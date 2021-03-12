@@ -16,7 +16,7 @@ class RestaurantController extends Controller
         'email_rest' => 'required|string|max:50',
         'image' => 'required|string|max:255',
         'vat' => 'required|string|max:11',
-        'slug' => 'required|string|max:50'
+        'slug' => 'string'
     ];
 
     public function create()

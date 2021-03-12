@@ -39,37 +39,28 @@
             </div>   
 
             <div class="form-group">
-                <label for="image">Testo</label>
+                <label for="image">Inserisci una immagine del prodotto</label>
                 <input class="form-control" type="file" name="image" id="image" accept="image/*">
             </div>
 
+           
             <div class="form-group">
-                <h4>Questo piatto è disponibile?</h4>
-                <div class="custom-control custom-radio">
-                    <input type="radio" id="visible_true" name="visible" class="custom-control-input" value="true">
-                    <label class="custom-control-label" for="visible_true">Si</label>
-                </div>
-
-                <div class="custom-control custom-radio">
-                    <input type="radio" id="visible_false" name="visible" class="custom-control-input" value="false">
-                    <label class="custom-control-label" for="visible_false">No</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="vegetarian" id="vegetarian" 
+                    @if (old('vegetarian') == 1) checked @endif value="1">
+                    <label class="form-check-label" for="vegetarian">Vegetariano</label>
                 </div>
             </div>
 
-            <div class="form-group">
-                <h4>Questo piatto è vegetariano?</h4>
-                <div class="custom-control custom-radio">
-                    <input type="radio" id="vegetarian_true" name="vegetarian" class="custom-control-input" value="true">
-                    <label class="custom-control-label" for="vegetarian_true">Si</label>
-                </div>
-
-                <div class="custom-control custom-radio">
-                    <input type="radio" id="vegetarian_false" name="vegetarian" class="custom-control-input" value="false">
-                    <label class="custom-control-label" for="vegetarian_false">No</label>
+             <div class="form-group">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="visible" id="visible" 
+                        @if (old('vegetarian') == 1) checked @endif value="1">
+                        <label class="form-check-label" for="visible">Disponibile</label>
+                    </div>
                 </div>
             </div>
-
-            
 
             <input class="btn btn-primary" type="submit" value="Crea">
         </form>
