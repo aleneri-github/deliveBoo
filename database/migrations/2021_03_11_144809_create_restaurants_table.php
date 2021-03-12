@@ -17,14 +17,16 @@ class CreateRestaurantsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('name', 50);
-            $table->string('address', 50)->nullable();
-            $table->string('phone_number', 50)->nullable();
-            $table->string('website', 50)->nullable();
-            $table->string('email_rest', 50)->nullable();
-            $table->string('images')->nullable();
+            $table->string('address', 50);
+            $table->string('phone_number', 50);
+            $table->string('website', 50);
+            $table->string('email_rest', 50);
+            $table->string('image');
+            $table->string('vat', 11); // partita iva
+            $table->integer('rating')->nullable();
             $table->string('slug', 50);
             $table->timestamps();
-            
+
             //DB relations
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

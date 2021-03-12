@@ -6,11 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    public function restaurant() {
-      return $this->belongsTo('App\Restaurant');
+    public function foods() {
+      return $this->belongsToMany('App\Food');
     }
-
-    public function cartItems() {
-      return $this->hasMany('App\CartItem');
-    }
+    
 }

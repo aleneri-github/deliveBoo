@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RestTypes extends Model
+class RestType extends Model
 {
     public function restaurants() {
       return $this->belongsToMany('App\Restaurant');
