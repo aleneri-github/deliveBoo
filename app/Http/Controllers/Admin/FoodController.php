@@ -4,9 +4,19 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Food;
 
 class FoodController extends Controller
-{
+{   
+    private $foodValidation = [
+        'name' => 'required|string|max:50',
+        'ingredients' => 'required',
+        'price' => 'required|numeric|max:4',
+        'image' => 'required|image',
+        'visible' => 'required|boolean',
+        'vegetarian' => 'required|boolean',
+        'slug' => 'required|string|max:50',
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,9 @@ class FoodController extends Controller
      */
     public function index()
     {
-        //
+        $foods = Food::where('restaurant_id', Auth::id())->get();
+
+        return view('admin.foods.index', compact('foods'));
     }
 
     /**
@@ -24,7 +36,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.foods.create');
     }
 
     /**
@@ -34,8 +46,26 @@ class FoodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $request->validate($this->foodValidation);
+        $data = $request->all();
+
+        $newFood = new Food();
+
+        $data["slug"] = Str::slug($data["name"]);
+        $data["restaurant_id"] = Auth::id();
+
+        if(!empty($data["image"])) {
+            $data["image"] = Storage::disk('public')->put('images', $data["image"]);
+        }
+
+        $newFood->fill($data);
+        $newFood->save();
+
+        // Mail::to('test@mail.com')->send(new FoodMail());
+
+        return redirect()->route('admin.foods.index');
+
     }
 
     /**
@@ -44,9 +74,9 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Food $food)
     {
-        //
+        return view('admin.foods.show', compact('food'));
     }
 
     /**
@@ -55,9 +85,9 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Food $food)
     {
-        //
+        return view('admin.foods.edit', compact('food'));
     }
 
     /**
@@ -67,9 +97,32 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, Food $food)
+    {   
+
+        $request->validate($this->foodValidation);
+
+        $data = $request->all();
+
+        $food->update($data);
+
+        $data["slug"] = Str::slug($data["name"]);
+
+        if(!empty($data["image"])) {
+            // verifico se è presente un'immagine precedente, se si devo cancellarla
+            if(!empty($food->image)) {
+                Storage::disk('public')->delete($food->image);
+            }
+
+            $data["image"] = Storage::disk('public')->put('images', $data["image"]);
+        }
+
+        $food->update($data);
+
+
+        return redirect()
+            ->route('admin.foods.index')
+            ->with('message', 'Il piatto '. $food->name. ' è stato aggiornato correttamente');
     }
 
     /**
@@ -78,8 +131,12 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Food $food)
     {
-        //
+        $food->delete();
+
+        return redirect()
+                ->route('admin.foods.index')
+                ->with('message', "Piatto " . $comic->name . " cancellato correttamente!");
     }
 }

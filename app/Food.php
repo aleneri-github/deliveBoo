@@ -5,12 +5,24 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Food extends Model
-{
-    public function restaurant() {
-      return $this->belongsTo('App\Restaurant');
-    }
+{   
+  protected $fillable = [
+      'restaurant_id',
+      'name',
+      'ingredients',
+      'description',
+      'price',
+      'image',
+      'visible',
+      'vegetarian',
+      'slug'
+    ];
 
-    public function orders() {
-      return $this->belongsToMany('App\Order');
-    }
+  public function restaurant() {
+    return $this->belongsTo('App\Restaurant');
+  }
+
+  public function orders() {
+    return $this->belongsToMany('App\Order');
+  }
 }

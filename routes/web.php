@@ -21,14 +21,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::prefix('admin')
     ->namespace('Admin')
     ->middleware('auth')
     ->name('admin.')
     ->group( function(){
     
-    // Route::get('/', 'HomeController@index');
 
-    //Route::resource('posts', 'PostController');
+    Route::resource('foods', 'FoodController');
+
+    Route::get('/restaurant/create', 'RestaurantController@create')->name('admin.restaurant.create');
 
 });
