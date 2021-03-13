@@ -5,34 +5,44 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Restaurant;
+use App\RestType;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
-{   
+{
     private $restaurantValidation = [
         'name' => 'required|string|max:50',
         'address' => 'required|string|max:50',
-        'phone_number' => 'required|string|max:50',
+        'phone_number' => 'required|string|regex:/^[+]?[0-9]+$/',
         'website' => 'required|string|max:50',
+<<<<<<< HEAD
         'email_rest' => 'required|string|max:50',
         'image' => 'required|string|max:255',
         'vat' => 'required|string|max:11',
+=======
+        'email_rest' => 'required|email|max:50',
+        'image' => 'required|image',
+        'vat' => 'required|string|size:11|regex:/^[0-9]+$/',
+>>>>>>> CreateRestaurantView
         'slug' => 'string'
     ];
 
     public function create()
     {
-        return view('admin.restaurant.create');
+        $types = RestType::all();
+        return view('admin.restaurant.create', compact('types'));
     }
 
     public function store(Request $request)
-    {   
-        $request->validate($this->restaurantValidation);
-        $data = $request->all();
-
+    {   $data = $request->all();
+        // $request->validate($this->restaurantValidation);
+        // $data = $request->all();
         $newRestaurant = new Restaurant();
 
         $data["user_id"] = Auth::id();
-
+        $data["slug"] = Str::slug($data['name'], '-');
         if(!empty($data["image"])) {
             $data["image"] = Storage::disk('public')->put('images', $data["image"]);
         }
@@ -40,9 +50,12 @@ class RestaurantController extends Controller
         $newRestaurant->fill($data);
         $newRestaurant->save();
 
-        // Mail::to('test@mail.com')->send(new RestaurantMail());
+        if(!empty($data['types'])) {
+          $newRestaurant->types()->attach($data['types']);
+        }
 
         return redirect()->route('admin.foods.index');
+
 
     }
 }
