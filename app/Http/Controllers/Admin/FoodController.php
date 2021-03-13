@@ -5,17 +5,20 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Food;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class FoodController extends Controller
-{   
+{
     private $foodValidation = [
         'name' => 'required|string|max:50',
         'ingredients' => 'required',
-        'price' => 'required|numeric|max:4',
+        'price' => 'required|numeric|max:99.99',
         'image' => 'required|image',
         'visible' => 'required|boolean',
         'vegetarian' => 'required|boolean',
-        'slug' => 'required|string|max:50',
+        'slug' => 'string',
     ];
     /**
      * Display a listing of the resource.
@@ -46,7 +49,7 @@ class FoodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $request->validate($this->foodValidation);
         $data = $request->all();
 
@@ -98,7 +101,7 @@ class FoodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Food $food)
-    {   
+    {
 
         $request->validate($this->foodValidation);
 
