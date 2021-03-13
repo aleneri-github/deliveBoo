@@ -15,27 +15,60 @@
         </div>
     @endif
 
-    <form action="{{ route('beers.update', $beer->id) }}" method="POST">
+    <form action="{{ route('admin.dishes.update', $dish->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
+       
         <div class="form-group">
-            <label for="name">Nome della Birra</label>
-            <input type="text" class="form-control" name="name"  id="name" placeholder="Nome della Birra" value="{{ $beer->name }}">
-        </div>
-        <div class="form-group">
-            <label for="brand">La tua marca</label>
-            <input type="text" class="form-control" name="brand" id="brand" placeholder="La tua marca" value="{{ $beer->brand }}">
-        </div>
-        <div class="form-group">
-            <label for="price">Prezzo</label>
-            <input type="text" class="form-control" name="price" id="price" placeholder="Prezzo" value="{{ $beer->price }}">
-        </div>
-        <div class="form-group">
-            <label for="content">Grado alcolico</label>
-            <input type="text" class="form-control" name="content"  id="content" placeholder="Grado alcolico" value="{{ $beer->content }}">
-        </div>
+                <label for="name">Nome del piatto</label>
+                <input class="form-control" type="text" id="name" name="name" value="{{ $dish->name }}">
+            </div>
+
+            <div class="form-group">
+                <label for="ingredients">Ingredienti</label>
+                <textarea class="form-control" id="ingredients" name="ingredients" rows="4" cols="50" value="{{ $dish->ingredients }}"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrivi il tuo piatto</label>
+                <textarea class="form-control" id="description" name="description" rows="4" cols="50" value="{{ $dish->description }}"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Prezzo</label>
+                <input class="form-control" type="text" id="price" name="price" value="{{ $dish->price }}">
+            </div>   
+
+            <div class="form-group">
+                <label for="image">Immagine del prodotto</label>
+                @if(!empty($dish->image))
+                    <img class="d-block" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
+                @endif
+                <p class="mt-2">Modifica l'immagine precedentemente caricata</p>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+            </div>
+
+           
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="vegetarian" id="vegetarian" 
+                    @if (old('vegetarian') == 1) checked @endif value="1">
+                    <label class="form-check-label" for="vegetarian">Vegetariano</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="visible" id="visible" 
+                        @if (old('vegetarian') == 1) checked @endif value="1">
+                        <label class="form-check-label" for="visible">Disponibile</label>
+                    </div>
+                </div>
+            </div>
         
-        <button type="submit" class="btn btn-primary">Salva</button>
-        <a href="{{ route('beers.index') }}" class="btn btn-secondary">Indietro</a>
+        <button type="submit" class="btn btn-primary">Salva le modifiche</button>
+
+        <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary">Indietro</a>
     </form>
 @endsection
