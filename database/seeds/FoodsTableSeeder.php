@@ -23,7 +23,7 @@ class FoodsTableSeeder extends Seeder
           $newFood = new Food();
           // Valorizza propietà
           $newFood->restaurant_id = $restaurant->id;
-          $newFood->name = $faker->sentences(4);
+          $newFood->name = $faker->sentence($nbWords = 1, $variableNbWords = true);
           $newFood->slug = Str::slug($newFood->name);
           $newFood->ingredients = $faker->text(100);
           $newFood->description = $faker->text(200);

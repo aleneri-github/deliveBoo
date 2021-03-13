@@ -14,7 +14,7 @@ class FoodController extends Controller
     private $foodValidation = [
         'name' => 'required|string|max:50',
         'ingredients' => 'required',
-        'price' => 'required|numeric|max:99.99',
+        'price' => 'required|numeric|max:99',
         'image' => 'required|image',
         'visible' => 'required|boolean',
         'vegetarian' => 'required|boolean',

@@ -17,15 +17,9 @@ class RestaurantController extends Controller
         'address' => 'required|string|max:50',
         'phone_number' => 'required|string|regex:/^[+]?[0-9]+$/',
         'website' => 'required|string|max:50',
-<<<<<<< HEAD
-        'email_rest' => 'required|string|max:50',
-        'image' => 'required|string|max:255',
-        'vat' => 'required|string|max:11',
-=======
         'email_rest' => 'required|email|max:50',
         'image' => 'required|image',
         'vat' => 'required|string|size:11|regex:/^[0-9]+$/',
->>>>>>> CreateRestaurantView
         'slug' => 'string'
     ];
 
