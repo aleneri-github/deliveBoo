@@ -77,8 +77,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Dish $dish)
+    public function show($slug)
     {
+        $dish = Dish::where('slug', $slug)->firstOrFail();
         return view('admin.dishes.show', compact('dish'));
     }
 

@@ -1,22 +1,17 @@
-@extends('layouts.main')
-
-@section('header')
-     <h1 class="mt-5">Dettaglio Birre</h1>
-@endsection
+@extends('layouts.app')
 
 @section('content')
-    <table class="table table-dark table-striped table-bordered">
-        @foreach ($beer->getAttributes() as $key => $value)
-            <tr>
-                <td><strong>{{ $key }}</strong></td>
-                <td>{{ $value }}</td>
-            </tr>
-        @endforeach
-    </table>
-@endsection
+    
+    <div class="container my-4">
+        <h2 class="display-4 text-center">{{ $dish->name}}</h2>
+        {{-- <h3 class="text-center mb-4">{{ $dish->ingredients}}</h3> --}}
+        <img src="{{ $dish->image }}" alt="{{ $dish->name}}" style="width: 500px">
+        </div>
+        <p class="mt-4">{{ $dish->ingredients }}</p>
+        <p><strong>Ingredienti: </strong>{{ $dish->description }}</p>
+        {{-- <p class="mb-4"><strong>Data di pubblicazione: </strong>{{ $dishes->publication_date }}</p> --}}
 
-@section('footer')
-     <div class="text-right">
-         <a href="{{ route('beers.index') }}" class="btn btn-primary">Torna all'elenco Birre</a>
-     </div>
+        <a href="{{ route('admin.dishes.index') }}" class="btn btn-lg btn-outline-primary">Torna alla home</a>
+    </div>
+
 @endsection
