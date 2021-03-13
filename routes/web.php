@@ -29,7 +29,7 @@ Route::prefix('admin')
     ->group( function(){
 
 
-    Route::resource('foods', 'FoodController');
+    Route::resource('dishes', 'DishController');
 
     Route::get('/restaurant', 'RestaurantController@index')->name('restaurant.index');
     Route::get('/restaurant/create', 'RestaurantController@create')->name('restaurant.create');

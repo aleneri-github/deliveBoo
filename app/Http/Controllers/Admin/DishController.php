@@ -9,9 +9,9 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class FoodController extends Controller
+class DishController extends Controller
 {
-    private $foodValidation = [
+    private $dishValidation = [
         'name' => 'required|string|max:50',
         'ingredients' => 'required',
         'price' => 'required|numeric|max:99',
@@ -27,9 +27,9 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $foods = Food::where('restaurant_id', Auth::id())->get();
-
-        return view('admin.foods.index', compact('foods'));
+        $dishes = Dish::where('restaurant_id', Auth::id())->get();
+        // GESTIONE ASSENZA DI PIATTI
+        return view('admin.dishes.index', compact('dishes'));
     }
 
     /**
@@ -39,7 +39,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        return view('admin.foods.create');
+        return view('admin.dishes.create');
     }
 
     /**
@@ -50,10 +50,10 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->foodValidation);
+        $request->validate($this->dishValidation);
         $data = $request->all();
 
-        $newFood = new Food();
+        $newDish = new Dish();
 
         $data["slug"] = Str::slug($data["name"]);
         $data["restaurant_id"] = Auth::id();
@@ -62,12 +62,12 @@ class FoodController extends Controller
             $data["image"] = Storage::disk('public')->put('images', $data["image"]);
         }
 
-        $newFood->fill($data);
-        $newFood->save();
+        $newDish->fill($data);
+        $newDish->save();
 
         // Mail::to('test@mail.com')->send(new FoodMail());
 
-        return redirect()->route('admin.foods.index');
+        return redirect()->route('admin.dishes.index');
 
     }
 
@@ -77,9 +77,9 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Food $food)
+    public function show(Dish $dish)
     {
-        return view('admin.foods.show', compact('food'));
+        return view('admin.dishes.show', compact('dish'));
     }
 
     /**
@@ -88,9 +88,9 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Food $food)
+    public function edit(Dish $dish)
     {
-        return view('admin.foods.edit', compact('food'));
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -100,32 +100,32 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Food $food)
+    public function update(Request $request, Dish $dish)
     {
 
-        $request->validate($this->foodValidation);
+        $request->validate($this->dishValidation);
 
         $data = $request->all();
 
-        $food->update($data);
+        $dish->update($data);
 
         $data["slug"] = Str::slug($data["name"]);
 
         if(!empty($data["image"])) {
             // verifico se è presente un'immagine precedente, se si devo cancellarla
-            if(!empty($food->image)) {
-                Storage::disk('public')->delete($food->image);
+            if(!empty($dish->image)) {
+                Storage::disk('public')->delete($dish->image);
             }
 
             $data["image"] = Storage::disk('public')->put('images', $data["image"]);
         }
 
-        $food->update($data);
+        $dish->update($data);
 
 
         return redirect()
-            ->route('admin.foods.index')
-            ->with('message', 'Il piatto '. $food->name. ' è stato aggiornato correttamente');
+            ->route('admin.dishes.index')
+            ->with('message', 'Il piatto '. $dish->name. ' è stato aggiornato correttamente');
     }
 
     /**
@@ -134,12 +134,12 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Food $food)
+    public function destroy(Dish $dish)
     {
-        $food->delete();
+        $dish->delete();
 
         return redirect()
-                ->route('admin.foods.index')
-                ->with('message', "Piatto " . $comic->name . " cancellato correttamente!");
+                ->route('admin.dishes.index')
+                ->with('message', "Piatto " . $dish->name . " cancellato correttamente!");
     }
 }
