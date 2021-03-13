@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Food;
 
 class FoodController extends Controller
-{   
+{
     private $foodValidation = [
         'name' => 'required|string|max:50',
         'ingredients' => 'required',
@@ -46,7 +46,7 @@ class FoodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $request->validate($this->foodValidation);
         $data = $request->all();
 
@@ -98,7 +98,7 @@ class FoodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Food $food)
-    {   
+    {
 
         $request->validate($this->foodValidation);
 

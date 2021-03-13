@@ -1856,6 +1856,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 //   }
 // );
 
+$(document).ready(function () {
+  $('#image').on('change', function () {
+    var fileName = $(this).val().split('\\').pop();
+    $('.custom-file-label').html(fileName);
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

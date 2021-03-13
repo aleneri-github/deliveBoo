@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
@@ -27,10 +27,12 @@ Route::prefix('admin')
     ->middleware('auth')
     ->name('admin.')
     ->group( function(){
-    
+
 
     Route::resource('foods', 'FoodController');
 
-    Route::get('/restaurant/create', 'RestaurantController@create')->name('admin.restaurant.create');
+    Route::get('/restaurant', 'RestaurantController@index')->name('restaurant.index');
+    Route::get('/restaurant/create', 'RestaurantController@create')->name('restaurant.create');
+    Route::post('/restaurant/store', 'RestaurantController@store')->name('restaurant.store');
 
 });

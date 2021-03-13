@@ -130,8 +130,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'vat' => [
+            'size' => 'The :attribute must be :size numbers',
+            'regex' => 'The :attribute must be only numbers',
         ],
     ],
 
