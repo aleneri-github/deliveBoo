@@ -35,3 +35,28 @@ class CreateOrdersTable extends Migration
         Schema::dropIfExists('orders');
     }
 }
+
+
+// $table->id();
+// $table->unsignedBigInteger('restaurant_id');
+// $table->string('name', 50);
+// $table->text('ingredients');
+// $table->text('description')->nullable(); // ?
+// $table->float('price', 4,2);
+// $table->string('image');
+// $table->boolean('visible');
+// $table->boolean('vegetarian');
+// $table->string('slug', 50);
+// $table->timestamps();
+//
+// //DB relations
+// $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
+
+
+// $table->id();
+// $table->unsignedBigInteger('food_id');
+// $table->unsignedBigInteger('order_id');
+//
+// //DB relations
+// $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade');
+// $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');

@@ -3,10 +3,10 @@
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
-use App\Food;
+use App\Dish;
 use App\Restaurant;
 
-class FoodsTableSeeder extends Seeder
+class DishesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,15 +20,15 @@ class FoodsTableSeeder extends Seeder
 
         for ($i=0; $i < 15 ; $i++) {
           // Creazione istanza
-          $newFood = new Food();
+          $newFood = new Dish();
           // Valorizza propietà
           $newFood->restaurant_id = $restaurant->id;
-          $newFood->name = $faker->sentence($nbWords = 1, $variableNbWords = true);
+          $newFood->name = $faker->word;
           $newFood->slug = Str::slug($newFood->name);
           $newFood->ingredients = $faker->text(100);
           $newFood->description = $faker->text(200);
-          $newFood->price = $faker->randomFloat(4,2);
-          $newFood->img = $faker->imageUrl(640,480, 'food');
+          $newFood->price = $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 99);
+          $newFood->image = $faker->imageUrl(640,480, 'food');
           $newFood->vegetarian = $faker->boolean();
           $newFood->visible = $faker->boolean();
           // Salvataggio
