@@ -2,7 +2,7 @@
 
 @section('content')
     
-<div class="d-flex flex-wrap p-5">
+<div class="d-flex flex-wrap p-5 container">
     @foreach ($dishes as $dish)
 
         <div class="card m-3" style="width: 20rem;">
@@ -36,6 +36,11 @@
         </div>
 
     @endforeach
+
+    {{-- Bottone per crare un nuovo piatto --}}
+    <div>
+        <a href="{{ route('admin.dishes.create')}}" class="btn btn-primary">Crea un nuovo piatto</a>
+    </div>
 </div>
 
 @endsection
