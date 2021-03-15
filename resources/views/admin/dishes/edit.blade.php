@@ -25,12 +25,12 @@
 
                 <div class="form-group">
                     <label for="ingredients">Ingredienti</label>
-                    <textarea class="form-control" id="ingredients" name="ingredients" rows="4" cols="50" value="{{ $dish->ingredients }}"></textarea>
+                    <textarea class="form-control" id="ingredients" name="ingredients" rows="4" cols="50">{{ $dish->ingredients }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="description">Descrivi il tuo piatto</label>
-                    <textarea class="form-control" id="description" name="description" rows="4" cols="50" value="{{ $dish->description }}"></textarea>
+                    <textarea class="form-control" id="description" name="description" rows="4" cols="50">{{ $dish->description }}</textarea>
                 </div>
 
                 <div class="form-group">
@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="vegetarian" id="vegetarian" 
-                        @if (old('vegetarian') == 1) checked @endif value="1">
+                        @if ($dish->vegetarian == 1) checked @endif value="1">
                         <label class="form-check-label" for="vegetarian">Vegetariano</label>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                     <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="visible" id="visible" 
-                            @if (old('vegetarian') == 1) checked @endif value="1">
+                            @if ($dish->visible == 1) checked @endif value="1">
                             <label class="form-check-label" for="visible">Disponibile</label>
                         </div>
                     </div>
