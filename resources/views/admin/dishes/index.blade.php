@@ -6,7 +6,7 @@
     @foreach ($dishes as $dish)
 
         <div class="card m-3" style="width: 20rem;">
-            <img class="card-img-top" src="{{ $dish->image }}" alt="{{ $dish->name }}">
+            <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
             <div class="card-body">
                 <h3 class="card-title">{{ $dish->name }}</h3>
                 <p class="card-text">{{ substr($dish->ingredients, 0, 100) . " ..." }}</p>
