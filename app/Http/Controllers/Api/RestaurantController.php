@@ -14,7 +14,7 @@ class RestaurantController extends Controller
 
     if ($_GET['type'] != 'all') {
       $filtered = $restaurants->filter(function ($value, $key) {
-        return in_array(ucfirst($_GET['type']), $value->types->pluck('name')->toArray());
+        return in_array($_GET['type'], $value->types->pluck('name')->toArray());
       });
       return response()->json($filtered);
     } else {

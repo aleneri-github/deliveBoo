@@ -4,8 +4,18 @@
 {{-- sezione ristorante --}}
 <div class="container">
     <div class="d-flex justify-content-between p-3">
-        <h2><strong>{{ $restaurant->name }}</strong></h2>
-        <a href="{{ route('admin.dishes.create')}}" class="btn btn-primary">Crea un nuovo piatto</a>
+        <div>
+            <h2><strong>{{ $restaurant->name }}</strong></h2>
+            <ul>
+                @foreach ($restaurant->types as $type)
+                    <li class="badge badge-success p-2">{{ $type->name }}</li>
+                @endforeach
+            </ul>
+        </div>
+
+        <div>
+            <a href="{{ route('admin.dishes.create')}}" class="btn btn-primary">Crea un nuovo piatto</a>
+        </div>
     </div>
 </div>
 
@@ -14,8 +24,8 @@
 
     {{-- sezione messaggi --}}
     @if (session('message'))
-            <div class="message-success my-4">
-            <div class="alert-success mx-4">
+            <div class="message-success my-4 p-2">
+            <div class="alert-success mx-4 p-2">
                 {{ session('message') }}
             </div>
         </div>  
