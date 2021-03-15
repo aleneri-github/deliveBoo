@@ -5,7 +5,7 @@
     <div class="container my-4">
         <h2 class="display-4 text-center">{{ $dish->name}}</h2>
         {{-- <h3 class="text-center mb-4">{{ $dish->ingredients}}</h3> --}}
-        <img src="{{ $dish->image }}" alt="{{ $dish->name}}" style="width: 500px">
+        <img src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name}}" style="width: 500px">
         </div>
         <p class="mt-4">{{ $dish->ingredients }}</p>
         <p><strong>Ingredienti: </strong>{{ $dish->description }}</p>
