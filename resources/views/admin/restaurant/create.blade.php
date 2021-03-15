@@ -8,7 +8,7 @@
                 <div class="card-header">Registra il tuo ristorante</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('admin.restaurant.store') }}">
+                    <form method="POST" action="{{ route('admin.restaurant.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
