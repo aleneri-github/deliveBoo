@@ -11,27 +11,16 @@ class RestaurantController extends Controller
   public function index() {
 
     $restaurants = Restaurant::all();
-    return response()->json($restaurants);
-  }
 
-  public function filter($type) {
-    $rest = Restaurant::where('id',2)->firstOrFail();
-    $restaurants = Restaurant::all();
-    $_GET['type'] = ucfirst($type);
-    $filtered = $restaurants->filter(function ($value, $key) {
-      dd($value->types->getAttributes());
-      return $value > 2;
-    });
+    if ($_GET['type'] != 'all') {
+      $filtered = $restaurants->filter(function ($value, $key) {
+        return in_array(ucfirst($_GET['type']), $value->types->pluck('name')->toArray());
+      });
+      return response()->json($filtered);
+    } else {
+      return response()->json($restaurants);
+    }
 
-    $filtered->all();
-    dd($rest->types);
-
-    $_GET['type'] = ucfirst($type);
-    $filteredRest = array_filter($restaurants, function($value) {
-      dd($value->types);
-      return in_array($_GET['type'], $value->types);
-    });
-    return response()->json($filteredRest);
   }
 
 }
