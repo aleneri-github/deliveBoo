@@ -13,13 +13,13 @@ class RestTypesTableSeeder extends Seeder
     public function run()
     {
         $rest_types = [
-          'fast_food',
+          'fast-food',
           'pizzeria',
           'sushi',
           'italiano',
           'hamburger',
           'vegetariano',
-          'stack House',
+          'steak-house',
           'asiatico'
         ];
 
