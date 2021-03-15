@@ -1,46 +1,63 @@
 @extends('layouts.app')
 
 @section('content')
-    
-<div class="d-flex flex-wrap p-5 container">
-    @foreach ($dishes as $dish)
-
-        <div class="card m-3" style="width: 20rem;">
-            <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
-            <div class="card-body">
-                <h3 class="card-title">{{ $dish->name }}</h3>
-                <p class="card-text">{{ substr($dish->ingredients, 0, 100) . " ..." }}</p>
-                {{-- <p class="card-text"><strong>{{ $dish->author }}</strong></p> --}}
-            </div>
-
-            <div class="card-footer">
-
-                {{-- SHOW --}}
-                <a href="{{ route('admin.dishes.show', $dish->slug) }}" class="btn btn-outline-primary">Leggi di più</a>
-
-                {{-- EDIT --}}
-                <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-outline-primary">
-                <i class="fas fa-pencil-alt"></i>
-                </a>
-                
-                {{-- DESTROY --}}
-                <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-outline-danger">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-                </form>
-
-            </div>
-        </div>
-
-    @endforeach
-
-    {{-- Bottone per crare un nuovo piatto --}}
-    <div>
+{{-- sezione ristorante --}}
+<div class="container">
+    <div class="d-flex bg-warning p-3">
         <a href="{{ route('admin.dishes.create')}}" class="btn btn-primary">Crea un nuovo piatto</a>
+        <h2><strong>{{ $restaurant->name }}</strong></h2>
     </div>
+</div>
+
+<div class="container">
+
+
+    {{-- sezione messaggi --}}
+    @if (session('message'))
+            <div class="message-success my-4">
+            <div class="alert-success mx-4">
+                {{ session('message') }}
+            </div>
+        </div>  
+    @endif
+
+    {{-- CARDS --}}
+    <div class="container d-flex flex-wrap">
+        @foreach ($dishes as $dish)
+
+            <div class="card" style="width: calc(100% / 3 - 20px); margin: 10px;">
+                <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
+                <div class="card-body">
+                    <h3 class="card-title">{{ $dish->name }}</h3>
+                    <p class="card-text">{{ substr($dish->ingredients, 0, 100) . " ..." }}</p>
+                </div>
+
+                <div class="card-footer">
+
+                    {{-- SHOW --}}
+                    <a href="{{ route('admin.dishes.show', $dish->slug) }}" class="btn btn-outline-primary">Leggi di più</a>
+
+                    {{-- EDIT --}}
+                    <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-outline-primary">
+                    <i class="fas fa-pencil-alt"></i>
+                    </a>
+                    
+                    {{-- DESTROY --}}
+                    <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-outline-danger">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                    </form>
+
+                </div>
+            </div>
+
+        @endforeach
+
+    </div>
+
 </div>
 
 @endsection

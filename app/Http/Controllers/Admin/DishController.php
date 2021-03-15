@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
+use App\Restaurant;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -17,8 +18,7 @@ class DishController extends Controller
         'price' => 'required|numeric|max:99',
         'image' => 'required|image',
         'visible' => 'boolean',
-        'vegetarian' => 'boolean',
-        'slug' => 'string',
+        'vegetarian' => 'boolean'
     ];
     /**
      * Display a listing of the resource.
@@ -27,9 +27,12 @@ class DishController extends Controller
      */
     public function index()
     {
+        // con first or fail trovo l'oggetto
+        $restaurant = Restaurant::where('id', Auth::id())->firstOrFail();
+        // con get prendo una collection
         $dishes = Dish::where('restaurant_id', Auth::id())->get();
         // GESTIONE ASSENZA DI PIATTI
-        return view('admin.dishes.index', compact('dishes'));
+        return view('admin.dishes.index', compact('dishes', 'restaurant'));
     }
 
     /**
@@ -75,7 +78,7 @@ class DishController extends Controller
 
         // Mail::to('test@mail.com')->send(new FoodMail());
 
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('message', 'piatto aggiunto correttamente');
 
     }
 
