@@ -58,6 +58,14 @@ class DishController extends Controller
         $data["slug"] = Str::slug($data["name"]);
         $data["restaurant_id"] = Auth::id();
 
+        if(empty($data["vegetarian"])) {
+            $data["vegetarian"] = 0;
+        }
+
+        if(empty($data["visible"])) {
+            $data["visible"] = 0;
+        }
+
         if(!empty($data["image"])) {
             $data["image"] = Storage::disk('public')->put('images', $data["image"]);
         }
