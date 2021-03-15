@@ -35,9 +35,8 @@ class RestaurantController extends Controller
         if (!$rest->isEmpty()) {
           return redirect()->route('admin.dishes.index');
         }
+        $request->validate($this->restaurantValidation);
         $data = $request->all();
-        // $request->validate($this->restaurantValidation);
-        // $data = $request->all();
         $newRestaurant = new Restaurant();
 
         $data["user_id"] = Auth::id();
