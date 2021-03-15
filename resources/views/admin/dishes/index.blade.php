@@ -35,6 +35,8 @@
                 <div class="card-body">
                     <h3 class="card-title">{{ $dish->name }}</h3>
                     <p class="card-text">{{ substr($dish->description, 0, 60) . " ..." }}</p>
+                    <p class="{{ $dish->vegetarian == 1 ? 'btn btn-success' : 'btn btn-success disabled' }}">vegetariano</p>
+                    <p class="{{ $dish->visible == 1 ? 'btn btn-success' : 'btn btn-success disabled' }}">disponibile</p>
                 </div>
 
                 <div class="card-footer">
