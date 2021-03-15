@@ -28,7 +28,7 @@
             <div class="alert-success mx-4 p-2">
                 {{ session('message') }}
             </div>
-        </div>  
+        </div>
     @endif
 
     {{-- CARDS --}}
@@ -41,7 +41,7 @@
                     <h3 class="card-title">{{ $dish->name }}</h3>
                 </div> --}}
 
-                <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
+                <img style="height:40%" class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
                 <div class="card-body">
                     <h3 class="card-title">{{ $dish->name }}</h3>
                     <p class="card-text">{{ substr($dish->description, 0, 60) . " ..." }}</p>
@@ -58,7 +58,7 @@
                     <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-outline-primary">
                     <i class="fas fa-pencil-alt"></i>
                     </a>
-                    
+
                     {{-- DESTROY --}}
                     <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline">
                     @csrf
