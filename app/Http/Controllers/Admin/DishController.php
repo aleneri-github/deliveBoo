@@ -123,6 +123,14 @@ class DishController extends Controller
 
         $data["slug"] = Str::slug($data["name"]);
 
+        if(empty($data["vegetarian"])) {
+            $data["vegetarian"] = 0;
+        }
+
+        if(empty($data["visible"])) {
+            $data["visible"] = 0;
+        }
+
         if(!empty($data["image"])) {
             // verifico se è presente un'immagine precedente, se si devo cancellarla
             if(!empty($dish->image)) {
