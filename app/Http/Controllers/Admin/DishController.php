@@ -16,8 +16,8 @@ class DishController extends Controller
         'ingredients' => 'required',
         'price' => 'required|numeric|max:99',
         'image' => 'required|image',
-        'visible' => 'required|boolean',
-        'vegetarian' => 'required|boolean',
+        'visible' => 'boolean',
+        'vegetarian' => 'boolean',
         'slug' => 'string',
     ];
     /**
@@ -51,10 +51,8 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $request->validate($this->dishValidation);
-        // dd($request);
-        $data = $request->all();
-        // dd($data);
 
+        $data = $request->all();
         $newDish = new Dish();
 
         $data["slug"] = Str::slug($data["name"]);

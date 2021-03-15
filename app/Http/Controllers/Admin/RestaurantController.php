@@ -18,9 +18,8 @@ class RestaurantController extends Controller
         'phone_number' => 'required|string|regex:/^[+]?[0-9]+$/',
         'website' => 'required|string|max:50',
         'email_rest' => 'required|email|max:50',
-        'image' => 'required|image',
+        // 'image' => 'required|image',
         'vat' => 'required|string|size:11|regex:/^[0-9]+$/',
-        'slug' => 'string'
     ];
 
     public function create()
