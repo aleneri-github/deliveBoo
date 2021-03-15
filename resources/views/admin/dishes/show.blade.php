@@ -4,7 +4,10 @@
     
     <div class="container my-4">
         <h2 class="display-4">{{ $dish->name}}</h2>
-        @if ($dish->vegetarian =! 0) 
+        @if ($dish->visible == 0) 
+          <span class="badge badge-danger mb-2" style="font-size: 120%;"> Non Disponibile </span>     
+        @endif
+        @if ($dish->vegetarian == 1) 
           <span class="badge badge-success mb-2" style="font-size: 120%;"> Vegetarian </span>     
         @endif
         <div>
