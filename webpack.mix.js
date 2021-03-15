@@ -14,5 +14,5 @@ const mix = require('laravel-mix');
 mix
     .js('resources/js/app.js', 'public/js').vue({version:2})
     .sass('resources/sass/app.scss', 'public/css')
-    .options({processCssUrls: false})
-    .mjml('resources/mail', 'resources/views/mail'['.blade.php']);
+    .options({processCssUrls: false});
+    // .mjml('resources/mail', 'resources/views/mail'['.blade.php']);

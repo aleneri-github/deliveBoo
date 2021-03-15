@@ -3,9 +3,9 @@
 @section('content')
 {{-- sezione ristorante --}}
 <div class="container">
-    <div class="d-flex bg-warning p-3">
-        <a href="{{ route('admin.dishes.create')}}" class="btn btn-primary">Crea un nuovo piatto</a>
+    <div class="d-flex justify-content-between p-3">
         <h2><strong>{{ $restaurant->name }}</strong></h2>
+        <a href="{{ route('admin.dishes.create')}}" class="btn btn-primary">Crea un nuovo piatto</a>
     </div>
 </div>
 
