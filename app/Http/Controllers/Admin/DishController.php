@@ -16,7 +16,7 @@ class DishController extends Controller
         'name' => 'required|string|max:50',
         'ingredients' => 'required',
         'price' => 'required|numeric|max:99',
-        'image' => 'required|image',
+        'image' => 'image',
         'visible' => 'boolean',
         'vegetarian' => 'boolean'
     ];
