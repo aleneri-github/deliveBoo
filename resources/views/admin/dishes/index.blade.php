@@ -25,11 +25,18 @@
     <div class="container d-flex flex-wrap">
         @foreach ($dishes as $dish)
 
-            <div class="card" style="width: calc(100% / 3 - 20px); margin: 10px;">
+            <div class="card shadow" style="width: calc(100% / 3 - 20px); margin: 10px;">
+
+                {{-- <div class="card-header bg-info">
+                    <h3 class="card-title">{{ $dish->name }}</h3>
+                </div> --}}
+
                 <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
                 <div class="card-body">
                     <h3 class="card-title">{{ $dish->name }}</h3>
-                    <p class="card-text">{{ substr($dish->ingredients, 0, 100) . " ..." }}</p>
+                    <p class="card-text">{{ substr($dish->description, 0, 60) . " ..." }}</p>
+                    <p class="{{ $dish->vegetarian == 1 ? 'btn btn-success' : 'btn btn-success disabled' }}">vegetariano</p>
+                    <p class="{{ $dish->visible == 1 ? 'btn btn-success' : 'btn btn-success disabled' }}">disponibile</p>
                 </div>
 
                 <div class="card-footer">
