@@ -41,7 +41,7 @@
                 <div class="form-group">
                     <label for="image">Immagine del prodotto</label>
                     @if(!empty($dish->image))
-                        <img class="d-block" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
+                        <img class="img-fluid d-block" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
                     @endif
                     <p class="mt-2">Modifica l'immagine precedentemente caricata</p>
                     <input type="file" class="form-control" id="image" name="image" accept="image/*">
