@@ -32,7 +32,7 @@ Route::prefix('admin')
     Route::resource('dishes', 'DishController');
 
     Route::get('/restaurant', 'RestaurantController@index')->name('restaurant.index');
-    Route::get('/restaurant/create', 'RestaurantController@create')->name('restaurant.create');
+    Route::get('/restaurant/create', 'RestaurantController@create')->name('restaurant.create')->middleware('check');
     Route::post('/restaurant/store', 'RestaurantController@store')->name('restaurant.store');
 
 });

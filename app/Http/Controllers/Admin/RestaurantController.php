@@ -30,9 +30,13 @@ class RestaurantController extends Controller
     }
 
     public function store(Request $request)
-    {   $data = $request->all();
-        // $request->validate($this->restaurantValidation);
-        // $data = $request->all();
+    {
+        $rest = Restaurant::where('id', Auth::id())->get();
+        if (!$rest->isEmpty()) {
+          return redirect()->route('admin.dishes.index');
+        }
+        $request->validate($this->restaurantValidation);
+        $data = $request->all();
         $newRestaurant = new Restaurant();
 
         $data["user_id"] = Auth::id();
