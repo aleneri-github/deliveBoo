@@ -23,7 +23,7 @@ class CheckRest
         if ($rest->isEmpty()) {
           return $next($request);
         }
-        return redirect()->route('home');
-        // return redirect()->route('admin.dishes.index');
+        // return redirect()->route('home');
+        return redirect()->route('admin.dishes.index');
     }
 }
