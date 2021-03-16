@@ -60,7 +60,7 @@
                     </a>
 
                     {{-- DESTROY --}}
-                    <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline">
+                    <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline" onSubmit="return confirm ('Sei sicuro di voler cancellare questo Post?')">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-outline-danger">
