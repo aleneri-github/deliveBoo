@@ -52,7 +52,5 @@
     <div id="restaurants" class="p-4">
       <h3>Restaurants - Elenco dei ristoranti</h3>
     </div>
-
-
   </main>
 @endsection
