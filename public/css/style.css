@@ -1,3 +1,12 @@
-.back-color {
-  background-color: bisque;
+main {
+  color: #7a7a7a;
+}
+main #jumbotron {
+  background-color: #FDC234;
+}
+main #types {
+  background-color: #fefefe;
+}
+main #restaurants {
+  background-color: #1a1918;
 }
