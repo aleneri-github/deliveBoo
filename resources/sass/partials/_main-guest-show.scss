@@ -1,0 +1,41 @@
+#jumbotron {
+  position: relative;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  .dark-layer {
+    padding: 100px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+  h1 {
+    position: absolute;
+    bottom: 100px;
+    font-size: 64px;
+    word-wrap: break-word;
+    color: $white;
+    text-transform: uppercase;
+  }
+}
+
+#detail {
+  background-color: bisque;
+  #cards {
+    width: 70%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    .card {
+      width: 50%;
+      background-color: rgba(0,0,0,0.25);
+    }
+  }
+  #cart {
+    width: 30%;
+    border: 1px solid black;
+  }
+}
+
+// MEDIA QUERY
+// jumbotron: la font-size titolo va ridotta

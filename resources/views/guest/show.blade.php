@@ -2,10 +2,22 @@
 
 @section('content')
 
-  @dump($restaurant->dishes);
-  <h1>view show</h1>
+  {{-- JUMBOTRON --}}
+  <div id="jumbotron" style="background-image: url('{{ asset('storage/' . $restaurant->image) }}')">
+    <div class="dark-layer">
+      <h1>{{ $restaurant->name }}</h1>
+    </div>
+  </div>
 
-  <p>{{ $restaurant->name }}</p>
-  <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
+  {{-- CONTENUTO --}}
+  <div id="detail" class="d-flex p-3">
+
+    {{-- CARD PIATTI --}}
+    <div id="cards" class="m-2">cards</div>
+
+    {{-- CARRELLO --}}
+    <div id="cart" class="m-2">carrello</div>
+
+  </div>
     
 @endsection
