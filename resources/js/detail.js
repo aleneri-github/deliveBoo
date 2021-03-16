@@ -10,20 +10,20 @@ var detail = new Vue(
     },
     methods: {
       // PROVA
-      prova(elem) {
-        console.log(elem);
-      },
+      // prova(elem) {
+      //   console.log(elem);
+      // },
       // PROVA
       addOne(elem) {
         if(!this.cart.some(item => item.name == elem.name)) {
           elem.quantity = 1;
-          elem.total = (elem.quantity * elem.price).toFixed(2);
+          elem.total = elem.price;
           this.cart.push(elem);
         } else {
           this.cart.map((e) => {
             if(e.name == elem.name) {
               e.quantity++;
-              e.total = (elem.quantity * elem.price).toFixed(2);
+              e.total += elem.price;
             }
           })
           this.$forceUpdate();
@@ -35,7 +35,7 @@ var detail = new Vue(
               if(e.name == elem.name) {
                 if (e.quantity != 1) {
                   e.quantity--;
-                  e.total = (Math.round(elem.quantity * elem.price * 100)/100).toFixed(2);
+                  e.total -= elem.price;
                 } else {
                   let index = this.cart.indexOf(e);
                   this.cart.splice(index,1);

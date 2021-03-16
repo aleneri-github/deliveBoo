@@ -49342,22 +49342,22 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   },
   methods: {
     // PROVA
-    prova: function prova(elem) {
-      console.log(elem);
-    },
+    // prova(elem) {
+    //   console.log(elem);
+    // },
     // PROVA
     addOne: function addOne(elem) {
       if (!this.cart.some(function (item) {
         return item.name == elem.name;
       })) {
         elem.quantity = 1;
-        elem.total = (elem.quantity * elem.price).toFixed(2);
+        elem.total = elem.price;
         this.cart.push(elem);
       } else {
         this.cart.map(function (e) {
           if (e.name == elem.name) {
             e.quantity++;
-            e.total = (elem.quantity * elem.price).toFixed(2);
+            e.total += elem.price;
           }
         });
         this.$forceUpdate();
@@ -49373,7 +49373,7 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
           if (e.name == elem.name) {
             if (e.quantity != 1) {
               e.quantity--;
-              e.total = (Math.round(elem.quantity * elem.price * 100) / 100).toFixed(2);
+              e.total -= elem.price;
             } else {
               var index = _this.cart.indexOf(e);
 
