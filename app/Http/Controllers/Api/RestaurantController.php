@@ -31,4 +31,12 @@ class RestaurantController extends Controller
     return response()->json($types);
 
   }
+
+  public function dishes() {
+
+    $dishes = Dish::where('restaurant_id', 2)->get();
+    
+    return response()->json($dishes);
+
+  }
 }
