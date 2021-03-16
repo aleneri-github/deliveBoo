@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// PROVVISORIA
+Route::get('/guest/index', function () {
+    return view('guest.index');
+})->name('guest.index');
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');

@@ -20,10 +20,10 @@
   </head>
 
   <body>
-    @include('components.header')
+    @include('layouts.components.header')
 
     @yield('content')
 
-    @include('components.footes')
+    @include('layouts.components.footer')
   </body>
 </html>
