@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Restaurant;
 use App\Dish;
+use App\RestType;
 
 class RestaurantController extends Controller
 {
@@ -22,5 +23,12 @@ class RestaurantController extends Controller
       return response()->json($restaurants);
     }
     return response()->json($dishes);
+  }
+
+  public function types() {
+
+    $types = RestType::all()->pluck('name');
+    return response()->json($types);
+
   }
 }
