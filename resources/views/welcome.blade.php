@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -64,6 +64,7 @@
         </style>
     </head>
     <body>
+      <div id="root">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -96,5 +97,6 @@
                 </div>
             </div>
         </div>
+      </div>
     </body>
 </html>
