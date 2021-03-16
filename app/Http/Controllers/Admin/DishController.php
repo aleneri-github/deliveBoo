@@ -52,13 +52,23 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        
+
         $request->validate($this->dishValidation);
 
         $data = $request->all();
-        $newDish = new Dish();
 
         $data["slug"] = Str::slug($data["name"]);
+
+        $dish = Dish::where('slug', $data["slug"])->get();
+        if (!$dish->isEmpty()) {
+          return redirect()->route('admin.dishes.create')->with('message', 'Il piatto che stia creando esiste già nel Database');
+        }
+
+        $newDish = new Dish();
+
+        
         $data["restaurant_id"] = Auth::id();
 
         if(empty($data["vegetarian"])) {

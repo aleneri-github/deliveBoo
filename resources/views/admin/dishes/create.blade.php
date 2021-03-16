@@ -4,6 +4,14 @@
     <div class="container">
         <h1>Crea un nuovo piatto</h1>
 
+        @if (session('message'))
+            <div class="alert-danger my-4 p-2">
+                <div class="alert-danger mx-4 p-2">
+                    {{ session('message') }}
+                </div>
+            </div>
+         @endif
+
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

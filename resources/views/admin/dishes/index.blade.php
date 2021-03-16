@@ -24,7 +24,7 @@
 
     {{-- sezione messaggi --}}
     @if (session('message'))
-            <div class="message-success my-4 p-2">
+        <div class="message-success my-4 p-2">
             <div class="alert-success mx-4 p-2">
                 {{ session('message') }}
             </div>
