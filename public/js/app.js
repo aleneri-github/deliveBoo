@@ -1843,22 +1843,112 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: "#root",
+var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
+  el: "#home",
   data: {
-    types: []
+    types: ['all'],
+    restaurants: []
   },
-  methods: {},
+  methods: {
+    filter: function filter(type) {
+      var _this = this;
+
+      this.restaurants = [];
+      axios.get("http://localhost:8000/api/restaurants?type=".concat(type)).then(function (response) {
+        _this.restaurants = response.data;
+      });
+    }
+  },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     axios.get('http://localhost:8000/api/restaurants/types').then(function (response) {
-      console.log(response.data);
-      _this.types = response.data;
-      console.log(_this.types);
+      var _this2$types;
+
+      (_this2$types = _this2.types).push.apply(_this2$types, _toConsumableArray(response.data));
+    });
+    axios.get("http://localhost:8000/api/restaurants?type=all").then(function (response) {
+      _this2.restaurants = response.data;
+    });
+  }
+});
+var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
+  el: "#detail",
+  data: {
+    dishes: [],
+    cart: []
+  },
+  methods: {
+    addOne: function addOne(elem) {
+      if (!this.cart.some(function (item) {
+        return item.name == elem.name;
+      })) {
+        elem.quantity = 1;
+        elem.total = (elem.quantity * elem.price).toFixed(2);
+        this.cart.push(elem);
+      } else {
+        this.cart.map(function (e) {
+          if (e.name == elem.name) {
+            e.quantity++;
+            e.total = (elem.quantity * elem.price).toFixed(2);
+          }
+        });
+        this.$forceUpdate();
+      }
+    },
+    removeOne: function removeOne(elem) {
+      var _this3 = this;
+
+      if (this.cart.some(function (item) {
+        return item.name == elem.name;
+      })) {
+        this.cart.map(function (e) {
+          if (e.name == elem.name) {
+            if (e.quantity != 1) {
+              e.quantity--;
+              e.total = (Math.round(elem.quantity * elem.price * 100) / 100).toFixed(2);
+            } else {
+              var index = _this3.cart.indexOf(e);
+
+              _this3.cart.splice(index, 1);
+            }
+          }
+        });
+        this.$forceUpdate();
+      } else {
+        return;
+      }
+    },
+    cartTotal: function cartTotal() {
+      var partials = this.cart.map(function (e) {
+        return parseFloat(e.total);
+      });
+      console.log(partials);
+      return partials.reduce(function (a, b) {
+        return a + b;
+      }, 0);
+    }
+  },
+  mounted: function mounted() {
+    var _this4 = this;
+
+    axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
+      _this4.dishes = response.data;
     });
   }
 });
