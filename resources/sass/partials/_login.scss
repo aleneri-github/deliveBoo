@@ -1,0 +1,108 @@
+#login-page {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 55px);
+  background-color: $white;
+  background-image: linear-gradient(90deg, $white 57%, $yellow 43%);
+  .card {
+    width: 100%;
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
+    border: 0px;
+    .card-header-1 {
+      padding: 10% 13%;
+    }
+    .login-card {
+      display: flex;
+      .card-body {
+        width: 60%;
+        form {
+          padding-bottom: 20%;
+        }
+       }
+       .card-img {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          width: 40%;
+          border-bottom-left-radius: 0px;
+          border-top-left-radius: 0px;
+          background-color: $yellow;
+        img {
+         width: 80%;
+        }
+      }
+    }
+  }
+} 
+
+
+/* SM */
+@media screen and (max-width: 980px) {
+  #login-page {
+    .card {
+      .card-header-1 {
+        padding: 8% 0%;
+      }
+    }
+  }
+
+}
+
+/* XS */
+@media screen and (max-width: 770px) {
+  
+  #login-page {
+    display: block;
+    background-color: $yellow;
+    background-image: linear-gradient($yellow 51%, $white 67%);
+    .card {
+        box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 50%);
+        border: 0px;
+        background-color: transparent;
+      .card-header-1 {
+        padding: 3% 0%;
+      }
+      .login-card {
+        flex-direction: column-reverse;
+        width: 100%; 
+        .card-body {
+          width: 100%; 
+          form {
+            padding-bottom: 0%;
+          }
+         }
+         .card-img {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background-color: $yellow;
+          img {
+            margin-top: 20px;
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+/* Extra XS */
+@media screen and (max-width: 470px) {
+  #login-page {
+    background-image: linear-gradient($yellow 51%, $white 67%);
+    .card {
+      .login-card {
+        .card-body {
+          padding: 0 10px;
+        }
+         .card-img {
+          img {
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+
+}
