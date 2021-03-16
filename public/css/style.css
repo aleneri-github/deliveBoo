@@ -1,8 +1,43 @@
-main {
-  color: #7a7a7a;
-}
 main #jumbotron {
-  background-color: #FDC234;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/jumbotron.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+main #jumbotron .title {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  color: black;
+  font-weight: bold;
+}
+main #jumbotron marquee {
+  margin-top: 3%;
+  background-color: transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+main #jumbotron marquee div {
+  display: inline-block;
+  margin-left: 15px;
+  cursor: pointer;
+}
+main #jumbotron marquee div small {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 22px;
+}
+main #jumbotron marquee div img {
+  overflow: hidden;
+  border-radius: 5px;
 }
 main #types {
   background-color: #fefefe;
