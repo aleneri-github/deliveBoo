@@ -28,10 +28,3 @@ var home = new Vue(
     }
   }
 );
-
-$(document).ready(function() {
-  $('#image').on('change', function(){
-    var fileName = $(this).val().split('\\').pop();
-    $('.custom-file-label').html(fileName);
-  });
-});

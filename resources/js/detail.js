@@ -1,3 +1,6 @@
+require('./bootstrap');
+import Vue from 'vue';
+
 var detail = new Vue(
   {
     el: "#detail",
