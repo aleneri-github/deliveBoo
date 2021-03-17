@@ -6,7 +6,7 @@
             <li><a href="#">Chi siamo</a></li>
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">Contattaci</a></li>
+            <li><a href="#">Contattaci</a></li>            
           </ul>
           <img class="logo" src="../img/deliverYou-bianco.svg" alt="logo">
         </div>
