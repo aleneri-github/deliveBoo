@@ -3,24 +3,63 @@ main {
 }
 main #jumbotron {
   width: 100%;
-  height: calc(100vh - 55px);
-  background-image: url("../img/jumbo-img-1.png");
-  background-repeat: no-repeat;
-  background-size: 700px;
-  background-position: 700px 40px;
+  height: 700px;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #FDC234;
+  background-image: linear-gradient(#FDC234 69%, #fefefe 95%);
 }
-main #jumbotron .title {
+main #jumbotron .container {
   display: flex;
+}
+main #jumbotron .container .title {
+  width: 50%;
   padding-top: 12%;
   color: black;
   font-weight: bold;
   font-size: 50px;
 }
-main #jumbotron .title h1, main #jumbotron .title .h1 {
+main #jumbotron .container .title h1, main #jumbotron .container .title .h1 {
   font-size: 3.25rem;
 }
-main #jumbotron marquee {
+main #jumbotron .container .jumb-img {
+  width: 50%;
+}
+main #jumbotron .container .jumb-img img {
+  width: 100%;
+}
+main #service {
+  position: relative;
+}
+main #service h1 {
+  position: absolute;
+  top: -70px;
+  right: 50%;
+  transform: translateX(50%);
+}
+main #service .box-cards {
+  display: flex;
+  padding-top: 20px;
+}
+main #service .box-cards .service-card {
+  width: calc(100% / 3 - 20px);
+  text-align: center;
+  margin: 10px;
+}
+main #food {
+  width: 100%;
+  padding: 5% 0;
+}
+main #food .box-cards {
+  display: flex;
+}
+main #food .box-cards .card_food {
+  width: calc(100% / 4 - 20px);
+  margin: 10px;
+}
+main #food .box-cards .card_food img {
+  width: 200px;
+}
+main #carousel-type marquee {
   margin-top: 4%;
   background-color: transparent;
   overflow: hidden;
@@ -28,17 +67,17 @@ main #jumbotron marquee {
   align-items: center;
   overflow: hidden;
 }
-main #jumbotron marquee div {
+main #carousel-type marquee div {
   position: relative;
   display: inline-block;
   margin-left: 15px;
   cursor: pointer;
 }
-main #jumbotron marquee div img {
+main #carousel-type marquee div img {
   overflow: hidden;
   border-radius: 5px;
 }
-main #jumbotron marquee div h5 {
+main #carousel-type marquee div h5 {
   position: absolute;
   bottom: 0;
   left: 22px;
@@ -48,11 +87,12 @@ main #jumbotron marquee div h5 {
 }
 main #restaurants {
   width: 100%;
-  height: 1000px;
   padding: 5% 0;
+}
+main #restaurants .box-cards {
   display: flex;
 }
-main #restaurants .card_rest {
+main #restaurants .box-cards .card_rest {
   position: relative;
   width: calc(100% / 3 - 20px);
   margin: 10px;
@@ -63,17 +103,17 @@ main #restaurants .card_rest {
   border-radius: 10px;
   transition: all 0.4s;
 }
-main #restaurants .card_rest:hover {
+main #restaurants .box-cards .card_rest:hover {
   transform: scale(1.02);
   box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
   transition: all 0.4s;
 }
-main #restaurants .card_rest img {
+main #restaurants .box-cards .card_rest img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main #restaurants .card_rest h5 {
+main #restaurants .box-cards .card_rest h5 {
   position: absolute;
   bottom: 0;
   left: 22px;

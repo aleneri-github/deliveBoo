@@ -2,23 +2,72 @@ main {
   background-color: $white;
   #jumbotron {
     width: 100%;
-    height: calc(100vh - 55px);
-    background-image: url("../img/jumbo-img-1.png");
-    background-repeat: no-repeat;
-    background-size: 700px;
-    background-position: 700px 40px;
+    height: 700px;
     font-family: Arial, Helvetica, sans-serif;
-    .title {
+    background-color: $yellow;
+    background-image: linear-gradient($yellow 69%, $white 95%);
+    // background-image: url('../img/jumbotron_ij.png');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    .container {
       display: flex;
-      padding-top: 12%;
-      color: black;
-      font-weight: bold;
-      font-size: 50px;
-      h1, .h1 {
-        font-size: 3.25rem;
-     }
+      .title {
+        width: 50%;
+        padding-top: 12%;
+        color: black;
+        font-weight: bold;
+        font-size: 50px;
+        h1, .h1 {
+          font-size: 3.25rem;
+       }
+      }
+      .jumb-img {
+        width: 50%;
+       img {
+         width: 100%;
+       }
+      }
+
     }
-     
+  }
+
+  #service {
+    position: relative;
+    h1 {
+      position: absolute;
+      top: -70px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+    .box-cards {
+      display: flex;
+      padding-top: 20px;
+      .service-card {
+        width: calc(100% / 3 - 20px);
+        text-align: center;
+        margin: 10px;
+
+      }
+    }
+  }
+
+  #food {
+    width: 100%;
+    padding: 5% 0;
+    .box-cards {
+      display: flex;
+      .card_food {
+        width: calc(100% / 4 - 20px);
+        margin: 10px;
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  #carousel-type {
     marquee {
       margin-top: 4%;
       background-color: transparent;
@@ -49,37 +98,38 @@ main {
 
   #restaurants {
     width: 100%;
-    height: 1000px;
     padding: 5% 0;
-    display: flex;
-    
-    .card_rest {
-      position: relative;
-      width: calc(100% / 3 - 20px);
-      margin: 10px;
-      height: 200px;
-      transition: all 0.4s;
-      box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
-      overflow: hidden;
-      border-radius: 10px;
-      transition: all 0.4s;
-      &:hover{
-        transform: scale(1.02);
-        box-shadow: 0px 0px 80px -25px rgba(0,0,0, 0.5);
+    .box-cards {
+      display: flex;
+      .card_rest {
+        position: relative;
+        width: calc(100% / 3 - 20px);
+        margin: 10px;
+        height: 200px;
         transition: all 0.4s;
-      }
-      img {
-        width: 100%;
-        object-fit: cover;
-      }
-      h5 {
-          position: absolute;
-          bottom: 0;
-          left: 22px;
-          font-size: 20px;
-          font-weight: bold;
-          color: white;
+        box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
+        overflow: hidden;
+        border-radius: 10px;
+        transition: all 0.4s;
+        &:hover{
+          transform: scale(1.02);
+          box-shadow: 0px 0px 80px -25px rgba(0,0,0, 0.5);
+          transition: all 0.4s;
         }
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+        h5 {
+            position: absolute;
+            bottom: 0;
+            left: 22px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+          }
+      }
+
     }
   }
 }
