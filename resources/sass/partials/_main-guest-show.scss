@@ -58,36 +58,9 @@
 // md - 768px
 // sm - 576px
 
-// DISPOSITIVI SM
-@media screen and (max-width: 576px) {
-  #jumbotron {
-    height: 200px;
-    .dark-layer {
-      padding: 20px;
-      h1 {
-        bottom: 20px;
-        font-size: 32px;
-      }
-    }
-  }
-  #detail {
-    position: relative;
-    #cards {
-       width: 100%;
-      .card {
-        width: calc(100% - 20px);
-      }
-     }
-    #cart {
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-  }
-}
-
 // DISPOSITIVI MD
-@media screen and (min-width: 577px) and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
+
   #jumbotron {
     height: 350px;
     .dark-layer {
@@ -98,10 +71,57 @@
       }
     }
   }
-  #cards {
-    width: 75%;
-    .card {
-      width: calc(100% / 2 - 20px);
+  
+  #detail {
+    color: $greyText;
+    height: 500px;
+    #cards {
+      padding: 40px;
+      .card {
+        // margin: 10px;
+        width: calc(100% / 2 - 20px);
+        img {
+          height: 60%;
+        }
+      }
+    }
+    #cart {
+      padding: 20px;
+      width: 25%;
+      border-radius: 20px;
+    }
+  }
+
+}
+
+// DISPOSITIVI SM
+@media screen and (max-width: 750px) {
+  #jumbotron {
+    height: 350px;
+    .dark-layer {
+      padding: 60px;
+      h1 {
+        bottom: 60px;
+        font-size: 48px;
+      }
+    }
+  }
+  #detail {
+    color: $greyText;
+    height: 500px;
+    #cards {
+      width: 100%;
+      padding: 40px;
+      .card {
+        // margin: 10px;
+        width: calc(100% - 20px);
+        img {
+          height: 60%;
+        }
+      }
+    }
+    #cart {
+      display: none;
     }
   }
 }
