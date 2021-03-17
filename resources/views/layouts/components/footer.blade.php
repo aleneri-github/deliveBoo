@@ -1,6 +1,6 @@
 <footer>
       <div class="row">
-        <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="col-footer col-lg-3 col-md-6 col-xs-12">
           <ul class="list-unstyled">
             <li><strong>Uniamo le forze</strong></li>
             <li><a href="#">Chi siamo</a></li>
@@ -8,18 +8,9 @@
             <li><a href="#">Blog</a></li>
             <li><a href="#">Contattaci</a></li>
           </ul>
-          <img class="logo" src="../img/deliverYou-bianco.svg" alt="">
+          <img class="logo" src="../img/deliverYou-bianco.svg" alt="logo">
         </div>
-        <div class="col-lg-3 col-md-6 col-xs-12">
-          <ul class="list-unstyled">
-            <li><strong>Uniamo le forze</strong></li>
-            <li><a href="#">Chi siamo</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contattaci</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="col-footer col-lg-3 col-md-6 col-xs-12">
           <ul class="list-unstyled">
             <li><strong>Uniamo le forze</strong></li>
             <li><a href="#">Chi siamo</a></li>
@@ -28,7 +19,16 @@
             <li><a href="#">Contattaci</a></li>
           </ul>
         </div>
-        <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="col-footer col-lg-3 col-md-6 col-xs-12">
+          <ul class="list-unstyled">
+            <li><strong>Uniamo le forze</strong></li>
+            <li><a href="#">Chi siamo</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contattaci</a></li>
+          </ul>
+        </div>
+        <div class="col-footer col-lg-3 col-md-6 col-xs-12">
           <ul class="list-unstyled">
             <li>
               <img src="../img/app-store-badge.png" alt="app-store">

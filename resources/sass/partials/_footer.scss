@@ -1,34 +1,41 @@
 footer {
-  background-color: #1a1918;
+  background-color: $grey;
   height: 100%;
   color: white;
   font-size: 20px;
 }
 
-.col-lg-3 {
+.col-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   padding: 20px 0px;
+  li:first-child {
+    color: $yellow;
+  }
 }
 
 a {
-  color: white;
+  color: $withTextFooter;
 }
 
 a:hover {
   text-decoration: none;
-  color: #FDC234;
+  color: $yellow;
 }
 
-img {
+img  {
   display: block;
   margin: 20px 0px;
   max-width: 125px;
   cursor: pointer;
 }
 
-.logo {
+img:hover  {
+  transform: scale(1.1);
+}
+
+.logo  {
   max-width: 150px;
 }
