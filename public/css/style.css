@@ -50,7 +50,7 @@ main #restaurants {
   overflow-y: scroll;
 }
 #detail #cards .card {
-  margin: 10px;
+  width: calc(100% / 3 - 20px);
   background-color: #fefefe;
   border-radius: 20px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);

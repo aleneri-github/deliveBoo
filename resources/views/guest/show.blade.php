@@ -16,7 +16,7 @@
     <div id="cards">
       @foreach ($restaurant->dishes as $dish)
       {{-- style="width: 18rem;" --}}
-      <div class="card col-lg-4 col-md-6 col-sm-12">
+      <div class="card m-2">
         {{-- img --}}
         <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
         <div class="card-body">
