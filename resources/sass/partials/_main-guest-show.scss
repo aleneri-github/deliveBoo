@@ -21,7 +21,7 @@
 
 #detail {
   color: $greyText;
-  height: 500px;
+  height: 600px;
   #cards {
     padding: 40px;
     width: 75%;
@@ -29,19 +29,33 @@
     flex-wrap: wrap;
     overflow-y: scroll;
     .card {
-      // margin: 10px;
+      position: relative;
       width: calc(100% / 3 - 20px);
       background-color: $white;
       border-radius: 20px;
       box-shadow: 0 0 10px 5px rgba(0,0,0, 0.5);
       transition: 0.5s;
       overflow: hidden;
+      .card_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        transition: 0.5s;
+        opacity: 0;
+        background-color: rgba(0,0,0, 0.75);
+      }
       img {
         height: 60%;
       }
       &:hover {
         cursor: pointer;
         transform: scale(1.025);
+        .card_overlay {
+          opacity: 1;
+        }
       }
     }
   }
@@ -54,12 +68,13 @@
 }
 
 // MEDIA QUERY
+// xl - 1200px
 // lg - 992px
 // md - 768px
 // sm - 576px
 
 // DISPOSITIVI MD
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
 
   #jumbotron {
     height: 350px;
@@ -74,11 +89,10 @@
   
   #detail {
     color: $greyText;
-    height: 500px;
+    height: 400px;
     #cards {
-      padding: 40px;
+      padding: 20px;
       .card {
-        // margin: 10px;
         width: calc(100% / 2 - 20px);
         img {
           height: 60%;
@@ -95,14 +109,14 @@
 }
 
 // DISPOSITIVI SM
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   #jumbotron {
-    height: 350px;
+    height: 200px;
     .dark-layer {
       padding: 60px;
       h1 {
         bottom: 60px;
-        font-size: 48px;
+        font-size: 28px;
       }
     }
   }
@@ -113,7 +127,6 @@
       width: 100%;
       padding: 40px;
       .card {
-        // margin: 10px;
         width: calc(100% - 20px);
         img {
           height: 60%;

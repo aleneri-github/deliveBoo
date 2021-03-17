@@ -144,7 +144,7 @@ footer .col-footer .logo {
 
 #detail {
   color: #7a7a7a;
-  height: 500px;
+  height: 600px;
 }
 #detail #cards {
   padding: 40px;
@@ -154,12 +154,24 @@ footer .col-footer .logo {
   overflow-y: scroll;
 }
 #detail #cards .card {
+  position: relative;
   width: calc(100% / 3 - 20px);
   background-color: #fefefe;
   border-radius: 20px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
   transition: 0.5s;
   overflow: hidden;
+}
+#detail #cards .card .card_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  transition: 0.5s;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 #detail #cards .card img {
   height: 60%;
@@ -168,6 +180,9 @@ footer .col-footer .logo {
   cursor: pointer;
   transform: scale(1.025);
 }
+#detail #cards .card:hover .card_overlay {
+  opacity: 1;
+}
 #detail #cart {
   padding: 20px;
   width: 25%;
@@ -175,7 +190,7 @@ footer .col-footer .logo {
   background-color: #FDC234;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   #jumbotron {
     height: 350px;
   }
@@ -189,10 +204,10 @@ footer .col-footer .logo {
 
   #detail {
     color: #7a7a7a;
-    height: 500px;
+    height: 400px;
   }
   #detail #cards {
-    padding: 40px;
+    padding: 20px;
   }
   #detail #cards .card {
     width: calc(100% / 2 - 20px);
@@ -206,16 +221,16 @@ footer .col-footer .logo {
     border-radius: 20px;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   #jumbotron {
-    height: 350px;
+    height: 200px;
   }
   #jumbotron .dark-layer {
     padding: 60px;
   }
   #jumbotron .dark-layer h1 {
     bottom: 60px;
-    font-size: 48px;
+    font-size: 28px;
   }
 
   #detail {

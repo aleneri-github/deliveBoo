@@ -17,21 +17,27 @@
       @foreach ($restaurant->dishes as $dish)
       {{-- style="width: 18rem;" --}}
       <div class="card m-2">
-        {{-- img --}}
-        <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
-        <div class="card-body">
-          {{-- titolo --}}
-          <h5 class="card-title">{{ $dish->name }}</h5>
-          {{-- prezzo --}}
-          <p class="card-text">{{ $dish->price }}</p>
-          {{-- <a href="#" class="btn btn-primary" @click="prova('{{ $dish->name }}')">Funzione prova</a> --}}
-          <button class="btn btn-outline-success" @click="addOne({{ $dish }})">
-            <i class="fas fa-plus"></i>
-          </button>
-          <button class="btn btn-outline-danger" @click="removeOne({{ $dish }})">
-            <i class="fas fa-minus"></i>
-          </button>
+          {{-- img --}}
+          <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
+          <div class="card-body">
+            {{-- titolo --}}
+            <h5 class="card-title">{{ $dish->name }}</h5>
+            {{-- prezzo --}}
+            <p class="card-text">{{ $dish->price }}</p>
+            {{-- <a href="#" class="btn btn-primary" @click="prova('{{ $dish->name }}')">Funzione prova</a> --}}
+            <button class="btn btn-outline-success" @click="addOne({{ $dish }})">
+              <i class="fas fa-plus"></i>
+            </button>
+            <button class="btn btn-outline-danger" @click="removeOne({{ $dish }})">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        
+        {{-- sezione con le informazioni --}}
+        <div class="card_overlay">
+          <h3>informazioni</h3>
         </div>
+
       </div>
       @endforeach
     </div>
