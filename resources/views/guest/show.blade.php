@@ -15,8 +15,7 @@
     {{-- CARD PIATTI --}}
     <div id="cards">
       @foreach ($restaurant->dishes as $dish)
-      {{-- style="width: 18rem;" --}}
-      <div class="card m-2">
+      <div class="card">
           {{-- img --}}
           <img class="card-img-top" src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
           <div class="card-body">
@@ -24,10 +23,11 @@
             <h5 class="card-title">{{ $dish->name }}</h5>
             {{-- prezzo --}}
             <p class="card-text">€ {{ $dish->price }}</p>
-            {{-- <a href="#" class="btn btn-primary" @click="prova('{{ $dish->name }}')">Funzione prova</a> --}}
+            {{-- ADD --}}
             <button class="btn btn-outline-success" @click="addOne({{ $dish }})">
               <i class="fas fa-plus"></i>
             </button>
+            {{-- REMOVE --}}
             <button class="btn btn-outline-danger" @click="removeOne({{ $dish }})">
               <i class="fas fa-minus"></i>
             </button>
@@ -44,10 +44,11 @@
     </div>
 
     {{-- CARRELLO --}}
-    <div id="cart" class="m-2">
+    <div id="cart">
       <ul>
         <li v-for="item in cart">
-          @{{ item.name }} - @{{ item.quantity }} - @{{ item.total }}
+          @{{ item.quantity }}x <strong>@{{ item.name }}</strong> - € @{{ item.total }}
+          <hr>
         </li>
       </ul>
       <h3>€ @{{ cartTotal() }}</h3>
