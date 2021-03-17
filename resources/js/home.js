@@ -25,7 +25,6 @@ var home = new Vue(
 
       axios.get(`http://localhost:8000/api/restaurants?type=all`).then(response => {
         this.restaurants = response.data;
-        console.log(this.restaurants);
       });
 
       axios.get(`http://localhost:8000/api/restaurant/carousel`).then(response => {

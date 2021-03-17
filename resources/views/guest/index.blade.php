@@ -12,7 +12,7 @@
       </div>
 
       <marquee onmouseover="this.stop();" onmouseout="this.start();"  scrollamount="15">
-        <div v-for="card in carousel">
+        <div v-for="card in carousel" @click='filter(card.type)'>
           <img :src="card.image" alt="sales">
           <h5> @{{ card.type }}</h5>
         </div>

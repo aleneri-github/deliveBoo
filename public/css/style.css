@@ -82,42 +82,6 @@ main #restaurants .card_rest h5 {
   color: white;
 }
 
-footer {
-  background-color: #1a1918;
-  height: 100%;
-  color: white;
-  font-size: 20px;
-}
-footer .col-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 20px 0px;
-}
-footer .col-footer li:first-child {
-  color: #FDC234;
-}
-footer .col-footer a {
-  color: #FFFFFF;
-}
-footer .col-footer a:hover {
-  text-decoration: none;
-  color: #FDC234;
-}
-footer .col-footer img {
-  display: block;
-  margin: 20px 0px;
-  max-width: 125px;
-  cursor: pointer;
-}
-footer .col-footer img:hover {
-  transform: scale(1.1);
-}
-footer .col-footer .logo {
-  max-width: 150px;
-}
-
 #login-page {
   display: flex;
   align-items: center;
@@ -267,4 +231,39 @@ footer .col-footer .logo {
   #register-page .container .left-side img {
     width: 100%;
   }
+}
+footer {
+  background-color: #1a1918;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+}
+footer .col-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 20px 0px;
+}
+footer .col-footer li:first-child {
+  color: #FDC234;
+}
+footer .col-footer a {
+  color: #FFFFFF;
+}
+footer .col-footer a:hover {
+  text-decoration: none;
+  color: #FDC234;
+}
+footer .col-footer img {
+  display: block;
+  margin: 20px 0px;
+  max-width: 125px;
+  cursor: pointer;
+}
+footer .col-footer img:hover {
+  transform: scale(1.1);
+}
+footer .col-footer .logo {
+  max-width: 150px;
 }
