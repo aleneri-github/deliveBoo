@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 main {
   background-color: #fefefe;
 }
@@ -113,4 +119,120 @@ footer .col-footer img:hover {
 }
 footer .col-footer .logo {
   max-width: 150px;
+}
+
+#jumbotron {
+  position: relative;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+#jumbotron .dark_layer {
+  padding: 100px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#jumbotron h1 {
+  position: absolute;
+  bottom: 100px;
+  font-size: 64px;
+  word-wrap: break-word;
+  color: #fefefe;
+  text-transform: uppercase;
+}
+
+#detail {
+  color: #7a7a7a;
+  height: 500px;
+}
+#detail #cards {
+  padding: 40px;
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+#detail #cards .card {
+  width: calc(100% / 3 - 20px);
+  background-color: #fefefe;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  overflow: hidden;
+}
+#detail #cards .card img {
+  height: 60%;
+}
+#detail #cards .card:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+}
+#detail #cart {
+  padding: 20px;
+  width: 25%;
+  border-radius: 20px;
+  background-color: #FDC234;
+}
+
+@media screen and (max-width: 1200px) {
+  #jumbotron {
+    height: 350px;
+  }
+  #jumbotron .dark-layer {
+    padding: 60px;
+  }
+  #jumbotron .dark-layer h1 {
+    bottom: 60px;
+    font-size: 48px;
+  }
+
+  #detail {
+    color: #7a7a7a;
+    height: 500px;
+  }
+  #detail #cards {
+    padding: 40px;
+  }
+  #detail #cards .card {
+    width: calc(100% / 2 - 20px);
+  }
+  #detail #cards .card img {
+    height: 60%;
+  }
+  #detail #cart {
+    padding: 20px;
+    width: 25%;
+    border-radius: 20px;
+  }
+}
+@media screen and (max-width: 750px) {
+  #jumbotron {
+    height: 350px;
+  }
+  #jumbotron .dark-layer {
+    padding: 60px;
+  }
+  #jumbotron .dark-layer h1 {
+    bottom: 60px;
+    font-size: 48px;
+  }
+
+  #detail {
+    color: #7a7a7a;
+    height: 500px;
+  }
+  #detail #cards {
+    width: 100%;
+    padding: 40px;
+  }
+  #detail #cards .card {
+    width: calc(100% - 20px);
+  }
+  #detail #cards .card img {
+    height: 60%;
+  }
+  #detail #cart {
+    display: none;
+  }
 }
