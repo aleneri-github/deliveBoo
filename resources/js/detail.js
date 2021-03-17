@@ -28,6 +28,7 @@ var detail = new Vue(
           })
           this.$forceUpdate();
         }
+        this.saveCart();
       },
       removeOne(elem) {
         if(this.cart.some(item => item.name == elem.name)) {
@@ -46,6 +47,11 @@ var detail = new Vue(
         } else {
           return
         }
+        this.saveCart();
+      },
+      saveCart() {
+        const parsed = JSON.stringify(this.cart);
+        localStorage.setItem('cart', parsed);
       },
       cartTotal: function() {
         let partials = this.cart.map((e) => {
@@ -61,6 +67,14 @@ var detail = new Vue(
       axios.get(`http://localhost:8000/api/restaurant/dishes`).then(response => {
         this.dishes = response.data;
       });
+      if (localStorage.getItem('cart')) {
+        try {
+          this.cart = JSON.parse(localStorage.getItem('cart'));
+        } catch(error) {
+          console.log(error);
+          localStorage.removeItem('cart');
+        }
+      }
     }
   }
 );

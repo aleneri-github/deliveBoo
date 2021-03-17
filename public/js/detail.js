@@ -49362,6 +49362,8 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         });
         this.$forceUpdate();
       }
+
+      this.saveCart();
     },
     removeOne: function removeOne(elem) {
       var _this = this;
@@ -49385,6 +49387,12 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       } else {
         return;
       }
+
+      this.saveCart();
+    },
+    saveCart: function saveCart() {
+      var parsed = JSON.stringify(this.cart);
+      localStorage.setItem('cart', parsed);
     },
     cartTotal: function cartTotal() {
       var partials = this.cart.map(function (e) {
@@ -49402,6 +49410,15 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
       _this2.dishes = response.data;
     });
+
+    if (localStorage.getItem('cart')) {
+      try {
+        this.cart = JSON.parse(localStorage.getItem('cart'));
+      } catch (error) {
+        console.log(error);
+        localStorage.removeItem('cart');
+      }
+    }
   }
 });
 })();
