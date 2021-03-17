@@ -35,7 +35,8 @@
         
         {{-- sezione con le informazioni --}}
         <div class="card_overlay">
-          <h3>informazioni</h3>
+          <h3 class="ingredients">{{ $dish->ingredients }}</h3>
+          <h4>{{ $dish->description }}</h4>
         </div>
 
       </div>

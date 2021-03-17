@@ -166,12 +166,17 @@ footer .col-footer .logo {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 80%;
   width: 100%;
   padding: 20px;
   transition: 0.5s;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.75);
+  overflow-y: scroll;
+}
+#detail #cards .card .card_overlay h3 {
+  margin-bottom: 20px;
+  color: #fefefe;
 }
 #detail #cards .card img {
   height: 60%;
@@ -179,6 +184,8 @@ footer .col-footer .logo {
 #detail #cards .card:hover {
   cursor: pointer;
   transform: scale(1.025);
+  border: 4px solid #FDC234;
+  box-shadow: 0 0 24px 8px rgba(253, 194, 52, 0.75);
 }
 #detail #cards .card:hover .card_overlay {
   opacity: 1;
