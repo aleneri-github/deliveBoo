@@ -23,12 +23,12 @@
             {{-- titolo --}}
             <h5 class="card-title">{{ $dish->name }}</h5>
             {{-- prezzo --}}
-            <p class="card-text">{{ $dish->price }}</p>
+            <p class="card-text">€ {{ $dish->price }}</p>
             {{-- <a href="#" class="btn btn-primary" @click="prova('{{ $dish->name }}')">Funzione prova</a> --}}
-            <button class="btn btn-outline-success" @click="addOne({{ $dish }})">
+            <button class="btn" @click="addOne({{ $dish }})">
               <i class="fas fa-plus"></i>
             </button>
-            <button class="btn btn-outline-danger" @click="removeOne({{ $dish }})">
+            <button class="btn" @click="removeOne({{ $dish }})">
               <i class="fas fa-minus"></i>
             </button>
           </div>
@@ -50,7 +50,7 @@
           @{{ item.name }} - @{{ item.quantity }} - @{{ item.total }}
         </li>
       </ul>
-      <h3>@{{ cartTotal() }}</h3>
+      <h3>€ @{{ cartTotal() }}</h3>
     </div>
 
   </div>

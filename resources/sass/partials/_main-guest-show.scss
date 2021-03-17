@@ -1,9 +1,10 @@
+// JUMBOTRON ------------------------
 #jumbotron {
-  position: relative;
   height: 500px;
   background-position: center;
   background-size: cover;
   .dark_layer {
+    position: relative;
     padding: 100px;
     height: 100%;
     width: 100%;
@@ -19,6 +20,7 @@
   }
 }
 
+// DETTAGLIO ------------------------
 #detail {
   color: $greyText;
   height: 600px;
@@ -74,23 +76,32 @@
   }
 }
 
-// MEDIA QUERY
-// xl - 1200px
-// lg - 992px
+// MEDIA QUERIES ------------------------
+// lg - 1200px
 // md - 768px
 // sm - 576px
 
-// DISPOSITIVI MD
-@media screen and (max-width: 992px) {
+// DISPOSITIVI LG
+@media screen and (max-width: 1200px) {
 
   #jumbotron {
     height: 350px;
-    .dark-layer {
+    background-position: center;
+    background-size: cover;
+    .dark_layer {
+      position: relative;
       padding: 60px;
-      h1 {
-        bottom: 60px;
-        font-size: 48px;
-      }
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    h1 {
+      position: absolute;
+      bottom: 60px;
+      font-size: 48px;
+      word-wrap: break-word;
+      color: $white;
+      text-transform: uppercase;
     }
   }
   
@@ -115,24 +126,36 @@
 
 }
 
-// DISPOSITIVI SM
+// DISPOSITIVI MD
 @media screen and (max-width: 768px) {
+
   #jumbotron {
-    height: 200px;
-    .dark-layer {
-      padding: 60px;
-      h1 {
-        bottom: 60px;
-        font-size: 28px;
-      }
+    height: 225px;
+    background-position: center;
+    background-size: cover;
+    .dark_layer {
+      position: relative;
+      padding: 30px;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    h1 {
+      position: absolute;
+      bottom: 30px;
+      font-size: 48px;
+      word-wrap: break-word;
+      color: $white;
+      text-transform: uppercase;
     }
   }
+
   #detail {
     color: $greyText;
     height: 500px;
     #cards {
       width: 100%;
-      padding: 40px;
+      padding: 60px;
       .card {
         width: calc(100% - 20px);
         img {

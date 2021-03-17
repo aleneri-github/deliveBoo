@@ -122,12 +122,12 @@ footer .col-footer .logo {
 }
 
 #jumbotron {
-  position: relative;
   height: 500px;
   background-position: center;
   background-size: cover;
 }
 #jumbotron .dark_layer {
+  position: relative;
   padding: 100px;
   height: 100%;
   width: 100%;
@@ -197,16 +197,26 @@ footer .col-footer .logo {
   background-color: #FDC234;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   #jumbotron {
     height: 350px;
+    background-position: center;
+    background-size: cover;
   }
-  #jumbotron .dark-layer {
+  #jumbotron .dark_layer {
+    position: relative;
     padding: 60px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
-  #jumbotron .dark-layer h1 {
+  #jumbotron h1 {
+    position: absolute;
     bottom: 60px;
     font-size: 48px;
+    word-wrap: break-word;
+    color: #fefefe;
+    text-transform: uppercase;
   }
 
   #detail {
@@ -230,14 +240,24 @@ footer .col-footer .logo {
 }
 @media screen and (max-width: 768px) {
   #jumbotron {
-    height: 200px;
+    height: 225px;
+    background-position: center;
+    background-size: cover;
   }
-  #jumbotron .dark-layer {
-    padding: 60px;
+  #jumbotron .dark_layer {
+    position: relative;
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
-  #jumbotron .dark-layer h1 {
-    bottom: 60px;
-    font-size: 28px;
+  #jumbotron h1 {
+    position: absolute;
+    bottom: 30px;
+    font-size: 48px;
+    word-wrap: break-word;
+    color: #fefefe;
+    text-transform: uppercase;
   }
 
   #detail {
@@ -246,7 +266,7 @@ footer .col-footer .logo {
   }
   #detail #cards {
     width: 100%;
-    padding: 40px;
+    padding: 60px;
   }
   #detail #cards .card {
     width: calc(100% - 20px);
