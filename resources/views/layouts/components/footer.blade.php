@@ -1,5 +1,5 @@
 <footer>
-      <div class="row">
+      <div class="row no-gutters">
         <div class="col-footer col-lg-3 col-md-6 col-xs-12">
           <ul class="list-unstyled">
             <li><strong>Uniamo le forze</strong></li>
