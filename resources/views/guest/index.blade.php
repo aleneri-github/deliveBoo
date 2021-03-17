@@ -24,14 +24,10 @@
       </div>
     </div>
 
-    
+
 
   </main>
-<<<<<<< HEAD
+
 
   <script src="{{ asset('js/home.js') }}"></script>
 @endsection
-
-=======
-@endsection
->>>>>>> footer
