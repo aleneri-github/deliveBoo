@@ -6,7 +6,8 @@ var home = new Vue(
     el: "#home",
     data: {
       types: ['all'],
-      restaurants: []
+      restaurants: [],
+      carousel: [],
     },
     methods: {
       filter(type) {
@@ -24,7 +25,15 @@ var home = new Vue(
 
       axios.get(`http://localhost:8000/api/restaurants?type=all`).then(response => {
         this.restaurants = response.data;
+        console.log(this.restaurants);
       });
+
+      axios.get(`http://localhost:8000/api/restaurant/carousel`).then(response => {
+        this.carousel = response.data;
+      });
+      
     }
-  }
+  },
+  
+
 );

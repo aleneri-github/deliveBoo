@@ -1,3 +1,6 @@
+main {
+  background-color: #fefefe;
+}
 main #jumbotron {
   width: 100%;
   height: 100vh;
@@ -10,12 +13,12 @@ main #jumbotron {
 main #jumbotron .title {
   display: flex;
   justify-content: center;
-  padding-top: 10%;
+  padding-top: 16%;
   color: black;
   font-weight: bold;
 }
 main #jumbotron marquee {
-  margin-top: 3%;
+  margin-top: 4%;
   background-color: transparent;
   overflow: hidden;
   display: flex;
@@ -23,25 +26,55 @@ main #jumbotron marquee {
   overflow: hidden;
 }
 main #jumbotron marquee div {
+  position: relative;
   display: inline-block;
   margin-left: 15px;
   cursor: pointer;
-}
-main #jumbotron marquee div small {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  position: absolute;
-  bottom: 0;
-  left: 22px;
 }
 main #jumbotron marquee div img {
   overflow: hidden;
   border-radius: 5px;
 }
-main #types {
-  background-color: #fefefe;
+main #jumbotron marquee div h5 {
+  position: absolute;
+  bottom: 0;
+  left: 22px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }
 main #restaurants {
-  background-color: #1a1918;
+  width: 100%;
+  height: 1000px;
+  padding: 5% 0;
+  display: flex;
+}
+main #restaurants .card_rest {
+  position: relative;
+  width: calc(100% / 3 - 20px);
+  margin: 10px;
+  height: 200px;
+  transition: all 0.4s;
+  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+main #restaurants .card_rest:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s;
+}
+main #restaurants .card_rest img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main #restaurants .card_rest h5 {
+  position: absolute;
+  bottom: 0;
+  left: 22px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }

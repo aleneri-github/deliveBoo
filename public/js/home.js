@@ -1906,7 +1906,8 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: "#home",
   data: {
     types: ['all'],
-    restaurants: []
+    restaurants: [],
+    carousel: []
   },
   methods: {
     filter: function filter(type) {
@@ -1928,6 +1929,10 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     });
     axios.get("http://localhost:8000/api/restaurants?type=all").then(function (response) {
       _this2.restaurants = response.data;
+      console.log(_this2.restaurants);
+    });
+    axios.get("http://localhost:8000/api/restaurant/carousel").then(function (response) {
+      _this2.carousel = response.data;
     });
   }
 });

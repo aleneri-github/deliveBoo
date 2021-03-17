@@ -28,6 +28,7 @@ class RestaurantController extends Controller
   public function types() {
 
     $types = RestType::all()->pluck('name');
+
     return response()->json($types);
 
   }
@@ -37,6 +38,14 @@ class RestaurantController extends Controller
     $dishes = Dish::where('restaurant_id', 2)->get();
 
     return response()->json($dishes);
+
+  }
+
+  public function carousel() {
+
+    $data = config('types');
+    
+    return response()->json($data);
 
   }
 }
