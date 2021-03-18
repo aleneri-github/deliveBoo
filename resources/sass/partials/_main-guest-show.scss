@@ -47,6 +47,7 @@
         position: relative;
         height: 60%;
         overflow: hidden;
+        transition: 0.5s;
         .img_layer {
           position: absolute;
           top: 0;
@@ -68,7 +69,6 @@
         // }
         img {
           height: 100%;
-          transition: 0.5s;
         }
         h5 {
           position: absolute;
@@ -93,7 +93,7 @@
       &:hover {
         cursor: pointer;
         box-shadow: 0 0 36px 12px rgba(0,0,0, 0.75);
-        img {
+        .img_div {
           transform: scale(1.05);
         }
         .img_layer {
@@ -149,7 +149,7 @@
     height: 400px;
     #cards {
       padding: 20px;
-      .card {
+      .card_dish {
         width: calc(100% / 2 - 20px);
         img {
           height: 60%;
@@ -157,6 +157,7 @@
       }
     }
     #cart {
+      margin: 20px;
       padding: 20px;
       width: 25%;
       border-radius: 20px;
@@ -166,7 +167,53 @@
 }
 
 // DISPOSITIVI MD
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 718px) {
+
+  #jumbotron {
+    height: 225px;
+    background-position: center;
+    background-size: cover;
+    .dark_layer {
+      position: relative;
+      padding: 30px;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    h1 {
+      position: absolute;
+      bottom: 30px;
+      font-size: 48px;
+      word-wrap: break-word;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+
+  #detail {
+    color: $greyText;
+    height: 500px;
+    #cards {
+      width: 75%;
+      padding: 60px;
+      .card_dish {
+        width: calc(100% - 20px);
+        img {
+          height: 60%;
+        }
+      }
+    }
+    #cart {
+      margin: 0;
+      padding: 20px;
+      width: 25%;
+      border-radius: 0;
+    }
+  }
+}
+
+// DISPOSITIVI SM
+@media screen and (max-width: 576px) {
 
   #jumbotron {
     height: 225px;
@@ -195,7 +242,7 @@
     #cards {
       width: 100%;
       padding: 60px;
-      .card {
+      .card_dish {
         width: calc(100% - 20px);
         img {
           height: 60%;
