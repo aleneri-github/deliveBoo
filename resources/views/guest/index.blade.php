@@ -89,15 +89,21 @@
       </marquee>
     </section>
 
+    {{-- RESTAURANTS --}}
+    <h1 class="text-center">I nostri ristoranti</h1>
     <section id="restaurants">
-      <h1 class="text-center">I nostri ristoranti</h1>
-      <div class="box-cards container">
-        <div class="card_rest" v-for="restaurant in restaurants">
-          <img :src="'{{ asset('/storage') }}' + '/' + restaurant.image" alt="" >
-          <h5> @{{ restaurant.name }}</h5>
-        </div>
 
+      <div class="card_rest" v-for="restaurant in restaurants">
+        <img :src="'{{ asset('/storage') }}' + '/' + restaurant.image" alt="">
+        <h4>@{{ restaurant.name }}</h4>
+        <div class="overlay">
+          <h2><strong>@{{ restaurant.name }}</strong></h2>
+          {{-- <p class="m-4">@{{ restaurant. }}</p> --}}
+          <p>@{{ restaurant.address }}</p>
+          <p>@{{ restaurant.phone_number }}</p>
+        </div>
       </div>
+
     </section>
 
   </main>

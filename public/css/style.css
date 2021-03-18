@@ -102,42 +102,57 @@ main #carousel-type marquee div h5 {
   color: white;
 }
 main #restaurants {
-  width: 100%;
-  padding: 5% 0;
-}
-main #restaurants .box-cards {
+  padding: 100px;
   display: flex;
-  flex-wrap: wrap;
 }
-main #restaurants .box-cards .card_rest {
-  display: flex;
+main #restaurants .card_rest {
   position: relative;
-  width: calc(100% / 3 - 20px);
   margin: 10px;
   height: 200px;
-  transition: all 0.4s;
-  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+  width: calc(100% / 3 - 20px);
+  background-color: blue;
+  border-radius: 20px;
   overflow: hidden;
-  border-radius: 10px;
-  transition: all 0.4s;
-}
-main #restaurants .box-cards .card_rest:hover {
-  transform: scale(1.02);
-  box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
-  transition: all 0.4s;
-}
-main #restaurants .box-cards .card_rest img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-main #restaurants .box-cards .card_rest h5 {
-  position: absolute;
-  bottom: 0;
-  left: 22px;
-  font-size: 20px;
-  font-weight: bold;
   color: white;
+  transition: 1s;
+}
+main #restaurants .card_rest:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+}
+main #restaurants .card_rest:hover .overlay {
+  width: 80%;
+  transition: 1s;
+}
+main #restaurants .card_rest:hover h4 {
+  display: none;
+}
+main #restaurants .card_rest img {
+  width: 100%;
+}
+main #restaurants .card_rest h4 {
+  margin: 20px;
+  display: inline-block;
+}
+main #restaurants .card_rest .overlay {
+  display: inline-block;
+  position: absolute;
+  right: -40px;
+  padding: 20px;
+  height: 100%;
+  width: 0%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  z-index: 2;
+}
+main #restaurants .card_rest .overlay h2 {
+  margin: 10px 0 0 10px;
+}
+main #restaurants .card_rest .overlay p {
+  margin: 10px 0 0 10px;
+}
+main #restaurants .card_rest .overlay p:nth-of-type(2) {
+  margin: 0 0 0 10px;
 }
 
 #login-page {
