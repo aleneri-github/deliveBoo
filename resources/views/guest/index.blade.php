@@ -5,6 +5,7 @@
   <main id="home">
 
     <section id="jumbotron">
+      <div class="layover"></div>
       <div class="container d-flex">
         <div class="title">
           <h1 class="font-weight-bold">Hai fame?
