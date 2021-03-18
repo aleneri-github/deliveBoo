@@ -6,15 +6,19 @@ main {
     font-family: Arial, Helvetica, sans-serif;
     background-color: $yellow;
     background-image: linear-gradient($yellow 69%, $white 95%);
-    // background-image: url('../img/jumbotron_ij.png');
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
+    background-image: url('../img/jumbotron.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     .container {
       display: flex;
+      justify-content: center;
+      padding-top: 8%;
+      padding-left: 5%;
       .title {
         width: 50%;
         padding-top: 12%;
+        padding-left: 10;
         color: black;
         font-weight: bold;
         font-size: 50px;
@@ -36,13 +40,13 @@ main {
     position: relative;
     h1 {
       position: absolute;
-      top: -70px;
+      top: 10px;
       right: 50%;
       transform: translateX(50%);
     }
     .box-cards {
       display: flex;
-      padding-top: 20px;
+      padding-top: 80px;
       .service-card {
         width: calc(100% / 3 - 20px);
         text-align: center;

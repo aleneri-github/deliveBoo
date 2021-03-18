@@ -11,7 +11,7 @@
             <br>
             Sei nel posto giusto</h1>
         </div>
-        <div class="jumb-img">
+        <div class="jumb-img animate__animated animate__backInRight">
           <img src="{{asset('img/jumb-2.svg')}}" alt="">
         </div>
       </div>
