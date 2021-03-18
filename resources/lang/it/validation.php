@@ -130,8 +130,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'vat' => [
+            'size' => 'La partita IVA deve essere composta da :size numeri',
+            'regex' => 'Il campo deve essere numerico',
         ],
     ],
 

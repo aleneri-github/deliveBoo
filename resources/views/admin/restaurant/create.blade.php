@@ -4,13 +4,13 @@
 <div id="restaurant-form">
     <div class="container">
         <div class="right-side">
-            <img src="{{ asset('img/food-rest.svg') }}" alt="">            
+            <img src="{{ asset('img/food-rest.svg') }}" alt="">
         </div>
         <div class="left-side">
             <div class="row">
                 <div class="col-md-12">
                     <div class="register-box">
-    
+
                         <div class="d-flex">
                             <div class="form-register">
                                 <h1>{{ __('Register') }}</h1>
@@ -49,7 +49,7 @@
                                         <label for="phone_number" class="col-md-4 col-form-label text-md-right">Telefono</label>
 
                                         <div class="col-md-6">
-                                            <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" required autocomplete="phone_number">
+                                            <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number">
 
                                             @error('phone_number')
                                                 <span class="invalid-feedback" role="alert">
@@ -63,7 +63,7 @@
                                         <label for="website" class="col-md-4 col-form-label text-md-right">Sito Web</label>
 
                                         <div class="col-md-6">
-                                            <input id="website" type="text" class="form-control @error('website') is-invalid @enderror" name="website" required autocomplete="website">
+                                            <input id="website" type="text" class="form-control @error('website') is-invalid @enderror" name="website" value="{{ old('website') }}" required autocomplete="website">
 
                                             @error('website')
                                                 <span class="invalid-feedback" role="alert">
@@ -77,8 +77,8 @@
                                         <label for="email_rest" class="col-md-4 col-form-label text-md-right">Email Ristorante</label>
 
                                         <div class="col-md-6">
-                                            <input id="email_rest" type="text" class="form-control @error('email_rest') is-invalid @enderror" name="email_rest" required autocomplete="email_rest">
-
+                                            <input id="email_rest" type="text" class="form-control @error('email_rest') is-invalid @enderror" name="email_rest" value="{{ old('email_rest') }}" required autocomplete="email_rest">
+                                            
                                             @error('email_rest')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -91,7 +91,7 @@
                                         <label for="vat" class="col-md-4 col-form-label text-md-right">P. IVA</label>
 
                                         <div class="col-md-6">
-                                            <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" required autocomplete="vat">
+                                            <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat">
 
                                             @error('vat')
                                                 <span class="invalid-feedback" role="alert">
@@ -138,7 +138,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -146,10 +146,8 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
 
 @endsection
-
-
