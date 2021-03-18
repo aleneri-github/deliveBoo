@@ -37,7 +37,7 @@
       position: relative;
       margin: 10px;
       width: calc(100% / 3 - 20px);
-      height: 400px;
+      height: 450px;
       background-color: $white;
       border-radius: 20px;
       box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
@@ -47,8 +47,28 @@
         position: relative;
         height: 60%;
         overflow: hidden;
+        .img_layer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(220deg, rgba(255, 255, 255, 0) 50%, rgba(0,0,0,0.6) 100%);
+          transition: 0.5s;
+        }
+        // &::before {
+        //   content: '';
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   width: 100%;
+        //   height: 100%;
+        //   background: linear-gradient(220deg, rgba(255, 255, 255, 0) 50%, rgba(0,0,0,0.6) 100%);
+        //   transition: 0.5s;
+        // }
         img {
           height: 100%;
+          transition: 0.5s;
         }
         h5 {
           position: absolute;
@@ -57,11 +77,28 @@
           color: white;
         }
       }
+      .card_body {
+        padding: 20px;
+        .buttons {
+          float: right;
+          height: 100px
+        }
+      }
+      // &:hover {
+      //   cursor: pointer;
+      //   transform: scale(1.025);
+      //   border: 6px solid $yellow;
+      //   box-shadow: 0 0 36px 12px rgba(0,0,0, 0.75);
+      // }
       &:hover {
         cursor: pointer;
-        transform: scale(1.025);
-        border: 6px solid $yellow;
         box-shadow: 0 0 36px 12px rgba(0,0,0, 0.75);
+        img {
+          transform: scale(1.05);
+        }
+        .img_layer {
+          transform: scale(1.05);
+        }
       }
     }
   }

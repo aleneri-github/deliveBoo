@@ -19,13 +19,19 @@
       <div class="card_dish">
 
         <div class="img_div">
+          <div class="img_layer"></div>
           <img src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name }}">
           <h5><strong>{{ $dish->name }}</strong></h5>
         </div>
 
-        <div class="card-body">
-          <p class="card-text">€ {{ $dish->price }}</p>
-          {{-- ADD --}}
+        <div class="card_body">
+          <div style="height: 100px">
+            <p>{{ $dish->ingredients }}</p>
+            <p>€ {{ $dish->price }}</p>
+          </div>
+          {{-- BUTTONS --}}
+          <div class="buttons">
+            {{-- ADD --}}
           <button class="btn btn-outline-success" @click="addOne({{ $dish }})">
             <i class="fas fa-plus"></i>
           </button>
@@ -33,7 +39,9 @@
           <button class="btn btn-outline-danger" @click="removeOne({{ $dish }})">
             <i class="fas fa-minus"></i>
           </button>
+          </div>
         </div>
+
       </div>
       @endforeach
     </div>
