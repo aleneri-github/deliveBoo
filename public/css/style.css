@@ -625,10 +625,12 @@ footer .col-footer .logo {
   color: #fefefe;
 }
 #dashboard #admin-menu .side-menu .admin-menu ul li {
+  position: relative;
   width: 100%;
   padding: 30px 40px;
   list-style-type: none;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 #dashboard #admin-menu .side-menu .admin-menu ul li:hover {
   background-color: #fefefe;
@@ -638,13 +640,13 @@ footer .col-footer .logo {
 #dashboard #admin-menu .side-menu .admin-menu ul li:hover a {
   color: #FDC234;
 }
-#dashboard #admin-menu .side-menu .admin-menu ul li i {
-  font-size: 25px;
-  padding-right: 10px;
-}
 #dashboard #admin-menu .side-menu .admin-menu ul li a {
   color: #fefefe;
   font-size: 25px;
+}
+#dashboard #admin-menu .side-menu .admin-menu ul li a i {
+  font-size: 25px;
+  padding-right: 10px;
 }
 #dashboard #admin-menu .side-menu .admin-menu ul li a:hover {
   text-decoration: none;
@@ -652,6 +654,7 @@ footer .col-footer .logo {
 #dashboard #admin-show {
   width: calc(100% - 620px);
   height: 100vh;
+  padding: 30px 20px;
 }
 #dashboard #admin-info {
   width: 300px;
@@ -680,4 +683,93 @@ footer .col-footer .logo {
 }
 #dashboard #admin-info .info-side .card-restaurant p {
   text-align: right;
+}
+#dashboard #admin-info .data .data-top {
+  display: flex;
+  background-color: #F9F9F9;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+#dashboard #admin-info .data .data-top .box {
+  padding-top: 16px;
+  text-align: center;
+  width: calc(100% / 3);
+}
+#dashboard #admin-info .data .data-top .box span {
+  font-weight: bolder;
+}
+#dashboard #admin-info .data .data-top .box p {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 980px) {
+  #dashboard #admin-menu {
+    width: 100px;
+    padding-left: 0px;
+  }
+  #dashboard #admin-menu .logo-nav {
+    padding-bottom: 30px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li {
+    padding: 30px 40px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li:hover {
+    background-color: #FDC234;
+    color: #fefefe;
+    border-radius: 60px 0px 0px 60px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li:hover a {
+    color: #fefefe;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li a {
+    color: #fefefe;
+    font-size: 25px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li a i {
+    font-size: 25px;
+    padding-right: 10px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li a span {
+    display: none;
+  }
+  #dashboard #admin-show {
+    width: calc(100% - 300px);
+    height: 100vh;
+    padding: 30px 20px;
+  }
+  #dashboard #admin-info {
+    width: 300px;
+    height: 100vh;
+    padding: 15px 30px;
+    border-left: 1px solid lightgray;
+  }
+}
+@media screen and (max-width: 750px) {
+  #dashboard #admin-show {
+    position: relative;
+    width: calc(100% - 100px);
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-left: 20px;
+  }
+  #dashboard #admin-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 100px);
+    height: 55px;
+    padding: 15px 30px;
+    border-left: 0px solid lightgray;
+    border-bottom: 1px solid lightgray;
+  }
+  #dashboard #admin-info .top {
+    width: 100%;
+    text-align: right;
+  }
+  #dashboard #admin-info .info-side {
+    display: none;
+  }
+  #dashboard #admin-info .data {
+    display: none;
+  }
 }
