@@ -90,15 +90,28 @@
       </marquee>
     </section>
 
-    <section id="restaurants">
-      <h1 class="text-center">I nostri ristoranti</h1>
-      <div class="box-cards container">
+    <h1 class="text-center">I nostri ristoranti</h1>
+    <section id="restaurants" class="d-flex">
+
+      {{-- <div class="box-cards container">
         <div class="card_rest" v-for="restaurant in restaurants">
           <img :src="'{{ asset('/storage') }}' + '/' + restaurant.image" alt="" >
           <h5> @{{ restaurant.name }}</h5>
         </div>
+      </div> --}}
 
+      {{-- :style="backgound-image: url('{{ asset('/storage') }}' + '/' + restaurant.image)" --}}
+      <div class="card_" v-for="restaurant in restaurants">
+        <img :src="'{{ asset('/storage') }}' + '/' + restaurant.image" alt="">
+        <h4>@{{ restaurant.name }}</h4>
+        <div class="overlay">
+          <h2 class="m-4">Da Peppe</h2>
+          <p class="m-4">Cucina Tipica Lucana <br>
+          Via Matera 15 <br>
+          0856/969871 </p>
+        </div>
       </div>
+
     </section>
 
   </main>
