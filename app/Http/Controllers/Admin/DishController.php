@@ -28,7 +28,7 @@ class DishController extends Controller
     public function index()
     {
         // con first or fail trovo l'oggetto
-        $restaurant = Restaurant::where('id', Auth::id())->firstOrFail();
+        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
         // con get prendo una collection
         $dishes = Dish::where('restaurant_id', Auth::id())->get();
         // GESTIONE ASSENZA DI PIATTI
@@ -52,8 +52,8 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        
+    {
+
 
         $request->validate($this->dishValidation);
 
@@ -68,7 +68,7 @@ class DishController extends Controller
 
         $newDish = new Dish();
 
-        
+
         $data["restaurant_id"] = Auth::id();
 
         if(empty($data["vegetarian"])) {

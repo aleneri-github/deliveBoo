@@ -30,7 +30,7 @@ class RestaurantController extends Controller
 
     public function store(Request $request)
     {
-        $rest = Restaurant::where('id', Auth::id())->get();
+        $rest = Restaurant::where('user_id', Auth::id())->get();
         if (!$rest->isEmpty()) {
           return redirect()->route('admin.dishes.index');
         }

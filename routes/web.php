@@ -14,13 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 // PROVVISORIA
-Route::get('/guest/index', function () {
+
+Route::get('/', 'RedirectController@index');
+
+Route::get('/home', function () {
     return view('guest.index');
 })->name('guest.index');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::prefix('guest')->name('guest.')->group( function() {
+
+  Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+  Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
+});
 
 Auth::routes();
 
@@ -42,4 +48,4 @@ Route::prefix('admin')
 
 });
 
-Route::get('/guest/{slug}/show', 'GuestController@show')->name('guest.show');
+Route::get('/restaurants/{slug}/show', 'GuestController@show')->name('guest.show');

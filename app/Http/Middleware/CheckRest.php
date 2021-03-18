@@ -19,7 +19,7 @@ class CheckRest
 
     public function handle($request, Closure $next)
     {
-        $rest = Restaurant::where('id', Auth::id())->get();
+        $rest = Restaurant::where('user_id', Auth::id())->get();
         if ($rest->isEmpty()) {
           return $next($request);
         }

@@ -108,8 +108,5 @@
 
   </main>
 
-
   <script src="{{ asset('js/home.js') }}"></script>
 @endsection
-
-{ backgroundImage: 'url(' + image + ')' }
