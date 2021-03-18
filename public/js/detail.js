@@ -49346,17 +49346,19 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         return item.name == elem.name;
       })) {
         elem.quantity = 1;
-        elem.total = (elem.quantity * elem.price).toFixed(2);
+        elem.total = elem.price;
         this.cart.push(elem);
       } else {
         this.cart.map(function (e) {
           if (e.name == elem.name) {
             e.quantity++;
-            e.total = (elem.quantity * elem.price).toFixed(2);
+            e.total += elem.price;
           }
         });
         this.$forceUpdate();
       }
+
+      this.saveCart();
     },
     removeOne: function removeOne(elem) {
       var _this = this;
@@ -49368,7 +49370,7 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
           if (e.name == elem.name) {
             if (e.quantity != 1) {
               e.quantity--;
-              e.total = (Math.round(elem.quantity * elem.price * 100) / 100).toFixed(2);
+              e.total -= elem.price;
             } else {
               var index = _this.cart.indexOf(e);
 
@@ -49380,6 +49382,8 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       } else {
         return;
       }
+
+      this.saveCart();
     },
     cartTotal: function cartTotal() {
       var partials = this.cart.map(function (e) {
@@ -49407,7 +49411,6 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         this.cart = JSON.parse(localStorage.getItem('cart'));
       } catch (error) {
         console.log(error);
-        localStorage.removeItem('cart');
       }
     }
   }
