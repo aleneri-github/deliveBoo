@@ -144,15 +144,14 @@ main #restaurants .card_rest {
   border-radius: 20px;
   overflow: hidden;
   color: white;
-  transition: 1s;
+  transition: 1.5s;
 }
 main #restaurants .card_rest:hover {
   cursor: pointer;
   transform: scale(1.025);
 }
 main #restaurants .card_rest:hover .overlay {
-  width: 80%;
-  transition: 1s;
+  transform: translate(-350px);
 }
 main #restaurants .card_rest:hover h3 {
   transform: translate(-120%);
@@ -181,14 +180,15 @@ main #restaurants .card_rest a .layover h3 {
 main #restaurants .card_rest a .overlay {
   display: inline-block;
   position: absolute;
-  right: -40px;
+  right: -350px;
   padding: 20px;
   height: 100%;
-  width: 0%;
+  width: 80%;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   z-index: 2;
   position: absolute;
+  transition: 1.5s;
 }
 main #restaurants .card_rest a .overlay h2 {
   margin: 10px 0 0 10px;
