@@ -8,6 +8,7 @@ var home = new Vue(
       types: ['all'],
       restaurants: [],
       carousel: [],
+      foods: []
     },
     methods: {
       filter(type) {
@@ -30,9 +31,17 @@ var home = new Vue(
       axios.get(`http://localhost:8000/api/restaurant/carousel`).then(response => {
         this.carousel = response.data;
       });
+
+      axios.get(`http://localhost:8000/api/restaurant/dishes`).then(response => {
+        this.foods = response.data;
+      });
       
     }
   },
-  
-
 );
+
+$('.types').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+});
