@@ -242,23 +242,23 @@ main #restaurants .box-cards .card_rest h5 {
   display: flex;
   align-items: center;
 }
-#register-page .container .right-side {
+#register-page .container .left-side {
   width: 60%;
 }
-#register-page .container .right-side .register-box h1 {
+#register-page .container .left-side .register-box h1 {
   padding-left: 16%;
   padding-bottom: 20px;
 }
-#register-page .container .right-side .register-box .form-register {
+#register-page .container .left-side .register-box .form-register {
   width: 100%;
 }
-#register-page .container .left-side {
+#register-page .container .right-side {
   display: flex;
   align-items: center;
   width: 40%;
   height: 100%;
 }
-#register-page .container .left-side img {
+#register-page .container .right-side img {
   width: 100%;
 }
 
@@ -271,22 +271,83 @@ main #restaurants .box-cards .card_rest h5 {
   #register-page .container {
     flex-direction: column-reverse;
   }
-  #register-page .container .right-side {
+  #register-page .container .left-side {
     width: 70%;
   }
-  #register-page .container .right-side .register-box h1 {
+  #register-page .container .left-side .register-box h1 {
     padding-top: 10px;
     padding-left: 0%;
     padding-bottom: 10px;
   }
-  #register-page .container .right-side .register-box .form-register {
+  #register-page .container .left-side .register-box .form-register {
     width: 100%;
     padding-bottom: 20px;
   }
-  #register-page .container .left-side {
+  #register-page .container .right-side {
     width: 100%;
   }
-  #register-page .container .left-side img {
+  #register-page .container .right-side img {
+    width: 100%;
+  }
+}
+#restaurant-form {
+  display: flex;
+  align-items: center;
+  background-color: #FDC234;
+  background-image: linear-gradient(90deg, #FDC234 43%, #fefefe 43%);
+}
+#restaurant-form .container {
+  display: flex;
+  align-items: center;
+}
+#restaurant-form .container .left-side {
+  width: 60%;
+}
+#restaurant-form .container .left-side .register-box {
+  padding: 50px 0;
+}
+#restaurant-form .container .left-side .register-box h1 {
+  padding-left: 16%;
+  padding-bottom: 20px;
+}
+#restaurant-form .container .left-side .register-box .form-register {
+  width: 100%;
+}
+#restaurant-form .container .right-side {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+#restaurant-form .container .right-side img {
+  width: 100%;
+}
+
+@media screen and (max-width: 770px) {
+  #restaurant-form {
+    height: 100%;
+    background-color: #FDC234;
+    background-image: linear-gradient(#FDC234 51%, #fefefe 67%);
+  }
+  #restaurant-form .container {
+    flex-direction: column;
+  }
+  #restaurant-form .container .left-side {
+    width: 70%;
+  }
+  #restaurant-form .container .left-side .register-box h1 {
+    padding-top: 10px;
+    padding-left: 0%;
+    padding-bottom: 10px;
+  }
+  #restaurant-form .container .left-side .register-box .form-register {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  #restaurant-form .container .right-side {
+    width: 50%;
+  }
+  #restaurant-form .container .right-side img {
     width: 100%;
   }
 }

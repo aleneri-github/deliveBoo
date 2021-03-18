@@ -1,15 +1,15 @@
-#register-page {
+#restaurant-form {
   display: flex;
   align-items: center;
-  height: calc(100vh - 55px);
-  background-color: $white;
-  background-image: linear-gradient(90deg, $white 57%, $yellow 43%);
+  background-color: $yellow;
+  background-image: linear-gradient(90deg, $yellow 43%, $white 43%);
   .container {
     display: flex;
     align-items: center;
     .left-side {
       width: 60%;
       .register-box {
+        padding: 50px 0;
         h1 {
           padding-left: 16%;
           padding-bottom: 20px;
@@ -32,12 +32,12 @@
 } 
 
 @media screen and (max-width: 770px) {
-  #register-page {
+  #restaurant-form {
     height: 100%;
     background-color: $yellow;
     background-image: linear-gradient( $yellow 51%, $white 67%);
     .container {
-    flex-direction: column-reverse;
+    flex-direction: column;
       .left-side {
         width: 70%;
         .register-box {
@@ -53,7 +53,7 @@
         }
       }
       .right-side {
-        width: 100%;
+        width: 50%;
         img {
           width: 100%;
         }
