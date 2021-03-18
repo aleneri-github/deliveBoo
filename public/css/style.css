@@ -83,6 +83,9 @@ main #service .box-cards .service-card {
 main #food {
   width: 100%;
   padding: 5% 0;
+  background-color: #fdc234;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 main #food .box-cards {
   display: flex;
@@ -94,25 +97,26 @@ main #food .box-cards .card_food {
 main #food .box-cards .card_food img {
   width: 200px;
 }
-main #carousel-type marquee {
+main #carousel-type .types {
   margin-top: 4%;
+  margin-bottom: 4%;
   background-color: transparent;
   overflow: hidden;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
-main #carousel-type marquee div {
+main #carousel-type .types div {
   position: relative;
   display: inline-block;
   margin-left: 15px;
   cursor: pointer;
 }
-main #carousel-type marquee div img {
+main #carousel-type .types div img {
   overflow: hidden;
   border-radius: 5px;
 }
-main #carousel-type marquee div h5 {
+main #carousel-type .types div h5 {
   position: absolute;
   bottom: 0;
   left: 22px;
@@ -124,6 +128,13 @@ main #restaurants {
   padding: 100px;
   display: flex;
   flex-wrap: wrap;
+  background-color: #fdc234;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+main #restaurants h1 {
+  display: block;
+  width: 100%;
 }
 main #restaurants .card_rest {
   position: relative;
@@ -148,37 +159,44 @@ main #restaurants .card_rest:hover h3 {
   opacity: 0;
   font-size: 36px;
 }
-main #restaurants .card_rest img {
-  -o-object-fit: fill;
-     object-fit: fill;
-  -o-object-position: center;
-     object-position: center;
+main #restaurants .card_rest a {
+  color: inherit;
 }
-main #restaurants .card_rest h3 {
+main #restaurants .card_rest a .layover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  background: linear-gradient(330deg, rgba(255, 255, 255, 0.0595588577) 50%, black 100%);
+}
+main #restaurants .card_rest a .layover h3 {
   position: absolute;
   margin: 20px;
   display: inline-block;
   transition: 1.5s;
   font-size: 36px;
 }
-main #restaurants .card_rest .overlay {
+main #restaurants .card_rest a .overlay {
   display: inline-block;
   position: absolute;
   right: -40px;
   padding: 20px;
   height: 100%;
   width: 0%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   z-index: 2;
+  position: absolute;
 }
-main #restaurants .card_rest .overlay h2 {
+main #restaurants .card_rest a .overlay h2 {
   margin: 10px 0 0 10px;
 }
-main #restaurants .card_rest .overlay p {
+main #restaurants .card_rest a .overlay p {
   margin: 10px 0 0 10px;
 }
-main #restaurants .card_rest .overlay p:nth-of-type(2) {
+main #restaurants .card_rest a .overlay p:nth-of-type(2) {
   margin: 0 0 0 10px;
 }
 
@@ -187,6 +205,8 @@ footer {
   height: 100%;
   color: white;
   font-size: 20px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 footer .col-footer {
   display: flex;

@@ -57,53 +57,40 @@
     <section id="food">
       <h1 class="text-center">Le novità</h1>
       <div class="box-cards container text-center">
-        <div class="card_food">
-          <img src="http://gomoto.like-themes.com/wp-content/uploads/2019/06/item_02-480x480.jpg" alt="" >
-          <h5>Cheeseburger with Salad</h5>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
-        </div>
-        <div class="card_food">
-          <img src="http://gomoto.like-themes.com/wp-content/uploads/2019/06/item_02-480x480.jpg" alt="" >
-          <h5>Cheeseburger with Salad</h5>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
-        </div>
-        <div class="card_food">
-          <img src="http://gomoto.like-themes.com/wp-content/uploads/2019/06/item_02-480x480.jpg" alt="" >
-          <h5>Cheeseburger with Salad</h5>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
-        </div>
-        <div class="card_food">
-          <img src="http://gomoto.like-themes.com/wp-content/uploads/2019/06/item_02-480x480.jpg" alt="" >
-          <h5>Cheeseburger with Salad</h5>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+        <div class="card_food" v-for="food in foods">
+          <img :src="'{{ asset('/storage') }}' + '/' + food.image" alt="sales">
+          <h5>@{{ food.name }}</h5>
+          <p>@{{ food.description }}</p>
         </div>
       </div>
     </section>
 
     <section id="carousel-type">
-      <marquee onmouseover="this.stop();" onmouseout="this.start();"  scrollamount="15">
+      <div class="types">
         <div v-for="card in carousel" @click='filter(card.type)'>
           <img :src="card.image" alt="sales">
           <h5> @{{ card.type }}</h5>
         </div>
-      </marquee>
+      </div class="types">
     </section>
 
     {{-- RESTAURANTS --}}
-    <h1 class="text-center">I nostri ristoranti</h1>
     <section id="restaurants">
-
-      <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" class="card_rest" v-for="restaurant in restaurants">
-        <h3>@{{ restaurant.name }}</h3>
-        {{-- <img  :src="'{{ asset('/storage') }}' + '/' + restaurant.image" alt=""> --}}
-        <div class="overlay">
-          <h2><strong>@{{ restaurant.name }}</strong></h2>
-          {{-- <p class="m-4">@{{ restaurant. }}</p> --}}
-          <p>@{{ restaurant.address }}</p>
-          <p>@{{ restaurant.phone_number }}</p>
+      <h1 class="text-center">I nostri ristoranti</h1>
+        <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest animate__animated animate__fadeInLeft" v-for="restaurant in restaurants">
+          <a href="#">
+            <div class="layover">
+              <h3>@{{ restaurant.name }}</h3>
+            </div>
+            <div class="overlay">
+              <h2><strong>@{{ restaurant.name }}</strong></h2>
+              <p>@{{ restaurant.address }}</p>
+              <p>@{{ restaurant.phone_number }}</p>
+            </div> 
+          </a>
+           
         </div>
       </div>
-
     </section>
 
   </main>

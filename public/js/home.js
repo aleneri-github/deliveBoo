@@ -1907,7 +1907,8 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   data: {
     types: ['all'],
     restaurants: [],
-    carousel: []
+    carousel: [],
+    foods: []
   },
   methods: {
     filter: function filter(type) {
@@ -1933,7 +1934,15 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     axios.get("http://localhost:8000/api/restaurant/carousel").then(function (response) {
       _this2.carousel = response.data;
     });
+    axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
+      _this2.foods = response.data;
+    });
   }
+});
+$('.types').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
 });
 
 /***/ }),
