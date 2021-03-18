@@ -111,12 +111,12 @@ main {
   #restaurants {
     padding: 100px;
     display: flex;
+    flex-wrap: wrap;
     .card_rest {
       position: relative;
       margin: 10px;
       height: 200px;
       width: calc(100% / 3 - 20px);
-      background-color: blue;
       border-radius: 20px;
       overflow: hidden;
       color: white;
@@ -128,16 +128,22 @@ main {
           width: 80%;
           transition: 1s;
         }
-        h4 {
-          display: none;
+        h3 {
+          transform: translate(-120%);
+          opacity: 0;
+          font-size: 36px;
         }
       }
       img {
-        width: 100%;
+        object-fit: fill;
+        object-position: center;
       }
-      h4 {
+      h3 {
+        position: absolute;
         margin: 20px;
         display: inline-block;
+        transition: 1.5s;
+        font-size: 36px;
       }
       .overlay {
         display: inline-block;

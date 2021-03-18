@@ -93,9 +93,9 @@
     <h1 class="text-center">I nostri ristoranti</h1>
     <section id="restaurants">
 
-      <div class="card_rest" v-for="restaurant in restaurants">
-        <img :src="'{{ asset('/storage') }}' + '/' + restaurant.image" alt="">
-        <h4>@{{ restaurant.name }}</h4>
+      <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" class="card_rest" v-for="restaurant in restaurants">
+        <h3>@{{ restaurant.name }}</h3>
+        {{-- <img  :src="'{{ asset('/storage') }}' + '/' + restaurant.image" alt=""> --}}
         <div class="overlay">
           <h2><strong>@{{ restaurant.name }}</strong></h2>
           {{-- <p class="m-4">@{{ restaurant. }}</p> --}}
@@ -111,3 +111,5 @@
 
   <script src="{{ asset('js/home.js') }}"></script>
 @endsection
+
+{ backgroundImage: 'url(' + image + ')' }

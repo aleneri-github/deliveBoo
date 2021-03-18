@@ -104,13 +104,13 @@ main #carousel-type marquee div h5 {
 main #restaurants {
   padding: 100px;
   display: flex;
+  flex-wrap: wrap;
 }
 main #restaurants .card_rest {
   position: relative;
   margin: 10px;
   height: 200px;
   width: calc(100% / 3 - 20px);
-  background-color: blue;
   border-radius: 20px;
   overflow: hidden;
   color: white;
@@ -124,15 +124,23 @@ main #restaurants .card_rest:hover .overlay {
   width: 80%;
   transition: 1s;
 }
-main #restaurants .card_rest:hover h4 {
-  display: none;
+main #restaurants .card_rest:hover h3 {
+  transform: translate(-120%);
+  opacity: 0;
+  font-size: 36px;
 }
 main #restaurants .card_rest img {
-  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: center;
+     object-position: center;
 }
-main #restaurants .card_rest h4 {
+main #restaurants .card_rest h3 {
+  position: absolute;
   margin: 20px;
   display: inline-block;
+  transition: 1.5s;
+  font-size: 36px;
 }
 main #restaurants .card_rest .overlay {
   display: inline-block;
