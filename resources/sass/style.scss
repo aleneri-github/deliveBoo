@@ -3,14 +3,12 @@
 @import 'partials/mixins';
 @import 'partials/header';
 @import 'partials/main';
-@import 'partials/login';
-@import 'partials/register';
-<<<<<<< HEAD
 @import 'partials/footer';
 
 // css per la guest.show
 @import 'partials/main-guest-show';
-=======
+
+//
+@import 'partials/login';
+@import 'partials/register';
 @import 'partials/createRestaurant';
-@import 'partials/footer';
->>>>>>> createRestaurantCss
