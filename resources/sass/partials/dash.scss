@@ -1,0 +1,57 @@
+#dashboard {
+  display: flex;
+  #side_bar {
+    width: 320px;
+    height: calc(100vh - 55px);
+    background-color: $yellow;
+    padding-left: 30px;
+    .logo-nav {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 30px;
+      a {
+        img {
+          width: 100px; 
+        }
+      }
+    }
+    .side-menu {
+      width: 100%;
+      .admin-menu {
+        width: 100%;
+        ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+          width: 100%;
+          color: $white;
+          li {
+            width: 100%;
+            padding: 30px 40px;
+            list-style-type: none;
+            transition-duration: 0.4s;
+            &:hover {
+              background-color: $white;
+              color: $yellow;
+              border-radius: 60px 0px 0px 60px;
+              a {
+                color: $yellow;
+              }
+            }
+            i {
+              font-size: 25px;
+              padding-right: 10px;
+            }
+            a {
+              color: $white;
+              font-size: 25px;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

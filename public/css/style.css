@@ -593,3 +593,58 @@ footer .col-footer .logo {
     width: 100%;
   }
 }
+#dashboard {
+  display: flex;
+}
+#dashboard #side_bar {
+  width: 320px;
+  height: calc(100vh - 55px);
+  background-color: #FDC234;
+  padding-left: 30px;
+}
+#dashboard #side_bar .logo-nav {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+}
+#dashboard #side_bar .logo-nav a img {
+  width: 100px;
+}
+#dashboard #side_bar .side-menu {
+  width: 100%;
+}
+#dashboard #side_bar .side-menu .admin-menu {
+  width: 100%;
+}
+#dashboard #side_bar .side-menu .admin-menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  color: #fefefe;
+}
+#dashboard #side_bar .side-menu .admin-menu ul li {
+  width: 100%;
+  padding: 30px 40px;
+  list-style-type: none;
+  transition-duration: 0.4s;
+}
+#dashboard #side_bar .side-menu .admin-menu ul li:hover {
+  background-color: #fefefe;
+  color: #FDC234;
+  border-radius: 60px 0px 0px 60px;
+}
+#dashboard #side_bar .side-menu .admin-menu ul li:hover a {
+  color: #FDC234;
+}
+#dashboard #side_bar .side-menu .admin-menu ul li i {
+  font-size: 25px;
+  padding-right: 10px;
+}
+#dashboard #side_bar .side-menu .admin-menu ul li a {
+  color: #fefefe;
+  font-size: 25px;
+}
+#dashboard #side_bar .side-menu .admin-menu ul li a:hover {
+  text-decoration: none;
+}
