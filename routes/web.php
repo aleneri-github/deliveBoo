@@ -43,3 +43,8 @@ Route::prefix('admin')
 });
 
 Route::get('/guest/{slug}/show', 'GuestController@show')->name('guest.show');
+
+// PROVVISORIA CARDS
+Route::get('/guest/cards', function () {
+    return view('guest.cards');
+})->name('guest.cards');
