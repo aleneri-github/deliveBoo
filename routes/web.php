@@ -45,6 +45,9 @@ Route::prefix('admin')
     Route::get('/restaurant', 'RestaurantController@index')->name('restaurant.index');
     Route::get('/restaurant/create', 'RestaurantController@create')->name('restaurant.create')->middleware('check');
     Route::post('/restaurant/store', 'RestaurantController@store')->name('restaurant.store');
+    Route::get('/dashboard', function () {
+        return view('admin.dishes.dash');
+    })->name('dishes.dash');
 
 });
 
