@@ -42,7 +42,7 @@ var detail = new Vue(
           return
         }
       },
-      cartTotal: function() {
+      cartTotal() {
         let partials = this.cart.map((e) => {
           return parseFloat(e.total);
         })
@@ -50,12 +50,26 @@ var detail = new Vue(
         return partials.reduce(function(a,b) {
           return a + b;
         }, 0);
+      },
+      saveCart() {
+        const parsed = JSON.stringify(this.cart);
+        localStorage.setItem('cart', parsed);
       }
     },
     mounted: function() {
       axios.get(`http://localhost:8000/api/restaurant/dishes`).then(response => {
         this.dishes = response.data;
       });
+
+      if (localStorage.getItem('cart')) {
+        try {
+          this.cart = JSON.parse(localStorage.getItem('cart'));
+        } catch(error) {
+          console.log(error);
+          localStorage.removeItem('cart');
+        }
+      }
+
     }
   }
 );

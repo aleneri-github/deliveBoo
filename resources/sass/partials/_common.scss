@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// SCROLLBAR PER TUTTO IL SITO
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: $greyText;
+}
+::-webkit-scrollbar-thumb {
+  background: $yellow;
+  border-radius: 10px;
+}
