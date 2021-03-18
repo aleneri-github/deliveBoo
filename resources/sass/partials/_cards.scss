@@ -1,40 +1,49 @@
 .card_ {
   position: relative;
+  margin: 10px;
   height: 200px;
   width: calc(100% / 3 - 20px);
   background-color: blue;
-  margin: 10px;
   border-radius: 20px;
   overflow: hidden;
   color: white;
   transition: 1s;
-  img {
-    height: 200px;
-  }
   &:hover {
     cursor: pointer;
     transform: scale(1.025);
     .overlay{
-      transition-duration: 1s;
       width: 80%;
+      transition: 1s;
     }
     h4 {
       display: none;
     }
   }
-}
-h4 {
-  margin: 20px;
-  display: inline-block;
-}
-.overlay {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  padding: 20px;
-  height: 100%;
-  width: 0%;
-  background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
-  z-index: 2;
+  img {
+    width: 100%;
+  }
+  h4 {
+    margin: 20px;
+    display: inline-block;
+  }
+  .overlay {
+    display: inline-block;
+    position: absolute;
+    right: -40px;
+    padding: 20px;
+    height: 100%;
+    width: 0%;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    z-index: 2;
+    h2 {
+      margin: 10px 0 0 10px;
+    }
+    p {
+      margin: 10px 0 0 10px;
+      &:nth-of-type(2) {
+        margin: 0 0 0 10px
+      }
+    }
+  }
 }

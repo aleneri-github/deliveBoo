@@ -105,10 +105,10 @@
         <img :src="'{{ asset('/storage') }}' + '/' + restaurant.image" alt="">
         <h4>@{{ restaurant.name }}</h4>
         <div class="overlay">
-          <h2 class="m-4">Da Peppe</h2>
-          <p class="m-4">Cucina Tipica Lucana <br>
-          Via Matera 15 <br>
-          0856/969871 </p>
+          <h2><strong>@{{ restaurant.name }}</strong></h2>
+          {{-- <p class="m-4">@{{ restaurant. }}</p> --}}
+          <p>@{{ restaurant.address }}</p>
+          <p>@{{ restaurant.phone_number }}</p>
         </div>
       </div>
 
