@@ -99,8 +99,10 @@ main #restaurants {
 }
 main #restaurants .box-cards {
   display: flex;
+  flex-wrap: wrap;
 }
 main #restaurants .box-cards .card_rest {
+  display: flex;
   position: relative;
   width: calc(100% / 3 - 20px);
   margin: 10px;

@@ -105,7 +105,9 @@ main {
     padding: 5% 0;
     .box-cards {
       display: flex;
+      flex-wrap: wrap;
       .card_rest {
+        display: flex;
         position: relative;
         width: calc(100% / 3 - 20px);
         margin: 10px;
