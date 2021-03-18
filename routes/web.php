@@ -41,3 +41,5 @@ Route::prefix('admin')
     Route::post('/restaurant/store', 'RestaurantController@store')->name('restaurant.store');
 
 });
+
+Route::get('/guest/{slug}/show', 'GuestController@show')->name('guest.show');

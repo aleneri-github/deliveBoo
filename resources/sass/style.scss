@@ -3,6 +3,13 @@
 @import 'partials/mixins';
 @import 'partials/header';
 @import 'partials/main';
+<<<<<<< HEAD
 @import 'partials/login';
 @import 'partials/register';
 @import 'partials/footer';
+=======
+@import 'partials/footer';
+
+// vista show di guest
+@import 'partials/main-guest-show';
+>>>>>>> ShowGuest2
