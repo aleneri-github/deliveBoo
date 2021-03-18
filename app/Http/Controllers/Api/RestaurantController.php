@@ -35,8 +35,8 @@ class RestaurantController extends Controller
 
   public function dishes() {
 
-    $dishes = Dish::orderBy('created_date', 'DESC')->take(10)->get();
-    
+    $dishes = Dish::orderBy('created_at', 'DESC')->take(10)->get();
+
     return response()->json($dishes);
 
   }
