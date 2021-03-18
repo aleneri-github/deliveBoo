@@ -35,8 +35,8 @@ class RestaurantController extends Controller
 
   public function dishes() {
 
-    $dishes = Dish::where('restaurant_id', 2)->get();
-
+    $dishes = Dish::orderBy('created_date', 'DESC')->take(10)->get();
+    
     return response()->json($dishes);
 
   }
@@ -44,7 +44,7 @@ class RestaurantController extends Controller
   public function carousel() {
 
     $data = config('types');
-    
+
     return response()->json($data);
 
   }
