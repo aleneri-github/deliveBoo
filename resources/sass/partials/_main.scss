@@ -14,10 +14,6 @@ main {
     font-family: Arial, Helvetica, sans-serif;
     background-color: $yellow;
     background-image: linear-gradient($yellow 69%, $white 95%);
-    background-image: url('../img/jumb-3.svg');
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
     .container {
       display: flex;
       justify-content: center;
@@ -168,7 +164,7 @@ main {
         .overlay {
           display: inline-block;
           position: absolute;
-          right: calc(100% / 3 - 20px);
+          right: -500px;
           padding: 20px;
           height: 100%;
           width: 80%;
@@ -206,6 +202,21 @@ main {
     #jumbotron_main {
       .container {
         padding-top: 8%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1199px) {
+  main {
+    #jumbotron_main {
+      .container {
+        display: block !important;
+        .title {
+
+        }
+        .jumb-img {
+
+        }
       }
     }
   }
