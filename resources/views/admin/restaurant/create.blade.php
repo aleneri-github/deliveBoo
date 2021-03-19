@@ -120,12 +120,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </div>
-=======
-        {{-- /lato destro --}}
-    </div>    
->>>>>>> DashboardNavBar
 </div>
 @endsection
 
