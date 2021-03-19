@@ -3,7 +3,7 @@
 @section('content')
 
   {{-- JUMBOTRON --}}
-  <div id="jumbotron" style="background-image: url('{{ asset('storage/' . $restaurant->image) }}')">
+  <div id="jumbotron_rest" style="background-image: url('{{ asset('storage/' . $restaurant->image) }}')">
     <div class="dark_layer">
       <h1>{{ $restaurant->name }}</h1>
     </div>
@@ -51,7 +51,7 @@
       <ul>
         <li v-for="item in cart">
           @{{ item.quantity }}x <strong>@{{ item.name }}</strong> - € @{{ item.total.toFixed(2) }}
-          <hr>
+          {{-- <hr> --}}
         </li>
       </ul>
       <h3>€ @{{ cartTotal().toFixed(2) }}</h3>

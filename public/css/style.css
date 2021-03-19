@@ -238,19 +238,19 @@ footer .col-footer .logo {
   max-width: 150px;
 }
 
-#jumbotron {
+#jumbotron_rest {
   height: 500px;
   background-position: center;
   background-size: cover;
 }
-#jumbotron .dark_layer {
+#jumbotron_rest .dark_layer {
   position: relative;
   padding: 100px;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
-#jumbotron h1 {
+#jumbotron_rest h1 {
   position: absolute;
   bottom: 100px;
   font-size: 64px;
@@ -261,7 +261,7 @@ footer .col-footer .logo {
 
 #detail {
   height: 600px;
-  background-color: #fee099;
+  background-color: #fefefe;
 }
 #detail #cards {
   padding: 40px;
@@ -312,14 +312,14 @@ footer .col-footer .logo {
   float: right;
   height: 100px;
 }
-#detail #cards .card_dish r {
+#detail #cards .card_dish:hover {
   cursor: pointer;
   box-shadow: 0 0 36px 12px rgba(0, 0, 0, 0.75);
 }
-#detail #cards .card_dish r .img_div {
+#detail #cards .card_dish:hover .img_div {
   transform: scale(1.05);
 }
-#detail #cards .card_dish r .img_layer {
+#detail #cards .card_dish:hover .img_layer {
   transform: scale(1.05);
 }
 #detail #cart {
@@ -403,8 +403,8 @@ footer .col-footer .logo {
     height: 500px;
   }
   #detail #cards {
-    width: 65%;
-    padding: 60px;
+    width: 60%;
+    padding: 20px;
   }
   #detail #cards .card_dish {
     width: calc(100% - 20px);
@@ -415,7 +415,7 @@ footer .col-footer .logo {
   #detail #cart {
     margin: 0;
     padding: 20px;
-    width: 35%;
+    width: 40%;
     font-size: 12px;
     border-radius: 0;
   }
@@ -443,7 +443,7 @@ footer .col-footer .logo {
   }
 
   #detail {
-    color: #7a7a7a;
+    position: relative;
     height: 500px;
   }
   #detail #cards {
@@ -457,7 +457,15 @@ footer .col-footer .logo {
     height: 60%;
   }
   #detail #cart {
-    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  #detail #cart ul {
+    display: inline-block;
+  }
+  #detail #cart h3 {
+    float: right;
   }
 }
 #login-page {

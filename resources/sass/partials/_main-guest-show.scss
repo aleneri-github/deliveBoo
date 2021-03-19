@@ -1,5 +1,5 @@
 // JUMBOTRON ------------------------
-#jumbotron {
+#jumbotron_rest {
   height: 500px;
   background-position: center;
   background-size: cover;
@@ -23,7 +23,8 @@
 // DETTAGLIO ------------------------
 #detail {
   height: 600px;
-  background-color: lighten($yellow, 20%);
+  background-color: $white;
+  // background-color: lighten($yellow, 15%);
   #cards {
     padding: 40px;
     width: 75%;
@@ -70,7 +71,8 @@
           float: right;
           height: 100px
         }
-      }r {
+      }
+      &:hover {
         cursor: pointer;
         box-shadow: 0 0 36px 12px rgba(0,0,0, 0.75);
         .img_div {
@@ -89,6 +91,7 @@
     font-size: 20px;
     border-radius: 20px;
     background-color: $yellow;
+    // background-color: $white;
     box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
     ul {
       list-style: none;
@@ -174,8 +177,8 @@
   #detail {
     height: 500px;
     #cards {
-      width: 65%;
-      padding: 60px;
+      width: 60%;
+      padding: 20px;
       .card_dish {
         width: calc(100% - 20px);
         img {
@@ -186,7 +189,7 @@
     #cart {
       margin: 0;
       padding: 20px;
-      width: 35%;
+      width: 40%;
       font-size: 12px;
       border-radius: 0;
     }
@@ -218,7 +221,7 @@
   }
 
   #detail {
-    color: $greyText;
+    position: relative;
     height: 500px;
     #cards {
       width: 100%;
@@ -231,7 +234,15 @@
       }
     }
     #cart {
-      display: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      ul {
+        display: inline-block;
+      }
+      h3 {
+        float: right;
+      }
     }
   }
 }
