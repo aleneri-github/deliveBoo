@@ -58,6 +58,23 @@ var detail = new Vue(
         localStorage.setItem('cart', parsed);
       }
     },
+    addItem(item) {
+      item.quantity++;
+      item.total += item.price;
+      this.$forceUpdate();
+      this.saveCart();
+    },
+    removeItem(item) {
+      if (item.quantity == 1) {
+        let index = this.cart.indexOf(item);
+        this.cart.splice(index,1);
+        return
+      }
+      item.quantity--;
+      item.total -= item.price;
+      this.$forceUpdate();
+      this.saveCart();
+    },
     mounted: function() {
       axios.get(`http://localhost:8000/api/restaurant/dishes`).then(response => {
         this.dishes = response.data;
