@@ -37,3 +37,14 @@ footer {
     }
   }
 }
+
+
+// Media Query footer
+@media screen and (max-width: 575px) {
+  footer {
+    .col-footer {
+      align-items: flex-start;
+      margin-left: 30px;
+    }
+  }
+}

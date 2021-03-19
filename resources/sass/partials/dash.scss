@@ -1,7 +1,14 @@
 #dashboard {
   display: flex;
   width: 100%;
-  
+
+// bordo giallo dei form crea e modifica piatto
+  .border-edit-create {
+    border: 4px solid $yellow;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
   // menu laterale
   #admin-menu {
     width: 320px;
@@ -14,7 +21,7 @@
       padding-bottom: 30px;
       a {
         img {
-          width: 100px; 
+          width: 100px;
         }
       }
     }
@@ -128,7 +135,7 @@
 @media screen and (max-width: 980px) {
 
   #dashboard {
-    
+
     // menu laterale
     #admin-menu {
       width: 100px;
@@ -165,14 +172,14 @@
         }
       }
     }
-  
+
     //main
     #admin-show {
       width: calc(100% - 300px);
       height: 100vh;
       padding: 30px 20px;
     }
-  
+
     //Info restaurant
     #admin-info {
       width: 300px;
@@ -182,16 +189,16 @@
     }
   }
 
-} 
+}
 
 // SM
 @media screen and (max-width: 750px) {
 
   #dashboard {
-    
+
     // menu laterale
 
-  
+
     //main
     #admin-show {
       position: relative;
@@ -200,7 +207,7 @@
       padding-left: 20px;
       padding-left: 20px;
     }
-  
+
     //Info restaurant
     #admin-info {
       position: absolute;

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container border-edit-create">
         <h1>Modifica il tuo piatto</h1>
 
         @if ($errors->any())
@@ -17,7 +17,7 @@
         <form action="{{ route('admin.dishes.update', $dish->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-        
+
             <div class="form-group">
                     <label for="name">Nome del piatto</label>
                     <input class="form-control" type="text" id="name" name="name" value="{{ $dish->name }}">
@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <label for="name">Prezzo</label>
                     <input class="form-control" type="text" id="price" name="price" value="{{ $dish->price }}">
-                </div>   
+                </div>
 
                 <div class="form-group">
                     <label for="image">Immagine del prodotto</label>
@@ -47,10 +47,10 @@
                     <input type="file" class="form-control" id="image" name="image" accept="image/*">
                 </div>
 
-            
+
                 <div class="form-group">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="vegetarian" id="vegetarian" 
+                        <input class="form-check-input" type="checkbox" name="vegetarian" id="vegetarian"
                         @if ($dish->vegetarian == 1) checked @endif value="1">
                         <label class="form-check-label" for="vegetarian">Vegetariano</label>
                     </div>
@@ -59,18 +59,18 @@
                 <div class="form-group">
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="visible" id="visible" 
+                            <input class="form-check-input" type="checkbox" name="visible" id="visible"
                             @if ($dish->visible == 1) checked @endif value="1">
                             <label class="form-check-label" for="visible">Disponibile</label>
                         </div>
                     </div>
                 </div>
-            
+
             <button type="submit" class="btn btn-primary">Salva le modifiche</button>
 
         </form>
-        
+
         <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary">Indietro</a>
-    
+
     </div>
 @endsection
