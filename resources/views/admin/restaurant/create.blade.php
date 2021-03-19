@@ -12,10 +12,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="register-box">
-<<<<<<< HEAD
-=======
-
->>>>>>> Italian
                         <div class="d-flex">
                             <div class="form-register">
                                 <h1>{{ __('Register') }}</h1>
@@ -47,10 +43,6 @@
                                         <label for="phone_number" class="col-md-4 col-form-label text-md-right">Telefono</label>
                                         <div class="col-md-6">
                                             <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number">
-<<<<<<< HEAD
-=======
-
->>>>>>> Italian
                                             @error('phone_number')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -62,10 +54,6 @@
                                         <label for="website" class="col-md-4 col-form-label text-md-right">Sito Web</label>
                                         <div class="col-md-6">
                                             <input id="website" type="text" class="form-control @error('website') is-invalid @enderror" name="website" value="{{ old('website') }}" required autocomplete="website">
-<<<<<<< HEAD
-=======
-
->>>>>>> Italian
                                             @error('website')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -77,10 +65,6 @@
                                         <label for="email_rest" class="col-md-4 col-form-label text-md-right">Email Ristorante</label>
                                         <div class="col-md-6">
                                             <input id="email_rest" type="text" class="form-control @error('email_rest') is-invalid @enderror" name="email_rest" value="{{ old('email_rest') }}" required autocomplete="email_rest">
-<<<<<<< HEAD
-=======
-                                            
->>>>>>> Italian
                                             @error('email_rest')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -92,10 +76,6 @@
                                         <label for="vat" class="col-md-4 col-form-label text-md-right">P. IVA</label>
                                         <div class="col-md-6">
                                             <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat">
-<<<<<<< HEAD
-=======
-
->>>>>>> Italian
                                             @error('vat')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -134,10 +114,6 @@
                                         </div>
                                     </div>
                                 </form>
-<<<<<<< HEAD
-=======
-
->>>>>>> Italian
                             </div>
                         </div>
                     </div>
@@ -145,33 +121,5 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> Italian
 </div>
 @endsection
-
-
-
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-
-=======
-@endsection
->>>>>>> DashboardNavBar
-
-=======
-@endsection
->>>>>>> Italian

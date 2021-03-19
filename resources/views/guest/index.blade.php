@@ -55,14 +55,37 @@
     </section>
 
     <section id="food">
-      <h1 class="text-center">Le novità</h1>
+      <div class="slider-wrapper">
+              <div class="prev">
+                  <i class="fas fa-angle-left" @click="stopAuto(), backward()"></i>
+              </div>
+
+              <div class="container_food">
+                <h2 class="text-center">Le nostre novità in zona</h2>
+                <div v-for="(image, index) in images" class="images animate__animated" :class="(index == indexOfImage) ? active : ''">
+                    <img :src="image">
+                    <h3>PROVA</h3>
+                    <!-- <img :src="images[indexOfImage]" alt=""> -->
+                    {{-- <div class="image_block" v-for="(food,i) in images" :class="(i == indexOfImage) ? active : ''" alt="">
+                      <h3>PROVA</h3>
+                      <img :src="food">
+                    </div> --}}
+                </div>
+              </div>
+
+              <div class="next">
+                  <i class="fas fa-angle-right" @click="stopAuto(),forward()"></i>
+              </div>
+          </div>
+      {{-- <h1 class="text-center">Le novità</h1>
       <div class="box-cards container text-center">
         <div class="card_food" v-for="food in foods">
-          <img :src="'{{ asset('/storage') }}' + '/' + food.image" alt="sales">
+          <img :src="'{{ asset('/storage') }}' + '/' + food.image" alt="sales" v-on:mouseover="stopRotation"
+          v-on:mouseout="startRotation">
           <h5>@{{ food.name }}</h5>
           <p>@{{ food.description }}</p>
         </div>
-      </div>
+      </div> --}}
     </section>
 
     <section id="carousel-type">
@@ -86,9 +109,9 @@
               <h2><strong>@{{ restaurant.name }}</strong></h2>
               <p>@{{ restaurant.address }}</p>
               <p>@{{ restaurant.phone_number }}</p>
-            </div> 
+            </div>
           </a>
-           
+
         </div>
       </div>
     </section>
