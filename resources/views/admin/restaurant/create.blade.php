@@ -12,10 +12,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="register-box">
-<<<<<<< HEAD
-=======
-
->>>>>>> Italian
                         <div class="d-flex">
                             <div class="form-register">
                                 <h1>{{ __('Register') }}</h1>
@@ -79,7 +75,7 @@
                                             <input id="email_rest" type="text" class="form-control @error('email_rest') is-invalid @enderror" name="email_rest" value="{{ old('email_rest') }}" required autocomplete="email_rest">
 <<<<<<< HEAD
 =======
-                                            
+
 >>>>>>> Italian
                                             @error('email_rest')
                                                 <span class="invalid-feedback" role="alert">
