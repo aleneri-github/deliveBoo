@@ -12,8 +12,7 @@ class RestaurantController extends Controller
 {
   public function index() {
 
-    $restaurants = Restaurant::all();
-    // $dishes = Dish::where('restaurant_id', 2)->get();
+    $restaurants = Restaurant::with('types')->get();
     if ($_GET['type'] != 'all') {
       $filtered = $restaurants->filter(function ($value, $key) {
         $value['types'] = $value->types->pluck('name')->toArray();
@@ -24,7 +23,6 @@ class RestaurantController extends Controller
     } else {
       return response()->json($restaurants);
     }
-    return response()->json($dishes);
   }
 
   public function types() {
