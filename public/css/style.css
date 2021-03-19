@@ -20,7 +20,8 @@
 main {
   background-color: #fefefe;
 }
-main #jumbotron {
+main #jumbotron_main {
+  height: 700px;
   position: relative;
   width: 100%;
   height: 700px;
@@ -32,34 +33,35 @@ main #jumbotron {
   background-repeat: no-repeat;
   background-size: cover;
 }
-main #jumbotron .layover {
+main #jumbotron_main .layover {
   position: absolute;
   width: 100%;
   height: 100%;
   background-image: linear-gradient(rgba(253, 194, 52, 0) 69%, #fefefe 95%);
 }
-main #jumbotron .container {
+main #jumbotron_main .container {
   display: flex;
   justify-content: center;
-  padding-top: 8%;
-  padding-left: 5%;
 }
-main #jumbotron .container .title {
-  width: 50%;
+main #jumbotron_main .container .title {
+  width: 100%;
   padding-top: 30px;
   padding-left: 10;
   color: black;
   font-weight: bold;
   font-size: 50px;
 }
-main #jumbotron .container .title h1, main #jumbotron .container .title .h1 {
-  font-size: 4.25rem;
+main #jumbotron_main .container .title h1, main #jumbotron_main .container .title .h1 {
+  padding-top: 20%;
+  color: white;
+  bottom: 40%;
+  font-size: 3rem;
   font-weight: 900 !important;
 }
-main #jumbotron .container .jumb-img {
-  width: 50%;
+main #jumbotron_main .container .jumb-img {
+  width: 100%;
 }
-main #jumbotron .container .jumb-img img {
+main #jumbotron_main .container .jumb-img img {
   width: 100%;
 }
 main #service {
@@ -180,7 +182,7 @@ main #restaurants .card_rest a .layover h3 {
 main #restaurants .card_rest a .overlay {
   display: inline-block;
   position: absolute;
-  right: -350px;
+  right: calc(100% / 3 - 20px);
   padding: 20px;
   height: 100%;
   width: 80%;
@@ -200,6 +202,16 @@ main #restaurants .card_rest a .overlay p:nth-of-type(2) {
   margin: 0 0 0 10px;
 }
 
+@media screen and (max-width: 1400px) {
+  main #jumbotron_main .container {
+    padding-top: 5%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main #jumbotron_main .container {
+    padding-top: 8%;
+  }
+}
 footer {
   background-color: #1a1918;
   height: 100%;

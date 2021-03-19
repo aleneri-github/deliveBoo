@@ -4,7 +4,7 @@
 
   <main id="home">
 
-    <section id="jumbotron">
+    <section id="jumbotron_main">
       <div class="layover"></div>
       <div class="container d-flex">
         <div class="title">

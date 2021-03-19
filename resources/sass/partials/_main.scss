@@ -1,6 +1,7 @@
 main {
   background-color: $white;
-  #jumbotron {
+  #jumbotron_main {
+    height: 700px;
     position: relative;
     .layover {
       position: absolute;
@@ -20,22 +21,23 @@ main {
     .container {
       display: flex;
       justify-content: center;
-      padding-top: 8%;
-      padding-left: 5%;
       .title {
-        width: 50%;
+        width: 100%;
         padding-top: 30px;
         padding-left: 10;
         color: black;
         font-weight: bold;
         font-size: 50px;
         h1, .h1 {
-          font-size: 4.25rem;
+          padding-top: 20%;
+          color: white;
+          bottom: 40%;
+          font-size: 3rem;
           font-weight: 900 !important;
        }
       }
       .jumb-img {
-        width: 50%;
+        width: 100%;
        img {
          width: 100%;
        }
@@ -166,7 +168,7 @@ main {
         .overlay {
           display: inline-block;
           position: absolute;
-          right: -350px;
+          right: calc(100% / 3 - 20px);
           padding: 20px;
           height: 100%;
           width: 80%;
@@ -189,3 +191,24 @@ main {
     }
   }
 }
+
+@media screen and (max-width: 1400px) {
+  main {
+    #jumbotron_main {
+      .container {
+        padding-top: 5%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  main {
+    #jumbotron_main {
+      .container {
+        padding-top: 8%;
+      }
+    }
+  }
+}
+
+
