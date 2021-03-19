@@ -28,7 +28,10 @@ class DishController extends Controller
     public function index()
     {
         // con first or fail trovo l'oggetto
-        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
+        $restaurant = Restaurant::where('user_id', Auth::id())->first();
+        if (!$restaurant) {
+          return redirect()->route('admin.restaurant.create');
+        }
         // con get prendo una collection
         $dishes = Dish::where('restaurant_id', Auth::id())->get();
         // GESTIONE ASSENZA DI PIATTI
