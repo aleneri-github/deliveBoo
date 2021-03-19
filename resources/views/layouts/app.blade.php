@@ -31,7 +31,7 @@
     
 </head>
 <body>
-    <div id="app">
+    <div>
         <section id="dashboard">
             {{-- pannello admin --}}
             <div id="admin-menu">
