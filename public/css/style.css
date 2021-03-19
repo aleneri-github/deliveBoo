@@ -28,10 +28,6 @@ main #jumbotron_main {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #FDC234;
   background-image: linear-gradient(#FDC234 69%, #fefefe 95%);
-  background-image: url("../img/jumb-3.svg");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 main #jumbotron_main .layover {
   position: absolute;
@@ -182,7 +178,7 @@ main #restaurants .card_rest a .layover h3 {
 main #restaurants .card_rest a .overlay {
   display: inline-block;
   position: absolute;
-  right: calc(100% / 3 - 20px);
+  right: -500px;
   padding: 20px;
   height: 100%;
   width: 80%;
@@ -210,6 +206,11 @@ main #restaurants .card_rest a .overlay p:nth-of-type(2) {
 @media screen and (max-width: 1280px) {
   main #jumbotron_main .container {
     padding-top: 8%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  main #jumbotron_main .container {
+    display: block !important;
   }
 }
 footer {
