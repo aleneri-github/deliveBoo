@@ -334,6 +334,15 @@ footer .col-footer .logo {
 #detail #cart ul {
   list-style: none;
 }
+#detail #cart ul li {
+  margin-bottom: 10px;
+}
+#detail #cart ul li .cart_buttons_price {
+  background-color: #fefefe;
+}
+#detail #cart ul li .cart_buttons_price .buttons {
+  float: right;
+}
 
 @media screen and (max-width: 1200px) {
   #jumbotron {
@@ -460,6 +469,8 @@ footer .col-footer .logo {
     position: absolute;
     top: 0;
     width: 100%;
+    height: 150px;
+    overflow-y: scroll;
   }
   #detail #cart ul {
     display: inline-block;
