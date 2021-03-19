@@ -8,7 +8,11 @@
 // css per la guest.show
 @import 'partials/main-guest-show';
 
-//
+// registrazione e login
 @import 'partials/login';
 @import 'partials/register';
 @import 'partials/createRestaurant';
+
+
+// ADMIN
+@import 'partials/dash';

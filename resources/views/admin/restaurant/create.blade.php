@@ -1,9 +1,13 @@
 @section('content')
 <div id="restaurant-form">
     <div class="container">
+        {{-- lato sinistro / sono stati invertite con right-side --}}
         <div class="right-side">
             <img src="{{ asset('img/food-rest.svg') }}" alt="">
         </div>
+        {{-- /lato sinistro --}}
+
+        {{-- lato destro --}}
         <div class="left-side">
             <div class="row">
                 <div class="col-md-12">
@@ -116,7 +120,12 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
+=======
+        {{-- /lato destro --}}
+    </div>    
+>>>>>>> DashboardNavBar
 </div>
 @endsection
 
@@ -133,6 +142,9 @@
 
 
 
+<<<<<<< HEAD
 
-
+=======
+@endsection
+>>>>>>> DashboardNavBar
 

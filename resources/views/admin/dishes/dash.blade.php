@@ -1,1 +1,6 @@
-<h1>QUESTA E LA DASHBOARD</h1>
+@extends('layouts.app')
+
+@section('content')
+ 
+
+@endsection
