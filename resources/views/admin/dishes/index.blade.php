@@ -17,6 +17,8 @@
             <a href="{{ route('admin.dishes.create')}}" class="btn btn-primary">Crea un nuovo piatto</a>
         </div>
     </div>
+
+    
 </div>
 
 <div class="container">
