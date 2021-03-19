@@ -50,11 +50,11 @@
     <div id="cart">
       <ul>
         <li v-for="item in cart">
-          @{{ item.quantity }}x <strong>@{{ item.name }}</strong> - € @{{ item.total }}
+          @{{ item.quantity }}x <strong>@{{ item.name }}</strong> - € @{{ item.total.toFixed(2) }}
           <hr>
         </li>
       </ul>
-      <h3>€ @{{ cartTotal() }}</h3>
+      <h3>€ @{{ cartTotal().toFixed(2) }}</h3>
     </div>
 
   </div>
