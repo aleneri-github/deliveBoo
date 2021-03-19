@@ -367,7 +367,7 @@ footer .col-footer .logo {
   }
 
   #detail {
-    height: 400px;
+    height: 600px;
   }
   #detail #cards {
     padding: 20px;
@@ -409,7 +409,7 @@ footer .col-footer .logo {
   }
 
   #detail {
-    height: 500px;
+    height: 400px;
   }
   #detail #cards {
     width: 60%;
@@ -453,7 +453,7 @@ footer .col-footer .logo {
 
   #detail {
     position: relative;
-    height: 500px;
+    height: 400px;
   }
   #detail #cards {
     width: 100%;

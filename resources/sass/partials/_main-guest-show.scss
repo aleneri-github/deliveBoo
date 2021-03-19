@@ -24,7 +24,6 @@
 #detail {
   height: 600px;
   background-color: $white;
-  // background-color: lighten($yellow, 15%);
   #cards {
     padding: 40px;
     width: 75%;
@@ -137,7 +136,7 @@
   }
   
   #detail {
-    height: 400px;
+    height: 600px;
     #cards {
       padding: 20px;
       .card_dish {
@@ -183,7 +182,7 @@
   }
 
   #detail {
-    height: 500px;
+    height: 400px;
     #cards {
       width: 60%;
       padding: 20px;
@@ -230,7 +229,7 @@
 
   #detail {
     position: relative;
-    height: 500px;
+    height: 400px;
     #cards {
       width: 100%;
       padding: 60px;
