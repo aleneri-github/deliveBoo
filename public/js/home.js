@@ -1886,27 +1886,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_slick__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-slick */ "./node_modules/vue-slick/dist/slickCarousel.esm.js");
-/* harmony import */ var slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! slick-carousel/slick/slick.css */ "./node_modules/slick-carousel/slick/slick.css");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var slick_carousel_slick_slick__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! slick-carousel/slick/slick */ "./node_modules/slick-carousel/slick/slick.js");
+/* harmony import */ var slick_carousel_slick_slick__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick__WEBPACK_IMPORTED_MODULE_0__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-
-var home = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
+var home = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: "#home",
   data: {
     types: ['all'],
@@ -1914,9 +1901,7 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     carousel: [],
     foods: [],
     indexOfImage: 0,
-    active: "active",
-    bool: true,
-    images: ["https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&dl=clouds-country-daylight-371633.jpg&fm=jpg", "https://static.photocdn.pt/images/articles/2017/04/28/iStock-646511634.jpg", "https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg", "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg"]
+    active: "active"
   },
   methods: {
     filter: function filter(type) {
@@ -1930,32 +1915,21 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     forward: function forward() {
       this.indexOfImage++;
 
-      if (this.indexOfImage == this.images.length) {
+      if (this.indexOfImage == this.foods.lenght) {
         this.indexOfImage = 0;
       }
     },
     backward: function backward() {
       if (this.indexOfImage == 0) {
-        this.indexOfImage = this.images.length - 1;
+        this.indexOfImage = this.foods.length - 1;
       } else {
         this.indexOfImage--;
       }
-    },
-    stopAuto: function stopAuto() {
-      this.bool = true;
-    },
-    prova: function prova(index) {
-      this.indexOfImage = index;
     }
   },
   mounted: function mounted() {
     var _this2 = this;
 
-    axios.get('http://localhost:8000/api/restaurants/types').then(function (response) {
-      var _this2$types;
-
-      (_this2$types = _this2.types).push.apply(_this2$types, _toConsumableArray(response.data));
-    });
     axios.get("http://localhost:8000/api/restaurants?type=all").then(function (response) {
       _this2.restaurants = response.data;
     });
@@ -1967,20 +1941,11 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
     });
   },
   created: function created() {
-    // setInterval(() => {
-    //   this.forward();
-    // }, 1000);
-    //OPPURE, perchè assegno this a self prima di usare setinterval
-    var self = this;
+    var _this3 = this;
+
     var timer = setInterval(function () {
-      if (self.bool == true) {
-        console.log("sono qui");
-        clearInterval(timer);
-      } else {
-        self.forward();
-        console.log("sono qui");
-      }
-    }, 1000);
+      _this3.forward();
+    }, 5000);
   }
 });
 
@@ -6424,106 +6389,6 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 })));
 //# sourceMappingURL=bootstrap.js.map
 
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/slick-carousel/slick/slick.css":
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/slick-carousel/slick/slick.css ***!
-  \***************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Slider */\n.slick-slider\n{\n    position: relative;\n\n    display: block;\n    box-sizing: border-box;\n\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n\n    -webkit-touch-callout: none;\n    -khtml-user-select: none;\n    touch-action: pan-y;\n    -webkit-tap-highlight-color: transparent;\n}\n\n.slick-list\n{\n    position: relative;\n\n    display: block;\n    overflow: hidden;\n\n    margin: 0;\n    padding: 0;\n}\n.slick-list:focus\n{\n    outline: none;\n}\n.slick-list.dragging\n{\n    cursor: pointer;\n    cursor: hand;\n}\n\n.slick-slider .slick-track,\n.slick-slider .slick-list\n{\n    transform: translate3d(0, 0, 0);\n}\n\n.slick-track\n{\n    position: relative;\n    top: 0;\n    left: 0;\n\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n}\n.slick-track:before,\n.slick-track:after\n{\n    display: table;\n\n    content: '';\n}\n.slick-track:after\n{\n    clear: both;\n}\n.slick-loading .slick-track\n{\n    visibility: hidden;\n}\n\n.slick-slide\n{\n    display: none;\n    float: left;\n\n    height: 100%;\n    min-height: 1px;\n}\n[dir='rtl'] .slick-slide\n{\n    float: right;\n}\n.slick-slide img\n{\n    display: block;\n}\n.slick-slide.slick-loading img\n{\n    display: none;\n}\n.slick-slide.dragging img\n{\n    pointer-events: none;\n}\n.slick-initialized .slick-slide\n{\n    display: block;\n}\n.slick-loading .slick-slide\n{\n    visibility: hidden;\n}\n.slick-vertical .slick-slide\n{\n    display: block;\n\n    height: auto;\n\n    border: 1px solid transparent;\n}\n.slick-arrow.slick-hidden {\n    display: none;\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (cssWithMappingToString) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join("");
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === "string") {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, ""]];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
 
 /***/ }),
 
@@ -37482,642 +37347,40 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./node_modules/slick-carousel/slick/slick.css":
-/*!*****************************************************!*\
-  !*** ./node_modules/slick-carousel/slick/slick.css ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_slick_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./slick.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/slick-carousel/slick/slick.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_slick_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_slick_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var isOldIE = function isOldIE() {
-  var memo;
-  return function memorize() {
-    if (typeof memo === 'undefined') {
-      // Test for IE <= 9 as proposed by Browserhacks
-      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-      // Tests for existence of standard globals is to allow style-loader
-      // to operate correctly into non-standard environments
-      // @see https://github.com/webpack-contrib/style-loader/issues/177
-      memo = Boolean(window && document && document.all && !window.atob);
-    }
-
-    return memo;
-  };
-}();
-
-var getTarget = function getTarget() {
-  var memo = {};
-  return function memorize(target) {
-    if (typeof memo[target] === 'undefined') {
-      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
-
-      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-        try {
-          // This will throw an exception if access to iframe is blocked
-          // due to cross-origin restrictions
-          styleTarget = styleTarget.contentDocument.head;
-        } catch (e) {
-          // istanbul ignore next
-          styleTarget = null;
-        }
-      }
-
-      memo[target] = styleTarget;
-    }
-
-    return memo[target];
-  };
-}();
-
-var stylesInDom = [];
-
-function getIndexByIdentifier(identifier) {
-  var result = -1;
-
-  for (var i = 0; i < stylesInDom.length; i++) {
-    if (stylesInDom[i].identifier === identifier) {
-      result = i;
-      break;
-    }
-  }
-
-  return result;
-}
-
-function modulesToDom(list, options) {
-  var idCountMap = {};
-  var identifiers = [];
-
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i];
-    var id = options.base ? item[0] + options.base : item[0];
-    var count = idCountMap[id] || 0;
-    var identifier = "".concat(id, " ").concat(count);
-    idCountMap[id] = count + 1;
-    var index = getIndexByIdentifier(identifier);
-    var obj = {
-      css: item[1],
-      media: item[2],
-      sourceMap: item[3]
-    };
-
-    if (index !== -1) {
-      stylesInDom[index].references++;
-      stylesInDom[index].updater(obj);
-    } else {
-      stylesInDom.push({
-        identifier: identifier,
-        updater: addStyle(obj, options),
-        references: 1
-      });
-    }
-
-    identifiers.push(identifier);
-  }
-
-  return identifiers;
-}
-
-function insertStyleElement(options) {
-  var style = document.createElement('style');
-  var attributes = options.attributes || {};
-
-  if (typeof attributes.nonce === 'undefined') {
-    var nonce =  true ? __webpack_require__.nc : 0;
-
-    if (nonce) {
-      attributes.nonce = nonce;
-    }
-  }
-
-  Object.keys(attributes).forEach(function (key) {
-    style.setAttribute(key, attributes[key]);
-  });
-
-  if (typeof options.insert === 'function') {
-    options.insert(style);
-  } else {
-    var target = getTarget(options.insert || 'head');
-
-    if (!target) {
-      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
-    }
-
-    target.appendChild(style);
-  }
-
-  return style;
-}
-
-function removeStyleElement(style) {
-  // istanbul ignore if
-  if (style.parentNode === null) {
-    return false;
-  }
-
-  style.parentNode.removeChild(style);
-}
-/* istanbul ignore next  */
-
-
-var replaceText = function replaceText() {
-  var textStore = [];
-  return function replace(index, replacement) {
-    textStore[index] = replacement;
-    return textStore.filter(Boolean).join('\n');
-  };
-}();
-
-function applyToSingletonTag(style, index, remove, obj) {
-  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
-
-  /* istanbul ignore if  */
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = replaceText(index, css);
-  } else {
-    var cssNode = document.createTextNode(css);
-    var childNodes = style.childNodes;
-
-    if (childNodes[index]) {
-      style.removeChild(childNodes[index]);
-    }
-
-    if (childNodes.length) {
-      style.insertBefore(cssNode, childNodes[index]);
-    } else {
-      style.appendChild(cssNode);
-    }
-  }
-}
-
-function applyToTag(style, options, obj) {
-  var css = obj.css;
-  var media = obj.media;
-  var sourceMap = obj.sourceMap;
-
-  if (media) {
-    style.setAttribute('media', media);
-  } else {
-    style.removeAttribute('media');
-  }
-
-  if (sourceMap && typeof btoa !== 'undefined') {
-    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  } // For old IE
-
-  /* istanbul ignore if  */
-
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    while (style.firstChild) {
-      style.removeChild(style.firstChild);
-    }
-
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var singleton = null;
-var singletonCounter = 0;
-
-function addStyle(obj, options) {
-  var style;
-  var update;
-  var remove;
-
-  if (options.singleton) {
-    var styleIndex = singletonCounter++;
-    style = singleton || (singleton = insertStyleElement(options));
-    update = applyToSingletonTag.bind(null, style, styleIndex, false);
-    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-  } else {
-    style = insertStyleElement(options);
-    update = applyToTag.bind(null, style, options);
-
-    remove = function remove() {
-      removeStyleElement(style);
-    };
-  }
-
-  update(obj);
-  return function updateStyle(newObj) {
-    if (newObj) {
-      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
-        return;
-      }
-
-      update(obj = newObj);
-    } else {
-      remove();
-    }
-  };
-}
-
-module.exports = function (list, options) {
-  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-  // tags it will allow on a page
-
-  if (!options.singleton && typeof options.singleton !== 'boolean') {
-    options.singleton = isOldIE();
-  }
-
-  list = list || [];
-  var lastIdentifiers = modulesToDom(list, options);
-  return function update(newList) {
-    newList = newList || [];
-
-    if (Object.prototype.toString.call(newList) !== '[object Array]') {
-      return;
-    }
-
-    for (var i = 0; i < lastIdentifiers.length; i++) {
-      var identifier = lastIdentifiers[i];
-      var index = getIndexByIdentifier(identifier);
-      stylesInDom[index].references--;
-    }
-
-    var newLastIdentifiers = modulesToDom(newList, options);
-
-    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
-      var _identifier = lastIdentifiers[_i];
-
-      var _index = getIndexByIdentifier(_identifier);
-
-      if (stylesInDom[_index].references === 0) {
-        stylesInDom[_index].updater();
-
-        stylesInDom.splice(_index, 1);
-      }
-    }
-
-    lastIdentifiers = newLastIdentifiers;
-  };
-};
-
-/***/ }),
-
-/***/ "./node_modules/vue-slick/dist/slickCarousel.esm.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/vue-slick/dist/slickCarousel.esm.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-
-
-//
-
-// Check if the request came from the browser and is not server rendered
-if (typeof window !== 'undefined') {
-  Promise.resolve().then(function () { return slick$1; });
-}
-
-var script = {
-  props: {
-    options: {
-      type: Object,
-      default: function() {
-        return {};
-      },
-    },
-  },
-
-  mounted: function() {
-    this.create();
-  },
-
-  destroyed: function() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('unslick');
-  },
-
-  methods: {
-    create: function() {
-      var $slick = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el);
-
-      $slick.on('afterChange', this.onAfterChange);
-      $slick.on('beforeChange', this.onBeforeChange);
-      $slick.on('breakpoint', this.onBreakpoint);
-      $slick.on('destroy', this.onDestroy);
-      $slick.on('edge', this.onEdge);
-      $slick.on('init', this.onInit);
-      $slick.on('reInit', this.onReInit);
-      $slick.on('setPosition', this.onSetPosition);
-      $slick.on('swipe', this.onSwipe);
-      $slick.on('lazyLoaded', this.onLazyLoaded);
-      $slick.on('lazyLoadError', this.onLazyLoadError);
-
-      $slick.slick(this.options);
-    },
-
-    destroy: function() {
-      var $slick = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el);
-
-      $slick.off('afterChange', this.onAfterChange);
-      $slick.off('beforeChange', this.onBeforeChange);
-      $slick.off('breakpoint', this.onBreakpoint);
-      $slick.off('destroy', this.onDestroy);
-      $slick.off('edge', this.onEdge);
-      $slick.off('init', this.onInit);
-      $slick.off('reInit', this.onReInit);
-      $slick.off('setPosition', this.onSetPosition);
-      $slick.off('swipe', this.onSwipe);
-      $slick.off('lazyLoaded', this.onLazyLoaded);
-      $slick.off('lazyLoadError', this.onLazyLoadError);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('unslick');
-    },
-
-    reSlick: function() {
-      this.destroy();
-      this.create();
-    },
-
-    next: function() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickNext');
-    },
-
-    prev: function() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickPrev');
-    },
-
-    pause: function() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickPause');
-    },
-
-    play: function() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickPlay');
-    },
-
-    goTo: function(index, dontAnimate) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickGoTo', index, dontAnimate);
-    },
-
-    currentSlide: function() {
-      return jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickCurrentSlide');
-    },
-
-    add: function(element, index, addBefore) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickAdd', element, index, addBefore);
-    },
-
-    remove: function(index, removeBefore) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickRemove', index, removeBefore);
-    },
-
-    filter: function(filterData) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickFilter', filterData);
-    },
-
-    unfilter: function() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickUnfilter');
-    },
-
-    getOption: function(option) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickGetOption', option);
-    },
-
-    setOption: function(option, value, refresh) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('slickSetOption', option, value, refresh);
-    },
-
-    setPosition: function() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$el).slick('setPosition');
-    },
-
-    // Events
-    onAfterChange: function(event, slick, currentSlide) {
-      this.$emit('afterChange', event, slick, currentSlide);
-    },
-
-    onBeforeChange: function(event, slick, currentSlide, nextSlide) {
-      this.$emit('beforeChange', event, slick, currentSlide, nextSlide);
-    },
-
-    onBreakpoint: function(event, slick, breakpoint) {
-      this.$emit('breakpoint', event, slick, breakpoint);
-    },
-
-    onDestroy: function(event, slick) {
-      this.$emit('destroy', event, slick);
-    },
-
-    onEdge: function(event, slick, direction) {
-      this.$emit('edge', event, slick, direction);
-    },
-
-    onInit: function(event, slick) {
-      this.$emit('init', event, slick);
-    },
-
-    onReInit: function(event, slick) {
-      this.$emit('reInit', event, slick);
-    },
-
-    onSetPosition: function(event, slick) {
-      this.$emit('setPosition', event, slick);
-    },
-
-    onSwipe: function(event, slick, direction) {
-      this.$emit('swipe', event, slick, direction);
-    },
-
-    onLazyLoaded: function(event, slick, image, imageSource) {
-      this.$emit('lazyLoaded', event, slick, image, imageSource);
-    },
-
-    onLazyLoadError: function(event, slick, image, imageSource) {
-      this.$emit('lazyLoadError', event, slick, image, imageSource);
-    },
-  },
-
-};
-
-function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
-/* server only */
-, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
-  if (typeof shadowMode !== 'boolean') {
-    createInjectorSSR = createInjector;
-    createInjector = shadowMode;
-    shadowMode = false;
-  } // Vue.extend constructor export interop.
-
-
-  var options = typeof script === 'function' ? script.options : script; // render functions
-
-  if (template && template.render) {
-    options.render = template.render;
-    options.staticRenderFns = template.staticRenderFns;
-    options._compiled = true; // functional template
-
-    if (isFunctionalTemplate) {
-      options.functional = true;
-    }
-  } // scopedId
-
-
-  if (scopeId) {
-    options._scopeId = scopeId;
-  }
-
-  var hook;
-
-  if (moduleIdentifier) {
-    // server build
-    hook = function hook(context) {
-      // 2.3 injection
-      context = context || // cached call
-      this.$vnode && this.$vnode.ssrContext || // stateful
-      this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext; // functional
-      // 2.2 with runInNewContext: true
-
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__;
-      } // inject component styles
-
-
-      if (style) {
-        style.call(this, createInjectorSSR(context));
-      } // register component module identifier for async chunk inference
-
-
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier);
-      }
-    }; // used by ssr in case component is cached and beforeCreate
-    // never gets called
-
-
-    options._ssrRegister = hook;
-  } else if (style) {
-    hook = shadowMode ? function () {
-      style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
-    } : function (context) {
-      style.call(this, createInjector(context));
-    };
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // register for functional component in vue file
-      var originalRender = options.render;
-
-      options.render = function renderWithStyleInjection(h, context) {
-        hook.call(context);
-        return originalRender(h, context);
-      };
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate;
-      options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
-    }
-  }
-
-  return script;
-}
-
-var normalizeComponent_1 = normalizeComponent;
-
-/* script */
-var __vue_script__ = script;
-
-/* template */
-var __vue_render__ = function() {
-  var _vm = this;
-  var _h = _vm.$createElement;
-  var _c = _vm._self._c || _h;
-  return _c("div", [_vm._t("default")], 2)
-};
-var __vue_staticRenderFns__ = [];
-__vue_render__._withStripped = true;
-
-  /* style */
-  var __vue_inject_styles__ = undefined;
-  /* scoped */
-  var __vue_scope_id__ = undefined;
-  /* module identifier */
-  var __vue_module_identifier__ = undefined;
-  /* functional template */
-  var __vue_is_functional_template__ = false;
-  /* style inject */
-  
-  /* style inject SSR */
-  
-
-  
-  var Slick = normalizeComponent_1(
-    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
-    __vue_inject_styles__,
-    __vue_script__,
-    __vue_scope_id__,
-    __vue_is_functional_template__,
-    __vue_module_identifier__,
-    undefined,
-    undefined
-  );
-
-var install = function installMyComponent(Vue, opt) {
-  // Don't install if already installed, or SSR
-  if (install.installed || Vue.prototype.$isServer) { return }
-  install.installed = true;
-
-  Vue.component('slick', Slick);
-};
-
-// Inject install function into component - allows component
-// to be registered via Vue.use() as well as Vue.component()
-Slick.install = install;
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var slick = createCommonjsModule(function (module, exports) {
-(function(factory) {
-    {
-        module.exports = factory((jquery__WEBPACK_IMPORTED_MODULE_0___default()));
-    }
-
-}(function($$$1) {
+/***/ "./node_modules/slick-carousel/slick/slick.js":
+/*!****************************************************!*\
+  !*** ./node_modules/slick-carousel/slick/slick.js ***!
+  \****************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
+     _ _      _       _
+ ___| (_) ___| | __  (_)___
+/ __| | |/ __| |/ /  | / __|
+\__ \ | | (__|   < _ | \__ \
+|___/_|_|\___|_|\_(_)/ |___/
+                   |__/
+
+ Version: 1.8.1
+  Author: Ken Wheeler
+ Website: http://kenwheeler.github.io
+    Docs: http://kenwheeler.github.io/slick
+    Repo: http://github.com/kenwheeler/slick
+  Issues: http://github.com/kenwheeler/slick/issues
+
+ */
+/* global window, document, define, jQuery, setInterval, clearInterval */
+;(function(factory) {
+    'use strict';
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else {}
+
+}(function($) {
+    'use strict';
     var Slick = window.Slick || {};
 
     Slick = (function() {
@@ -38131,8 +37394,8 @@ var slick = createCommonjsModule(function (module, exports) {
             _.defaults = {
                 accessibility: true,
                 adaptiveHeight: false,
-                appendArrows: $$$1(element),
-                appendDots: $$$1(element),
+                appendArrows: $(element),
+                appendDots: $(element),
                 arrows: true,
                 asNavFor: null,
                 prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
@@ -38143,7 +37406,7 @@ var slick = createCommonjsModule(function (module, exports) {
                 centerPadding: '50px',
                 cssEase: 'ease',
                 customPaging: function(slider, i) {
-                    return $$$1('<button type="button" />').text(i + 1);
+                    return $('<button type="button" />').text(i + 1);
                 },
                 dots: false,
                 dotsClass: 'slick-dots',
@@ -38211,7 +37474,7 @@ var slick = createCommonjsModule(function (module, exports) {
                 unslicked: false
             };
 
-            $$$1.extend(_, _.initials);
+            $.extend(_, _.initials);
 
             _.activeBreakpoint = null;
             _.animType = null;
@@ -38227,7 +37490,7 @@ var slick = createCommonjsModule(function (module, exports) {
             _.respondTo = null;
             _.rowCount = 1;
             _.shouldClick = true;
-            _.$slider = $$$1(element);
+            _.$slider = $(element);
             _.$slidesCache = null;
             _.transformType = null;
             _.transitionType = null;
@@ -38235,9 +37498,9 @@ var slick = createCommonjsModule(function (module, exports) {
             _.windowWidth = 0;
             _.windowTimer = null;
 
-            dataSettings = $$$1(element).data('slick') || {};
+            dataSettings = $(element).data('slick') || {};
 
-            _.options = $$$1.extend({}, _.defaults, settings, dataSettings);
+            _.options = $.extend({}, _.defaults, settings, dataSettings);
 
             _.currentSlide = _.options.initialSlide;
 
@@ -38251,16 +37514,16 @@ var slick = createCommonjsModule(function (module, exports) {
                 _.visibilityChange = 'webkitvisibilitychange';
             }
 
-            _.autoPlay = $$$1.proxy(_.autoPlay, _);
-            _.autoPlayClear = $$$1.proxy(_.autoPlayClear, _);
-            _.autoPlayIterator = $$$1.proxy(_.autoPlayIterator, _);
-            _.changeSlide = $$$1.proxy(_.changeSlide, _);
-            _.clickHandler = $$$1.proxy(_.clickHandler, _);
-            _.selectHandler = $$$1.proxy(_.selectHandler, _);
-            _.setPosition = $$$1.proxy(_.setPosition, _);
-            _.swipeHandler = $$$1.proxy(_.swipeHandler, _);
-            _.dragHandler = $$$1.proxy(_.dragHandler, _);
-            _.keyHandler = $$$1.proxy(_.keyHandler, _);
+            _.autoPlay = $.proxy(_.autoPlay, _);
+            _.autoPlayClear = $.proxy(_.autoPlayClear, _);
+            _.autoPlayIterator = $.proxy(_.autoPlayIterator, _);
+            _.changeSlide = $.proxy(_.changeSlide, _);
+            _.clickHandler = $.proxy(_.clickHandler, _);
+            _.selectHandler = $.proxy(_.selectHandler, _);
+            _.setPosition = $.proxy(_.setPosition, _);
+            _.swipeHandler = $.proxy(_.swipeHandler, _);
+            _.dragHandler = $.proxy(_.dragHandler, _);
+            _.keyHandler = $.proxy(_.keyHandler, _);
 
             _.instanceUid = instanceUid++;
 
@@ -38305,17 +37568,17 @@ var slick = createCommonjsModule(function (module, exports) {
 
         if (typeof(index) === 'number') {
             if (index === 0 && _.$slides.length === 0) {
-                $$$1(markup).appendTo(_.$slideTrack);
+                $(markup).appendTo(_.$slideTrack);
             } else if (addBefore) {
-                $$$1(markup).insertBefore(_.$slides.eq(index));
+                $(markup).insertBefore(_.$slides.eq(index));
             } else {
-                $$$1(markup).insertAfter(_.$slides.eq(index));
+                $(markup).insertAfter(_.$slides.eq(index));
             }
         } else {
             if (addBefore === true) {
-                $$$1(markup).prependTo(_.$slideTrack);
+                $(markup).prependTo(_.$slideTrack);
             } else {
-                $$$1(markup).appendTo(_.$slideTrack);
+                $(markup).appendTo(_.$slideTrack);
             }
         }
 
@@ -38326,7 +37589,7 @@ var slick = createCommonjsModule(function (module, exports) {
         _.$slideTrack.append(_.$slides);
 
         _.$slides.each(function(index, element) {
-            $$$1(element).attr('data-slick-index', index);
+            $(element).attr('data-slick-index', index);
         });
 
         _.$slidesCache = _.$slides;
@@ -38372,7 +37635,7 @@ var slick = createCommonjsModule(function (module, exports) {
                 if (_.options.rtl === true) {
                     _.currentLeft = -(_.currentLeft);
                 }
-                $$$1({
+                $({
                     animStart: _.currentLeft
                 }).animate({
                     animStart: targetLeft
@@ -38431,7 +37694,7 @@ var slick = createCommonjsModule(function (module, exports) {
             asNavFor = _.options.asNavFor;
 
         if ( asNavFor && asNavFor !== null ) {
-            asNavFor = $$$1(asNavFor).not(_.$slider);
+            asNavFor = $(asNavFor).not(_.$slider);
         }
 
         return asNavFor;
@@ -38445,7 +37708,7 @@ var slick = createCommonjsModule(function (module, exports) {
 
         if ( asNavFor !== null && typeof asNavFor === 'object' ) {
             asNavFor.each(function() {
-                var target = $$$1(this).slick('getSlick');
+                var target = $(this).slick('getSlick');
                 if(!target.unslicked) {
                     target.slideHandler(index, true);
                 }
@@ -38532,8 +37795,8 @@ var slick = createCommonjsModule(function (module, exports) {
 
         if (_.options.arrows === true ) {
 
-            _.$prevArrow = $$$1(_.options.prevArrow).addClass('slick-arrow');
-            _.$nextArrow = $$$1(_.options.nextArrow).addClass('slick-arrow');
+            _.$prevArrow = $(_.options.prevArrow).addClass('slick-arrow');
+            _.$nextArrow = $(_.options.nextArrow).addClass('slick-arrow');
 
             if( _.slideCount > _.options.slidesToShow ) {
 
@@ -38579,10 +37842,10 @@ var slick = createCommonjsModule(function (module, exports) {
 
             _.$slider.addClass('slick-dotted');
 
-            dot = $$$1('<ul />').addClass(_.options.dotsClass);
+            dot = $('<ul />').addClass(_.options.dotsClass);
 
             for (i = 0; i <= _.getDotCount(); i += 1) {
-                dot.append($$$1('<li />').append(_.options.customPaging.call(this, _, i)));
+                dot.append($('<li />').append(_.options.customPaging.call(this, _, i)));
             }
 
             _.$dots = dot.appendTo(_.options.appendDots);
@@ -38605,15 +37868,15 @@ var slick = createCommonjsModule(function (module, exports) {
         _.slideCount = _.$slides.length;
 
         _.$slides.each(function(index, element) {
-            $$$1(element)
+            $(element)
                 .attr('data-slick-index', index)
-                .data('originalStyling', $$$1(element).attr('style') || '');
+                .data('originalStyling', $(element).attr('style') || '');
         });
 
         _.$slider.addClass('slick-slider');
 
         _.$slideTrack = (_.slideCount === 0) ?
-            $$$1('<div class="slick-track"/>').appendTo(_.$slider) :
+            $('<div class="slick-track"/>').appendTo(_.$slider) :
             _.$slides.wrapAll('<div class="slick-track"/>').parent();
 
         _.$list = _.$slideTrack.wrap(
@@ -38624,7 +37887,7 @@ var slick = createCommonjsModule(function (module, exports) {
             _.options.slidesToScroll = 1;
         }
 
-        $$$1('img[data-lazy]', _.$slider).not('[src]').addClass('slick-loading');
+        $('img[data-lazy]', _.$slider).not('[src]').addClass('slick-loading');
 
         _.setupInfinite();
 
@@ -38688,7 +37951,7 @@ var slick = createCommonjsModule(function (module, exports) {
         var _ = this,
             breakpoint, targetBreakpoint, respondToWidth, triggerBreakpoint = false;
         var sliderWidth = _.$slider.width();
-        var windowWidth = window.innerWidth || $$$1(window).width();
+        var windowWidth = window.innerWidth || $(window).width();
 
         if (_.respondTo === 'window') {
             respondToWidth = windowWidth;
@@ -38726,7 +37989,7 @@ var slick = createCommonjsModule(function (module, exports) {
                         if (_.breakpointSettings[targetBreakpoint] === 'unslick') {
                             _.unslick(targetBreakpoint);
                         } else {
-                            _.options = $$$1.extend({}, _.originalSettings,
+                            _.options = $.extend({}, _.originalSettings,
                                 _.breakpointSettings[
                                     targetBreakpoint]);
                             if (initial === true) {
@@ -38741,7 +38004,7 @@ var slick = createCommonjsModule(function (module, exports) {
                     if (_.breakpointSettings[targetBreakpoint] === 'unslick') {
                         _.unslick(targetBreakpoint);
                     } else {
-                        _.options = $$$1.extend({}, _.originalSettings,
+                        _.options = $.extend({}, _.originalSettings,
                             _.breakpointSettings[
                                 targetBreakpoint]);
                         if (initial === true) {
@@ -38774,7 +38037,7 @@ var slick = createCommonjsModule(function (module, exports) {
     Slick.prototype.changeSlide = function(event, dontAnimate) {
 
         var _ = this,
-            $target = $$$1(event.currentTarget),
+            $target = $(event.currentTarget),
             indexOffset, slideOffset, unevenOffset;
 
         // If target is a link, prevent default action.
@@ -38848,10 +38111,10 @@ var slick = createCommonjsModule(function (module, exports) {
 
         if (_.options.dots && _.$dots !== null) {
 
-            $$$1('li', _.$dots)
+            $('li', _.$dots)
                 .off('click.slick', _.changeSlide)
-                .off('mouseenter.slick', $$$1.proxy(_.interrupt, _, true))
-                .off('mouseleave.slick', $$$1.proxy(_.interrupt, _, false));
+                .off('mouseenter.slick', $.proxy(_.interrupt, _, true))
+                .off('mouseleave.slick', $.proxy(_.interrupt, _, false));
 
             if (_.options.accessibility === true) {
                 _.$dots.off('keydown.slick', _.keyHandler);
@@ -38877,7 +38140,7 @@ var slick = createCommonjsModule(function (module, exports) {
 
         _.$list.off('click.slick', _.clickHandler);
 
-        $$$1(document).off(_.visibilityChange, _.visibility);
+        $(document).off(_.visibilityChange, _.visibility);
 
         _.cleanUpSlideEvents();
 
@@ -38886,16 +38149,16 @@ var slick = createCommonjsModule(function (module, exports) {
         }
 
         if (_.options.focusOnSelect === true) {
-            $$$1(_.$slideTrack).children().off('click.slick', _.selectHandler);
+            $(_.$slideTrack).children().off('click.slick', _.selectHandler);
         }
 
-        $$$1(window).off('orientationchange.slick.slick-' + _.instanceUid, _.orientationChange);
+        $(window).off('orientationchange.slick.slick-' + _.instanceUid, _.orientationChange);
 
-        $$$1(window).off('resize.slick.slick-' + _.instanceUid, _.resize);
+        $(window).off('resize.slick.slick-' + _.instanceUid, _.resize);
 
-        $$$1('[draggable!=true]', _.$slideTrack).off('dragstart', _.preventDefault);
+        $('[draggable!=true]', _.$slideTrack).off('dragstart', _.preventDefault);
 
-        $$$1(window).off('load.slick.slick-' + _.instanceUid, _.setPosition);
+        $(window).off('load.slick.slick-' + _.instanceUid, _.setPosition);
 
     };
 
@@ -38903,8 +38166,8 @@ var slick = createCommonjsModule(function (module, exports) {
 
         var _ = this;
 
-        _.$list.off('mouseenter.slick', $$$1.proxy(_.interrupt, _, true));
-        _.$list.off('mouseleave.slick', $$$1.proxy(_.interrupt, _, false));
+        _.$list.off('mouseenter.slick', $.proxy(_.interrupt, _, true));
+        _.$list.off('mouseleave.slick', $.proxy(_.interrupt, _, false));
 
     };
 
@@ -38942,7 +38205,7 @@ var slick = createCommonjsModule(function (module, exports) {
 
         _.cleanUpEvents();
 
-        $$$1('.slick-cloned', _.$slider).detach();
+        $('.slick-cloned', _.$slider).detach();
 
         if (_.$dots) {
             _.$dots.remove();
@@ -38980,7 +38243,7 @@ var slick = createCommonjsModule(function (module, exports) {
                 .removeAttr('aria-hidden')
                 .removeAttr('data-slick-index')
                 .each(function(){
-                    $$$1(this).attr('style', $$$1(this).data('originalStyling'));
+                    $(this).attr('style', $(this).data('originalStyling'));
                 });
 
             _.$slideTrack.children(this.options.slide).detach();
@@ -39110,7 +38373,7 @@ var slick = createCommonjsModule(function (module, exports) {
             .on('focus.slick blur.slick', '*', function(event) {
 
             event.stopImmediatePropagation();
-            var $sf = $$$1(this);
+            var $sf = $(this);
 
             setTimeout(function() {
 
@@ -39180,13 +38443,13 @@ var slick = createCommonjsModule(function (module, exports) {
         if (_.options.infinite === true) {
             if (_.slideCount > _.options.slidesToShow) {
                 _.slideOffset = (_.slideWidth * _.options.slidesToShow) * -1;
-                coef = -1;
+                coef = -1
 
                 if (_.options.vertical === true && _.options.centerMode === true) {
                     if (_.options.slidesToShow === 2) {
                         coef = -1.5;
                     } else if (_.options.slidesToShow === 1) {
-                        coef = -2;
+                        coef = -2
                     }
                 }
                 verticalOffset = (verticalHeight * _.options.slidesToShow) * coef;
@@ -39321,13 +38584,13 @@ var slick = createCommonjsModule(function (module, exports) {
 
         if (_.options.swipeToSlide === true) {
             _.$slideTrack.find('.slick-slide').each(function(index, slide) {
-                if (slide.offsetLeft - centerOffset + ($$$1(slide).outerWidth() / 2) > (_.swipeLeft * -1)) {
+                if (slide.offsetLeft - centerOffset + ($(slide).outerWidth() / 2) > (_.swipeLeft * -1)) {
                     swipedSlide = slide;
                     return false;
                 }
             });
 
-            slidesTraversed = Math.abs($$$1(swipedSlide).attr('data-slick-index') - _.currentSlide) || 1;
+            slidesTraversed = Math.abs($(swipedSlide).attr('data-slick-index') - _.currentSlide) || 1;
 
             return slidesTraversed;
 
@@ -39354,9 +38617,9 @@ var slick = createCommonjsModule(function (module, exports) {
 
         var _ = this;
 
-        if (!$$$1(_.$slider).hasClass('slick-initialized')) {
+        if (!$(_.$slider).hasClass('slick-initialized')) {
 
-            $$$1(_.$slider).addClass('slick-initialized');
+            $(_.$slider).addClass('slick-initialized');
 
             _.buildRows();
             _.buildOut();
@@ -39406,16 +38669,16 @@ var slick = createCommonjsModule(function (module, exports) {
             _.$slides.not(_.$slideTrack.find('.slick-cloned')).each(function(i) {
                 var slideControlIndex = tabControlIndexes.indexOf(i);
 
-                $$$1(this).attr({
+                $(this).attr({
                     'role': 'tabpanel',
                     'id': 'slick-slide' + _.instanceUid + i,
                     'tabindex': -1
                 });
 
                 if (slideControlIndex !== -1) {
-                   var ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex;
-                   if ($$$1('#' + ariaButtonControl).length) {
-                     $$$1(this).attr({
+                   var ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex
+                   if ($('#' + ariaButtonControl).length) {
+                     $(this).attr({
                          'aria-describedby': ariaButtonControl
                      });
                    }
@@ -39425,11 +38688,11 @@ var slick = createCommonjsModule(function (module, exports) {
             _.$dots.attr('role', 'tablist').find('li').each(function(i) {
                 var mappedSlideIndex = tabControlIndexes[i];
 
-                $$$1(this).attr({
+                $(this).attr({
                     'role': 'presentation'
                 });
 
-                $$$1(this).find('button').first().attr({
+                $(this).find('button').first().attr({
                     'role': 'tab',
                     'id': 'slick-slide-control' + _.instanceUid + i,
                     'aria-controls': 'slick-slide' + _.instanceUid + mappedSlideIndex,
@@ -39485,7 +38748,7 @@ var slick = createCommonjsModule(function (module, exports) {
         var _ = this;
 
         if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
-            $$$1('li', _.$dots).on('click.slick', {
+            $('li', _.$dots).on('click.slick', {
                 message: 'index'
             }, _.changeSlide);
 
@@ -39496,9 +38759,9 @@ var slick = createCommonjsModule(function (module, exports) {
 
         if (_.options.dots === true && _.options.pauseOnDotsHover === true && _.slideCount > _.options.slidesToShow) {
 
-            $$$1('li', _.$dots)
-                .on('mouseenter.slick', $$$1.proxy(_.interrupt, _, true))
-                .on('mouseleave.slick', $$$1.proxy(_.interrupt, _, false));
+            $('li', _.$dots)
+                .on('mouseenter.slick', $.proxy(_.interrupt, _, true))
+                .on('mouseleave.slick', $.proxy(_.interrupt, _, false));
 
         }
 
@@ -39510,8 +38773,8 @@ var slick = createCommonjsModule(function (module, exports) {
 
         if ( _.options.pauseOnHover ) {
 
-            _.$list.on('mouseenter.slick', $$$1.proxy(_.interrupt, _, true));
-            _.$list.on('mouseleave.slick', $$$1.proxy(_.interrupt, _, false));
+            _.$list.on('mouseenter.slick', $.proxy(_.interrupt, _, true));
+            _.$list.on('mouseleave.slick', $.proxy(_.interrupt, _, false));
 
         }
 
@@ -39541,24 +38804,24 @@ var slick = createCommonjsModule(function (module, exports) {
 
         _.$list.on('click.slick', _.clickHandler);
 
-        $$$1(document).on(_.visibilityChange, $$$1.proxy(_.visibility, _));
+        $(document).on(_.visibilityChange, $.proxy(_.visibility, _));
 
         if (_.options.accessibility === true) {
             _.$list.on('keydown.slick', _.keyHandler);
         }
 
         if (_.options.focusOnSelect === true) {
-            $$$1(_.$slideTrack).children().on('click.slick', _.selectHandler);
+            $(_.$slideTrack).children().on('click.slick', _.selectHandler);
         }
 
-        $$$1(window).on('orientationchange.slick.slick-' + _.instanceUid, $$$1.proxy(_.orientationChange, _));
+        $(window).on('orientationchange.slick.slick-' + _.instanceUid, $.proxy(_.orientationChange, _));
 
-        $$$1(window).on('resize.slick.slick-' + _.instanceUid, $$$1.proxy(_.resize, _));
+        $(window).on('resize.slick.slick-' + _.instanceUid, $.proxy(_.resize, _));
 
-        $$$1('[draggable!=true]', _.$slideTrack).on('dragstart', _.preventDefault);
+        $('[draggable!=true]', _.$slideTrack).on('dragstart', _.preventDefault);
 
-        $$$1(window).on('load.slick.slick-' + _.instanceUid, _.setPosition);
-        $$$1(_.setPosition);
+        $(window).on('load.slick.slick-' + _.instanceUid, _.setPosition);
+        $(_.setPosition);
 
     };
 
@@ -39610,12 +38873,12 @@ var slick = createCommonjsModule(function (module, exports) {
 
         function loadImages(imagesScope) {
 
-            $$$1('img[data-lazy]', imagesScope).each(function() {
+            $('img[data-lazy]', imagesScope).each(function() {
 
-                var image = $$$1(this),
-                    imageSource = $$$1(this).attr('data-lazy'),
-                    imageSrcSet = $$$1(this).attr('data-srcset'),
-                    imageSizes  = $$$1(this).attr('data-sizes') || _.$slider.attr('data-sizes'),
+                var image = $(this),
+                    imageSource = $(this).attr('data-lazy'),
+                    imageSrcSet = $(this).attr('data-srcset'),
+                    imageSizes  = $(this).attr('data-sizes') || _.$slider.attr('data-sizes'),
                     imageToLoad = document.createElement('img');
 
                 imageToLoad.onload = function() {
@@ -39674,8 +38937,8 @@ var slick = createCommonjsModule(function (module, exports) {
             rangeStart = _.options.infinite ? _.options.slidesToShow + _.currentSlide : _.currentSlide;
             rangeEnd = Math.ceil(rangeStart + _.options.slidesToShow);
             if (_.options.fade === true) {
-                if (rangeStart > 0) { rangeStart--; }
-                if (rangeEnd <= _.slideCount) { rangeEnd++; }
+                if (rangeStart > 0) rangeStart--;
+                if (rangeEnd <= _.slideCount) rangeEnd++;
             }
         }
 
@@ -39687,7 +38950,7 @@ var slick = createCommonjsModule(function (module, exports) {
                 $slides = _.$slider.find('.slick-slide');
 
             for (var i = 0; i < _.options.slidesToScroll; i++) {
-                if (prevSlide < 0) { prevSlide = _.slideCount - 1; }
+                if (prevSlide < 0) prevSlide = _.slideCount - 1;
                 loadRange = loadRange.add($slides.eq(prevSlide));
                 loadRange = loadRange.add($slides.eq(nextSlide));
                 prevSlide--;
@@ -39797,7 +39060,7 @@ var slick = createCommonjsModule(function (module, exports) {
                 _.initADA();
 
                 if (_.options.focusOnChange) {
-                    var $currentSlide = $$$1(_.$slides.get(_.currentSlide));
+                    var $currentSlide = $(_.$slides.get(_.currentSlide));
                     $currentSlide.attr('tabindex', 0).focus();
                 }
             }
@@ -39829,7 +39092,7 @@ var slick = createCommonjsModule(function (module, exports) {
         tryCount = tryCount || 1;
 
         var _ = this,
-            $imgsToLoad = $$$1( 'img[data-lazy]', _.$slider ),
+            $imgsToLoad = $( 'img[data-lazy]', _.$slider ),
             image,
             imageSource,
             imageSrcSet,
@@ -39930,7 +39193,7 @@ var slick = createCommonjsModule(function (module, exports) {
 
         _.destroy(true);
 
-        $$$1.extend(_, _.initials, { currentSlide: currentSlide });
+        $.extend(_, _.initials, { currentSlide: currentSlide });
 
         _.init();
 
@@ -39952,7 +39215,7 @@ var slick = createCommonjsModule(function (module, exports) {
         var _ = this, breakpoint, currentBreakpoint, l,
             responsiveSettings = _.options.responsive || null;
 
-        if ( $$$1.type(responsiveSettings) === 'array' && responsiveSettings.length ) {
+        if ( $.type(responsiveSettings) === 'array' && responsiveSettings.length ) {
 
             _.respondTo = _.options.respondTo || 'window';
 
@@ -40022,7 +39285,7 @@ var slick = createCommonjsModule(function (module, exports) {
         _.checkResponsive(false, true);
 
         if (_.options.focusOnSelect === true) {
-            $$$1(_.$slideTrack).children().on('click.slick', _.selectHandler);
+            $(_.$slideTrack).children().on('click.slick', _.selectHandler);
         }
 
         _.setSlideClasses(typeof _.currentSlide === 'number' ? _.currentSlide : 0);
@@ -40041,10 +39304,10 @@ var slick = createCommonjsModule(function (module, exports) {
 
         var _ = this;
 
-        if ($$$1(window).width() !== _.windowWidth) {
+        if ($(window).width() !== _.windowWidth) {
             clearTimeout(_.windowDelay);
             _.windowDelay = window.setTimeout(function() {
-                _.windowWidth = $$$1(window).width();
+                _.windowWidth = $(window).width();
                 _.checkResponsive();
                 if( !_.unslicked ) { _.setPosition(); }
             }, 50);
@@ -40150,7 +39413,7 @@ var slick = createCommonjsModule(function (module, exports) {
         }
 
         var offset = _.$slides.first().outerWidth(true) - _.$slides.first().width();
-        if (_.options.variableWidth === false) { _.$slideTrack.children('.slick-slide').width(_.slideWidth - offset); }
+        if (_.options.variableWidth === false) _.$slideTrack.children('.slick-slide').width(_.slideWidth - offset);
 
     };
 
@@ -40162,7 +39425,7 @@ var slick = createCommonjsModule(function (module, exports) {
         _.$slides.each(function(index, element) {
             targetLeft = (_.slideWidth * index) * -1;
             if (_.options.rtl === true) {
-                $$$1(element).css({
+                $(element).css({
                     position: 'relative',
                     right: targetLeft,
                     top: 0,
@@ -40170,7 +39433,7 @@ var slick = createCommonjsModule(function (module, exports) {
                     opacity: 0
                 });
             } else {
-                $$$1(element).css({
+                $(element).css({
                     position: 'relative',
                     left: targetLeft,
                     top: 0,
@@ -40216,19 +39479,19 @@ var slick = createCommonjsModule(function (module, exports) {
 
         var _ = this, l, item, option, value, refresh = false, type;
 
-        if( $$$1.type( arguments[0] ) === 'object' ) {
+        if( $.type( arguments[0] ) === 'object' ) {
 
             option =  arguments[0];
             refresh = arguments[1];
             type = 'multiple';
 
-        } else if ( $$$1.type( arguments[0] ) === 'string' ) {
+        } else if ( $.type( arguments[0] ) === 'string' ) {
 
             option =  arguments[0];
             value = arguments[1];
             refresh = arguments[2];
 
-            if ( arguments[0] === 'responsive' && $$$1.type( arguments[1] ) === 'array' ) {
+            if ( arguments[0] === 'responsive' && $.type( arguments[1] ) === 'array' ) {
 
                 type = 'responsive';
 
@@ -40247,7 +39510,7 @@ var slick = createCommonjsModule(function (module, exports) {
 
         } else if ( type === 'multiple' ) {
 
-            $$$1.each( option , function( opt, val ) {
+            $.each( option , function( opt, val ) {
 
                 _.options[opt] = val;
 
@@ -40258,7 +39521,7 @@ var slick = createCommonjsModule(function (module, exports) {
 
             for ( item in value ) {
 
-                if( $$$1.type( _.options.responsive ) !== 'array' ) {
+                if( $.type( _.options.responsive ) !== 'array' ) {
 
                     _.options.responsive = [ value[item] ];
 
@@ -40349,25 +39612,25 @@ var slick = createCommonjsModule(function (module, exports) {
             _.animType = 'OTransform';
             _.transformType = '-o-transform';
             _.transitionType = 'OTransition';
-            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) { _.animType = false; }
+            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) _.animType = false;
         }
         if (bodyStyle.MozTransform !== undefined) {
             _.animType = 'MozTransform';
             _.transformType = '-moz-transform';
             _.transitionType = 'MozTransition';
-            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.MozPerspective === undefined) { _.animType = false; }
+            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.MozPerspective === undefined) _.animType = false;
         }
         if (bodyStyle.webkitTransform !== undefined) {
             _.animType = 'webkitTransform';
             _.transformType = '-webkit-transform';
             _.transitionType = 'webkitTransition';
-            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) { _.animType = false; }
+            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) _.animType = false;
         }
         if (bodyStyle.msTransform !== undefined) {
             _.animType = 'msTransform';
             _.transformType = '-ms-transform';
             _.transitionType = 'msTransition';
-            if (bodyStyle.msTransform === undefined) { _.animType = false; }
+            if (bodyStyle.msTransform === undefined) _.animType = false;
         }
         if (bodyStyle.transform !== undefined && _.animType !== false) {
             _.animType = 'transform';
@@ -40505,18 +39768,18 @@ var slick = createCommonjsModule(function (module, exports) {
                 for (i = _.slideCount; i > (_.slideCount -
                         infiniteCount); i -= 1) {
                     slideIndex = i - 1;
-                    $$$1(_.$slides[slideIndex]).clone(true).attr('id', '')
+                    $(_.$slides[slideIndex]).clone(true).attr('id', '')
                         .attr('data-slick-index', slideIndex - _.slideCount)
                         .prependTo(_.$slideTrack).addClass('slick-cloned');
                 }
                 for (i = 0; i < infiniteCount  + _.slideCount; i += 1) {
                     slideIndex = i;
-                    $$$1(_.$slides[slideIndex]).clone(true).attr('id', '')
+                    $(_.$slides[slideIndex]).clone(true).attr('id', '')
                         .attr('data-slick-index', slideIndex + _.slideCount)
                         .appendTo(_.$slideTrack).addClass('slick-cloned');
                 }
                 _.$slideTrack.find('.slick-cloned').find('[id]').each(function() {
-                    $$$1(this).attr('id', '');
+                    $(this).attr('id', '');
                 });
 
             }
@@ -40541,13 +39804,13 @@ var slick = createCommonjsModule(function (module, exports) {
         var _ = this;
 
         var targetElement =
-            $$$1(event.target).is('.slick-slide') ?
-                $$$1(event.target) :
-                $$$1(event.target).parents('.slick-slide');
+            $(event.target).is('.slick-slide') ?
+                $(event.target) :
+                $(event.target).parents('.slick-slide');
 
         var index = parseInt(targetElement.attr('data-slick-index'));
 
-        if (!index) { index = 0; }
+        if (!index) index = 0;
 
         if (_.slideCount <= _.options.slidesToShow) {
 
@@ -40858,6 +40121,7 @@ var slick = createCommonjsModule(function (module, exports) {
     Slick.prototype.swipeMove = function(event) {
 
         var _ = this,
+            edgeWasHit = false,
             curLeft, swipeDirection, swipeLength, positionOffset, touches, verticalSwipeLength;
 
         touches = event.originalEvent !== undefined ? event.originalEvent.touches : null;
@@ -40977,7 +40241,7 @@ var slick = createCommonjsModule(function (module, exports) {
 
         var _ = this;
 
-        $$$1('.slick-cloned', _.$slider).remove();
+        $('.slick-cloned', _.$slider).remove();
 
         if (_.$dots) {
             _.$dots.remove();
@@ -41081,7 +40345,7 @@ var slick = createCommonjsModule(function (module, exports) {
 
     };
 
-    $$$1.fn.slick = function() {
+    $.fn.slick = function() {
         var _ = this,
             opt = arguments[0],
             args = Array.prototype.slice.call(arguments, 1),
@@ -41090,23 +40354,15 @@ var slick = createCommonjsModule(function (module, exports) {
             ret;
         for (i = 0; i < l; i++) {
             if (typeof opt == 'object' || typeof opt == 'undefined')
-                { _[i].slick = new Slick(_[i], opt); }
+                _[i].slick = new Slick(_[i], opt);
             else
-                { ret = _[i].slick[opt].apply(_[i].slick, args); }
-            if (typeof ret != 'undefined') { return ret; }
+                ret = _[i].slick[opt].apply(_[i].slick, args);
+            if (typeof ret != 'undefined') return ret;
         }
         return _;
     };
 
 }));
-});
-
-var slick$1 = /*#__PURE__*/Object.freeze({
-  default: slick,
-  __moduleExports: slick
-});
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Slick);
 
 
 /***/ }),
