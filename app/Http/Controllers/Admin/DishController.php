@@ -91,7 +91,7 @@ class DishController extends Controller
 
         // Mail::to('test@mail.com')->send(new FoodMail());
 
-        return redirect()->route('admin.dishes.index')->with('message', 'piatto aggiunto correttamente');
+        return redirect()->route('admin.dishes.index')->with('message', 'Piatto aggiunto correttamente');
 
     }
 

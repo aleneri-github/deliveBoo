@@ -71,6 +71,7 @@
             </div>
 
             <input class="btn btn-primary" type="submit" value="Crea">
+              <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary">Indietro</a>
         </form>
     </div>
 @endsection

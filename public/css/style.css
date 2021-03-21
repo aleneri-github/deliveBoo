@@ -696,7 +696,8 @@ footer .col-footer .logo {
 #dashboard .border-edit-create {
   border: 4px solid #FDC234;
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
+  background-color: #fed980;
 }
 #dashboard #admin-menu {
   width: 320px;

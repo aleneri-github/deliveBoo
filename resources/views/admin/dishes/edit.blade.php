@@ -67,10 +67,8 @@
                 </div>
 
             <button type="submit" class="btn btn-primary">Salva le modifiche</button>
+            <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary">Indietro</a>
 
         </form>
-
-        <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary">Indietro</a>
-
     </div>
 @endsection
