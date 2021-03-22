@@ -55,15 +55,23 @@
     </section>
 
     <section id="food">
-      <h1 class="text-center">Le novità</h1>
-      <div class="box-cards container text-center">
-        <div class="card_food" v-for="food in foods">
-          <img :src="'{{ asset('/storage') }}' + '/' + food.image" alt="sales">
-          <h5>@{{ food.name }}</h5>
-          <p>@{{ food.description }}</p>
-        </div>
-      </div>
+      <div class="slider-wrapper">
+              <div class="prev">
+                  <i class="fas fa-angle-left" @click="backward()"></i>
+              </div>
+              <div class="container_food">
+                <h2 class="text-center">Le nostre novità in zona</h2>
+                <div v-for="(food, index) in foods" class="images" :class="(index == indexOfImage) ? active : ''">
+                    <img :src="food.image">
+                    <h3>@{{ food.name }}</h3>
+                </div>
+              </div>
+              <div class="next">
+                  <i class="fas fa-angle-right" @click="forward()"></i>
+              </div>
+          </div>
     </section>
+
 
     <section id="carousel-type">
       <div class="types">
@@ -85,7 +93,7 @@
               <p>@{{ restaurant.phone_number }}</p>
             </div>
           </a>
-           
+
         </div>
       </div>
     </section>

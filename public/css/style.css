@@ -88,12 +88,15 @@ main #service .box-cards {
 main #service .box-cards .service-card {
   width: calc(100% / 3 - 20px);
   text-align: center;
-  margin: 10px;
+  margin-top: 40px;
+}
+main #service .box-cards .text-card {
+  margin-top: 25px;
 }
 main #food {
   width: 100%;
   height: 500px;
-  background-color: #FDC234;
+  background-color: #fdc234;
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
 }
@@ -316,9 +319,6 @@ main #restaurants .card_rest a .layover p {
   }
 }
 @media screen and (max-width: 900px) {
-  main h1 {
-    font-size: 2rem;
-  }
   main #restaurants {
     justify-content: center;
   }
@@ -341,9 +341,6 @@ main #restaurants .card_rest a .layover p {
   }
 }
 @media screen and (max-width: 656px) {
-  main h1 {
-    font-size: 1.5rem;
-  }
   main #carousel-type .types div h5 {
     font-size: 13px;
   }
@@ -363,9 +360,6 @@ main #restaurants .card_rest a .layover p {
   }
 }
 @media screen and (max-width: 500px) {
-  main h1 {
-    font-size: 1rem;
-  }
   main #carousel-type .types {
     flex-wrap: nowrap;
     height: 100%;
