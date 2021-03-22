@@ -10,7 +10,7 @@
             </div>
     
             <div>
-                <a href="{{ route('admin.dishes.create')}}" class="btn btn-primary">Crea un nuovo piatto</a>
+                <a href="{{ route('admin.dishes.create')}}" class="btn btn-dark">Crea un nuovo piatto</a>
             </div>
         </div>
     </div>
@@ -26,6 +26,30 @@
                 </div>
             </div>
         @endif
+
+        <div class="row-food d-flex">
+            <div class="tab tab-10">
+                ID
+            </div>
+            <div class="tab tab-big">
+                Nome
+            </div>
+            <div class="tab tab-10">
+                Prezzo
+            </div>
+            <div class="tab tab-10">
+                Immagine
+            </div>
+            <div class="tab tab-10">
+                {{-- EDIT --}}               
+            </div>
+            <div class="tab tab-10">
+                 {{-- DESTROY --}}
+            </div>
+            <div class="tab tab-10">
+                 {{-- SHOW --}}
+            </div>
+        </div>
 
         @foreach ($dishes as $dish)
         <div class="row-food d-flex">
