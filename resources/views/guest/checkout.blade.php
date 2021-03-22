@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="checkout" class="d-flex">
+<div id="checkout" class="container d-flex pt-5 pb-5">
 
   {{-- DATI DI CHECKOUT --}}
   <div id="checkout_data">
@@ -44,9 +44,11 @@
   {{-- CARRELLO --}}
   <div id="checkout_cart">
     <ul>
-      <li v-for="">
-        carrello
+      <li v-for="item in cart">
+        <h5><strong>@{{ item.name }}</strong></h5>
+        <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
       </li>
+      <h4 class="float-right mt-4">€ @{{ cartTotal().toFixed(2) }}</h4>
     </ul>
   </div>
 

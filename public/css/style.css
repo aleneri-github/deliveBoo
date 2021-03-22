@@ -501,25 +501,28 @@ footer .col-footer .logo {
 }
 #checkout #checkout_data {
   display: inline-block;
-  margin: 50px 25px 50px 50px;
+  margin-right: 25px;
   width: 60%;
   background-color: #FDC234;
-  padding: 20px;
+  padding: 40px;
   border-radius: 20px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
 }
 #checkout #checkout_cart {
   display: inline-block;
-  margin: 50px 50px 50px 25px;
+  margin-left: 25px;
   width: 40%;
-  background-color: #FDC234;
+  border-radius: 20px;
 }
 #checkout #checkout_cart ul {
   list-style: none;
 }
 #checkout #checkout_cart ul li {
   padding: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius: 20px;
+  background-color: #FDC234;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
 }
 #checkout .deliveboo_button {
   float: right;
