@@ -1,8 +1,7 @@
 require('./bootstrap');
 import Vue from 'vue';
-var braintree = require('braintree-web');
+
 var dropin = require('braintree-web-drop-in');
-// var button = document.querySelector('#submit-button');
 
 var checkout = new Vue(
   {
@@ -24,6 +23,33 @@ var checkout = new Vue(
         const parsed = JSON.stringify(this.cart);
         localStorage.setItem('cart', parsed);
       },
+      paymentBox() {
+        let form = document.querySelector('#payment-form');
+        let token = document.querySelector('#token');
+        let self = this;
+        dropin.create({
+          authorization: token.value,
+          container: '#dropin-container',
+          locale: 'it_IT'
+        }, function(err, instance) {
+          if (err) {
+            console.error(err);
+            return
+          }
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            instance.requestPaymentMethod().then(function(payload) {
+              nonce.value = payload.nonce;
+              cart.value = JSON.stringify(self.cart);
+              total.value = self.cartTotal();
+              form.submit();
+            }).catch(function(err) {
+              console.error(err);
+            });
+          })
+        }
+      );
+      }
     },
     mounted() {
       if (localStorage.getItem('cart')) {
@@ -34,27 +60,7 @@ var checkout = new Vue(
           localStorage.removeItem('cart');
         }
       }
-      dropin.create({
-      authorization: 'sandbox_q7gbgtzq_wjc3tmmcjzkgjqtj',
-      container: '#dropin-container',
-      card: {
-        cardholderName: true,
-      }
-      }, function (createErr, instance) {
-      $('#submit-button').click(function () {
-        instance.requestPaymentMethod(function (err, payload) {
-          if (err) {
-
-          } else {
-            axios.post('http://127.0.0.1:8000/checkout', { payload })
-            .then(function(response) {
-              // window.location = "/home"
-              console.log(response.data);
-            })
-          }
-        });
-      });
-    });
+      this.paymentBox();
     }
   }
 );

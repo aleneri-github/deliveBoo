@@ -15,8 +15,6 @@ class RestaurantController extends Controller
     $restaurants = Restaurant::with('types')->get();
     if ($_GET['type'] != 'all') {
       $filtered = $restaurants->filter(function ($value, $key) {
-        $value['types'] = $value->types->pluck('name')->toArray();
-        dd($value);
         return in_array($_GET['type'], $value->types->pluck('name')->toArray());
       });
       return response()->json($filtered);

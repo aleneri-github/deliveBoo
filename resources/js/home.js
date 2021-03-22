@@ -1,6 +1,5 @@
 require('./bootstrap');
 import Vue from 'vue';
-import 'slick-carousel/slick/slick';
 
 var home = new Vue(
   {

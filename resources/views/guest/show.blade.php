@@ -60,5 +60,5 @@
   </div>
 
   <script src="{{ asset('js/detail.js') }}" defer></script>
-    
+
 @endsection
