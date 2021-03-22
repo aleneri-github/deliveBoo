@@ -1,0 +1,28 @@
+#index-Menu {
+  overflow-y: auto;
+  .box-menu {
+    .row-food {
+      width: 100%;
+      padding: 5px 10px;
+      margin: 10px 0;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      box-shadow: 18px -19px 29px -26px rgb(0 0 0 / 30%);
+      .tab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tab-10 {
+        width: 10%;
+        img {
+          width: 100%;
+          border-radius: 5px;
+        }
+      }
+      .tab-big {
+        width: 40%;
+      }
+    }
+  }
+}
