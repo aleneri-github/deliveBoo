@@ -17,6 +17,23 @@
   border-radius: 10px;
 }
 
+a {
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 main {
   background-color: #fefefe;
 }
@@ -148,54 +165,21 @@ main #restaurants .card_rest:hover {
   cursor: pointer;
   transform: scale(1.025);
 }
-main #restaurants .card_rest:hover .overlay {
-  transform: translate(-350px);
-}
-main #restaurants .card_rest:hover h3 {
-  transform: translate(-120%);
-  opacity: 0;
-  font-size: 36px;
-}
 main #restaurants .card_rest a {
   color: inherit;
 }
 main #restaurants .card_rest a .layover {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  padding: 20px;
   background: white;
-  background: linear-gradient(330deg, rgba(255, 255, 255, 0.0595588577) 50%, black 100%);
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 36%, rgba(0, 0, 0, 0.8015581232) 100%);
 }
 main #restaurants .card_rest a .layover h3 {
-  position: absolute;
-  margin: 20px;
-  display: inline-block;
-  transition: 1.5s;
-  font-size: 36px;
+  font-size: 26px;
 }
-main #restaurants .card_rest a .overlay {
-  display: inline-block;
-  position: absolute;
-  right: -500px;
-  padding: 20px;
-  height: 100%;
-  width: 80%;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  z-index: 2;
-  position: absolute;
-  transition: 1.5s;
-}
-main #restaurants .card_rest a .overlay h2 {
-  margin: 10px 0 0 10px;
-}
-main #restaurants .card_rest a .overlay p {
-  margin: 10px 0 0 10px;
-}
-main #restaurants .card_rest a .overlay p:nth-of-type(2) {
-  margin: 0 0 0 10px;
+main #restaurants .card_rest a .layover p {
+  font-size: 26px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -517,6 +501,7 @@ footer .col-footer .logo {
   height: calc(100vh - 55px);
   background-color: #fefefe;
   background-image: linear-gradient(90deg, #fefefe 57%, #FDC234 43%);
+  padding: 150px;
 }
 #login-page .card {
   width: 100%;
@@ -727,10 +712,12 @@ footer .col-footer .logo {
   width: 100%;
 }
 #dashboard #admin-menu {
-  width: 320px;
-  height: 100vh;
+  position: fixed;
+  width: 200px;
+  height: 100%;
   background-color: #FDC234;
-  padding-left: 30px;
+  padding-left: 5px;
+  overflow: hidden;
 }
 #dashboard #admin-menu .logo-nav {
   width: 100%;
@@ -756,7 +743,7 @@ footer .col-footer .logo {
 #dashboard #admin-menu .side-menu .admin-menu ul li {
   position: relative;
   width: 100%;
-  padding: 30px 40px;
+  padding: 20px 30px;
   list-style-type: none;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -771,23 +758,27 @@ footer .col-footer .logo {
 }
 #dashboard #admin-menu .side-menu .admin-menu ul li a {
   color: #fefefe;
-  font-size: 25px;
+  font-size: 18px;
 }
 #dashboard #admin-menu .side-menu .admin-menu ul li a i {
-  font-size: 25px;
+  font-size: 18px;
   padding-right: 10px;
 }
 #dashboard #admin-menu .side-menu .admin-menu ul li a:hover {
   text-decoration: none;
 }
 #dashboard #admin-show {
-  width: calc(100% - 620px);
-  height: 100vh;
+  width: calc(100% - 400px);
   padding: 30px 20px;
+  margin-left: 200px;
 }
 #dashboard #admin-info {
-  width: 300px;
-  height: 100vh;
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  overflow: hidden;
   padding: 15px 30px;
   border-left: 1px solid lightgray;
 }
@@ -863,12 +854,10 @@ footer .col-footer .logo {
   }
   #dashboard #admin-show {
     width: calc(100% - 300px);
-    height: 100vh;
+    margin-left: 100px;
     padding: 30px 20px;
   }
   #dashboard #admin-info {
-    width: 300px;
-    height: 100vh;
     padding: 15px 30px;
     border-left: 1px solid lightgray;
   }
@@ -901,4 +890,30 @@ footer .col-footer .logo {
   #dashboard #admin-info .data {
     display: none;
   }
+}
+#index-Menu {
+  overflow-y: auto;
+}
+#index-Menu .box-menu .row-food {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 18px -19px 29px -26px rgba(0, 0, 0, 0.3);
+}
+#index-Menu .box-menu .row-food .tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#index-Menu .box-menu .row-food .tab-10 {
+  width: 10%;
+}
+#index-Menu .box-menu .row-food .tab-10 img {
+  width: 100%;
+  border-radius: 5px;
+}
+#index-Menu .box-menu .row-food .tab-big {
+  width: 40%;
 }

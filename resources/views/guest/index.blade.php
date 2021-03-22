@@ -81,12 +81,9 @@
           <a href="#">
             <div class="layover">
               <h3>@{{ restaurant.name }}</h3>
-            </div>
-            <div class="overlay">
-              <h2><strong>@{{ restaurant.name }}</strong></h2>
               <p>@{{ restaurant.address }}</p>
               <p>@{{ restaurant.phone_number }}</p>
-            </div> 
+            </div>
           </a>
            
         </div>

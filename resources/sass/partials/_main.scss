@@ -133,56 +133,45 @@ main {
       &:hover {
         cursor: pointer;
         transform: scale(1.025);
-        .overlay {
-          transform: translate(-350px);
-        }
-        h3 {
-          transform: translate(-120%);
-          opacity: 0;
-          font-size: 36px;
-        }
       }
       a {
         color: inherit;
         .layover {
-          position: absolute;
-          top: 0;
-          left: 0;
           width: 100%;
           height: 100%;
+          padding: 20px;
           background: rgb(255,255,255);
-          background: linear-gradient(330deg, rgba(255,255,255,0.05955885772277658) 50%, rgba(0,0,0,1) 100%);
-          h3 {
-            position: absolute;
-            margin: 20px;
-            display: inline-block;
-            transition: 1.5s;
-            font-size: 36px;
+          background: linear-gradient(270deg, rgba(255,255,255,0) 36%, rgba(0,0,0,0.8015581232492998) 100%);
+          h3  {
+            font-size: 26px;
+          }
+          p {
+            font-size: 26px;
           }
         }
 
-        .overlay {
-          display: inline-block;
-          position: absolute;
-          right: -500px;
-          padding: 20px;
-          height: 100%;
-          width: 80%;
-          background-color: rgba(0, 0, 0, 0.4);
-          border-radius: 20px;
-          z-index: 2;
-          position: absolute;
-          transition: 1.5s;
-          h2 {
-            margin: 10px 0 0 10px;
-          }
-          p {
-            margin: 10px 0 0 10px;
-            &:nth-of-type(2) {
-              margin: 0 0 0 10px
-            }
-          }
-        }
+        // .overlay {
+        //   display: inline-block;
+        //   position: absolute;
+        //   right: -500px;
+        //   padding: 20px;
+        //   height: 100%;
+        //   width: 80%;
+        //   background-color: rgba(0, 0, 0, 0.4);
+        //   border-radius: 20px;
+        //   z-index: 2;
+        //   position: absolute;
+        //   transition: 1.5s;
+        //   h2 {
+        //     margin: 10px 0 0 10px;
+        //   }
+        //   p {
+        //     margin: 10px 0 0 10px;
+        //     &:nth-of-type(2) {
+        //       margin: 0 0 0 10px
+        //     }
+        //   }
+        // }
       }
     }
   }
