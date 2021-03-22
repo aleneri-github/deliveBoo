@@ -78,17 +78,12 @@ main #jumbotron_main .container .jumb-img img {
   width: 100%;
 }
 main #service {
-  position: relative;
-}
-main #service h1 {
-  position: absolute;
-  top: 10px;
-  right: 50%;
-  transform: translateX(50%);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 main #service .box-cards {
   display: flex;
-  padding-top: 80px;
 }
 main #service .box-cards .service-card {
   width: calc(100% / 3 - 20px);
@@ -191,10 +186,49 @@ main #restaurants .card_rest a .layover p {
   main #jumbotron_main .container {
     padding-top: 8%;
   }
+  main #restaurants {
+    padding: 40px;
+  }
 }
 @media screen and (max-width: 1199px) {
   main #jumbotron_main .container {
-    display: block !important;
+    flex-direction: column;
+  }
+  main #jumbotron_main .container .title {
+    padding-top: 0;
+  }
+  main #jumbotron_main .container .title h1, main #jumbotron_main .container .title .h1 {
+    padding-top: 0;
+  }
+  main #jumbotron_main .container .jumb-img {
+    display: flex;
+    justify-content: center;
+  }
+  main #jumbotron_main .container .jumb-img img {
+    width: 70%;
+  }
+  main #service {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  main #service h1 {
+    bottom: 2%;
+  }
+  main #restaurants {
+    justify-content: center;
+    padding: 40px;
+  }
+  main #restaurants .card_rest {
+    width: calc(100% / 2 - 20px);
+  }
+}
+@media screen and (max-width: 900px) {
+  main #restaurants {
+    justify-content: center;
+  }
+  main #restaurants .card_rest {
+    min-width: 500px;
   }
 }
 footer {

@@ -43,16 +43,11 @@ main {
   }
 
   #service {
-    position: relative;
-    h1 {
-      position: absolute;
-      top: 10px;
-      right: 50%;
-      transform: translateX(50%);
-    }
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     .box-cards {
       display: flex;
-      padding-top: 80px;
       .service-card {
         width: calc(100% / 3 - 20px);
         text-align: center;
@@ -184,6 +179,12 @@ main {
         padding-top: 5%;
       }
     }
+
+    // #restaurants {
+    //   .card_rest {
+    //     width: calc(100% / 2 - 20px);
+    //   }
+    // }
   }
 }
 @media screen and (max-width: 1280px) {
@@ -193,19 +194,56 @@ main {
         padding-top: 8%;
       }
     }
+
+    #restaurants {
+      padding: 40px;
+    }
   }
 }
 @media screen and (max-width: 1199px) {
   main {
     #jumbotron_main {
       .container {
-        display: block !important;
+        flex-direction: column;
         .title {
-
+          padding-top: 0;
+          h1, .h1 {
+            padding-top: 0;
+          }
         }
         .jumb-img {
-
+          display: flex;
+          justify-content: center;
+          img {
+            width: 70%;
+          }
         }
+      }
+    }
+    #service {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      h1 {
+        bottom: 2%;
+      }
+    }
+    #restaurants {
+      justify-content: center;
+      padding: 40px;
+      .card_rest {
+        width: calc(100% / 2 - 20px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+     #restaurants {
+      justify-content: center;
+      .card_rest {
+        min-width: 500px;
       }
     }
   }
