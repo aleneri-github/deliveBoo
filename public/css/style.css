@@ -17,13 +17,13 @@
   border-radius: 10px;
 }
 
-<<<<<<< HEAD
 a {
   color: inherit;
 }
 a:hover {
   text-decoration: none;
-=======
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 1s;
@@ -32,7 +32,6 @@ a:hover {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
->>>>>>> indexAdmin
 }
 
 main {

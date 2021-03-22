@@ -14,15 +14,7 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
 
-    
-</div>
-
-<div class="container">
-
-=======
-    
     <div class="box-menu">
     
     
@@ -34,7 +26,6 @@
                 </div>
             </div>
         @endif
->>>>>>> indexAdmin
 
         <div class="row-food d-flex">
             <div class="tab tab-10">
