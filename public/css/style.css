@@ -524,6 +524,9 @@ footer .col-footer .logo {
   background-color: #FDC234;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
 }
+#checkout #checkout_cart ul li .buttons {
+  float: right;
+}
 #checkout .deliveboo_button {
   float: right;
   padding: 15px;

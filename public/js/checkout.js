@@ -71855,6 +71855,27 @@ var checkout = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     saveCart: function saveCart() {
       var parsed = JSON.stringify(this.cart);
       localStorage.setItem('cart', parsed);
+    },
+    addItem: function addItem(item) {
+      console.log(item);
+      item.quantity++;
+      item.total += item.price;
+      this.$forceUpdate();
+      this.saveCart();
+    },
+    removeItem: function removeItem(item) {
+      console.log(item);
+
+      if (item.quantity == 1) {
+        var index = this.cart.indexOf(item);
+        this.cart.splice(index, 1);
+        return;
+      }
+
+      item.quantity--;
+      item.total -= item.price;
+      this.$forceUpdate();
+      this.saveCart();
     }
   },
   mounted: function mounted() {

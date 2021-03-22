@@ -21,6 +21,25 @@ var checkout = new Vue(
         const parsed = JSON.stringify(this.cart);
         localStorage.setItem('cart', parsed);
       },
+      addItem(item) {
+        console.log(item)
+        item.quantity++;
+        item.total += item.price;
+        this.$forceUpdate();
+        this.saveCart();
+      },
+      removeItem(item) {
+        console.log(item)
+        if (item.quantity == 1) {
+          let index = this.cart.indexOf(item);
+          this.cart.splice(index,1);
+          return
+        }
+        item.quantity--;
+        item.total -= item.price;
+        this.$forceUpdate();
+        this.saveCart();
+      },
     },
     mounted() {
       if (localStorage.getItem('cart')) {

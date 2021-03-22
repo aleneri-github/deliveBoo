@@ -47,6 +47,18 @@
       <li v-for="item in cart">
         <h5><strong>@{{ item.name }}</strong></h5>
         <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
+        <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
+
+          <div class="buttons">
+            {{-- ADD --}}
+            <button class="deliveboo_button" @click="addItem(item)">
+              <i class="fas fa-plus"></i>
+            </button>
+            {{-- REMOVE --}}
+            <button class="deliveboo_button" @click="removeItem(item)">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
       </li>
       <h4 class="float-right mt-4">€ @{{ cartTotal().toFixed(2) }}</h4>
     </ul>
