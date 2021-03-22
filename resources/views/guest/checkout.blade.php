@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div id="checkout" class="container d-flex pt-3 pb-5">
+<div id="checkout" class="container d-flex pt-5 pb-5">
 
   {{-- DATI DI CHECKOUT --}}
   <div id="checkout_container">
-    <h3>Dati di fatturazione</h3>
+    <h3 class="mb-3">Dati di fatturazione</h3>
 
     <div id="checkout_data">
       {{-- FORM BRAINTREE --}}
@@ -47,7 +47,7 @@
 
   {{-- CARRELLO --}}
   <div id="checkout_cart">
-    <h3>Carrello</h3>
+    <h3 class="mb-3">Carrello</h3>
     <ul>
       <li v-for="item in cart">
         <h5><strong>@{{ item.name }}</strong></h5>
@@ -63,7 +63,10 @@
           </button>
         </div>
       </li>
-      <h4 class="float-right mt-4">€ @{{ cartTotal().toFixed(2) }}</h4>
+      <div class="mt-4 m-3 d-flex justify-content-between">
+        <h4>Totale</h4>
+        <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
+      </div>
     </ul>
   </div>
 

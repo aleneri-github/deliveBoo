@@ -543,6 +543,16 @@ footer .col-footer .logo {
   color: #fefefe;
 }
 
+@media screen and (max-width: 992px) {
+  #checkout_data {
+    height: 780px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #checkout_container {
+    background-color: bisque;
+  }
+}
 #login-page {
   display: flex;
   align-items: center;

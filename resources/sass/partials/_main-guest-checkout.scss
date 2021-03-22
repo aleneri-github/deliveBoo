@@ -48,5 +48,14 @@
 
 // DISPOSITVI SM
 @media screen and (max-width: 992px) {
+  #checkout_data {
+    height: 780px;
+  }
+} 
 
+// DISPOSITVI MD
+@media screen and (max-width: 768px) {
+  #checkout_container {
+    background-color: bisque;
+  }
 } 
