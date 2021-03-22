@@ -331,13 +331,13 @@ main {
         bottom: 2%;
       }
     }
-    #restaurants {
-      justify-content: center;
-      padding: 40px;
-      .card_rest {
-        width: calc(100% / 2 - 20px);
-      }
-    }
+    // #restaurants {
+    //   justify-content: center;
+    //   padding: 40px;
+    //   .card_rest {
+    //     width: calc(100% / 2 - 20px);
+    //   }
+    // }
   }
 }
 
@@ -347,7 +347,7 @@ main {
      #restaurants {
       justify-content: center;
       .card_rest {
-        min-width: 500px;
+        width: calc(100% / 2 - 20px);
       }
     }
     #service {
@@ -418,6 +418,13 @@ main {
 
 @media screen and (max-width: 500px) {
   main {
+    #restaurants {
+     justify-content: center;
+     .card_rest {
+       width: calc(100% / 1 - 20px);
+     }
+   }
+
     #carousel-type {
       .types {
         flex-wrap: nowrap;

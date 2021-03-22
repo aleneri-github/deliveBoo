@@ -310,20 +310,13 @@ main #restaurants .card_rest a .layover p {
   main #service h1 {
     bottom: 2%;
   }
-  main #restaurants {
-    justify-content: center;
-    padding: 40px;
-  }
-  main #restaurants .card_rest {
-    width: calc(100% / 2 - 20px);
-  }
 }
 @media screen and (max-width: 900px) {
   main #restaurants {
     justify-content: center;
   }
   main #restaurants .card_rest {
-    min-width: 500px;
+    width: calc(100% / 2 - 20px);
   }
   main #service {
     display: flex;
@@ -360,6 +353,12 @@ main #restaurants .card_rest a .layover p {
   }
 }
 @media screen and (max-width: 500px) {
+  main #restaurants {
+    justify-content: center;
+  }
+  main #restaurants .card_rest {
+    width: calc(100% / 1 - 20px);
+  }
   main #carousel-type .types {
     flex-wrap: nowrap;
     height: 100%;

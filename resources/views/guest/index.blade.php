@@ -62,7 +62,7 @@
               <div class="container_food">
                 <h2 class="text-center">Le nostre novità in zona</h2>
                 <div v-for="(food, index) in foods" class="images" :class="(index == indexOfImage) ? active : ''">
-                    <img :src="food.image">
+                    <img src="https://static.cookist.it/wp-content/uploads/sites/21/2018/07/hamburger-all-italiana.jpg">
                     <h3>@{{ food.name }}</h3>
                 </div>
               </div>
