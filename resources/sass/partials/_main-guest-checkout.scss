@@ -1,41 +1,52 @@
-#checkout {
-  // DATI DI CHECKOUT
-  #checkout_data {
-    display: inline-block;
-    margin-right: 25px;
-    width: 60%;
-    background-color: $yellow;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
-  }  
-  // CARRELLO
-  #checkout_cart {
-    display: inline-block;
-    margin-left: 25px;
-    width: 40%;
-    border-radius: 20px;
-    ul {
-      list-style: none;
-      li {
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 20px;
-        background-color: $yellow;
-        box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
-        .buttons {
-          float: right;
-          .deliveboo_button {
-            margin-left: 5px;
-            width: 30px;
-            height: 30px;
-          }
+// DATI DI CHECKOUT
+#checkout_container {
+  display: inline-block;
+  width: 60%;
+}
+#checkout_data {
+  margin-right: 25px;
+  background-color: $yellow;
+  padding: 40px;
+  height: 750px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
+}  
+// CARRELLO
+#checkout_cart {
+  display: inline-block;
+  margin-left: 25px;
+  width: 40%;
+  border-radius: 20px;
+  ul {
+    list-style: none;
+    li {
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      background-color: $yellow;
+      box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
+      .buttons {
+        float: right;
+        .deliveboo_button {
+          margin-left: 5px;
+          width: 30px;
+          height: 30px;
         }
       }
     }
   }
-  .deliveboo_button {
-    float: right;
-    color: $white;
-  }
 }
+.deliveboo_button {
+  float: right;
+  color: $white;
+}
+
+// MEDIA QUERIES ------------------------
+// lg - 1200px
+// md - 768px
+// sm - 576px
+
+// DISPOSITVI SM
+@media screen and (max-width: 992px) {
+
+} 

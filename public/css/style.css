@@ -499,40 +499,46 @@ footer .col-footer .logo {
     float: right;
   }
 }
-#checkout #checkout_data {
+#checkout_container {
   display: inline-block;
-  margin-right: 25px;
   width: 60%;
+}
+
+#checkout_data {
+  margin-right: 25px;
   background-color: #FDC234;
   padding: 40px;
+  height: 750px;
   border-radius: 20px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
 }
-#checkout #checkout_cart {
+
+#checkout_cart {
   display: inline-block;
   margin-left: 25px;
   width: 40%;
   border-radius: 20px;
 }
-#checkout #checkout_cart ul {
+#checkout_cart ul {
   list-style: none;
 }
-#checkout #checkout_cart ul li {
+#checkout_cart ul li {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 20px;
   background-color: #FDC234;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
 }
-#checkout #checkout_cart ul li .buttons {
+#checkout_cart ul li .buttons {
   float: right;
 }
-#checkout #checkout_cart ul li .buttons .deliveboo_button {
+#checkout_cart ul li .buttons .deliveboo_button {
   margin-left: 5px;
   width: 30px;
   height: 30px;
 }
-#checkout .deliveboo_button {
+
+.deliveboo_button {
   float: right;
   color: #fefefe;
 }
