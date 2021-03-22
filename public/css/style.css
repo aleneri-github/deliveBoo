@@ -251,19 +251,19 @@ footer .col-footer .logo {
   max-width: 150px;
 }
 
-#jumbotron {
+#jumbotron_rest {
   height: 500px;
   background-position: center;
   background-size: cover;
 }
-#jumbotron .dark_layer {
+#jumbotron_rest .dark_layer {
   position: relative;
   padding: 100px;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
-#jumbotron h1 {
+#jumbotron_rest h1 {
   position: absolute;
   bottom: 100px;
   font-size: 64px;
@@ -274,7 +274,7 @@ footer .col-footer .logo {
 
 #detail {
   height: 600px;
-  background-color: #fee099;
+  background-color: #fefefe;
 }
 #detail #cards {
   padding: 40px;
@@ -335,6 +335,24 @@ footer .col-footer .logo {
 #detail #cards .card_dish:hover .img_layer {
   transform: scale(1.05);
 }
+#detail .detail_button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #01a183;
+  border-radius: 10px;
+  transform: translate(0, -25%);
+}
+#detail .detail_button i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+#detail .detail_button:hover {
+  background-color: #008169;
+}
 #detail #cart {
   margin: 40px;
   padding: 40px;
@@ -347,21 +365,27 @@ footer .col-footer .logo {
 #detail #cart ul {
   list-style: none;
 }
+#detail #cart ul li {
+  margin-bottom: 10px;
+}
+#detail #cart ul li .cart_buttons .buttons {
+  float: right;
+}
 
 @media screen and (max-width: 1200px) {
-  #jumbotron {
+  #jumbotron_rest {
     height: 350px;
     background-position: center;
     background-size: cover;
   }
-  #jumbotron .dark_layer {
+  #jumbotron_rest .dark_layer {
     position: relative;
     padding: 60px;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  #jumbotron h1 {
+  #jumbotron_rest h1 {
     position: absolute;
     bottom: 60px;
     font-size: 48px;
@@ -371,7 +395,7 @@ footer .col-footer .logo {
   }
 
   #detail {
-    height: 400px;
+    height: 600px;
   }
   #detail #cards {
     padding: 20px;
@@ -383,26 +407,27 @@ footer .col-footer .logo {
     height: 60%;
   }
   #detail #cart {
-    margin: 20px;
+    margin: 0;
     padding: 20px;
     width: 25%;
-    border-radius: 20px;
+    font-size: 16px;
+    border-radius: 0;
   }
 }
-@media screen and (max-width: 718px) {
-  #jumbotron {
+@media screen and (max-width: 768px) {
+  #jumbotron_rest {
     height: 225px;
     background-position: center;
     background-size: cover;
   }
-  #jumbotron .dark_layer {
+  #jumbotron_rest .dark_layer {
     position: relative;
     padding: 30px;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  #jumbotron h1 {
+  #jumbotron_rest h1 {
     position: absolute;
     bottom: 30px;
     font-size: 48px;
@@ -412,12 +437,11 @@ footer .col-footer .logo {
   }
 
   #detail {
-    color: #7a7a7a;
-    height: 500px;
+    height: 400px;
   }
   #detail #cards {
-    width: 75%;
-    padding: 60px;
+    width: 60%;
+    padding: 20px;
   }
   #detail #cards .card_dish {
     width: calc(100% - 20px);
@@ -428,39 +452,41 @@ footer .col-footer .logo {
   #detail #cart {
     margin: 0;
     padding: 20px;
-    width: 25%;
+    width: 40%;
+    font-size: 12px;
     border-radius: 0;
   }
 }
 @media screen and (max-width: 576px) {
-  #jumbotron {
-    height: 225px;
+  #jumbotron_rest {
+    height: 175px;
     background-position: center;
     background-size: cover;
   }
-  #jumbotron .dark_layer {
+  #jumbotron_rest .dark_layer {
     position: relative;
     padding: 30px;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  #jumbotron h1 {
+  #jumbotron_rest h1 {
     position: absolute;
     bottom: 30px;
-    font-size: 48px;
+    font-size: 36px;
     word-wrap: break-word;
     color: #fefefe;
     text-transform: uppercase;
   }
 
   #detail {
-    color: #7a7a7a;
-    height: 500px;
+    position: relative;
+    height: 800px;
   }
   #detail #cards {
     width: 100%;
     padding: 60px;
+    padding-top: 160px;
   }
   #detail #cards .card_dish {
     width: calc(100% - 20px);
@@ -469,7 +495,20 @@ footer .col-footer .logo {
     height: 60%;
   }
   #detail #cart {
-    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    overflow-y: scroll;
+  }
+  #detail #cart ul {
+    width: 50%;
+    display: inline-block;
+  }
+  #detail #cart h3 {
+    position: sticky;
+    top: 20px;
+    float: right;
   }
 }
 #login-page {

@@ -1,5 +1,5 @@
 // JUMBOTRON ------------------------
-#jumbotron {
+#jumbotron_rest {
   height: 500px;
   background-position: center;
   background-size: cover;
@@ -20,13 +20,10 @@
   }
 }
 
-// background: linear-gradient(
-// 0deg
-// , rgba(20, 25, 34, 0.8), rgba(20, 25, 34, 1));
 // DETTAGLIO ------------------------
 #detail {
   height: 600px;
-  background-color: lighten($yellow, 20%);
+  background-color: $white;
   #cards {
     padding: 40px;
     width: 75%;
@@ -57,16 +54,6 @@
           background: linear-gradient(220deg, rgba(255, 255, 255, 0) 50%, rgba(0,0,0,0.6) 100%);
           transition: 0.5s;
         }
-        // &::before {
-        //   content: '';
-        //   position: absolute;
-        //   top: 0;
-        //   left: 0;
-        //   width: 100%;
-        //   height: 100%;
-        //   background: linear-gradient(220deg, rgba(255, 255, 255, 0) 50%, rgba(0,0,0,0.6) 100%);
-        //   transition: 0.5s;
-        // }
         img {
           height: 100%;
         }
@@ -84,12 +71,6 @@
           height: 100px
         }
       }
-      // &:hover {
-      //   cursor: pointer;
-      //   transform: scale(1.025);
-      //   border: 6px solid $yellow;
-      //   box-shadow: 0 0 36px 12px rgba(0,0,0, 0.75);
-      // }
       &:hover {
         cursor: pointer;
         box-shadow: 0 0 36px 12px rgba(0,0,0, 0.75);
@@ -102,6 +83,24 @@
       }
     }
   }
+  .detail_button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: $greenButton;
+    border-radius: 10px;
+    transform: translate(0, -25%);
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+    }
+    &:hover {
+      background-color: $btnHover
+    }
+  } 
   #cart {
     margin: 40px;
     padding: 40px;
@@ -112,6 +111,15 @@
     box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
     ul {
       list-style: none;
+      li {
+        margin-bottom: 10px;
+        .cart_buttons {
+          // background-color: $white;
+          .buttons {
+            float: right;
+          }
+        }
+      }
     }
   }
 }
@@ -124,7 +132,7 @@
 // DISPOSITIVI LG
 @media screen and (max-width: 1200px) {
 
-  #jumbotron {
+  #jumbotron_rest {
     height: 350px;
     background-position: center;
     background-size: cover;
@@ -146,7 +154,7 @@
   }
   
   #detail {
-    height: 400px;
+    height: 600px;
     #cards {
       padding: 20px;
       .card_dish {
@@ -157,19 +165,20 @@
       }
     }
     #cart {
-      margin: 20px;
+      margin: 0;
       padding: 20px;
       width: 25%;
-      border-radius: 20px;
+      font-size: 16px;
+      border-radius: 0;
     }
   }
 
 }
 
 // DISPOSITIVI MD
-@media screen and (max-width: 718px) {
+@media screen and (max-width: 768px) {
 
-  #jumbotron {
+  #jumbotron_rest {
     height: 225px;
     background-position: center;
     background-size: cover;
@@ -191,11 +200,10 @@
   }
 
   #detail {
-    color: $greyText;
-    height: 500px;
+    height: 400px;
     #cards {
-      width: 75%;
-      padding: 60px;
+      width: 60%;
+      padding: 20px;
       .card_dish {
         width: calc(100% - 20px);
         img {
@@ -206,7 +214,8 @@
     #cart {
       margin: 0;
       padding: 20px;
-      width: 25%;
+      width: 40%;
+      font-size: 12px;
       border-radius: 0;
     }
   }
@@ -215,8 +224,8 @@
 // DISPOSITIVI SM
 @media screen and (max-width: 576px) {
 
-  #jumbotron {
-    height: 225px;
+  #jumbotron_rest {
+    height: 175px;
     background-position: center;
     background-size: cover;
     .dark_layer {
@@ -229,7 +238,7 @@
     h1 {
       position: absolute;
       bottom: 30px;
-      font-size: 48px;
+      font-size: 36px;
       word-wrap: break-word;
       color: $white;
       text-transform: uppercase;
@@ -237,11 +246,12 @@
   }
 
   #detail {
-    color: $greyText;
-    height: 500px;
+    position: relative;
+    height: 800px;
     #cards {
       width: 100%;
       padding: 60px;
+      padding-top: 160px;
       .card_dish {
         width: calc(100% - 20px);
         img {
@@ -250,7 +260,20 @@
       }
     }
     #cart {
-      display: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 150px;
+      overflow-y: scroll;
+      ul {
+        width: 50%;
+        display: inline-block;
+      }
+      h3 {
+        position: sticky;
+        top: 20px;
+        float: right;
+      }
     }
   }
 }

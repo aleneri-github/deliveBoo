@@ -3,7 +3,7 @@
 @section('content')
 
   {{-- JUMBOTRON --}}
-  <div id="jumbotron" style="background-image: url('{{ asset('storage/' . $restaurant->image) }}')">
+  <div id="jumbotron_rest" style="background-image: url('{{ asset('storage/' . $restaurant->image) }}')">
     <div class="dark_layer">
       <h1>{{ $restaurant->name }}</h1>
     </div>
@@ -31,12 +31,12 @@
           </div>
           {{-- BUTTONS --}}
           <div class="buttons">
-            {{-- ADD --}}
-          <button class="btn btn-outline-success" @click="addOne({{ $dish }})">
+          {{-- ADD --}}
+          <button class="detail_button" @click="addOne({{ $dish }})">
             <i class="fas fa-plus"></i>
           </button>
           {{-- REMOVE --}}
-          <button class="btn btn-outline-danger" @click="removeOne({{ $dish }})">
+          <button class="detail_button" @click="removeOne({{ $dish }})">
             <i class="fas fa-minus"></i>
           </button>
           </div>
@@ -50,8 +50,20 @@
     <div id="cart">
       <ul>
         <li v-for="item in cart">
-          @{{ item.quantity }}x <strong>@{{ item.name }}</strong> - € @{{ item.total.toFixed(2) }}
-          <hr>
+          <span><strong>@{{ item.name }}</strong></span>
+          <div class="cart_buttons">
+            <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
+            <div class="buttons">
+              {{-- ADD --}}
+              <button class="detail_button" @click="addItem(item)">
+                <i class="fas fa-plus"></i>
+              </button>
+              {{-- REMOVE --}}
+              <button class="detail_button" @click="removeItem(item)">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>          
         </li>
       </ul>
       <h3>€ @{{ cartTotal().toFixed(2) }}</h3>
