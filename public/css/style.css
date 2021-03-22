@@ -495,6 +495,16 @@ footer .col-footer .logo {
     float: right;
   }
 }
+#checkout_data {
+  background-color: #FDC234;
+  padding: 20px;
+}
+
+#checkout_cart {
+  background-color: #FDC234;
+  padding: 20px;
+}
+
 #login-page {
   display: flex;
   align-items: center;
