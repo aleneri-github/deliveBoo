@@ -71872,7 +71872,8 @@ var checkout = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     var self = this;
     dropin.create({
       authorization: 'sandbox_5r6c6ymm_ffhwsdzry36sq5tt',
-      container: '#dropin-container'
+      container: '#dropin-container',
+      locale: 'it_IT'
     }, function (err, instance) {
       if (err) {
         console.log(err);

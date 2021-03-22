@@ -16,6 +16,16 @@
   border-radius: 10px;
 }
 
+// button in slite Glovo
+.deliveboo_button {
+  background-color: $greenButton;
+  border-radius: 10px;
+  border: none;
+  &:hover {
+    background-color: $btnHover
+  }
+} 
+
 a {
   color: inherit;
   &:hover {

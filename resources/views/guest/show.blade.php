@@ -32,11 +32,11 @@
           {{-- BUTTONS --}}
           <div class="buttons">
           {{-- ADD --}}
-          <button class="detail_button" @click="addOne({{ $dish }})">
+          <button class="deliveboo_button" @click="addOne({{ $dish }})">
             <i class="fas fa-plus"></i>
           </button>
           {{-- REMOVE --}}
-          <button class="detail_button" @click="removeOne({{ $dish }})">
+          <button class="deliveboo_button" @click="removeOne({{ $dish }})">
             <i class="fas fa-minus"></i>
           </button>
           </div>
@@ -55,11 +55,11 @@
             <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
             <div class="buttons">
               {{-- ADD --}}
-              <button class="detail_button" @click="addItem(item)">
+              <button class="deliveboo_button" @click="addItem(item)">
                 <i class="fas fa-plus"></i>
               </button>
               {{-- REMOVE --}}
-              <button class="detail_button" @click="removeItem(item)">
+              <button class="deliveboo_button" @click="removeItem(item)">
                 <i class="fas fa-minus"></i>
               </button>
             </div>

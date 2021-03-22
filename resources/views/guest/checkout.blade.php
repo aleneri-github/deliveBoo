@@ -34,7 +34,7 @@
 
       {{-- DATI PAGAMENTO BRAINTREE --}}
       <div id="dropin-container"></div>
-      <input type="submit" value="Compra"></input>
+      <input class="deliveboo_button" type="submit" value="Compra"></input>
       <input type="hidden" id="nonce" name="nonce"></input>
       <input type="hidden" id="cart" name="cart"></input>
     </form>

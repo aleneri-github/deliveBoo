@@ -83,12 +83,10 @@
       }
     }
   }
-  .detail_button {
+  .deliveboo_button {
     position: relative;
     width: 30px;
     height: 30px;
-    background-color: $greenButton;
-    border-radius: 10px;
     transform: translate(0, -25%);
     i {
       position: absolute;
@@ -96,9 +94,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 12px;
-    }
-    &:hover {
-      background-color: $btnHover
     }
   } 
   #cart {

@@ -17,6 +17,15 @@
   border-radius: 10px;
 }
 
+.deliveboo_button {
+  background-color: #01a183;
+  border-radius: 10px;
+  border: none;
+}
+.deliveboo_button:hover {
+  background-color: #008169;
+}
+
 a {
   color: inherit;
 }
@@ -319,23 +328,18 @@ footer .col-footer .logo {
 #detail #cards .card_dish:hover .img_layer {
   transform: scale(1.05);
 }
-#detail .detail_button {
+#detail .deliveboo_button {
   position: relative;
   width: 30px;
   height: 30px;
-  background-color: #01a183;
-  border-radius: 10px;
   transform: translate(0, -25%);
 }
-#detail .detail_button i {
+#detail .deliveboo_button i {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 12px;
-}
-#detail .detail_button:hover {
-  background-color: #008169;
 }
 #detail #cart {
   margin: 40px;
@@ -516,6 +520,11 @@ footer .col-footer .logo {
   padding: 20px;
   margin-bottom: 10px;
   border-radius: 20px;
+}
+#checkout .deliveboo_button {
+  float: right;
+  padding: 15px;
+  color: #fefefe;
 }
 
 #login-page {

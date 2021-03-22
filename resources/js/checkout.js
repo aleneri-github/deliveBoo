@@ -36,7 +36,8 @@ var checkout = new Vue(
       var self = this;
       dropin.create({
         authorization: 'sandbox_5r6c6ymm_ffhwsdzry36sq5tt',
-        container: '#dropin-container'
+        container: '#dropin-container',
+        locale: 'it_IT'
       }, function(err, instance) {
         if (err) {
           console.log(err);
