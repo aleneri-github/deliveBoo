@@ -34,7 +34,7 @@
 
       {{-- DATI PAGAMENTO BRAINTREE --}}
       <div id="dropin-container"></div>
-      <input class="deliveboo_button" type="submit" value="Compra"></input>
+      <input class="deliveboo_button p-3" type="submit" value="Compra"></input>
       <input type="hidden" id="nonce" name="nonce"></input>
       <input type="hidden" id="cart" name="cart"></input>
     </form>
@@ -48,17 +48,16 @@
         <h5><strong>@{{ item.name }}</strong></h5>
         <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
         <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
-
-          <div class="buttons">
-            {{-- ADD --}}
-            <button class="deliveboo_button" @click="addItem(item)">
-              <i class="fas fa-plus"></i>
-            </button>
-            {{-- REMOVE --}}
-            <button class="deliveboo_button" @click="removeItem(item)">
-              <i class="fas fa-minus"></i>
-            </button>
-          </div>
+        <div class="buttons">
+          {{-- ADD --}}
+          <button class="deliveboo_button" @click="addItem(item)">
+            <i class="fas fa-plus"></i>
+          </button>
+          {{-- REMOVE --}}
+          <button class="deliveboo_button" @click="removeItem(item)">
+            <i class="fas fa-minus"></i>
+          </button>
+        </div>
       </li>
       <h4 class="float-right mt-4">€ @{{ cartTotal().toFixed(2) }}</h4>
     </ul>

@@ -527,9 +527,13 @@ footer .col-footer .logo {
 #checkout #checkout_cart ul li .buttons {
   float: right;
 }
+#checkout #checkout_cart ul li .buttons .deliveboo_button {
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+}
 #checkout .deliveboo_button {
   float: right;
-  padding: 15px;
   color: #fefefe;
 }
 

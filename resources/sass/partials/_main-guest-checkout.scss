@@ -25,13 +25,17 @@
         box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
         .buttons {
           float: right;
+          .deliveboo_button {
+            margin-left: 5px;
+            width: 30px;
+            height: 30px;
+          }
         }
       }
     }
   }
   .deliveboo_button {
     float: right;
-    padding: 15px;
     color: $white;
   }
 }
