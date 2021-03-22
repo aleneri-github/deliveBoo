@@ -1,6 +1,5 @@
 require('./bootstrap');
 import Vue from 'vue';
-
 var home = new Vue(
   {
     el: "#home",
@@ -8,7 +7,9 @@ var home = new Vue(
       types: ['all'],
       restaurants: [],
       carousel: [],
-      foods: []
+      foods: [],
+      indexOfImage: 0,
+      active: "active",
     },
     methods: {
       filter(type) {
@@ -17,31 +18,35 @@ var home = new Vue(
           this.restaurants = response.data;
         });
       },
-
+      forward() {
+        this.indexOfImage++;
+        if (this.indexOfImage == this.foods.lenght) {
+          this.indexOfImage = 0;
+        }
+      },
+      backward() {
+        if (this.indexOfImage == 0) {
+          this.indexOfImage = this.foods.length -1;
+        } else {
+          this.indexOfImage--;
+        }
+      }
     },
     mounted: function () {
-      axios.get('http://localhost:8000/api/restaurants/types').then(response => {
-        this.types.push(...response.data);
-      });
-
       axios.get(`http://localhost:8000/api/restaurants?type=all`).then(response => {
         this.restaurants = response.data;
       });
-
       axios.get(`http://localhost:8000/api/restaurant/carousel`).then(response => {
         this.carousel = response.data;
       });
-
       axios.get(`http://localhost:8000/api/restaurant/dishes`).then(response => {
         this.foods = response.data;
       });
-      
+    },
+    created: function () {
+      const timer = setInterval(() => {
+        this.forward();
+      }, 5000);
     }
   },
 );
-
-$('.types').flickity({
-  // options
-  cellAlign: 'left',
-  contain: true
-});

@@ -1887,18 +1887,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -1908,7 +1896,9 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     types: ['all'],
     restaurants: [],
     carousel: [],
-    foods: []
+    foods: [],
+    indexOfImage: 0,
+    active: "active"
   },
   methods: {
     filter: function filter(type) {
@@ -1918,16 +1908,25 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       axios.get("http://localhost:8000/api/restaurants?type=".concat(type)).then(function (response) {
         _this.restaurants = response.data;
       });
+    },
+    forward: function forward() {
+      this.indexOfImage++;
+
+      if (this.indexOfImage == this.foods.lenght) {
+        this.indexOfImage = 0;
+      }
+    },
+    backward: function backward() {
+      if (this.indexOfImage == 0) {
+        this.indexOfImage = this.foods.length - 1;
+      } else {
+        this.indexOfImage--;
+      }
     }
   },
   mounted: function mounted() {
     var _this2 = this;
 
-    axios.get('http://localhost:8000/api/restaurants/types').then(function (response) {
-      var _this2$types;
-
-      (_this2$types = _this2.types).push.apply(_this2$types, _toConsumableArray(response.data));
-    });
     axios.get("http://localhost:8000/api/restaurants?type=all").then(function (response) {
       _this2.restaurants = response.data;
     });
@@ -1937,12 +1936,14 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
       _this2.foods = response.data;
     });
+  },
+  created: function created() {
+    var _this3 = this;
+
+    var timer = setInterval(function () {
+      _this3.forward();
+    }, 5000);
   }
-});
-$('.types').flickity({
-  // options
-  cellAlign: 'left',
-  contain: true
 });
 
 /***/ }),
