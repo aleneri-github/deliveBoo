@@ -335,6 +335,9 @@ main {
 
 @media screen and (max-width: 900px) {
   main {
+    h1 {
+      font-size: 2rem;
+    }
      #restaurants {
       justify-content: center;
       .card_rest {
@@ -379,6 +382,9 @@ main {
 // }
 @media screen and (max-width: 656px) {
   main {
+    h1 {
+      font-size: 1.5rem;
+    }
     #carousel-type {
       .types {
         div {
@@ -408,6 +414,9 @@ main {
 
 @media screen and (max-width: 500px) {
   main {
+    h1 {
+      font-size: 1rem;
+    }
     #carousel-type {
       .types {
         flex-wrap: nowrap;

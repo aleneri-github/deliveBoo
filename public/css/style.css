@@ -306,6 +306,9 @@ main #restaurants .card_rest a .layover p {
   }
 }
 @media screen and (max-width: 900px) {
+  main h1 {
+    font-size: 2rem;
+  }
   main #restaurants {
     justify-content: center;
   }
@@ -328,6 +331,9 @@ main #restaurants .card_rest a .layover p {
   }
 }
 @media screen and (max-width: 656px) {
+  main h1 {
+    font-size: 1.5rem;
+  }
   main #carousel-type .types div h5 {
     font-size: 13px;
   }
@@ -347,6 +353,9 @@ main #restaurants .card_rest a .layover p {
   }
 }
 @media screen and (max-width: 500px) {
+  main h1 {
+    font-size: 1rem;
+  }
   main #carousel-type .types {
     flex-wrap: nowrap;
     height: 100%;
