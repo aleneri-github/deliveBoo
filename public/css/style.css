@@ -199,6 +199,16 @@ main #carousel-type .types div img {
   border-radius: 5px;
   width: 100%;
 }
+main #carousel-type .types div:hover {
+  border: 5px solid #FDC234;
+  border-radius: 5px;
+}
+main #carousel-type .types div:active {
+  transform: scale(1.1);
+}
+main #carousel-type .types div:active h5 {
+  color: #FDC234;
+}
 main #carousel-type .types div h5 {
   position: absolute;
   width: 100%;
