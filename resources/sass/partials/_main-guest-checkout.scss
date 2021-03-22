@@ -1,19 +1,28 @@
-// DATI DI CHECKOUT
-#checkout_data {
-  display: inline-block;
-  // margin: 20px;
-  width: 60%;
-  background-color: $yellow;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-// CARRELLO
-#checkout_cart {
-  display: inline-block;
-  // margin: 20px;
-  width: 40%;
-  background-color: $yellow;
-  padding: 20px;
-  border-radius: 20px;
+#checkout {
+  // DATI DI CHECKOUT
+  #checkout_data {
+    display: inline-block;
+    margin: 50px 25px 50px 50px;
+    width: 60%;
+    background-color: $yellow;
+    padding: 20px;
+    border-radius: 20px;
+  }  
+  // CARRELLO
+  #checkout_cart {
+    display: inline-block;
+    margin: 50px 50px 50px 25px;
+    width: 40%;
+    background-color: $yellow;
+    // padding: 20px;
+    // border-radius: 20px;
+    ul {
+      list-style: none;
+      li {
+        padding: 20px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+      }
+    }
+  }
 }

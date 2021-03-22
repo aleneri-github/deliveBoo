@@ -13,18 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// PROVVISORIA
-
 Route::get('/', 'RedirectController@index');
 
 Route::get('/home', function () {
     return view('guest.index');
 })->name('guest.index');
 
-Route::prefix('guest')->name('guest.')->group( function() {
+Route::prefix('')->name('guest.')->group( function() {
 
   Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
   Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+  Route::get('/restaurants/{slug}/show', 'GuestController@show')->name('show');
 
 });
 
@@ -50,5 +49,3 @@ Route::prefix('admin')
     })->name('dishes.dash');
 
 });
-
-Route::get('/restaurants/{slug}/show', 'GuestController@show')->name('guest.show');

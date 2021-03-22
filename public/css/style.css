@@ -495,19 +495,26 @@ footer .col-footer .logo {
     float: right;
   }
 }
-#checkout_data {
+#checkout #checkout_data {
   display: inline-block;
+  margin: 50px 25px 50px 50px;
   width: 60%;
   background-color: #FDC234;
   padding: 20px;
   border-radius: 20px;
 }
-
-#checkout_cart {
+#checkout #checkout_cart {
   display: inline-block;
+  margin: 50px 50px 50px 25px;
   width: 40%;
   background-color: #FDC234;
+}
+#checkout #checkout_cart ul {
+  list-style: none;
+}
+#checkout #checkout_cart ul li {
   padding: 20px;
+  margin-bottom: 10px;
   border-radius: 20px;
 }
 
