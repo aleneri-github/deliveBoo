@@ -203,6 +203,7 @@ main #carousel-type .types div img {
   width: 100%;
 }
 main #carousel-type .types div:hover {
+  transition-duration: 0.5s;
   border: 5px solid #FDC234;
   border-radius: 5px;
 }

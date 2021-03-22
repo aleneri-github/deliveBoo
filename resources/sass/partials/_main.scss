@@ -173,9 +173,10 @@ main {
           border-radius: 5px;
           width: 100%;
         } &:hover {
+          transition-duration: 0.5s;
           border: 5px solid $yellow;
           border-radius: 5px;
-        } &:active {
+        } &:active {          
           transform: scale(1.1);
         } &:active h5 {
           color: $yellow;
