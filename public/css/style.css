@@ -322,6 +322,24 @@ footer .col-footer .logo {
 #detail #cards .card_dish:hover .img_layer {
   transform: scale(1.05);
 }
+#detail .detail_button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #01a183;
+  border-radius: 10px;
+  transform: translate(0, -25%);
+}
+#detail .detail_button i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+#detail .detail_button:hover {
+  background-color: #008169;
+}
 #detail #cart {
   margin: 40px;
   padding: 40px;
@@ -337,27 +355,24 @@ footer .col-footer .logo {
 #detail #cart ul li {
   margin-bottom: 10px;
 }
-#detail #cart ul li .cart_buttons_price {
-  background-color: #fefefe;
-}
-#detail #cart ul li .cart_buttons_price .buttons {
+#detail #cart ul li .cart_buttons .buttons {
   float: right;
 }
 
 @media screen and (max-width: 1200px) {
-  #jumbotron {
+  #jumbotron_rest {
     height: 350px;
     background-position: center;
     background-size: cover;
   }
-  #jumbotron .dark_layer {
+  #jumbotron_rest .dark_layer {
     position: relative;
     padding: 60px;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  #jumbotron h1 {
+  #jumbotron_rest h1 {
     position: absolute;
     bottom: 60px;
     font-size: 48px;
@@ -379,27 +394,27 @@ footer .col-footer .logo {
     height: 60%;
   }
   #detail #cart {
-    margin: 20px;
+    margin: 0;
     padding: 20px;
     width: 25%;
     font-size: 16px;
-    border-radius: 20px;
+    border-radius: 0;
   }
 }
-@media screen and (max-width: 718px) {
-  #jumbotron {
+@media screen and (max-width: 768px) {
+  #jumbotron_rest {
     height: 225px;
     background-position: center;
     background-size: cover;
   }
-  #jumbotron .dark_layer {
+  #jumbotron_rest .dark_layer {
     position: relative;
     padding: 30px;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  #jumbotron h1 {
+  #jumbotron_rest h1 {
     position: absolute;
     bottom: 30px;
     font-size: 48px;
@@ -430,22 +445,22 @@ footer .col-footer .logo {
   }
 }
 @media screen and (max-width: 576px) {
-  #jumbotron {
-    height: 225px;
+  #jumbotron_rest {
+    height: 175px;
     background-position: center;
     background-size: cover;
   }
-  #jumbotron .dark_layer {
+  #jumbotron_rest .dark_layer {
     position: relative;
     padding: 30px;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  #jumbotron h1 {
+  #jumbotron_rest h1 {
     position: absolute;
     bottom: 30px;
-    font-size: 48px;
+    font-size: 36px;
     word-wrap: break-word;
     color: #fefefe;
     text-transform: uppercase;
@@ -453,11 +468,12 @@ footer .col-footer .logo {
 
   #detail {
     position: relative;
-    height: 400px;
+    height: 800px;
   }
   #detail #cards {
     width: 100%;
     padding: 60px;
+    padding-top: 160px;
   }
   #detail #cards .card_dish {
     width: calc(100% - 20px);
@@ -473,9 +489,12 @@ footer .col-footer .logo {
     overflow-y: scroll;
   }
   #detail #cart ul {
+    width: 50%;
     display: inline-block;
   }
   #detail #cart h3 {
+    position: sticky;
+    top: 20px;
     float: right;
   }
 }

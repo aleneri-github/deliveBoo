@@ -83,6 +83,24 @@
       }
     }
   }
+  .detail_button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: $greenButton;
+    border-radius: 10px;
+    transform: translate(0, -25%);
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+    }
+    &:hover {
+      background-color: $btnHover
+    }
+  } 
   #cart {
     margin: 40px;
     padding: 40px;
@@ -95,8 +113,8 @@
       list-style: none;
       li {
         margin-bottom: 10px;
-        .cart_buttons_price {
-          background-color: $white;
+        .cart_buttons {
+          // background-color: $white;
           .buttons {
             float: right;
           }
@@ -114,7 +132,7 @@
 // DISPOSITIVI LG
 @media screen and (max-width: 1200px) {
 
-  #jumbotron {
+  #jumbotron_rest {
     height: 350px;
     background-position: center;
     background-size: cover;
@@ -147,20 +165,20 @@
       }
     }
     #cart {
-      margin: 20px;
+      margin: 0;
       padding: 20px;
       width: 25%;
       font-size: 16px;
-      border-radius: 20px;
+      border-radius: 0;
     }
   }
 
 }
 
 // DISPOSITIVI MD
-@media screen and (max-width: 718px) {
+@media screen and (max-width: 768px) {
 
-  #jumbotron {
+  #jumbotron_rest {
     height: 225px;
     background-position: center;
     background-size: cover;
@@ -206,8 +224,8 @@
 // DISPOSITIVI SM
 @media screen and (max-width: 576px) {
 
-  #jumbotron {
-    height: 225px;
+  #jumbotron_rest {
+    height: 175px;
     background-position: center;
     background-size: cover;
     .dark_layer {
@@ -220,7 +238,7 @@
     h1 {
       position: absolute;
       bottom: 30px;
-      font-size: 48px;
+      font-size: 36px;
       word-wrap: break-word;
       color: $white;
       text-transform: uppercase;
@@ -229,10 +247,11 @@
 
   #detail {
     position: relative;
-    height: 400px;
+    height: 800px;
     #cards {
       width: 100%;
       padding: 60px;
+      padding-top: 160px;
       .card_dish {
         width: calc(100% - 20px);
         img {
@@ -247,9 +266,12 @@
       height: 150px;
       overflow-y: scroll;
       ul {
+        width: 50%;
         display: inline-block;
       }
       h3 {
+        position: sticky;
+        top: 20px;
         float: right;
       }
     }
