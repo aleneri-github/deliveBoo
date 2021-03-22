@@ -496,13 +496,19 @@ footer .col-footer .logo {
   }
 }
 #checkout_data {
+  display: inline-block;
+  width: 60%;
   background-color: #FDC234;
   padding: 20px;
+  border-radius: 20px;
 }
 
 #checkout_cart {
+  display: inline-block;
+  width: 40%;
   background-color: #FDC234;
   padding: 20px;
+  border-radius: 20px;
 }
 
 #login-page {

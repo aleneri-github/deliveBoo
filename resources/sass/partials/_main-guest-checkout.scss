@@ -1,11 +1,19 @@
 // DATI DI CHECKOUT
 #checkout_data {
+  display: inline-block;
+  // margin: 20px;
+  width: 60%;
   background-color: $yellow;
   padding: 20px;
+  border-radius: 20px;
 }
 
 // CARRELLO
 #checkout_cart {
+  display: inline-block;
+  // margin: 20px;
+  width: 40%;
   background-color: $yellow;
   padding: 20px;
+  border-radius: 20px;
 }
