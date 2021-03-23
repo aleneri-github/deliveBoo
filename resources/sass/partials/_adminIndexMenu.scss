@@ -1,13 +1,18 @@
 #index-Menu {
   overflow-y: auto;
   .box-menu {
+    //riga del piatto
     .row-food {
       width: 100%;
       padding: 5px 10px;
       margin: 10px 0;
       border: 1px solid lightgray;
       border-radius: 5px;
-      box-shadow: 18px -19px 29px -26px rgb(0 0 0 / 30%);
+      box-shadow: 15px -9px 47px -43px rgb(0 0 0 / 30%);
+      &:hover {
+        transition-duration: 0.4s;
+        background-color: $yellow;
+      }
       .tab {
         display: flex;
         align-items: center;
@@ -23,6 +28,59 @@
       .tab-big {
         width: 40%;
       }
+
+    }
+    // header delle righe
+    .row-info {
+      font-weight: bolder;
+      border: 0;
+      background-color: #F9F9F9;
+      border: 1px solid #F9F9F9;
+      padding: 10px 0;
+      &:hover {
+       background-color: #F9F9F9;
+      }
+    }
+    // show dettaglio piatto
+    .dish-show {
+      background-color: #F9F9F9;
+      border-radius: 5px;
+      opacity: 0;
+      display: none;
+      margin: 0 40px;
+      .img-show {
+        display: flex;
+        width: 50%;
+        img {
+          text-align: right;
+          width: 100%;
+          border-radius: 5px 0 0 5px;
+        }
+      }
+      .info-show {
+        width: 50%;
+        padding: 20px 10px;
+        span {
+          font-weight: bolder;
+        }
+        .img-info {
+          text-align: right;
+          img {
+            width: 20%;
+          }
+        }
+      
+      }
+    }
+    // classe active per il dettaglio piatto
+    .dish-active {
+      opacity: 1;
+      display: flex;
+      box-shadow: 18px -19px 29px -26px rgb(0 0 0 / 30%);
+    }
+    // classe active per riga del piatto cliccata
+    .row-active {
+      background-color: $yellow;
     }
   }
 }

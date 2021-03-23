@@ -12,11 +12,11 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- cdn animate css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <!-- cdn chart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -77,7 +77,7 @@
             {{-- main --}}
             <main id="admin-show">
         
-              <h1>Ciao Peppe!</h1>
+              <h1></h1>
               @yield('content')
         
           
@@ -119,11 +119,12 @@
                 </ul>
               </div>
               {{-- info restaurant --}}
+              {{-- @dd($restaurant->name) --}}
               <div class="info-side">
                 <div class="card-restaurant">
-                  <img src="https://www.mymi.it/wp-content/uploads/2017/07/Ceresio-7-terrazza-ok-min.jpg" alt="">
-                  <h4>Ceresio 7</h4>
-                  <p>info@ceresio.com</p>
+                  <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
+                  <h4>{{ $restaurant->name }}</h4>
+                  <p>{{ $restaurant->email_rest }}</p>
                   <span class="badge badge-dark">Italiano</span>
                   <span class="badge badge-dark">Vegetariano</span>
                 </div>
