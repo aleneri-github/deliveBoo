@@ -48,6 +48,7 @@
 
     {{-- CARRELLO --}}
     <div id="cart">
+      <h3 class="mb-3">Carrello</h3>
       <ul>
         <li v-for="item in cart">
           <span><strong>@{{ item.name }}</strong></span>
@@ -66,7 +67,10 @@
           </div>          
         </li>
       </ul>
-      <h3>€ @{{ cartTotal().toFixed(2) }}</h3>
+      <div class="mt-4 d-flex justify-content-between">
+        <h4>Totale</h4>
+        <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
+      </div>
     </div>
 
   </div>
