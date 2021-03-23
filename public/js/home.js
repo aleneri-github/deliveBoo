@@ -1939,11 +1939,6 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     });
   }
 });
-$('.types').flickity({
-  // options
-  cellAlign: 'left',
-  contain: true
-});
 
 /***/ }),
 

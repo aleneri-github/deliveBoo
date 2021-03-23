@@ -9,6 +9,13 @@ var detail = new Vue(
       cart: [],
     },
     methods: {
+      isInCart(elem) {
+        if(this.cart.some(item => item.name == elem.name)) {
+          return false
+        } else {
+          return true
+        }
+      },
       addOne(elem) {
         if(!this.cart.some(item => item.name == elem.name)) {
           elem.quantity = 1;

@@ -32,11 +32,11 @@
           {{-- BUTTONS --}}
           <div class="buttons">
             {{-- ADD --}}
-            <button class="deliveboo_button" @click="addOne({{ $dish }})">
+            <button {{ $dish->visible == 0 ? 'disabled' : '' }} class="deliveboo_button" @click="addOne({{ $dish }})">
               <i class="fas fa-plus"></i>
             </button>
             {{-- REMOVE --}}
-            <button class="deliveboo_button" @click="removeOne({{ $dish }})">
+            <button {{ $dish->visible == 0 ? 'disabled' : '' }} :disabled="isInCart({{ $dish }})" class="deliveboo_button" @click="removeOne({{ $dish }})">
               <i class="fas fa-minus"></i>
             </button>
           </div>

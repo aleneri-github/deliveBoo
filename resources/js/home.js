@@ -39,9 +39,3 @@ var home = new Vue(
     }
   },
 );
-
-$('.types').flickity({
-  // options
-  cellAlign: 'left',
-  contain: true
-});

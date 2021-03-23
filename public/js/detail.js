@@ -49341,6 +49341,15 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     cart: []
   },
   methods: {
+    isInCart: function isInCart(elem) {
+      if (this.cart.some(function (item) {
+        return item.name == elem.name;
+      })) {
+        return false;
+      } else {
+        return true;
+      }
+    },
     addOne: function addOne(elem) {
       if (!this.cart.some(function (item) {
         return item.name == elem.name;

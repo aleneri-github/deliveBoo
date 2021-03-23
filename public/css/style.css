@@ -350,6 +350,12 @@ footer .col-footer .logo {
   height: 30px;
   transform: translate(0, -25%);
 }
+#detail .deliveboo_button[disabled] {
+  background-color: #7a7a7a;
+}
+#detail .deliveboo_button[disabled]:hover {
+  background-color: #7a7a7a;
+}
 #detail .deliveboo_button i {
   position: absolute;
   top: 50%;
