@@ -1910,18 +1910,12 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       });
     },
     forward: function forward() {
-      this.indexOfImage++;
-
-      if (this.indexOfImage == this.foods.lenght) {
+      if (this.indexOfImage == this.foods.length - 1) {
         this.indexOfImage = 0;
+        return;
       }
-    },
-    backward: function backward() {
-      if (this.indexOfImage == 0) {
-        this.indexOfImage = this.foods.length - 1;
-      } else {
-        this.indexOfImage--;
-      }
+
+      this.indexOfImage++;
     }
   },
   mounted: function mounted() {

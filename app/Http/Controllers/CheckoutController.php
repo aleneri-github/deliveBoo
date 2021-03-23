@@ -36,38 +36,42 @@ class CheckoutController extends Controller
       'publicKey' => env("BRAINTREE_PUBLIC_KEY"),
       'privateKey' => env("BRAINTREE_PRIVATE_KEY")
     ]);
-
     $data = $request->all();
-    $data['name'] = 'pinco';
-    $data['surname'] = 'pinco';
-    $data['buyer_address'] = 'pinco';
-    $data['buyer_email'] = 'l.gentili@email.com';
-    $data['status'] = 'OK';
-    $data['dishes'] = [];
     $nonce = $data['nonce'];
-    $cart = json_decode($request->cart);
-    $order = new Order();
-    // manca lo status che prendo una volta che il pagamento è stato fatto!
-    $order->fill($data);
-    $order->save();
-    foreach ($cart as $value) {
-      for($i = 1; $i <= $value->quantity; $i++) {
-        array_push($data['dishes'], $value->id);
-      }
-    }
-    
-    $order->dishes()->attach($data['dishes']);
-    dd($order);
-
     if ($nonce != null) {
       $result = $gateway->transaction()->sale([
-        'amount' => $order->total,
+        'amount' => $data['total'],
         'paymentMethodNonce' => $nonce,
         'options' => [
           'submitForSettlement' => True
         ]
       ]);
-      return response()->json($result->succes);
+
+      if ($result->success) {
+        $data['name'] = 'pinco';
+        $data['surname'] = 'pinco';
+        $data['buyer_address'] = 'pinco';
+        $data['buyer_email'] = 'l.gentili@email.com';
+        $data['status'] = $result->transaction->status;
+        $data['dishes'] = [];
+        $cart = json_decode($request->cart);
+        $order = new Order();
+        $order->fill($data);
+        $order->save();
+        foreach ($cart as $value) {
+          for($i = 1; $i <= $value->quantity; $i++) {
+            array_push($data['dishes'], $value->id);
+          }
+        }
+
+        $order->dishes()->attach($data['dishes']);
+
+        return redirect()->route('guest.checkout', ['transaction' => $result->succes]);
+      } else {
+
+        return redirect()->route('guest.checkout', ['transaction' => $result->succes])->with('message', 'Errore transazione!');
+      }
+
     }
   }
 }
