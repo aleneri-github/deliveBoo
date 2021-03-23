@@ -10,6 +10,9 @@
   height: 750px;
   border-radius: 20px;
   box-shadow: 0 0 8px 2px rgba(0,0,0, 0.4);
+  #data_total {
+    display: none;
+  }
 }  
 // CARRELLO
 #checkout_cart {
@@ -66,6 +69,33 @@ a:hover {
     padding: 15px;
   }
   #checkout_cart {
+    li {
+      padding: 15px;
+    }
+  }
+} 
+
+// DISPOSITVI SM
+@media screen and (max-width: 525px) {
+  #checkout {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  #checkout_container {
+    margin: 0;
+    width: 100%;
+    #checkout_data {
+      margin: 0;
+      padding: 15px;
+      height: 810px;
+      #data_total {
+        display: flex;
+      }
+    }
+  }
+  #checkout_cart {
+    margin: 0;
+    width: 100%;
     li {
       padding: 15px;
     }

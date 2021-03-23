@@ -37,6 +37,10 @@
   
         {{-- DATI PAGAMENTO BRAINTREE --}}
         <div id="dropin-container"></div>
+        <div id="data_total" class="mt-4 m-3 justify-content-between">
+          <h4>Totale</h4>
+          <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
+        </div>
         <a href="#" class="deliveboo_button p-3">Torna indietro</a>
         <input class="deliveboo_button p-3" type="submit" value="Compra"></input>
         <input type="hidden" id="nonce" name="nonce"></input>
