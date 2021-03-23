@@ -1,19 +1,19 @@
 // JUMBOTRON ------------------------
 #jumbotron_rest {
-  height: 500px;
+  height: 380px;
   background-position: center;
   background-size: cover;
   .dark_layer {
     position: relative;
-    padding: 100px;
+    padding: 60px;
     height: 100%;
     width: 100%;
     background-color: rgba(0,0,0,0.4);
   }
   h1 {
     position: absolute;
-    bottom: 100px;
-    font-size: 64px;
+    bottom: 60px;
+    font-size: 56px;
     word-wrap: break-word;
     color: $white;
     text-transform: uppercase;
@@ -22,14 +22,12 @@
 
 // DETTAGLIO ------------------------
 #detail {
-  height: 600px;
   background-color: $white;
   #cards {
     padding: 40px;
     width: 75%;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: scroll;
     .card_dish {
       position: relative;
       margin: 10px;
@@ -37,9 +35,23 @@
       height: 450px;
       background-color: $white;
       border-radius: 20px;
-      box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
+      box-shadow: 0 0 8px 2px rgba(0,0,0, 0.4);
       transition: 0.5s;
       overflow: hidden;
+      &.not_available {
+        opacity: 0.5;
+        box-shadow: 0 0 8px 2px rgba(0,0,0, 0.4);
+        &:hover {
+          // cursor: deafault;
+          box-shadow: 0 0 8px 2px rgba(0,0,0, 0.4);
+          .img_div {
+            transform: none;
+          }
+          .img_layer {
+            transform: none;
+          }
+        }
+      }
       .img_div {
         position: relative;
         height: 60%;
@@ -73,7 +85,7 @@
       }
       &:hover {
         cursor: pointer;
-        box-shadow: 0 0 36px 12px rgba(0,0,0, 0.75);
+        box-shadow: 0 0 10px 4px rgba(0,0,0, 0.6);
         .img_div {
           transform: scale(1.05);
         }
@@ -83,13 +95,18 @@
       }
     }
   }
-  .detail_button {
+  .deliveboo_button {
     position: relative;
+    margin-left: 3px;
     width: 30px;
     height: 30px;
-    background-color: $greenButton;
-    border-radius: 10px;
     transform: translate(0, -25%);
+    &[disabled] {
+      background-color: $greyText;
+      &:hover {
+        background-color: $greyText;
+      }
+    }
     i {
       position: absolute;
       top: 50%;
@@ -97,18 +114,18 @@
       transform: translate(-50%, -50%);
       font-size: 12px;
     }
-    &:hover {
-      background-color: $btnHover
-    }
   } 
   #cart {
+    position: sticky;
+    top: 40px;
     margin: 40px;
     padding: 40px;
     width: 25%;
+    height: 100%;
     font-size: 20px;
     border-radius: 20px;
     background-color: $yellow;
-    box-shadow: 0 0 10px 5px rgba(0,0,0, 0.6);
+    box-shadow: 0 0 8px 2px rgba(0,0,0, 0.4);
     ul {
       list-style: none;
       li {
@@ -118,6 +135,17 @@
             float: right;
           }
         }
+      }
+    }
+    .deliveboo_button_cart {
+      float: right;
+      padding: 10px;
+      color: $white;
+      background-color: $greenButton;
+      border-radius: 10px;
+      border: none;
+      &:hover {
+        background-color: $btnHover
       }
     }
   }
@@ -132,7 +160,7 @@
 @media screen and (max-width: 1200px) {
 
   #jumbotron_rest {
-    height: 350px;
+    height: 250px;
     background-position: center;
     background-size: cover;
     .dark_layer {
@@ -153,7 +181,6 @@
   }
   
   #detail {
-    height: 600px;
     #cards {
       padding: 20px;
       .card_dish {
@@ -169,6 +196,9 @@
       width: 25%;
       font-size: 16px;
       border-radius: 0;
+      .buttons {
+        margin-top: 10px;
+      }
     }
   }
 
@@ -178,7 +208,7 @@
 @media screen and (max-width: 768px) {
 
   #jumbotron_rest {
-    height: 225px;
+    height: 150px;
     background-position: center;
     background-size: cover;
     .dark_layer {
@@ -199,7 +229,8 @@
   }
 
   #detail {
-    height: 400px;
+    height: 600px;
+    overflow-y: scroll;
     #cards {
       width: 60%;
       padding: 20px;
@@ -211,6 +242,7 @@
       }
     }
     #cart {
+      top: 0;
       margin: 0;
       padding: 20px;
       width: 40%;
@@ -246,7 +278,8 @@
 
   #detail {
     position: relative;
-    height: 800px;
+    height: 1000px;
+    overflow-y: scroll;
     #cards {
       width: 100%;
       padding: 60px;
@@ -268,10 +301,18 @@
         width: 50%;
         display: inline-block;
       }
-      h3 {
+      #total {
         position: sticky;
         top: 20px;
         float: right;
+        h4:first-of-type {
+          display: none;
+        }
+      }
+      .deliveboo_button_cart {
+        position: absolute;
+        top: 20px;
+        right: 20px;
       }
     }
   }

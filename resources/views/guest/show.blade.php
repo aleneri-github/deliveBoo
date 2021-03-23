@@ -16,7 +16,7 @@
     <div id="cards">
       {{-- @dd($restaurant->dishes); --}}
       @foreach ($restaurant->dishes as $dish)
-      <div class="card_dish">
+      <div class="{{ $dish->visible == 0 ? 'card_dish not_available' : 'card_dish'}}">
 
         <div class="img_div">
           <div class="img_layer"></div>
@@ -31,14 +31,14 @@
           </div>
           {{-- BUTTONS --}}
           <div class="buttons">
-          {{-- ADD --}}
-          <button class="detail_button" @click="addOne({{ $dish }})">
-            <i class="fas fa-plus"></i>
-          </button>
-          {{-- REMOVE --}}
-          <button class="detail_button" @click="removeOne({{ $dish }})">
-            <i class="fas fa-minus"></i>
-          </button>
+            {{-- ADD --}}
+            <button {{ $dish->visible == 0 ? 'disabled' : '' }} class="deliveboo_button" @click="addOne({{ $dish }})">
+              <i class="fas fa-plus"></i>
+            </button>
+            {{-- REMOVE --}}
+            <button {{ $dish->visible == 0 ? 'disabled' : '' }} :disabled="isInCart({{ $dish }})" class="deliveboo_button" @click="removeOne({{ $dish }})">
+              <i class="fas fa-minus"></i>
+            </button>
           </div>
         </div>
 
@@ -48,25 +48,32 @@
 
     {{-- CARRELLO --}}
     <div id="cart">
+      <h3 class="mb-3">Carrello</h3>
       <ul>
-        <li v-for="item in cart" v-cloak>
+        <li v-cloak v-for="item in cart">
           <span><strong>@{{ item.name }}</strong></span>
           <div class="cart_buttons">
             <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
             <div class="buttons">
               {{-- ADD --}}
-              <button class="detail_button" @click="addItem(item)">
+              <button class="deliveboo_button" @click="addItem(item)">
                 <i class="fas fa-plus"></i>
               </button>
               {{-- REMOVE --}}
-              <button class="detail_button" @click="removeItem(item)">
+              <button class="deliveboo_button" @click="removeItem(item)">
                 <i class="fas fa-minus"></i>
               </button>
             </div>
           </div>
         </li>
       </ul>
-      <h3 v-cloak>€ @{{ cartTotal().toFixed(2) }}</h3>
+      {{-- totale --}}
+      <div id="total" class="mt-4 d-flex justify-content-between">
+        <h4>Totale</h4>
+        <h4 v-cloak>€ @{{ cartTotal().toFixed(2) }}</h4>
+      </div>
+      {{-- button di checkout --}}
+      <a href="{{ route('guest.checkout.index') }}" class="deliveboo_button_cart">Checkout</a>
     </div>
 
   </div>

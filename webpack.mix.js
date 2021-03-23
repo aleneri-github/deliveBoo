@@ -15,7 +15,11 @@ mix
     .js('resources/js/home.js', 'public/js').vue({version:2})
     .js('resources/js/detail.js', 'public/js').vue({version:2})
     .js('resources/js/app.js', 'public/js').vue({version:2})
+<<<<<<< HEAD
     .js('resources/js/dashboard.js', 'public/js').vue({version:2})
+=======
+    .js('resources/js/checkout.js', 'public/js').vue({version:2})
+>>>>>>> GuestCheckout
     .sass('resources/sass/app.scss', 'public/css')
     // nostro file di stile
     .sass('resources/sass/style.scss', 'public/css')

@@ -1,11 +1,103 @@
 // DATI DI CHECKOUT
-#checkout_data {
-  background-color: $yellow;
-  padding: 20px;
+#checkout_container {
+  display: inline-block;
+  width: 60%;
 }
-
+#checkout_data {
+  margin-right: 15px;
+  background-color: $yellow;
+  padding: 40px;
+  height: 750px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px 2px rgba(0,0,0, 0.4);
+  #data_total {
+    display: none;
+  }
+}  
 // CARRELLO
 #checkout_cart {
-  background-color: $yellow;
-  padding: 20px;
+  display: inline-block;
+  margin-left: 15px;
+  width: 40%;
+  border-radius: 20px;
+  ul {
+    list-style: none;
+    li {
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      background-color: $yellow;
+      box-shadow: 0 0 8px 2px rgba(0,0,0, 0.4);
+      .buttons {
+        float: right;
+        .deliveboo_button {
+          margin-left: 5px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
 }
+a:hover {
+  color: $white;
+}
+.deliveboo_button {
+  margin-left: 10px;
+  float: right;
+  color: $white;
+}
+
+// MEDIA QUERIES ------------------------
+// lg - 1200px
+// md - 768px
+// sm - 576px
+
+// DISPOSITVI SM
+@media screen and (max-width: 992px) {
+  #checkout_data {
+    height: 780px;
+  }
+} 
+
+// DISPOSITVI MD
+@media screen and (max-width: 768px) {
+  #checkout {
+    width: 100%;
+  }
+  #checkout_data {
+    padding: 15px;
+  }
+  #checkout_cart {
+    li {
+      padding: 15px;
+    }
+  }
+} 
+
+// DISPOSITVI SM
+@media screen and (max-width: 525px) {
+  #checkout {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  #checkout_container {
+    margin: 0;
+    width: 100%;
+    #checkout_data {
+      margin: 0;
+      padding: 15px;
+      height: 810px;
+      #data_total {
+        display: flex;
+      }
+    }
+  }
+  #checkout_cart {
+    margin: 0;
+    width: 100%;
+    li {
+      padding: 15px;
+    }
+  }
+} 
