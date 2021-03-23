@@ -43,21 +43,20 @@ class CheckoutController extends Controller
     $data['buyer_address'] = 'pinco';
     $data['buyer_email'] = 'l.gentili@email.com';
     $data['status'] = 'OK';
-    $data['foods'] = [];
+    $data['dishes'] = [];
     $nonce = $data['nonce'];
     $cart = json_decode($request->cart);
-    dump($cart);
     $order = new Order();
     // manca lo status che prendo una volta che il pagamento è stato fatto!
     $order->fill($data);
-
+    $order->save();
     foreach ($cart as $value) {
       for($i = 1; $i <= $value->quantity; $i++) {
-        array_push($data['foods'], $value->id);
+        array_push($data['dishes'], $value->id);
       }
     }
-    dd($data['foods']);
-    $order->dishes()->attach($data['foods']);
+    
+    $order->dishes()->attach($data['dishes']);
     dd($order);
 
     if ($nonce != null) {

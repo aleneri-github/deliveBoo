@@ -13,6 +13,7 @@ class Order extends Model
     'buyer_address',
     'buyer_email',
     'total',
+    'status'
   ];
 
     public function dishes() {
