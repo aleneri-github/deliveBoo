@@ -6,8 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    public function foods() {
-      return $this->belongsToMany('App\Dish');
-    }
+  protected $fillable = [
+    'name',
+    'surname',
+    'buyer_address',
+    'buyer_email',
+    'total',
+    'status'
+  ];
+
+  public function dishes() {
+    return $this->belongsToMany('App\Dish');
+  }
 
 }

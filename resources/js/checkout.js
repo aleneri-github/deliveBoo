@@ -21,25 +21,33 @@ var checkout = new Vue(
         const parsed = JSON.stringify(this.cart);
         localStorage.setItem('cart', parsed);
       },
-      addItem(item) {
-        console.log(item)
-        item.quantity++;
-        item.total += item.price;
-        this.$forceUpdate();
-        this.saveCart();
-      },
-      removeItem(item) {
-        console.log(item)
-        if (item.quantity == 1) {
-          let index = this.cart.indexOf(item);
-          this.cart.splice(index,1);
-          return
+      paymentBox() {
+        let form = document.querySelector('#payment-form');
+        let token = document.querySelector('#token');
+        let self = this;
+        dropin.create({
+          authorization: token.value,
+          container: '#dropin-container',
+          locale: 'it_IT'
+        }, function(err, instance) {
+          if (err) {
+            console.error(err);
+            return
+          }
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            instance.requestPaymentMethod().then(function(payload) {
+              nonce.value = payload.nonce;
+              cart.value = JSON.stringify(self.cart);
+              total.value = self.cartTotal();
+              form.submit();
+            }).catch(function(err) {
+              console.error(err);
+            });
+          })
         }
-        item.quantity--;
-        item.total -= item.price;
-        this.$forceUpdate();
-        this.saveCart();
-      },
+      );
+      }
     },
     mounted() {
       if (localStorage.getItem('cart')) {
@@ -50,32 +58,7 @@ var checkout = new Vue(
           localStorage.removeItem('cart');
         }
       }
-      var form = document.querySelector('#payment-form');
-      var nonce = document.querySelector('#nonce');
-      var self = this;
-      dropin.create({
-        authorization: 'sandbox_5r6c6ymm_ffhwsdzry36sq5tt',
-        container: '#dropin-container',
-        locale: 'it_IT'
-      }, function(err, instance) {
-        if (err) {
-          console.log(err);
-          return
-        }
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          instance.requestPaymentMethod((err, payload) => {
-            if (err) {
-              console.log(err);
-              return;
-            }
-            nonce.value = payload.nonce;
-            cart.value = JSON.stringify(self.cart);
-            form.submit();
-          })
-        })
-      }
-    );
+      this.paymentBox();
     }
   }
 );

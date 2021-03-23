@@ -45,6 +45,8 @@
         <input class="deliveboo_button p-3" type="submit" value="Compra"></input>
         <input type="hidden" id="nonce" name="nonce"></input>
         <input type="hidden" id="cart" name="cart"></input>
+        <input type="hidden" id="token" name="token" value='{{ $token }}'/>
+        <input type="hidden" id="total" name="total"></input>
       </form>
     </div>
 
