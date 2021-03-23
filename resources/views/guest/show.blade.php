@@ -67,10 +67,13 @@
           </div>          
         </li>
       </ul>
-      <div class="mt-4 d-flex justify-content-between">
+      {{-- totale --}}
+      <div id="total" class="mt-4 d-flex justify-content-between">
         <h4>Totale</h4>
         <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
       </div>
+      {{-- button di checkout --}}
+      <a href="{{ route('guest.checkout.index') }}" class="deliveboo_button_cart">Checkout</a>
     </div>
 
   </div>

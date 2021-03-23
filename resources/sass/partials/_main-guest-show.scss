@@ -1,19 +1,19 @@
 // JUMBOTRON ------------------------
 #jumbotron_rest {
-  height: 500px;
+  height: 380px;
   background-position: center;
   background-size: cover;
   .dark_layer {
     position: relative;
-    padding: 100px;
+    padding: 60px;
     height: 100%;
     width: 100%;
     background-color: rgba(0,0,0,0.4);
   }
   h1 {
     position: absolute;
-    bottom: 100px;
-    font-size: 64px;
+    bottom: 60px;
+    font-size: 56px;
     word-wrap: break-word;
     color: $white;
     text-transform: uppercase;
@@ -22,14 +22,14 @@
 
 // DETTAGLIO ------------------------
 #detail {
-  height: 600px;
+  // height: 600px;
   background-color: $white;
   #cards {
     padding: 40px;
     width: 75%;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     .card_dish {
       position: relative;
       margin: 10px;
@@ -85,7 +85,7 @@
   }
   .deliveboo_button {
     position: relative;
-    margin-left: 5px;
+    margin-left: 3px;
     width: 30px;
     height: 30px;
     transform: translate(0, -25%);
@@ -98,9 +98,11 @@
     }
   } 
   #cart {
+    // position: relative;
     margin: 40px;
     padding: 40px;
     width: 25%;
+    height: 100%;
     font-size: 20px;
     border-radius: 20px;
     background-color: $yellow;
@@ -116,6 +118,17 @@
         }
       }
     }
+    .deliveboo_button_cart {
+      float: right;
+      padding: 10px;
+      color: $white;
+      background-color: $greenButton;
+      border-radius: 10px;
+      border: none;
+      &:hover {
+        background-color: $btnHover
+      }
+    }
   }
 }
 
@@ -128,7 +141,7 @@
 @media screen and (max-width: 1200px) {
 
   #jumbotron_rest {
-    height: 350px;
+    height: 250px;
     background-position: center;
     background-size: cover;
     .dark_layer {
@@ -174,7 +187,7 @@
 @media screen and (max-width: 768px) {
 
   #jumbotron_rest {
-    height: 225px;
+    height: 150px;
     background-position: center;
     background-size: cover;
     .dark_layer {
@@ -264,10 +277,18 @@
         width: 50%;
         display: inline-block;
       }
-      h3 {
+      #total {
         position: sticky;
         top: 20px;
         float: right;
+        h4:first-of-type {
+          display: none;
+        }
+      }
+      .deliveboo_button_cart {
+        position: sticky;
+        top: 20px;
+        left: 20px;
       }
     }
   }
