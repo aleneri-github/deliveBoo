@@ -5,24 +5,25 @@ var showFood = new Vue(
   {
     el: "#index-Menu",
     data: {
-      show: false
+      show: false,
+      indexOfList: -1,
+      isActive: true
     },
   
     methods: {
   
-      fadeMe: function() {
-        this.show = !this.show
-      },
-  
-      enter: function(el, done) {
-  
-        var that = this;
-  
-        setTimeout(function() {
-          that.show = false;
-        }, 3000); // hide the message after 3 seconds
+      fadeMe: function(index) {
+        if (this.indexOfList == -1) {
+          this.indexOfList = index;
+        } else {
+          this.indexOfList = -1;
+        }
+        //  if (this.show == true) {
+        //    this.show = false
+        //   } else {
+        //    this.show = true
+        //   }
       }
-  
     }
 
   }
