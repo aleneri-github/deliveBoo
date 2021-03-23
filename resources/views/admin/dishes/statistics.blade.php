@@ -2,8 +2,15 @@
 
 
 @section('content')
-    <div style="width: 760px; height: 380px;">
-        <canvas id="myChart"></canvas>
+    <div id="statistics">
+        <div class="chart_container">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="chart_container">
+            <canvas id="myChartTwo"></canvas>
+        </div>
     </div>
+    
 <script src="{{ asset('js/statistics.js') }}" defer></script>
 @endsection
