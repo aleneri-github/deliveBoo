@@ -7,9 +7,11 @@ var detail = new Vue(
     data: {
       dishes: [],
       cart: [],
+      // disabled: true,
     },
     methods: {
       addOne(elem) {
+        // this.disabled = false;
         if(!this.cart.some(item => item.name == elem.name)) {
           elem.quantity = 1;
           elem.total = elem.price;
@@ -35,6 +37,7 @@ var detail = new Vue(
                 } else {
                   let index = this.cart.indexOf(e);
                   this.cart.splice(index,1);
+                  // this.disabled = true;
                 }
               }
             })

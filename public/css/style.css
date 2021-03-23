@@ -289,6 +289,19 @@ footer .col-footer .logo {
   transition: 0.5s;
   overflow: hidden;
 }
+#detail #cards .card_dish.not_available {
+  opacity: 0.5;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.4);
+}
+#detail #cards .card_dish.not_available:hover {
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.4);
+}
+#detail #cards .card_dish.not_available:hover .img_div {
+  transform: none;
+}
+#detail #cards .card_dish.not_available:hover .img_layer {
+  transform: none;
+}
 #detail #cards .card_dish .img_div {
   position: relative;
   height: 60%;

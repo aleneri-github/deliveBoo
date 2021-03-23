@@ -16,7 +16,7 @@
     <div id="cards">
       {{-- @dd($restaurant->dishes); --}}
       @foreach ($restaurant->dishes as $dish)
-      <div class="card_dish">
+      <div class="{{ $dish->visible == 0 ? 'card_dish not_available' : 'card_dish'}}">
 
         <div class="img_div">
           <div class="img_layer"></div>
@@ -36,7 +36,11 @@
               <i class="fas fa-plus"></i>
             </button>
             {{-- REMOVE --}}
-            <button class="deliveboo_button" @click="removeOne({{ $dish }})">
+            <button disabled v-if="disabled == true" class="deliveboo_button" @click="removeOne({{ $dish }})">
+              <i class="fas fa-minus"></i>
+            </button>
+            {{-- REMOVE --}}
+            <button v-else class="deliveboo_button" @click="removeOne({{ $dish }})">
               <i class="fas fa-minus"></i>
             </button>
           </div>
