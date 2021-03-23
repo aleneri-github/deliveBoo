@@ -110,6 +110,8 @@
     }
   } 
   #cart {
+    position: sticky;
+    top: 40px;
     margin: 40px;
     padding: 40px;
     width: 25%;
@@ -234,6 +236,7 @@
       }
     }
     #cart {
+      top: 0;
       margin: 0;
       padding: 20px;
       width: 40%;

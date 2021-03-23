@@ -358,6 +358,8 @@ footer .col-footer .logo {
   font-size: 12px;
 }
 #detail #cart {
+  position: sticky;
+  top: 40px;
   margin: 40px;
   padding: 40px;
   width: 25%;
@@ -467,6 +469,7 @@ footer .col-footer .logo {
     height: 60%;
   }
   #detail #cart {
+    top: 0;
     margin: 0;
     padding: 20px;
     width: 40%;
