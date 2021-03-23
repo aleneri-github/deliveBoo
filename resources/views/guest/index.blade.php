@@ -62,7 +62,7 @@
               <div class="container_food">
                 <h2 class="text-center">Le nostre novità in zona</h2>
                 <div v-for="(food, index) in foods" class="images" :class="(index == indexOfImage) ? active : ''">
-                    <img :src="food.image">
+                    <img :src="'http://127.0.0.1:8000/storage' + '/' + food.image">
                     <h3>@{{ food.name }}</h3>
                 </div>
               </div>
