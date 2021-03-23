@@ -77,7 +77,7 @@
             {{-- main --}}
             <main id="admin-show">
         
-              <h1>Ciao Peppe!</h1>
+              <h1></h1>
               @yield('content')
         
           
@@ -119,11 +119,12 @@
                 </ul>
               </div>
               {{-- info restaurant --}}
+              {{-- @dd($restaurant->name) --}}
               <div class="info-side">
                 <div class="card-restaurant">
-                  <img src="https://www.mymi.it/wp-content/uploads/2017/07/Ceresio-7-terrazza-ok-min.jpg" alt="">
-                  <h4>Ceresio 7</h4>
-                  <p>info@ceresio.com</p>
+                  <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
+                  <h4>{{ $restaurant->name }}</h4>
+                  <p>{{ $restaurant->email_rest }}</p>
                   <span class="badge badge-dark">Italiano</span>
                   <span class="badge badge-dark">Vegetariano</span>
                 </div>

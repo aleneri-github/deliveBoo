@@ -861,7 +861,11 @@ footer .col-footer .logo {
   margin: 10px 0;
   border: 1px solid lightgray;
   border-radius: 5px;
-  box-shadow: 18px -19px 29px -26px rgba(0, 0, 0, 0.3);
+  box-shadow: 15px -9px 47px -43px rgba(0, 0, 0, 0.3);
+}
+#index-Menu .box-menu .row-food:hover {
+  transition-duration: 0.4s;
+  background-color: #FDC234;
 }
 #index-Menu .box-menu .row-food .tab {
   display: flex;
@@ -877,4 +881,51 @@ footer .col-footer .logo {
 }
 #index-Menu .box-menu .row-food .tab-big {
   width: 40%;
+}
+#index-Menu .box-menu .row-info {
+  font-weight: bolder;
+  border: 0;
+  background-color: #F9F9F9;
+  border: 1px solid #F9F9F9;
+  padding: 10px 0;
+}
+#index-Menu .box-menu .row-info:hover {
+  background-color: #F9F9F9;
+}
+#index-Menu .box-menu .dish-show {
+  background-color: #F9F9F9;
+  border-radius: 5px;
+  opacity: 0;
+  display: none;
+  margin: 0 40px;
+}
+#index-Menu .box-menu .dish-show .img-show {
+  display: flex;
+  width: 50%;
+}
+#index-Menu .box-menu .dish-show .img-show img {
+  text-align: right;
+  width: 100%;
+  border-radius: 5px 0 0 5px;
+}
+#index-Menu .box-menu .dish-show .info-show {
+  width: 50%;
+  padding: 20px 10px;
+}
+#index-Menu .box-menu .dish-show .info-show span {
+  font-weight: bolder;
+}
+#index-Menu .box-menu .dish-show .info-show .img-info {
+  text-align: right;
+}
+#index-Menu .box-menu .dish-show .info-show .img-info img {
+  width: 20%;
+}
+#index-Menu .box-menu .dish-active {
+  opacity: 1;
+  display: flex;
+  box-shadow: 18px -19px 29px -26px rgba(0, 0, 0, 0.3);
+}
+#index-Menu .box-menu .row-active {
+  background-color: #FDC234;
 }
