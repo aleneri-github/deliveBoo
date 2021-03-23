@@ -36,7 +36,11 @@
     }
   }
 }
+a:hover {
+  color: $white;
+}
 .deliveboo_button {
+  margin-left: 10px;
   float: right;
   color: $white;
 }

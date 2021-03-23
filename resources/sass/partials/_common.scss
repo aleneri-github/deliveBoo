@@ -24,11 +24,15 @@
   &:hover {
     background-color: $btnHover
   }
+  &:focus {
+    outline: none;
+  }
 } 
 
 a {
   color: inherit;
   &:hover {
+    color: inherit;
     text-decoration: none;
   }
 }

@@ -37,7 +37,7 @@
   
         {{-- DATI PAGAMENTO BRAINTREE --}}
         <div id="dropin-container"></div>
-        <a href="#" class="btn btn-outline-danger">Torna indietro</a>
+        <a href="#" class="deliveboo_button p-3">Torna indietro</a>
         <input class="deliveboo_button p-3" type="submit" value="Compra"></input>
         <input type="hidden" id="nonce" name="nonce"></input>
         <input type="hidden" id="cart" name="cart"></input>
