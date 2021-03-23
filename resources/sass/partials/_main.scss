@@ -357,6 +357,7 @@ main {
       .box-cards {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         .service-card {
           width: calc(100% / 2 - 20px);
           text-align: center;

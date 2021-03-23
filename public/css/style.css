@@ -333,6 +333,7 @@ main #restaurants .card_rest a .layover p {
   main #service .box-cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   main #service .box-cards .service-card {
     width: calc(100% / 2 - 20px);
