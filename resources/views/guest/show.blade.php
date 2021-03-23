@@ -49,7 +49,7 @@
     {{-- CARRELLO --}}
     <div id="cart">
       <ul>
-        <li v-for="item in cart">
+        <li v-for="item in cart" v-cloak>
           <span><strong>@{{ item.name }}</strong></span>
           <div class="cart_buttons">
             <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
@@ -63,14 +63,14 @@
                 <i class="fas fa-minus"></i>
               </button>
             </div>
-          </div>          
+          </div>
         </li>
       </ul>
-      <h3>€ @{{ cartTotal().toFixed(2) }}</h3>
+      <h3 v-cloak>€ @{{ cartTotal().toFixed(2) }}</h3>
     </div>
 
   </div>
 
   <script src="{{ asset('js/detail.js') }}" defer></script>
-    
+
 @endsection

@@ -372,6 +372,10 @@ main #restaurants .card_rest a .layover p {
     min-width: calc(100% / 3);
   }
 }
+[v-cloak] {
+  display: none;
+}
+
 footer {
   background-color: #1a1918;
   height: 100%;
