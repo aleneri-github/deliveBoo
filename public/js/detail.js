@@ -49338,12 +49338,10 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: "#detail",
   data: {
     dishes: [],
-    cart: [] // disabled: true,
-
+    cart: []
   },
   methods: {
     addOne: function addOne(elem) {
-      // this.disabled = false;
       if (!this.cart.some(function (item) {
         return item.name == elem.name;
       })) {
@@ -49376,8 +49374,7 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
             } else {
               var index = _this.cart.indexOf(e);
 
-              _this.cart.splice(index, 1); // this.disabled = true;
-
+              _this.cart.splice(index, 1);
             }
           }
         });

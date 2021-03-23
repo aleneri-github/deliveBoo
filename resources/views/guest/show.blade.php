@@ -32,15 +32,11 @@
           {{-- BUTTONS --}}
           <div class="buttons">
             {{-- ADD --}}
-            <button class="deliveboo_button" @click="addOne({{ $dish }})">
+            <button :disabled="{{ false }}" class="deliveboo_button" @click="addOne({{ $dish }})">
               <i class="fas fa-plus"></i>
             </button>
             {{-- REMOVE --}}
-            <button disabled v-if="disabled == true" class="deliveboo_button" @click="removeOne({{ $dish }})">
-              <i class="fas fa-minus"></i>
-            </button>
-            {{-- REMOVE --}}
-            <button v-else class="deliveboo_button" @click="removeOne({{ $dish }})">
+            <button :disabled="{{ false }}" class="deliveboo_button" @click="removeOne({{ $dish }})">
               <i class="fas fa-minus"></i>
             </button>
           </div>
