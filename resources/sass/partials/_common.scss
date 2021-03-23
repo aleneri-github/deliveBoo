@@ -35,3 +35,7 @@ a {
 {
   opacity: 0;
 }
+
+[v-cloak] {
+  display: none;
+}

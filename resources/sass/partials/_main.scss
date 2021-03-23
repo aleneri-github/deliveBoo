@@ -435,6 +435,73 @@ main {
   }
 }
 
-[v-cloak] {
-  display: none;
+@media screen and (max-width: 850px) {
+  main {
+    .slider-wrapper {
+      .container_food {
+          h2 {
+            left: 50%;
+            top: 5%;
+            transform: translateX(-50%);
+            width: 80%;
+            text-align: center !important;
+            font-size: 40px;
+          }
+          .images {
+            height: 90%;
+            left: 50%;
+            bottom: 0;
+            width: 90%;
+            transform: translateX(-50%);
+            img {
+              height: 330px;
+            }
+            h3 {
+              height: 330px;
+              line-height: 330px;
+            }
+          }
+      }
+    }
+  }
+}
+@media screen and (max-width: 535px) {
+  main {
+    .slider-wrapper {
+      .container_food {
+        h2 {
+          font-size: 30px;
+        }
+        .images {
+          img {
+            height: 300px;
+          }
+          h3 {
+            height: 300px;
+            line-height: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  main {
+    .slider-wrapper {
+      .container_food {
+        h2 {
+          font-size: 30px;
+        }
+        .images {
+          img {
+            height: 250px;
+          }
+          h3 {
+            height: 250px;
+            line-height: 250px;
+          }
+        }
+      }
+    }    
+  }
 }

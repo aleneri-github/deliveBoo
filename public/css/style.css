@@ -34,6 +34,10 @@ a:hover {
   opacity: 0;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 main {
   background-color: #fefefe;
 }
@@ -373,10 +377,54 @@ main #restaurants .card_rest a .layover p {
     min-width: calc(100% / 3);
   }
 }
-[v-cloak] {
-  display: none;
+@media screen and (max-width: 850px) {
+  main .slider-wrapper .container_food h2 {
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center !important;
+    font-size: 40px;
+  }
+  main .slider-wrapper .container_food .images {
+    height: 90%;
+    left: 50%;
+    bottom: 0;
+    width: 90%;
+    transform: translateX(-50%);
+  }
+  main .slider-wrapper .container_food .images img {
+    height: 330px;
+  }
+  main .slider-wrapper .container_food .images h3 {
+    height: 330px;
+    line-height: 330px;
+  }
 }
-
+@media screen and (max-width: 535px) {
+  main .slider-wrapper .container_food h2 {
+    font-size: 30px;
+  }
+  main .slider-wrapper .container_food .images img {
+    height: 300px;
+  }
+  main .slider-wrapper .container_food .images h3 {
+    height: 300px;
+    line-height: 300px;
+  }
+}
+@media screen and (max-width: 320px) {
+  main .slider-wrapper .container_food h2 {
+    font-size: 30px;
+  }
+  main .slider-wrapper .container_food .images img {
+    height: 250px;
+  }
+  main .slider-wrapper .container_food .images h3 {
+    height: 250px;
+    line-height: 250px;
+  }
+}
 footer {
   background-color: #1a1918;
   height: 100%;

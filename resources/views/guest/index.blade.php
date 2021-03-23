@@ -56,9 +56,7 @@
 
     <section id="food">
       <div class="slider-wrapper">
-              <div class="prev">
-                  <i class="fas fa-angle-left" @click="backward()"></i>
-              </div>
+
               <div class="container_food">
                 <h2 class="text-center">Le nostre novità in zona</h2>
                 <div v-for="(food, index) in foods" class="images" :class="(index == indexOfImage) ? active : ''">
@@ -66,9 +64,7 @@
                     <h3>@{{ food.name }}</h3>
                 </div>
               </div>
-              <div class="next">
-                  <i class="fas fa-angle-right" @click="forward()"></i>
-              </div>
+              
           </div>
     </section>
 
