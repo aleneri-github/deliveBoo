@@ -397,9 +397,6 @@ footer .col-footer .logo {
     text-transform: uppercase;
   }
 
-  #detail {
-    height: 600px;
-  }
   #detail #cards {
     padding: 20px;
   }
@@ -415,6 +412,9 @@ footer .col-footer .logo {
     width: 25%;
     font-size: 16px;
     border-radius: 0;
+  }
+  #detail #cart .buttons {
+    margin-top: 10px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -440,7 +440,8 @@ footer .col-footer .logo {
   }
 
   #detail {
-    height: 400px;
+    height: 600px;
+    overflow-y: scroll;
   }
   #detail #cards {
     width: 60%;
@@ -484,7 +485,8 @@ footer .col-footer .logo {
 
   #detail {
     position: relative;
-    height: 800px;
+    height: 1000px;
+    overflow-y: scroll;
   }
   #detail #cards {
     width: 100%;
@@ -517,9 +519,9 @@ footer .col-footer .logo {
     display: none;
   }
   #detail #cart .deliveboo_button_cart {
-    position: sticky;
+    position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px;
   }
 }
 #checkout_container {

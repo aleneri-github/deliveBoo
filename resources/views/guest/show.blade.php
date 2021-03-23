@@ -31,14 +31,14 @@
           </div>
           {{-- BUTTONS --}}
           <div class="buttons">
-          {{-- ADD --}}
-          <button class="deliveboo_button" @click="addOne({{ $dish }})">
-            <i class="fas fa-plus"></i>
-          </button>
-          {{-- REMOVE --}}
-          <button class="deliveboo_button" @click="removeOne({{ $dish }})">
-            <i class="fas fa-minus"></i>
-          </button>
+            {{-- ADD --}}
+            <button class="deliveboo_button" @click="addOne({{ $dish }})">
+              <i class="fas fa-plus"></i>
+            </button>
+            {{-- REMOVE --}}
+            <button class="deliveboo_button" @click="removeOne({{ $dish }})">
+              <i class="fas fa-minus"></i>
+            </button>
           </div>
         </div>
 
