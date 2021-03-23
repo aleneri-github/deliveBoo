@@ -64,7 +64,7 @@
                     <h3>@{{ food.name }}</h3>
                 </div>
               </div>
-              
+
           </div>
     </section>
 
@@ -72,7 +72,7 @@
     <section id="carousel-type">
       <div class="types">
         <div v-for="card in carousel" @click='filter(card.type)'>
-          <img :src="card.image" alt="sales">
+          <img @click='borderActive' :class="{ typeActive : border }" :src="card.image" alt="sales">
           <h5> @{{ card.type }}</h5>
         </div>
       </div class="types">

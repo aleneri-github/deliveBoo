@@ -172,13 +172,13 @@ main {
           // overflow: hidden;
           border-radius: 5px;
           width: 100%;
-        } &:hover {
-          border: 5px solid $yellow;
-          border-radius: 5px;
         } &:active {
           transform: scale(1.1);
         } &:active h5 {
           color: $yellow;
+        }
+        .typeActive {
+          border: 5px solid $yellow;
         }
         h5 {
           position: absolute;
@@ -502,6 +502,6 @@ main {
           }
         }
       }
-    }    
+    }
   }
 }

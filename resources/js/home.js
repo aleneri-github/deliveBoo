@@ -10,6 +10,9 @@ var home = new Vue(
       foods: [],
       indexOfImage: 0,
       active: "active",
+      border: "active",
+
+
     },
     methods: {
       filter(type) {
@@ -24,6 +27,10 @@ var home = new Vue(
           return
         }
         this.indexOfImage++;
+      },
+      borderActive() {
+        this.border = 'active';
+
       }
 
     },

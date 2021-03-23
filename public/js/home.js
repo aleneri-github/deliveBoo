@@ -1898,7 +1898,8 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     carousel: [],
     foods: [],
     indexOfImage: 0,
-    active: "active"
+    active: "active",
+    border: "active"
   },
   methods: {
     filter: function filter(type) {
@@ -1916,6 +1917,9 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       }
 
       this.indexOfImage++;
+    },
+    borderActive: function borderActive() {
+      this.border = 'active';
     }
   },
   mounted: function mounted() {
