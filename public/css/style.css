@@ -529,7 +529,7 @@ footer .col-footer .logo {
   padding: 40px;
   height: 750px;
   border-radius: 20px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.4);
 }
 
 #checkout_cart {
@@ -546,7 +546,7 @@ footer .col-footer .logo {
   margin-bottom: 20px;
   border-radius: 20px;
   background-color: #FDC234;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.4);
 }
 #checkout_cart ul li .buttons {
   float: right;

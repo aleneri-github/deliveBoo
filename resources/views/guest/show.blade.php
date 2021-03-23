@@ -50,7 +50,7 @@
     <div id="cart">
       <h3 class="mb-3">Carrello</h3>
       <ul>
-        <li v-for="item in cart">
+        <li v-cloak v-for="item in cart">
           <span><strong>@{{ item.name }}</strong></span>
           <div class="cart_buttons">
             <span>@{{ item.quantity }}x - € @{{ item.total.toFixed(2) }}</span>
@@ -70,7 +70,7 @@
       {{-- totale --}}
       <div id="total" class="mt-4 d-flex justify-content-between">
         <h4>Totale</h4>
-        <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
+        <h4 v-cloak>€ @{{ cartTotal().toFixed(2) }}</h4>
       </div>
       {{-- button di checkout --}}
       <a href="{{ route('guest.checkout.index') }}" class="deliveboo_button_cart">Checkout</a>
