@@ -49337,7 +49337,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var showFood = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: "#index-Menu",
   data: {
-<<<<<<< Updated upstream
     show: false,
     indexOfList: -1,
     isActive: true
@@ -49354,19 +49353,6 @@ var showFood = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       //    this.show = true
       //   }
 
-=======
-    show: false
-  },
-  methods: {
-    fadeMe: function fadeMe() {
-      this.show = !this.show;
-    },
-    enter: function enter(el, done) {
-      var that = this;
-      setTimeout(function () {
-        that.show = false;
-      }, 3000); // hide the message after 3 seconds
->>>>>>> Stashed changes
     }
   }
 });

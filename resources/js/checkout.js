@@ -47,7 +47,24 @@ var checkout = new Vue(
           })
         }
       );
-      }
+      },
+      addItem(item) {
+        item.quantity++;
+        item.total += item.price;
+        this.$forceUpdate();
+        this.saveCart();
+      },
+      removeItem(item) {
+        if (item.quantity == 1) {
+          let index = this.cart.indexOf(item);
+          this.cart.splice(index,1);
+          return
+        }
+        item.quantity--;
+        item.total -= item.price;
+        this.$forceUpdate();
+        this.saveCart();
+      },
     },
     mounted() {
       if (localStorage.getItem('cart')) {
