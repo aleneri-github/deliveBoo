@@ -49241,6 +49241,17 @@ Vue.compile = compileToFunctions;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Vue);
 
 
+/***/ }),
+
+/***/ "./resources/js/prova.json":
+/*!*********************************!*\
+  !*** ./resources/js/prova.json ***!
+  \*********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"1":[{"id":5,"name":"pinco","surname":"pinco","status":"submitted_for_settlement","buyer_address":"pinco","total":322.49,"buyer_email":"l.gentili@email.com","created_at":"2021-01-11T11:55:26.000000Z","updated_at":"2021-01-11T11:55:26.000000Z"},{"id":9,"name":"pinco","surname":"pinco","status":"submitted_for_settlement","buyer_address":"pinco","total":322.49,"buyer_email":"l.gentili@email.com","created_at":"2021-01-11T11:55:26.000000Z","updated_at":"2021-01-11T11:55:26.000000Z"}],"2":[{"id":4,"name":"pinco","surname":"pinco","status":"submitted_for_settlement","buyer_address":"pinco","total":322.49,"buyer_email":"l.gentili@email.com","created_at":"2021-02-09T11:55:26.000000Z","updated_at":"2021-02-09T11:55:26.000000Z"}],"3":[{"id":3,"name":"pinco","surname":"pinco","status":"submitted_for_settlement","buyer_address":"pinco","total":322.49,"buyer_email":"l.gentili@email.com","created_at":"2021-03-23T11:55:26.000000Z","updated_at":"2021-03-23T11:55:26.000000Z"},{"id":7,"name":"pinco","surname":"pinco","status":"submitted_for_settlement","buyer_address":"pinco","total":322.49,"buyer_email":"l.gentili@email.com","created_at":"2021-03-23T11:55:26.000000Z","updated_at":"2021-03-23T11:55:26.000000Z"},{"id":8,"name":"pinco","surname":"pinco","status":"submitted_for_settlement","buyer_address":"pinco","total":322.49,"buyer_email":"l.gentili@email.com","created_at":"2021-03-23T11:55:26.000000Z","updated_at":"2021-03-23T11:55:26.000000Z"}],"4":[],"5":[],"6":[],"7":[],"8":[],"9":[],"10":[],"11":[],"12":[{"id":6,"name":"pinco","surname":"pinco","status":"submitted_for_settlement","buyer_address":"pinco","total":322.49,"buyer_email":"l.gentili@email.com","created_at":"2020-12-09T11:55:26.000000Z","updated_at":"2020-12-12T11:55:26.000000Z"}]}');
+
 /***/ })
 
 /******/ 	});
@@ -49333,6 +49344,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+
+
+var prova = __webpack_require__(/*! ./prova.json */ "./resources/js/prova.json");
 
 var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: "#detail",
@@ -49431,6 +49445,8 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         console.log(error);
       }
     }
+
+    console.log(prova);
   }
 });
 })();

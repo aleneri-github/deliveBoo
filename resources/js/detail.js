@@ -1,5 +1,6 @@
 require('./bootstrap');
 import Vue from 'vue';
+let prova = require('./prova.json');
 
 var detail = new Vue(
   {
@@ -87,6 +88,7 @@ var detail = new Vue(
 
         }
       }
+      console.log(prova);
     }
   }
 );
