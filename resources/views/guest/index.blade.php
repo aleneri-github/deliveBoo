@@ -86,7 +86,7 @@
     <section id="restaurants">
       <h1 class="text-center">I nostri ristoranti</h1>
         <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest animate__animated animate__fadeInLeft" v-for="restaurant in restaurants">
-          <a href="#">
+          <a :href="'restaurants' + '/' + restaurant.slug + '/show'">
             <div class="layover">
               <h3>@{{ restaurant.name }}</h3>
               <p>@{{ restaurant.address }}</p>
