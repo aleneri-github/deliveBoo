@@ -25,6 +25,8 @@ Route::namespace('Api')->group(function() {
   Route::get('/restaurant/dishes', 'RestaurantController@dishes');
   Route::get('/restaurant/carousel', 'RestaurantController@carousel');
   // proteggere la rotta con middleware auth!
-  Route::get('/orders', 'OrderController@topDish');
+  Route::get('/orders', 'OrderController@orders');
+  Route::get('/orders/top-dish', 'OrderController@topDish');
+  Route::get('/orders/bottom-dish', 'OrderController@bottomDish');
 
 });

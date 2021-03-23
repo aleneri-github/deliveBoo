@@ -15,7 +15,7 @@ class OrderController extends Controller
 
     $orders = Order::where('status', '=', 'submitted_for_settlement')->orderBy('created_at', 'DESC')->get();
     $ordersMonth = [];
-    for ($i = 0; $i < 4; $i++) {
+    for ($i = 0; $i < 12; $i++) {
       $current = Carbon::today();
       $currentMonth = $current->subMonth($i)->month;
       $ordersMonth[$currentMonth] = [];
@@ -36,11 +36,19 @@ class OrderController extends Controller
     ->take(1)
     ->get();
     $dish = Dish::where('id', '=', $items[0]->dish_id)->get();
-    dd($dish);
+
+    return response()->json($dish);
   }
 
   public function bottomDish() {
+    $items = DB::table('dish_order')->select('dish_id', DB::raw('COUNT(dish_id) as count_dishes'))
+    ->groupBy('dish_id')
+    ->orderBy('count_dishes','ASC')
+    ->take(1)
+    ->get();
+    $dish = Dish::where('id', '=', $items[0]->dish_id)->get();
 
+    return response()->json($dish);
   }
 
 }
