@@ -12,16 +12,16 @@ use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
   public function orders() {
-
     $orders = Order::where('status', '=', 'submitted_for_settlement')->orderBy('created_at', 'DESC')->get();
     $ordersMonth = [];
     for ($i = 0; $i < 12; $i++) {
-      $current = Carbon::today();
-      $currentMonth = $current->subMonth($i)->month;
-      // $ordersMonth[$currentMonth] = [];
+      $currentInt = Carbon::now();
+      $currentString = Carbon::now();
+      $currentMonthInt = $currentInt->subMonth($i)->month;
+      $currentMonthString = $currentString->subMonth($i)->isoFormat('MMMM');
       foreach ($orders as $value) {
-        if ($value->created_at->month == $currentMonth) {
-          array_push($ordersMonth, ['month' => $currentMonth, 'order' => $value]);
+        if ($value->created_at->month == $currentMonthInt) {
+          array_push($ordersMonth, ['month' => ucfirst($currentMonthString), 'year' => $value->created_at->year,'order' => $value]);
         }
       }
     }
