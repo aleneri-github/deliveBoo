@@ -2,8 +2,8 @@
 
 @section('content')
 {{-- sezione ristorante --}}
-<div id="index-Menu" class="container">
-    
+<div id="indexMenu" class="container">
+
     <div class="d-flex justify-content-between p-3">
         <div>
             <h2><strong>I tuoi piatti</strong></h2>
@@ -13,11 +13,11 @@
             <a href="{{ route('admin.dishes.create')}}" class="btn btn-dark">Crea un nuovo piatto</a>
         </div>
     </div>
-    
+
 
     <div class="box-menu">
-    
-    
+
+
         {{-- sezione messaggi --}}
         @if (session('message'))
             <div class="message-success my-4 p-2">
@@ -35,7 +35,7 @@
                 Nome
             </div>
             <div class="tab tab-10">
-                {{-- EDIT --}}               
+                {{-- EDIT --}}
             </div>
             <div class="tab tab-10">
                  {{-- DESTROY --}}
@@ -46,11 +46,15 @@
         </div>
 
         @foreach ($dishes as $key => $dish)
-        <div class="row-food d-flex" 
+
+          <div v-if="isActive == true" class="">
+            DIV DI PROVA
+          </div>
+
+        <div class="row-food d-flex"
         :class="{{ $key }} == indexOfList ? 'row-active' : '' "
         {{-- :class="{{ $dish->visible }} == 0 ? 'row-food' : 'row-unavailable' " --}}
         >
-        
             <div class="tab tab-10">
                 {{ $dish->id }}
             </div>
@@ -64,7 +68,7 @@
                 {{-- EDIT --}}
                 <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn-outline">
                     <i class="fas fa-pencil-alt"></i>
-                </a>                
+                </a>
             </div>
             <div class="tab tab-10">
                  {{-- DESTROY --}}
@@ -78,14 +82,14 @@
             </div>
             <div class="tab tab-10">
                  {{-- SHOW --}}
-                <button v-on:click="fadeMe({{ $key }}); isActive = !isActive" class="btn">
+                <button class="btn" v-cloak>
                     <i v-if="show == false" class="fas fa-chevron-down"></i>
                     <i v-if="show == true" class="fas fa-chevron-up"></i>
                 </button>
             </div>
         </div>
         <transition name="fade">
-            <div class="dish-show" :class="{{ $key }} == indexOfList ? 'dish-active' : 'dish-show' ">
+            <div :class="activeClass">
                 <div class="img-show">
                     <img src="{{ asset('storage/' . $dish->image) }}" alt="">
                 </div>

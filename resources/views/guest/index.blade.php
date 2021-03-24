@@ -3,7 +3,12 @@
 @section('content')
 
   <main id="home">
-
+    <transition name="fade" mode="out-in">
+    <div key=1 v-if="loader == true" class="loading_page">
+      <h1>Solo un attimo...</h1>
+      <img src="img/jumb-2.svg" alt="">
+    </div>
+    <div key=2 v-else>
     <section id="jumbotron_main">
       <div class="layover"></div>
       <div class="container d-flex">
@@ -12,7 +17,7 @@
             <br>
             Sei nel posto giusto</h1>
         </div>
-        <div class="jumb-img animate__animated animate__backInRight">
+        <div class="jumb-img animate__animated animate__backInRight animate__delay-1s">
           <img src="{{asset('img/jumb-2.svg')}}" alt="">
         </div>
       </div>
@@ -84,7 +89,7 @@
     <section id="restaurants">
       <h1 class="text-center">I nostri ristoranti</h1>
       <div style="width:100%; display:flex; justify-content:center; flex-wrap:wrap" v-if="restaurants != ''">
-        <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest animate__animated animate__fadeInLeft" v-for="restaurant in restaurants">
+        <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest" :class="restAnim" v-for="restaurant in restaurants">
           <a :href="'restaurants' + '/' + restaurant.slug + '/show'">
             <div class="layover">
               <h3>@{{ restaurant.name }}</h3>
@@ -99,6 +104,8 @@
         </div>
       </div>
     </section>
+  </div>
+  </transition>
   </main>
 
   {{-- <script src="{{ asset('js/home.js') }}"></script> --}}

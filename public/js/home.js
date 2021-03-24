@@ -1900,15 +1900,21 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     indexOfImage: 0,
     active: "active",
     border: false,
-    typeIndex: 0
+    typeIndex: 0,
+    loader: true,
+    restAnim: ''
   },
   methods: {
     filter: function filter(type) {
       var _this = this;
 
       this.restaurants = [];
+      this.restAnim = '';
       axios.get("http://localhost:8000/api/restaurants?type=".concat(type)).then(function (response) {
         _this.restaurants = response.data;
+        setTimeout(function () {
+          _this.restAnim = 'rest_anim';
+        }, 1000);
       });
     },
     forward: function forward() {
@@ -1921,6 +1927,16 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     },
     borderActive: function borderActive() {
       this.border = !this.border;
+    },
+    createElem: function createElem(id) {
+      var elem = document.getElementById(id);
+
+      if (!elem) {
+        return;
+      }
+
+      var rect = elem.getBoundingClientRect();
+      return [elem, rect];
     }
   },
   mounted: function mounted() {
@@ -1928,12 +1944,24 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
     axios.get("http://localhost:8000/api/restaurants?type=all").then(function (response) {
       _this2.restaurants = response.data;
+      axios.get("http://localhost:8000/api/restaurant/carousel").then(function (response) {
+        _this2.carousel = response.data;
+        axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
+          _this2.foods = response.data;
+          _this2.loader = false;
+        });
+      });
     });
-    axios.get("http://localhost:8000/api/restaurant/carousel").then(function (response) {
-      _this2.carousel = response.data;
-    });
-    axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
-      _this2.foods = response.data;
+    window.addEventListener('scroll', function () {
+      var restDiv = _this2.createElem("restaurants");
+
+      if (!restDiv) {
+        return;
+      }
+
+      if (restDiv[1].top <= window.innerHeight) {
+        _this2.restAnim = 'rest_anim';
+      }
     });
   },
   created: function created() {
@@ -1942,7 +1970,16 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     var timer = setInterval(function () {
       _this3.forward();
     }, 5000);
+  },
+  destroyed: function destroyed() {
+    window.removeEventListener('scroll', this.scrollOnRest);
   }
+});
+$(document).ready(function () {
+  $('#image').on('change', function () {
+    var fileName = $(this).val().split('\\').pop();
+    $('.custom-file-label').html(fileName);
+  });
 });
 
 /***/ }),

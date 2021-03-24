@@ -33,7 +33,7 @@ class DishController extends Controller
           return redirect()->route('admin.restaurant.create');
         }
         // con get prendo una collection
-        $dishes = Dish::where('restaurant_id', Auth::id())->get();
+        $dishes = Dish::where('restaurant_id', $restaurant->id)->get();
         // GESTIONE ASSENZA DI PIATTI
         return view('admin.dishes.index', compact('dishes', 'restaurant'));
     }
@@ -44,7 +44,7 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
         return view('admin.dishes.create', compact('restaurant'));
     }

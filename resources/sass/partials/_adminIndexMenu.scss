@@ -1,8 +1,9 @@
-#index-Menu {
+#indexMenu {
   overflow-y: auto;
   .box-menu {
     //riga del piatto
     .row-food {
+      cursor: pointer;
       width: 100%;
       padding: 5px 10px;
       margin: 10px 0;
@@ -69,7 +70,7 @@
             width: 20%;
           }
         }
-      
+
       }
     }
     // classe active per il dettaglio piatto

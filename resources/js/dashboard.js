@@ -1,29 +1,30 @@
 require('./bootstrap');
 import Vue from 'vue';
 
-var showFood = new Vue(
+var indexMenu = new Vue(
   {
-    el: "#index-Menu",
+    el: "#indexMenu",
     data: {
       show: false,
       indexOfList: -1,
-      isActive: true
+      isActive: true,
+      activeClass: 'dish-show'
     },
-  
+
     methods: {
-  
-      fadeMe: function(index) {
-        if (this.indexOfList == -1) {
-          this.indexOfList = index;
-        } else {
-          this.indexOfList = -1;
-        }
-        //  if (this.show == true) {
-        //    this.show = false
-        //   } else {
-        //    this.show = true
-        //   }
+      prova() {
+        this.renderComponent = false;
+
+        this.$nextTick(() => {
+          // Add the component back in
+          this.renderComponent = true;
+        });
       }
+    },
+    mounted() {
+      $(document).on("click", ".row-food", () => {
+        this.prova()
+      });
     }
 
   }

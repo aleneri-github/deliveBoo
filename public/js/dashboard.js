@@ -49334,26 +49334,31 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-var showFood = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: "#index-Menu",
+var indexMenu = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
+  el: "#indexMenu",
   data: {
     show: false,
     indexOfList: -1,
-    isActive: true
+    isActive: true,
+    activeClass: 'dish-show'
   },
   methods: {
-    fadeMe: function fadeMe(index) {
-      if (this.indexOfList == -1) {
-        this.indexOfList = index;
-      } else {
-        this.indexOfList = -1;
-      } //  if (this.show == true) {
-      //    this.show = false
-      //   } else {
-      //    this.show = true
-      //   }
+    prova: function prova() {
+      var _this = this;
 
+      this.renderComponent = false;
+      this.$nextTick(function () {
+        // Add the component back in
+        _this.renderComponent = true;
+      });
     }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    $(document).on("click", ".row-food", function () {
+      _this2.prova();
+    });
   }
 });
 })();
