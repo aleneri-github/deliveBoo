@@ -49339,21 +49339,25 @@ var indexMenu = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   data: {
     show: false,
     indexOfList: -1,
-    isActive: false
+    isActive: true,
+    activeClass: 'dish-show'
   },
-  methods: {},
-  mounted: function mounted() {
-    var _this = this;
+  methods: {
+    prova: function prova() {
+      var _this = this;
 
-    console.log('creato');
-    document.querySelectorAll('.row-food').forEach(function (item) {
-      item.addEventListener('click', function (event) {
-        console.log($(item).index());
-
-        if (indexOfList == index) {
-          _this.isActive = !_this.isActive;
-        }
+      this.renderComponent = false;
+      this.$nextTick(function () {
+        // Add the component back in
+        _this.renderComponent = true;
       });
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    $(document).on("click", ".row-food", function () {
+      _this2.prova();
     });
   }
 });

@@ -7,22 +7,24 @@ var indexMenu = new Vue(
     data: {
       show: false,
       indexOfList: -1,
-      isActive: false
+      isActive: true,
+      activeClass: 'dish-show'
     },
 
     methods: {
+      prova() {
+        this.renderComponent = false;
 
+        this.$nextTick(() => {
+          // Add the component back in
+          this.renderComponent = true;
+        });
+      }
     },
     mounted() {
-      console.log('creato');
-      document.querySelectorAll('.row-food').forEach(item => {
-        item.addEventListener('click', event => {
-          console.log($(item).index());
-          if (indexOfList == index) {
-            this.isActive = !this.isActive;
-          }
-        })
-      })
+      $(document).on("click", ".row-food", () => {
+        this.prova()
+      });
     }
 
   }

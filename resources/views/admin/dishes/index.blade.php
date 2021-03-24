@@ -46,7 +46,12 @@
         </div>
 
         @foreach ($dishes as $key => $dish)
-        <div @click="fadeMe()" class="row-food d-flex"
+
+          <div v-if="isActive == true" class="">
+            DIV DI PROVA
+          </div>
+
+        <div class="row-food d-flex"
         :class="{{ $key }} == indexOfList ? 'row-active' : '' "
         {{-- :class="{{ $dish->visible }} == 0 ? 'row-food' : 'row-unavailable' " --}}
         >
@@ -77,14 +82,14 @@
             </div>
             <div class="tab tab-10">
                  {{-- SHOW --}}
-                <button @click="fadeMe({{ $key }}); indexOfList = {{ $key }}" class="btn" v-cloak>
+                <button class="btn" v-cloak>
                     <i v-if="show == false" class="fas fa-chevron-down"></i>
                     <i v-if="show == true" class="fas fa-chevron-up"></i>
                 </button>
             </div>
         </div>
         <transition name="fade">
-            <div class="dish-show" :class="(isActive == true) ? 'dish-active' : 'dish-show' ">
+            <div :class="activeClass">
                 <div class="img-show">
                     <img src="{{ asset('storage/' . $dish->image) }}" alt="">
                 </div>
