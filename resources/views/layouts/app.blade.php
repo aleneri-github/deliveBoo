@@ -28,10 +28,10 @@
 
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.css" integrity="sha512-9iWaz7iMchMkQOKA8K4Qpz6bpQRbhedFJB+MSdmJ5Nf4qIN1+5wOVnzg5BQs/mYH3sKtzY+DOgxiwMz8ZtMCsw==" crossorigin="anonymous" />
-    
+    <script src="{{ asset('js/dashboard.js') }}" defer></script>
 </head>
 <body>
-    <div>
+    <div id="app">
         <section id="dashboard">
             {{-- pannello admin --}}
             <div id="admin-menu">
@@ -102,14 +102,14 @@
                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               {{ Auth::user()->name }}
                           </a>
-          
+
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="{{ route('logout') }}"
-                                  onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
+                                 onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
                                   {{ __('Logout') }}
                               </a>
-          
+
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                   @csrf
                               </form>
