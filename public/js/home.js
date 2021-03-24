@@ -1914,7 +1914,7 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         _this.restaurants = response.data;
         setTimeout(function () {
           _this.restAnim = 'rest_anim';
-        }, 1000); // this.restAnim = 'rest_anim';
+        }, 1000);
       });
     },
     forward: function forward() {
@@ -1974,6 +1974,12 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   destroyed: function destroyed() {
     window.removeEventListener('scroll', this.scrollOnRest);
   }
+});
+$(document).ready(function () {
+  $('#image').on('change', function () {
+    var fileName = $(this).val().split('\\').pop();
+    $('.custom-file-label').html(fileName);
+  });
 });
 
 /***/ }),

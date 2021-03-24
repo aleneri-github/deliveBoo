@@ -44,11 +44,11 @@
                 <nav class="admin-menu">
                   <ul>
                     <li>
-                      
+
                       <a href="#">
-                        <i class="fas fa-cubes"></i>  
+                        <i class="fas fa-cubes"></i>
                         <span>Dashboard</span>
-                      </a> 
+                      </a>
                     </li>
                     <li>
                       <a href="#">
@@ -69,18 +69,18 @@
                       </a>
                     </li>
                   </ul>
-            
+
                 </nav>
-            
+
               </div>
             </div>
             {{-- main --}}
             <main id="admin-show">
-        
+
               <h1></h1>
               @yield('content')
-        
-          
+
+
             </main>
             {{-- pannello logout --}}
             <div id="admin-info">
@@ -125,8 +125,11 @@
                   <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
                   <h4>{{ $restaurant->name }}</h4>
                   <p>{{ $restaurant->email_rest }}</p>
-                  <span class="badge badge-dark">Italiano</span>
-                  <span class="badge badge-dark">Vegetariano</span>
+                  @foreach ($restaurant->types as $type)
+                    <span class="badge badge-dark">{{ ucfirst($type->name) }}</span>
+                  @endforeach
+                  {{-- <span class="badge badge-dark">Italiano</span>
+                  <span class="badge badge-dark">Vegetariano</span> --}}
                 </div>
               </div>
               {{-- dati restaurant --}}
@@ -145,11 +148,11 @@
                       <p>Incasso</p>
                     </div>
                 </div>
-          
+
               </div>
-          
+
             </div>
-        </section> 
+        </section>
     </div>
 </body>
 </html>

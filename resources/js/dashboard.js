@@ -1,29 +1,28 @@
 require('./bootstrap');
 import Vue from 'vue';
 
-var showFood = new Vue(
+var indexMenu = new Vue(
   {
-    el: "#index-Menu",
+    el: "#indexMenu",
     data: {
       show: false,
       indexOfList: -1,
-      isActive: true
+      isActive: false
     },
-  
+
     methods: {
-  
-      fadeMe: function(index) {
-        if (this.indexOfList == -1) {
-          this.indexOfList = index;
-        } else {
-          this.indexOfList = -1;
-        }
-        //  if (this.show == true) {
-        //    this.show = false
-        //   } else {
-        //    this.show = true
-        //   }
-      }
+
+    },
+    mounted() {
+      console.log('creato');
+      document.querySelectorAll('.row-food').forEach(item => {
+        item.addEventListener('click', event => {
+          console.log($(item).index());
+          if (indexOfList == index) {
+            this.isActive = !this.isActive;
+          }
+        })
+      })
     }
 
   }

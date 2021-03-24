@@ -25,7 +25,6 @@ var home = new Vue(
           setTimeout(() => {
             this.restAnim = 'rest_anim';
           }, 1000)
-          // this.restAnim = 'rest_anim';
         });
       },
       forward() {
@@ -79,3 +78,10 @@ var home = new Vue(
     }
   },
 );
+
+$(document).ready(function() {
+  $('#image').on('change', function(){
+    var fileName = $(this).val().split('\\').pop();
+    $('.custom-file-label').html(fileName);
+  });
+});

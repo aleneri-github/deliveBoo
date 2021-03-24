@@ -49334,26 +49334,27 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-var showFood = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: "#index-Menu",
+var indexMenu = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
+  el: "#indexMenu",
   data: {
     show: false,
     indexOfList: -1,
-    isActive: true
+    isActive: false
   },
-  methods: {
-    fadeMe: function fadeMe(index) {
-      if (this.indexOfList == -1) {
-        this.indexOfList = index;
-      } else {
-        this.indexOfList = -1;
-      } //  if (this.show == true) {
-      //    this.show = false
-      //   } else {
-      //    this.show = true
-      //   }
+  methods: {},
+  mounted: function mounted() {
+    var _this = this;
 
-    }
+    console.log('creato');
+    document.querySelectorAll('.row-food').forEach(function (item) {
+      item.addEventListener('click', function (event) {
+        console.log($(item).index());
+
+        if (indexOfList == index) {
+          _this.isActive = !_this.isActive;
+        }
+      });
+    });
   }
 });
 })();
