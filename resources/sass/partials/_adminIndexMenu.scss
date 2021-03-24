@@ -26,7 +26,7 @@
         }
       }
       .tab-big {
-        width: 40%;
+        width: 50%;
       }
 
     }
@@ -43,18 +43,23 @@
     }
     // show dettaglio piatto
     .dish-show {
+      width: 80%;
       background-color: #F9F9F9;
       border-radius: 5px;
       opacity: 0;
       display: none;
-      margin: 0 40px;
+      margin: auto;
       .img-show {
         display: flex;
+        align-items: flex-start;
         width: 50%;
         img {
           text-align: right;
           width: 100%;
           border-radius: 5px 0 0 5px;
+          border: 5px;
+          border-style: solid;
+          border-color: rgba(253, 194, 52, 1) rgba(253, 194, 52, 0) rgba(253, 194, 52, 0) rgba(253, 194, 52, 1);
         }
       }
       .info-show {

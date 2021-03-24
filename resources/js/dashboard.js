@@ -13,6 +13,7 @@ var showFood = new Vue(
     methods: {
   
       fadeMe: function(index) {
+        // console.log('funziona');
         if (this.indexOfList == -1) {
           this.indexOfList = index;
         } else {

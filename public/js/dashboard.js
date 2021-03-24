@@ -49343,6 +49343,7 @@ var showFood = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   },
   methods: {
     fadeMe: function fadeMe(index) {
+      // console.log('funziona');
       if (this.indexOfList == -1) {
         this.indexOfList = index;
       } else {

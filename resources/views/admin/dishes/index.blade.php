@@ -85,7 +85,7 @@
             </div>
         </div>
         <transition name="fade">
-            <div class="dish-show" :class="{{ $key }} == indexOfList ? 'dish-active' : 'dish-show' ">
+            <div class="dish-show" :class="{{ $key }} == indexOfList ? 'dish-active' : 'dish-active' ">
                 <div class="img-show">
                     <img src="{{ asset('storage/' . $dish->image) }}" alt="">
                 </div>
@@ -101,6 +101,7 @@
         </transition>
         @endforeach
     </div>
+
 </div>
 <script src="{{ asset('js/dashboard.js') }}" defer></script>
 
