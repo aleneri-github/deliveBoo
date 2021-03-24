@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Train+One&display=swap);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -505,6 +506,21 @@ footer .col-footer .logo {
     margin-left: 30px;
   }
 }
+#page-404 {
+  background-color: #FFFFFF;
+  padding-bottom: 50px;
+}
+#page-404 .container {
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+}
+#page-404 .container h1 {
+  padding-top: 20px;
+}
+#page-404 .container img {
+  width: 600px;
+}
+
 #jumbotron_rest {
   height: 380px;
   background-position: center;

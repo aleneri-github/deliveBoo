@@ -1,9 +1,13 @@
+//font google
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Train+One&display=swap');
+
 @import 'partials/variables';
 @import 'partials/common';
 @import 'partials/mixins';
 @import 'partials/header';
 @import 'partials/main';
 @import 'partials/footer';
+@import 'partials/_page-404';
 
 // css per la guest
 @import 'partials/main-guest-show';
