@@ -213,14 +213,14 @@ main {
       display: block;
       width: 100%;
     }
-    .v-if-container {
+    .v-if-container {      
       width: 100%;
       display:flex;
       flex-wrap:wrap
     }
     .v-else-container{
       display:flex;
-      justify-content:center;      
+      justify-content:center;
       width:100%;
       margin-top: 40px;
       border-radius: 20px;
