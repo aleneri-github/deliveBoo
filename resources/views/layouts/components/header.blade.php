@@ -1,4 +1,4 @@
-<div id="app">
+<header id="app">
     <nav class="navbar navbar-expand-md shadow-sm">
         <div class="container">
             {{-- <a class="navbar-brand" href="{{ url('/') }}">
@@ -58,4 +58,4 @@
             </div>
         </div>
     </nav>
-</div>
+</header>

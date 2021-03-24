@@ -51,16 +51,16 @@ a:hover {
   display: none;
 }
 
-#app {
+header {
   position: sticky;
   top: 0;
-  z-index: 2;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
-#app nav {
+header nav {
   background-color: #FDC234;
 }
-#app nav img {
+header nav img {
   height: 50px;
 }
 
