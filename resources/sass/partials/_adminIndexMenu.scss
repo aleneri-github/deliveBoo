@@ -17,6 +17,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        form {
+          button {
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+        button {
+          &:focus {
+            outline: none;
+          }
+        }
       }
       .tab-10 {
         width: 10%;
@@ -26,7 +38,7 @@
         }
       }
       .tab-big {
-        width: 40%;
+        width: 50%;
       }
 
     }

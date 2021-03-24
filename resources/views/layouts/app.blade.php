@@ -102,14 +102,14 @@
                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               {{ Auth::user()->name }}
                           </a>
-          
+
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="{{ route('logout') }}"
-                                  onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
+                                 onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
                                   {{ __('Logout') }}
                               </a>
-          
+
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                   @csrf
                               </form>
@@ -122,9 +122,9 @@
               {{-- @dd($restaurant->name) --}}
               <div class="info-side">
                 <div class="card-restaurant">
-                  <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
-                  <h4>{{ $restaurant->name }}</h4>
-                  <p>{{ $restaurant->email_rest }}</p>
+                  {{-- <img src="{{ asset('storage/' . $restaurant->image) }}" alt=""> --}}
+                  {{-- <h4>{{ $restaurant->name }}</h4>
+                  <p>{{ $restaurant->email_rest }}</p> --}}
                   <span class="badge badge-dark">Italiano</span>
                   <span class="badge badge-dark">Vegetariano</span>
                 </div>

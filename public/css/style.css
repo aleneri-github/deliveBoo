@@ -1106,6 +1106,12 @@ footer .col-footer .logo {
   align-items: center;
   justify-content: center;
 }
+#index-Menu .box-menu .row-food .tab form button:focus {
+  outline: none;
+}
+#index-Menu .box-menu .row-food .tab button:focus {
+  outline: none;
+}
 #index-Menu .box-menu .row-food .tab-10 {
   width: 10%;
 }
@@ -1114,7 +1120,7 @@ footer .col-footer .logo {
   border-radius: 5px;
 }
 #index-Menu .box-menu .row-food .tab-big {
-  width: 40%;
+  width: 50%;
 }
 #index-Menu .box-menu .row-info {
   font-weight: bolder;

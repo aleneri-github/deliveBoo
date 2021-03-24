@@ -48,7 +48,6 @@
         @foreach ($dishes as $key => $dish)
         <div class="row-food d-flex" 
         :class="{{ $key }} == indexOfList ? 'row-active' : '' "
-        {{-- :class="{{ $dish->visible }} == 0 ? 'row-food' : 'row-unavailable' " --}}
         >
         
             <div class="tab tab-10">
@@ -90,9 +89,9 @@
                     <img src="{{ asset('storage/' . $dish->image) }}" alt="">
                 </div>
                 <div class="info-show">
-                    <div class="img-info">
+                    {{-- <div class="img-info">
                         <img src="{{ asset('img/foglia.svg') }}" alt="">
-                    </div>
+                    </div> --}}
                     <p><span>Ingredienti:</span>  {{ $dish->ingredients }}</p>
                     <p><span>Descrizione:</span>  {{ $dish->description }}</p>
                     <p><span>Prezzo:</span>  {{ number_format($dish->price, 2) }} €</p>
