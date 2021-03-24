@@ -86981,8 +86981,7 @@ var prova = __webpack_require__(/*! ./orders.json */ "./resources/js/orders.json
 var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: "#statistics",
   data: {
-    dishes: [],
-    cart: []
+    orders: []
   },
   methods: {
     createChart: function createChart() {
@@ -87023,7 +87022,10 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
     this.createChart();
     axios.get("http://localhost:8000/api/orders").then(function (response) {
-      _this.carousel = response.data;
+      _this.orders = response.data;
+      console.log(_this.orders);
+
+      _this.orders.forEach(function (element) {});
     });
   }
 });
