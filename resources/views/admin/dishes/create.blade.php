@@ -44,17 +44,17 @@
             <div class="form-group">
                 <label for="name">Prezzo</label>
                 <input class="form-control" type="text" id="price" name="price" value="{{ old('price') }}">
-            </div>   
+            </div>
 
             <div class="form-group">
                 <label for="image">Inserisci una immagine del prodotto</label>
                 <input class="form-control" type="file" name="image" id="image" accept="image/*">
             </div>
 
-           
+
             <div class="form-group">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="vegetarian" id="vegetarian" 
+                    <input class="form-check-input" type="checkbox" name="vegetarian" id="vegetarian"
                     @if (old('vegetarian') == 1) checked @endif value="1">
                     <label class="form-check-label" for="vegetarian">Vegetariano</label>
                 </div>
@@ -63,7 +63,7 @@
              <div class="form-group">
                 <div class="form-group">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="visible" id="visible" 
+                        <input class="form-check-input" type="checkbox" name="visible" id="visible"
                         @if (old('vegetarian') == 1) checked @endif value="1">
                         <label class="form-check-label" for="visible">Disponibile</label>
                     </div>
@@ -73,4 +73,5 @@
             <input class="btn btn-primary" type="submit" value="Crea">
         </form>
     </div>
+    <script src="{{ asset('js/dashboard.js') }}" defer></script>
 @endsection

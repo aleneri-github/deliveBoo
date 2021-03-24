@@ -3,6 +3,7 @@ main {
   #jumbotron_main {
     height: 700px;
     position: relative;
+    overflow-x: hidden;
     .layover {
       position: absolute;
       width: 100%;
@@ -222,6 +223,12 @@ main {
       overflow: hidden;
       color: white;
       transition: 1.5s;
+      opacity: 0;
+      transform: translateX(-110%);
+      &.rest_anim {
+        transform: translateX(0);
+        opacity: 1;
+      }
       &:hover {
         cursor: pointer;
         transform: scale(1.025);
