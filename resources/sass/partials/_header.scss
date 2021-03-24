@@ -1,0 +1,12 @@
+#app {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  nav {
+    background-color: $yellow;
+    border: 1px solid black;
+    img {
+      height: 50px;
+    }
+  }
+}
