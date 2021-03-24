@@ -19,8 +19,13 @@ var home = new Vue(
     methods: {
       filter(type) {
         this.restaurants = [];
+        this.restAnim = '';
         axios.get(`http://localhost:8000/api/restaurants?type=${type}`).then(response => {
           this.restaurants = response.data;
+          setTimeout(() => {
+            this.restAnim = 'rest_anim';
+          }, 1000)
+          // this.restAnim = 'rest_anim';
         });
       },
       forward() {
@@ -36,6 +41,9 @@ var home = new Vue(
       },
       createElem(id) {
         let elem = document.getElementById(id);
+        if (!elem) {
+          return
+        }
         let rect = elem.getBoundingClientRect();
         return [elem, rect]
       }
@@ -53,6 +61,9 @@ var home = new Vue(
       });
       window.addEventListener('scroll', () => {
         const restDiv = this.createElem("restaurants");
+        if (!restDiv) {
+          return
+        }
         if (restDiv[1].top <= window.innerHeight) {
           this.restAnim = 'rest_anim';
         }

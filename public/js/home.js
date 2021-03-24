@@ -1909,8 +1909,12 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       var _this = this;
 
       this.restaurants = [];
+      this.restAnim = '';
       axios.get("http://localhost:8000/api/restaurants?type=".concat(type)).then(function (response) {
         _this.restaurants = response.data;
+        setTimeout(function () {
+          _this.restAnim = 'rest_anim';
+        }, 1000); // this.restAnim = 'rest_anim';
       });
     },
     forward: function forward() {
@@ -1926,6 +1930,11 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     },
     createElem: function createElem(id) {
       var elem = document.getElementById(id);
+
+      if (!elem) {
+        return;
+      }
+
       var rect = elem.getBoundingClientRect();
       return [elem, rect];
     }
@@ -1945,6 +1954,10 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     });
     window.addEventListener('scroll', function () {
       var restDiv = _this2.createElem("restaurants");
+
+      if (!restDiv) {
+        return;
+      }
 
       if (restDiv[1].top <= window.innerHeight) {
         _this2.restAnim = 'rest_anim';
