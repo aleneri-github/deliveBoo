@@ -13,7 +13,8 @@ var home = new Vue(
       border: false,
       typeIndex: 0,
       loader: true,
-      restAnim: ''
+      restAnim: '',
+      counter: 0
 
     },
     methods: {
@@ -63,8 +64,9 @@ var home = new Vue(
         if (!restDiv) {
           return
         }
-        if (restDiv[1].top <= window.innerHeight) {
+        if (restDiv[1].top <= window.innerHeight && this.counter == 0) {
           this.restAnim = 'rest_anim';
+          this.counter += 1;
         }
       });
     },

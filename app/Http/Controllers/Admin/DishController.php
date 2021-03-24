@@ -177,7 +177,7 @@ class DishController extends Controller
     }
 
      public function order() {
-        
+
         $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
         return view('admin.dishes.statistics', compact('restaurant'));
     }

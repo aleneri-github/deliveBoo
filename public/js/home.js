@@ -1902,7 +1902,8 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     border: false,
     typeIndex: 0,
     loader: true,
-    restAnim: ''
+    restAnim: '',
+    counter: 0
   },
   methods: {
     filter: function filter(type) {
@@ -1959,8 +1960,9 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         return;
       }
 
-      if (restDiv[1].top <= window.innerHeight) {
+      if (restDiv[1].top <= window.innerHeight && _this2.counter == 0) {
         _this2.restAnim = 'rest_anim';
+        _this2.counter += 1;
       }
     });
   },
