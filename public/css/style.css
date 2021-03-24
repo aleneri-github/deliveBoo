@@ -186,19 +186,24 @@ main .slider-wrapper .container_food .images img {
   -o-object-position: center;
      object-position: center;
 }
-main .slider-wrapper .container_food .images h3 {
+main .slider-wrapper .container_food .images .name_container {
   position: absolute;
-  height: 400px;
-  width: 80%;
-  text-align: center;
-  line-height: 400px;
+  top: 50%;
+  left: 50%;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.5);
   transform: translate(-50%, -50%);
+  height: 400px;
+  width: 80%;
+  display: flex;
+  padding: 5px;
+}
+main .slider-wrapper .container_food .images .name_container h3 {
+  margin: auto;
+  text-align: center;
   color: #fefefe;
-  top: 50%;
-  left: 50%;
   font-size: 50px;
+  word-break: break-word;
 }
 main #carousel-type .types {
   width: 100%;
@@ -212,6 +217,7 @@ main #carousel-type .types {
 main #carousel-type .types div {
   position: relative;
   margin: 5px 5px;
+  border: 5px solid #fefefe;
   width: calc(100% / 8 - 10px);
   cursor: pointer;
 }
@@ -219,14 +225,9 @@ main #carousel-type .types div img {
   border-radius: 5px;
   width: 100%;
 }
-main #carousel-type .types div:active {
-  transform: scale(1.1);
-}
-main #carousel-type .types div:active h5 {
-  color: #FDC234;
-}
-main #carousel-type .types div .typeActive {
+main #carousel-type .types div.typeActive {
   border: 5px solid #FDC234;
+  border-radius: 10px;
 }
 main #carousel-type .types div h5 {
   position: absolute;
@@ -238,6 +239,10 @@ main #carousel-type .types div h5 {
   color: white;
   font-weight: bold;
   text-transform: uppercase;
+  margin-left: 5px;
+}
+main #carousel-type .types div h5.titleActive {
+  color: #FDC234;
 }
 main #restaurants {
   padding: 100px;
@@ -408,9 +413,11 @@ main #restaurants .card_rest a .layover p {
   main .slider-wrapper .container_food .images img {
     height: 330px;
   }
-  main .slider-wrapper .container_food .images h3 {
+  main .slider-wrapper .container_food .images .name_container {
     height: 330px;
-    line-height: 330px;
+  }
+  main .slider-wrapper .container_food .images .name_container h3 {
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 535px) {
@@ -420,9 +427,11 @@ main #restaurants .card_rest a .layover p {
   main .slider-wrapper .container_food .images img {
     height: 300px;
   }
-  main .slider-wrapper .container_food .images h3 {
+  main .slider-wrapper .container_food .images .name_container {
     height: 300px;
-    line-height: 300px;
+  }
+  main .slider-wrapper .container_food .images .name_container h3 {
+    font-size: 35px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -432,9 +441,11 @@ main #restaurants .card_rest a .layover p {
   main .slider-wrapper .container_food .images img {
     height: 250px;
   }
-  main .slider-wrapper .container_food .images h3 {
+  main .slider-wrapper .container_food .images .name_container {
     height: 250px;
-    line-height: 250px;
+  }
+  main .slider-wrapper .container_food .images .name_container h3 {
+    font-size: 30px;
   }
 }
 footer {
