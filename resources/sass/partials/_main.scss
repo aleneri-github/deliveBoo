@@ -213,6 +213,23 @@ main {
       display: block;
       width: 100%;
     }
+    .v-if-container {
+      width: 100%;
+      display:flex;
+      flex-wrap:wrap
+    }
+    .v-else-container{
+      display:flex;
+      justify-content:center;      
+      width:100%;
+      margin-top: 40px;
+      border-radius: 20px;
+      background-color: $grey;
+      h2 {
+        align-items: center;
+        color: $white;
+      }
+    }
     .card_rest {
       position: relative;
       margin: 10px;

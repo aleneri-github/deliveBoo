@@ -256,6 +256,23 @@ main #restaurants h1 {
   display: block;
   width: 100%;
 }
+main #restaurants .v-if-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+main #restaurants .v-else-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+  border-radius: 20px;
+  background-color: #1a1918;
+}
+main #restaurants .v-else-container h2 {
+  align-items: center;
+  color: #fefefe;
+}
 main #restaurants .card_rest {
   position: relative;
   margin: 10px;
