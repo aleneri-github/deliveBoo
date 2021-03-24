@@ -178,8 +178,10 @@ main {
           // overflow: hidden;
           border-radius: 5px;
           width: 100%;
-        }
-        &.typeActive {
+        } &:hover {
+          transform: scale(1.1);
+          transition: 0.5s;
+        } &.typeActive {
           border: 5px solid $yellow;
           border-radius: 10px;
         }
@@ -213,7 +215,7 @@ main {
       display: block;
       width: 100%;
     }
-    .v-if-container {      
+    .v-if-container {
       width: 100%;
       display:flex;
       flex-wrap:wrap
@@ -227,6 +229,7 @@ main {
       background-color: $grey;
       h2 {
         align-items: center;
+        padding: 10px;
         color: $white;
       }
     }
@@ -390,6 +393,11 @@ main {
         }
       }
     }
+    .v-else-container {
+      h2 {
+        font-size: 22px;
+      }
+    }
   }
 }
 
@@ -438,6 +446,11 @@ main {
         }
       }
     }
+    .v-else-container {
+      h2 {
+        font-size: 18px;
+      }
+    }
   }
 }
 
@@ -454,6 +467,11 @@ main {
         div {
           min-width: calc(100% / 3);
         }
+      }
+    }
+    .v-else-container {
+      h2 {
+        font-size: 14px;
       }
     }
   }

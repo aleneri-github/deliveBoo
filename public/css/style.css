@@ -225,6 +225,10 @@ main #carousel-type .types div img {
   border-radius: 5px;
   width: 100%;
 }
+main #carousel-type .types div:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
 main #carousel-type .types div.typeActive {
   border: 5px solid #FDC234;
   border-radius: 10px;
@@ -271,6 +275,7 @@ main #restaurants .v-else-container {
 }
 main #restaurants .v-else-container h2 {
   align-items: center;
+  padding: 10px;
   color: #fefefe;
 }
 main #restaurants .card_rest {
@@ -378,6 +383,9 @@ main #restaurants .card_rest a .layover p {
     text-align: center;
     margin: 10px;
   }
+  main .v-else-container h2 {
+    font-size: 22px;
+  }
 }
 @media screen and (max-width: 656px) {
   main #carousel-type .types div h5 {
@@ -397,6 +405,9 @@ main #restaurants .card_rest a .layover p {
     text-align: center;
     margin: 10px;
   }
+  main .v-else-container h2 {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 500px) {
   main #carousel-type .types {
@@ -409,6 +420,9 @@ main #restaurants .card_rest a .layover p {
   }
   main #carousel-type .types div {
     min-width: calc(100% / 3);
+  }
+  main .v-else-container h2 {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 850px) {
