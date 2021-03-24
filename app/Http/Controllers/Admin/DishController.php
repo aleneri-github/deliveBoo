@@ -175,4 +175,10 @@ class DishController extends Controller
                 ->route('admin.dishes.index')
                 ->with('message', "Piatto " . $dish->name . " cancellato correttamente!");
     }
+
+     public function order() {
+        
+        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
+        return view('admin.dishes.statistics', compact('restaurant'));
+    }
 }

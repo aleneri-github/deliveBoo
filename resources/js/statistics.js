@@ -8,8 +8,7 @@ var statistics = new Vue(
     {
         el: "#statistics",
         data: {
-            dishes: [],
-            cart: [],
+            orders: [],
         },
         methods: {
             createChart() {
@@ -75,7 +74,12 @@ var statistics = new Vue(
             this.createChart();
 
             axios.get(`http://localhost:8000/api/orders`).then(response => {
-                this.carousel = response.data;
+                this.orders = response.data;
+                console.log(this.orders);
+
+                this.orders.forEach(element => {
+                    
+                });
             });
         },
     }
