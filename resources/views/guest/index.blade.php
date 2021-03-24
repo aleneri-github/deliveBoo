@@ -81,7 +81,8 @@
     {{-- RESTAURANTS --}}
     <section id="restaurants">
       <h1 class="text-center">I nostri ristoranti</h1>
-        <div v-if="" :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest animate__animated animate__fadeInLeft" v-for="restaurant in restaurants">
+      <div style="width:100%; display:flex; justify-content:center; flex-wrap:wrap" v-if="restaurants != ''">
+        <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest animate__animated animate__fadeInLeft" v-for="restaurant in restaurants">
           <a :href="'restaurants' + '/' + restaurant.slug + '/show'">
             <div class="layover">
               <h3>@{{ restaurant.name }}</h3>
@@ -90,13 +91,12 @@
             </div>
           </a>
         </div>
-        <div v-else>
-          <h4>Non ci sono ristoranti</h4>
-
+      </div>
+        <div v-else style="width:100%; display:flex; justify-content:center;">
+          <img style="max-width:400px;" src="https://miro.medium.com/max/5736/1*65xLAntdeSFQefVpy8k52Q.png" alt="">
         </div>
       </div>
     </section>
-
   </main>
 
   <script src="{{ asset('js/home.js') }}"></script>
