@@ -1384,3 +1384,18 @@ a:hover {
   padding: 20px;
   margin-bottom: 20px;
 }
+
+#page-404 {
+  background-color: #FFFFFF;
+  padding-bottom: 50px;
+}
+#page-404 .container {
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+}
+#page-404 .container h1 {
+  padding-top: 20px;
+}
+#page-404 .container img {
+  width: 600px;
+}
