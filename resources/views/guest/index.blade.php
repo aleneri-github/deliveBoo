@@ -61,7 +61,9 @@
                 <h2 class="text-center">Le nostre novità in zona</h2>
                 <div v-for="(food, index) in foods" class="images" :class="(index == indexOfImage) ? active : ''">
                     <img :src="'http://127.0.0.1:8000/storage' + '/' + food.image">
-                    <h3>@{{ food.name }}</h3>
+                    <div class="name_container">
+                      <h3>@{{ food.name }}</h3>
+                    </div>
                 </div>
               </div>
 
@@ -71,9 +73,9 @@
 
     <section id="carousel-type">
       <div class="types">
-        <div v-for="(card, index) in carousel" @click='filter(card.type); typeIndex = index'>
-          <img :class="index == typeIndex ? 'typeActive' : ''" :src="card.image" alt="sales">
-          <h5> @{{ card.type }}</h5>
+        <div v-for="(card, index) in carousel" @click='filter(card.type); typeIndex = index' :class="index == typeIndex ? 'typeActive' : ''">
+          <img :src="card.image" alt="sales">
+          <h5 :class="index == typeIndex ? 'titleActive' : ''"> @{{ card.type }}</h5>
         </div>
       </div class="types">
     </section>

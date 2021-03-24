@@ -131,19 +131,24 @@ main {
             object-fit: cover;
             object-position: center;
           }
-          h3 {
+          .name_container {
             position: absolute;
-            height: 400px;
-            width: 80%;
-            text-align: center;
-            line-height: 400px;
+            top: 50%;
+            left: 50%;
             border-radius: 50px;
             background-color: rgba(0,0,0,0.5);
             transform: translate(-50%, -50%);
-            color: $white;
-            top: 50%;
-            left: 50%;
-            font-size: 50px;
+            height: 400px;
+            width: 80%;
+            display: flex;
+            padding: 5px;
+            h3 {
+              margin: auto;
+              text-align: center;
+              color: $white;
+              font-size: 50px;
+              word-break: break-word;
+            }
           }
         }
     }
@@ -164,6 +169,7 @@ main {
         position: relative;
         // display: inline-block;
         margin: 5px 5px;
+        border: 5px solid $white;
         // width: calc(100% / 8 - 10px);
         width: calc(100% / 8 - 10px);
         // flex-shrink: 0;
@@ -172,13 +178,10 @@ main {
           // overflow: hidden;
           border-radius: 5px;
           width: 100%;
-        } &:active {
-          transform: scale(1.1);
-        } &:active h5 {
-          color: $yellow;
         }
-        .typeActive {
+        &.typeActive {
           border: 5px solid $yellow;
+          border-radius: 10px;
         }
         h5 {
           position: absolute;
@@ -190,6 +193,10 @@ main {
           color: white;
           font-weight: bold;
           text-transform: uppercase;
+          margin-left: 5px;
+          &.titleActive {
+            color: $yellow;
+          }
         }
       }
     }
@@ -456,9 +463,11 @@ main {
             img {
               height: 330px;
             }
-            h3 {
+            .name_container {
               height: 330px;
-              line-height: 330px;
+              h3 {
+                font-size: 40px;
+              }
             }
           }
       }
@@ -476,9 +485,11 @@ main {
           img {
             height: 300px;
           }
-          h3 {
+          .name_container {
             height: 300px;
-            line-height: 300px;
+            h3 {
+              font-size: 35px;
+            }
           }
         }
       }
@@ -496,9 +507,11 @@ main {
           img {
             height: 250px;
           }
-          h3 {
+          .name_container {
             height: 250px;
-            line-height: 250px;
+            h3 {
+              font-size: 30px;
+            }
           }
         }
       }
