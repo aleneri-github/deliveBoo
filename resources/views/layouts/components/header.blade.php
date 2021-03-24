@@ -14,7 +14,7 @@
                     {{-- LOGO --}}
                     <a href="{{ url('/') }}">
                         <img src="{{ asset('img/deliverYou-Logo.svg') }}" alt="deliverYou-logo">
-                        <span><strong>DeliverYou</strong></span>
+                        {{-- <span><strong>DeliverYou</strong></span> --}}
                     </a>
                 </ul>
 
