@@ -10,7 +10,8 @@ var home = new Vue(
       foods: [],
       indexOfImage: 0,
       active: "active",
-      border: "active",
+      border: false,
+      typeIndex: 0,
 
 
     },
@@ -29,7 +30,7 @@ var home = new Vue(
         this.indexOfImage++;
       },
       borderActive() {
-        this.border = 'active';
+        this.border = !this.border;
 
       }
 

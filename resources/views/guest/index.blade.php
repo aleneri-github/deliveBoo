@@ -71,8 +71,8 @@
 
     <section id="carousel-type">
       <div class="types">
-        <div v-for="card in carousel" @click='filter(card.type)'>
-          <img @click='borderActive' :class="{ typeActive : border }" :src="card.image" alt="sales">
+        <div v-for="(card, index) in carousel" @click='filter(card.type); typeIndex = index'>
+          <img :class="index == typeIndex ? 'typeActive' : ''" :src="card.image" alt="sales">
           <h5> @{{ card.type }}</h5>
         </div>
       </div class="types">
@@ -81,7 +81,7 @@
     {{-- RESTAURANTS --}}
     <section id="restaurants">
       <h1 class="text-center">I nostri ristoranti</h1>
-        <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest animate__animated animate__fadeInLeft" v-for="restaurant in restaurants">
+        <div v-if="" :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest animate__animated animate__fadeInLeft" v-for="restaurant in restaurants">
           <a :href="'restaurants' + '/' + restaurant.slug + '/show'">
             <div class="layover">
               <h3>@{{ restaurant.name }}</h3>
@@ -89,6 +89,9 @@
               <p>@{{ restaurant.phone_number }}</p>
             </div>
           </a>
+        </div>
+        <div v-else>
+          <h4>Non ci sono ristoranti</h4>
 
         </div>
       </div>
