@@ -76,18 +76,17 @@
     height: 100%;
     top: 0;
     right: 0;
-    overflow: hidden;
     padding: 15px 30px;
     border-left: 1px solid lightgray;
     .top {
       width: 100%;
       text-align: right;
-      ul {
-        li {
-          a {
-            color: $greyText;
-          }
-        }
+     ul {
+       li {
+         a {
+           color: $greyText;
+         }
+       }
       }
     }
     .info-side {
