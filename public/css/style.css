@@ -51,6 +51,19 @@ a:hover {
   display: none;
 }
 
+#app {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+#app nav {
+  background-color: #FDC234;
+}
+#app nav img {
+  height: 50px;
+}
+
 main {
   background-color: #fefefe;
 }
