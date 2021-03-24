@@ -18,10 +18,10 @@ class OrderController extends Controller
     for ($i = 0; $i < 12; $i++) {
       $current = Carbon::today();
       $currentMonth = $current->subMonth($i)->month;
-      $ordersMonth[$currentMonth] = [];
+      // $ordersMonth[$currentMonth] = [];
       foreach ($orders as $value) {
         if ($value->created_at->month == $currentMonth) {
-          array_push($ordersMonth[$currentMonth], $value);
+          array_push($ordersMonth, ['month' => $currentMonth, 'order' => $value]);
         }
       }
     }
