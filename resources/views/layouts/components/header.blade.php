@@ -1,16 +1,22 @@
 <div id="app">
-  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+  <nav class="navbar navbar-expand-md shadow-sm">
       <div class="container">
-          <a class="navbar-brand" href="{{ url('/') }}">
-              {{ config('app.name', 'Laravel') }}
+          {{-- <a class="navbar-brand" href="{{ url('/') }}">
+              {{ config('<img src="../img/deliverYou-Logo.svg" alt="">', '<img src="../img/deliverYou-Logo.svg" alt="">') }}
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
               <span class="navbar-toggler-icon"></span>
-          </button>
+          </button> --}}
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <!-- Left Side Of Navbar -->
               <ul class="navbar-nav mr-auto">
+                
+                {{-- LOGO A SINISTRA --}}
+                <a href="{{ url('/') }}">
+                    <img src="{{ asset('img/deliverYou-Logo.svg') }}" alt="deliverYou-logo">
+                    <span><strong>DeliverYou</strong></span>
+                </a>
 
               </ul>
 

@@ -47,6 +47,16 @@ a:hover {
   opacity: 0;
 }
 
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #FDC234;
+  border: 1px solid black;
+}
+nav img {
+  width: 80px;
+}
+
 main {
   background-color: #fefefe;
 }
