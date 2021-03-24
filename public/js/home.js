@@ -1898,7 +1898,9 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     carousel: [],
     foods: [],
     indexOfImage: 0,
-    active: "active"
+    active: "active",
+    border: false,
+    typeIndex: 0
   },
   methods: {
     filter: function filter(type) {
@@ -1910,18 +1912,15 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       });
     },
     forward: function forward() {
-      this.indexOfImage++;
-
-      if (this.indexOfImage == this.foods.lenght) {
+      if (this.indexOfImage == this.foods.length - 1) {
         this.indexOfImage = 0;
+        return;
       }
+
+      this.indexOfImage++;
     },
-    backward: function backward() {
-      if (this.indexOfImage == 0) {
-        this.indexOfImage = this.foods.length - 1;
-      } else {
-        this.indexOfImage--;
-      }
+    borderActive: function borderActive() {
+      this.border = !this.border;
     }
   },
   mounted: function mounted() {

@@ -56,9 +56,7 @@
 
     <section id="food">
       <div class="slider-wrapper">
-              <div class="prev">
-                  <i class="fas fa-angle-left" @click="backward()"></i>
-              </div>
+
               <div class="container_food">
                 <h2 class="text-center">Le nostre novità in zona</h2>
                 <div v-for="(food, index) in foods" class="images" :class="(index == indexOfImage) ? active : ''">
@@ -66,17 +64,15 @@
                     <h3>@{{ food.name }}</h3>
                 </div>
               </div>
-              <div class="next">
-                  <i class="fas fa-angle-right" @click="forward()"></i>
-              </div>
+
           </div>
     </section>
 
 
     <section id="carousel-type">
       <div class="types">
-        <div v-for="card in carousel" @click='filter(card.type)'>
-          <img :src="card.image" alt="sales">
+        <div v-for="(card, index) in carousel" @click='filter(card.type); typeIndex = index'>
+          <img :class="index == typeIndex ? 'typeActive' : ''" :src="card.image" alt="sales">
           <h5> @{{ card.type }}</h5>
         </div>
       </div class="types">
@@ -85,6 +81,7 @@
     {{-- RESTAURANTS --}}
     <section id="restaurants">
       <h1 class="text-center">I nostri ristoranti</h1>
+      <div style="width:100%; display:flex; justify-content:center; flex-wrap:wrap" v-if="restaurants != ''">
         <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest animate__animated animate__fadeInLeft" v-for="restaurant in restaurants">
           <a :href="'restaurants' + '/' + restaurant.slug + '/show'">
             <div class="layover">
@@ -93,11 +90,13 @@
               <p>@{{ restaurant.phone_number }}</p>
             </div>
           </a>
-
+        </div>
+      </div>
+        <div v-else style="width:100%; display:flex; justify-content:center;">
+          <img style="max-width:400px;" src="https://miro.medium.com/max/5736/1*65xLAntdeSFQefVpy8k52Q.png" alt="">
         </div>
       </div>
     </section>
-
   </main>
 
   <script src="{{ asset('js/home.js') }}"></script>

@@ -10,6 +10,10 @@ var home = new Vue(
       foods: [],
       indexOfImage: 0,
       active: "active",
+      border: false,
+      typeIndex: 0,
+
+
     },
     methods: {
       filter(type) {
@@ -19,18 +23,17 @@ var home = new Vue(
         });
       },
       forward() {
-        this.indexOfImage++;
-        if (this.indexOfImage == this.foods.lenght) {
+        if (this.indexOfImage == this.foods.length-1) {
           this.indexOfImage = 0;
+          return
         }
+        this.indexOfImage++;
       },
-      backward() {
-        if (this.indexOfImage == 0) {
-          this.indexOfImage = this.foods.length -1;
-        } else {
-          this.indexOfImage--;
-        }
+      borderActive() {
+        this.border = !this.border;
+
       }
+
     },
     mounted: function () {
       axios.get(`http://localhost:8000/api/restaurants?type=all`).then(response => {
