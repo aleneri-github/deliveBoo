@@ -44,7 +44,8 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   $restaurant = Restaurant::where('user_id', Auth::id())->first();
+    {   
+        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
         return view('admin.dishes.create', compact('restaurant'));
     }
 
@@ -56,8 +57,6 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $request->validate($this->dishValidation);
 
         $data = $request->all();
@@ -115,7 +114,8 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        return view('admin.dishes.edit', compact('dish'));
+        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
+        return view('admin.dishes.edit', compact('dish', 'restaurant'));
     }
 
     /**
