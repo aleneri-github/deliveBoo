@@ -52,7 +52,7 @@ var home = new Vue(
         localStorage.clear();
         // console.log(event);
         var link = document.getElementById('rest_a');
-        window.location.replace(link.href);
+        window.location.assign(link.href);
       }
     },
     mounted: function () {

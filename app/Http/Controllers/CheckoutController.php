@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
+use App\Restaurant;
+use Illuminate\Support\Str;
 class CheckoutController extends Controller
 {
   private $orderValidation = [
@@ -21,7 +23,7 @@ class CheckoutController extends Controller
       'privateKey' => env("BRAINTREE_PRIVATE_KEY")
     ]);
     $token = $gateway->clientToken()->generate();
-    return view ('guest.checkout', compact('token'));
+    return view ('guest.checkout', compact('token', 'restaurant'));
   }
   public function store(Request $request)
   {
