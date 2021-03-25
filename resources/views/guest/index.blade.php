@@ -107,7 +107,6 @@
   </div>
   </transition>
   </main>
-<<<<<<< HEAD
 
   {{-- <script src="{{ asset('js/home.js') }}"></script> --}}
 @endsection

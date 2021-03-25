@@ -14,4 +14,10 @@ class GuestController extends Controller
         // $dishes = Dish::where('restaurant_id', $restaurant->id);
         return view('guest.show', compact('restaurant'));
     }
+
+    // public function show($slug) {
+    //     $restaurant = Restaurant::where('slug', $slug)->firstOrFail();
+    //     // $dishes = Dish::where('restaurant_id', $restaurant->id);
+    //     return view('guest.show', compact('restaurant'));
+    // }
 }
