@@ -296,6 +296,10 @@ main #carousel-type .types div img {
   border-radius: 5px;
   width: 100%;
 }
+main #carousel-type .types div:hover {
+  transform: translate(0, -7px);
+  transition: 0.5s;
+}
 main #carousel-type .types div.typeActive {
   border: 5px solid #FDC234;
   border-radius: 10px;
@@ -324,6 +328,21 @@ main #restaurants {
 main #restaurants h1 {
   display: block;
   width: 100%;
+}
+main #restaurants .no-restaurants h2 {
+  text-align: center;
+  font-size: 22px;
+  border-radius: 20px;
+  background-color: #1a1918;
+  padding: 10px;
+  margin: 30px;
+  color: #fefefe;
+}
+main #restaurants .v-if-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 main #restaurants .card_rest {
   position: relative;
@@ -356,10 +375,17 @@ main #restaurants .card_rest a .layover {
   background: linear-gradient(270deg, rgba(255, 255, 255, 0) 36%, rgba(0, 0, 0, 0.8015581232) 100%);
 }
 main #restaurants .card_rest a .layover h3 {
-  font-size: 26px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #FDC234;
+  text-shadow: 1px 1px #1a1918;
 }
-main #restaurants .card_rest a .layover p {
-  font-size: 26px;
+main #restaurants .card_rest a .layover .card-address {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+main #restaurants .card_rest a .layover span {
+  font-size: 14px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -418,8 +444,8 @@ main #restaurants .card_rest a .layover p {
   main #restaurants {
     justify-content: center;
   }
-  main #restaurants .card_rest {
-    min-width: 500px;
+  main #restaurants .no-restaurants h2 {
+    font-size: 20px;
   }
   main #service {
     display: flex;
@@ -435,38 +461,6 @@ main #restaurants .card_rest a .layover p {
     width: calc(100% / 2 - 20px);
     text-align: center;
     margin: 10px;
-  }
-}
-@media screen and (max-width: 656px) {
-  main #carousel-type .types div h5 {
-    font-size: 13px;
-  }
-  main #service {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
-  main #service .box-cards {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  main #service .box-cards .service-card {
-    width: calc(100% / 1 - 20px);
-    text-align: center;
-    margin: 10px;
-  }
-}
-@media screen and (max-width: 500px) {
-  main #carousel-type .types {
-    flex-wrap: nowrap;
-    height: 100%;
-    overflow-x: scroll;
-  }
-  main #carousel-type .types::-webkit-scrollbar {
-    display: none;
-  }
-  main #carousel-type .types div {
-    min-width: calc(100% / 3);
   }
 }
 @media screen and (max-width: 850px) {
@@ -495,7 +489,35 @@ main #restaurants .card_rest a .layover p {
     font-size: 40px;
   }
 }
+@media screen and (max-width: 656px) {
+  main #carousel-type .types div h5 {
+    font-size: 13px;
+  }
+  main #restaurants .card_rest {
+    width: calc(100% / 1);
+  }
+  main #restaurants .no-restaurants h2 {
+    font-size: 14px;
+  }
+  main #service {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  main #service .box-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main #service .box-cards .service-card {
+    width: calc(100% / 1 - 20px);
+    text-align: center;
+    margin: 10px;
+  }
+}
 @media screen and (max-width: 535px) {
+  main #restaurants .card_rest {
+    width: calc(100% / 1);
+  }
   main .slider-wrapper .container_food h2 {
     font-size: 30px;
   }
@@ -507,6 +529,22 @@ main #restaurants .card_rest a .layover p {
   }
   main .slider-wrapper .container_food .images .name_container h3 {
     font-size: 35px;
+  }
+}
+@media screen and (max-width: 500px) {
+  main #carousel-type .types {
+    flex-wrap: nowrap;
+    height: 100%;
+    overflow-x: scroll;
+  }
+  main #carousel-type .types::-webkit-scrollbar {
+    display: none;
+  }
+  main #carousel-type .types div {
+    min-width: calc(100% / 3);
+  }
+  main #restaurants .no-restaurants h2 {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -521,6 +559,9 @@ main #restaurants .card_rest a .layover p {
   }
   main .slider-wrapper .container_food .images .name_container h3 {
     font-size: 30px;
+  }
+  main #restaurants .no-restaurants h2 {
+    font-size: 10px;
   }
 }
 footer {

@@ -88,18 +88,18 @@
     {{-- RESTAURANTS --}}
     <section id="restaurants">
       <h1 class="text-center">I nostri ristoranti</h1>
-      <div style="width:100%; display:flex; justify-content:center; flex-wrap:wrap" v-if="restaurants != 0">
+      <div class="v-if-container" v-if="restaurants != 0">
         <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest" :class="restAnim" v-for="restaurant in restaurants">
           <a :href="'restaurants' + '/' + restaurant.slug + '/show'">
             <div class="layover">
               <h3>@{{ restaurant.name }}</h3>
-              <p>@{{ restaurant.address }}</p>
-              <p>@{{ restaurant.phone_number }}</p>
+              <p class="card-address"><i class="fas fa-map-marker-alt"></i>  @{{ restaurant.address }}</p>
+              <span><i class="fas fa-phone"></i> @{{ restaurant.phone_number }}</span>
             </div>
           </a>
         </div>
       </div>
-        <div v-if="restaurants == 0" class="animate__animated animate__fadeIn animate__delay-2s	" style="width:100%; display:flex; justify-content:center;">
+        <div v-if="restaurants == 0" class="no-restaurants animate__animated animate__fadeIn animate__delay-1s	" style="width:100%; display:flex; justify-content:center;">
           <h2>Non ci sono ristoranti disponibili in questa categoria</h2>
         </div>
       </div>
