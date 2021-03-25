@@ -187,8 +187,6 @@ main #food {
   width: 100%;
   height: 500px;
   background-color: #fdc234;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
 }
 main #food .box-cards {
   display: flex;
@@ -322,8 +320,6 @@ main #restaurants {
   display: flex;
   flex-wrap: wrap;
   background-color: #fdc234;
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
 }
 main #restaurants h1 {
   display: block;
@@ -532,8 +528,6 @@ footer {
   height: 100%;
   color: white;
   font-size: 20px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
 }
 footer .col-footer {
   display: flex;
