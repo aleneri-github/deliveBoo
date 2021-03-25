@@ -1,0 +1,18 @@
+#confirmation {
+  width: 100%;
+  height: calc(100vh - 155px);
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    h1 {
+      font-family: 'Train One', cursive;
+      color: #01a183;
+    }
+    h5 {
+      color: lightgray;
+    }
+  }
+}

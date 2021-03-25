@@ -7,6 +7,7 @@ var detail = new Vue(
     data: {
       dishes: [],
       cart: [],
+      loader: true,
     },
     methods: {
       isInCart(elem) {
@@ -87,6 +88,7 @@ var detail = new Vue(
     mounted: function() {
       axios.get(`http://localhost:8000/api/restaurant/dishes`).then(response => {
         this.dishes = response.data;
+        this.loader = false;
       });
       if (localStorage.getItem('cart')) {
         try {

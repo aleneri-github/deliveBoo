@@ -42,6 +42,7 @@ class CheckoutController extends Controller
           'submitForSettlement' => True
         ]
       ]);
+      // dd($result->success);
       if ($result->success) {
         $data['status'] = $result->transaction->status;
         $data['dishes'] = [];
@@ -55,11 +56,10 @@ class CheckoutController extends Controller
           }
         }
         $order->dishes()->attach($data['dishes']);
-        return response()->json($result);
-        // return redirect()->route('guest.checkout', ['transaction' => $result->succes]);
+        return view('guest.success');
       } else {
-        // return redirect()->route('guest.checkout', ['transaction' => $result->succes])->with('message', 'Errore transazione!');
-        return response()->json($result);
+        return redirect()->route('guest.checkout.index')->with('message', 'Errore transazione!');
+        // return response()->json($result->success);
       }
     }
   }
