@@ -99,7 +99,7 @@
           </a>
         </div>
       </div>
-        <div v-if="restaurants == 0" class="animate__animated animate__fadeIn animate__delay-1s	" style="width:100%; display:flex; justify-content:center;">
+        <div v-if="restaurants == 0" class="no-restaurants animate__animated animate__fadeIn animate__delay-1s	" style="width:100%; display:flex; justify-content:center;">
           <h2>Non ci sono ristoranti disponibili in questa categoria</h2>
         </div>
       </div>

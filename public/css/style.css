@@ -325,6 +325,13 @@ main #restaurants h1 {
   display: block;
   width: 100%;
 }
+main #restaurants .no-restaurants h2 {
+  border-radius: 20px;
+  background-color: #1a1918;
+  padding: 10px;
+  margin: 30px;
+  color: #fefefe;
+}
 main #restaurants .v-if-container {
   width: 100%;
   display: flex;
