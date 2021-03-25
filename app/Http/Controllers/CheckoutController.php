@@ -55,11 +55,10 @@ class CheckoutController extends Controller
           }
         }
         $order->dishes()->attach($data['dishes']);
-        return response()->json($result);
-        // return redirect()->route('guest.checkout', ['transaction' => $result->succes]);
+        return view('guest.success');
       } else {
-        // return redirect()->route('guest.checkout', ['transaction' => $result->succes])->with('message', 'Errore transazione!');
-        return response()->json($result);
+        return redirect()->route('guest.checkout', ['transaction' => $result])->with('message', 'Errore transazione!');
+        // return response()->json($result);
       }
     }
   }
