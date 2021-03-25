@@ -377,9 +377,9 @@ main {
 
      #restaurants {
       justify-content: center;
-      .card_rest {
-        min-width: 500px;
-      }
+      // .card_rest {
+      //   min-width: 500px;
+      // }
       .no-restaurants {
         h2 {
           font-size: 20px;
@@ -399,88 +399,6 @@ main {
           text-align: center;
           margin: 10px;
 
-        }
-      }
-    }
-  }
-}
-
-
-// @media screen and (max-width: 1199px) {
-//   main {
-//     #carousel-type {
-//       .types {
-//         div {
-//           position: relative;
-//           // display: inline-block;
-//           margin: 5px 5px;
-//           // width: calc(100% / 8 - 10px);
-//           width: calc(100% / 4 - 10px);
-//           // flex-shrink: 0;
-//           cursor: pointer;
-//         }
-//       }
-//     }
-//   }
-// }
-@media screen and (max-width: 656px) {
-  main {
-
-    #carousel-type {
-      .types {
-        div {
-          h5 {
-            font-size: 13px;
-          }
-        }
-      }
-    }
-
-    #restaurants {
-      .no-restaurants {
-        h2 {
-          font-size: 14px;
-        }
-      }
-    }
-
-    #service {
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      .box-cards {
-        display: flex;
-        flex-wrap: wrap;
-        .service-card {
-          width: calc(100% / 1 - 20px);
-          text-align: center;
-          margin: 10px;
-
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 500px) {
-  main {
-    #carousel-type {
-      .types {
-        flex-wrap: nowrap;
-        height: 100%;
-        overflow-x: scroll;
-        &::-webkit-scrollbar {
-          display: none;
-        }
-        div {
-          min-width: calc(100% / 3);
-        }
-      }
-    }
-    #restaurants {
-      .no-restaurants {
-        h2 {
-          font-size: 12px;
         }
       }
     }
@@ -519,8 +437,74 @@ main {
     }
   }
 }
+
+
+// @media screen and (max-width: 1199px) {
+//   main {
+//     #carousel-type {
+//       .types {
+//         div {
+//           position: relative;
+//           // display: inline-block;
+//           margin: 5px 5px;
+//           // width: calc(100% / 8 - 10px);
+//           width: calc(100% / 4 - 10px);
+//           // flex-shrink: 0;
+//           cursor: pointer;
+//         }
+//       }
+//     }
+//   }
+// }
+@media screen and (max-width: 656px) {
+  main {
+
+    #carousel-type {
+      .types {
+        div {
+          h5 {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    #restaurants {
+      .card_rest {
+        width: calc(100% / 1);
+      }
+      .no-restaurants {
+        h2 {
+          font-size: 14px;
+        }
+      }
+    }
+
+    #service {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      .box-cards {
+        display: flex;
+        flex-wrap: wrap;
+        .service-card {
+          width: calc(100% / 1 - 20px);
+          text-align: center;
+          margin: 10px;
+
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 535px) {
   main {
+    #restaurants {
+      .card_rest {
+        width: calc(100% / 1);
+      }
+    }
     .slider-wrapper {
       .container_food {
         h2 {
@@ -541,6 +525,34 @@ main {
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  main {
+    #carousel-type {
+      .types {
+        flex-wrap: nowrap;
+        height: 100%;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        div {
+          min-width: calc(100% / 3);
+        }
+      }
+    }
+    #restaurants {
+      .no-restaurants {
+        h2 {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+
 @media screen and (max-width: 320px) {
   main {
     .slider-wrapper {

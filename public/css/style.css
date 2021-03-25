@@ -437,9 +437,6 @@ main #restaurants .card_rest a .layover p {
   main #restaurants {
     justify-content: center;
   }
-  main #restaurants .card_rest {
-    min-width: 500px;
-  }
   main #restaurants .no-restaurants h2 {
     font-size: 20px;
   }
@@ -457,44 +454,6 @@ main #restaurants .card_rest a .layover p {
     width: calc(100% / 2 - 20px);
     text-align: center;
     margin: 10px;
-  }
-}
-@media screen and (max-width: 656px) {
-  main #carousel-type .types div h5 {
-    font-size: 13px;
-  }
-  main #restaurants .no-restaurants h2 {
-    font-size: 14px;
-  }
-  main #service {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
-  main #service .box-cards {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  main #service .box-cards .service-card {
-    width: calc(100% / 1 - 20px);
-    text-align: center;
-    margin: 10px;
-  }
-}
-@media screen and (max-width: 500px) {
-  main #carousel-type .types {
-    flex-wrap: nowrap;
-    height: 100%;
-    overflow-x: scroll;
-  }
-  main #carousel-type .types::-webkit-scrollbar {
-    display: none;
-  }
-  main #carousel-type .types div {
-    min-width: calc(100% / 3);
-  }
-  main #restaurants .no-restaurants h2 {
-    font-size: 12px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -523,7 +482,35 @@ main #restaurants .card_rest a .layover p {
     font-size: 40px;
   }
 }
+@media screen and (max-width: 656px) {
+  main #carousel-type .types div h5 {
+    font-size: 13px;
+  }
+  main #restaurants .card_rest {
+    width: calc(100% / 1);
+  }
+  main #restaurants .no-restaurants h2 {
+    font-size: 14px;
+  }
+  main #service {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  main #service .box-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main #service .box-cards .service-card {
+    width: calc(100% / 1 - 20px);
+    text-align: center;
+    margin: 10px;
+  }
+}
 @media screen and (max-width: 535px) {
+  main #restaurants .card_rest {
+    width: calc(100% / 1);
+  }
   main .slider-wrapper .container_food h2 {
     font-size: 30px;
   }
@@ -535,6 +522,22 @@ main #restaurants .card_rest a .layover p {
   }
   main .slider-wrapper .container_food .images .name_container h3 {
     font-size: 35px;
+  }
+}
+@media screen and (max-width: 500px) {
+  main #carousel-type .types {
+    flex-wrap: nowrap;
+    height: 100%;
+    overflow-x: scroll;
+  }
+  main #carousel-type .types::-webkit-scrollbar {
+    display: none;
+  }
+  main #carousel-type .types div {
+    min-width: calc(100% / 3);
+  }
+  main #restaurants .no-restaurants h2 {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 320px) {
