@@ -114,6 +114,11 @@ a:hover {
   display: none;
 }
 
+.icon a i {
+  color: #01a183;
+  font-size: 40px;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -1394,14 +1399,10 @@ a:hover {
     width: calc(100% - 60px);
   }
 }
-#dashboard #admin-show .container #header-show {
+#dashboard #admin-show .container .header-admin {
   width: 100%;
   text-align: right;
   padding-bottom: 50px;
-}
-#dashboard #admin-show .container #header-show .icon a i {
-  color: #01a183;
-  font-size: 40px;
 }
 #dashboard #admin-show .container .dish-show {
   width: 80%;
@@ -1477,10 +1478,6 @@ a:hover {
 }
 #indexMenu {
   overflow-y: auto;
-}
-#indexMenu .icon a i {
-  color: #01a183;
-  font-size: 40px;
 }
 #indexMenu .box-menu .row-food {
   cursor: pointer;

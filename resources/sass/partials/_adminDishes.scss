@@ -1,18 +1,10 @@
 #dashboard {
   #admin-show {
     .container {
-      #header-show {
+      .header-admin {
         width: 100%;
         text-align: right;
         padding-bottom: 50px;
-        .icon {
-          a {
-            i {
-                color: $greenButton;
-                font-size: 40px;
-            }
-          }
-        }
       }
        // show dettaglio piatto
        .dish-show {

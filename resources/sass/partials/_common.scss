@@ -102,3 +102,11 @@ a {
 [v-cloak] {
   display: none;
 }
+.icon {
+  a {
+    i {
+        color: $greenButton;
+        font-size: 40px;
+    }
+  }
+}

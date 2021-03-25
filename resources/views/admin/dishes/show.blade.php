@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div id="header-show">
+        <div class="header-admin">
             <div class="icon">
                 <a href="{{ route('admin.dishes.index') }}">
                     <i class="fas fa-chevron-circle-left"></i>
