@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
+
+use App\Mail\DeliveMail;
+use Illuminate\Support\Facades\Mail;
+
 class CheckoutController extends Controller
 {
   private $orderValidation = [
