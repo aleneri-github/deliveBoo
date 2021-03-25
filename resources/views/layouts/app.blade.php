@@ -36,7 +36,7 @@
             {{-- pannello admin --}}
             <div id="admin-menu">
               <div class="logo-nav">
-                <a href="">
+                <a href="{{ route('guest.index')}}">
                   <img src="{{ asset('img/deliverYou-logo.svg') }}" alt="">
                 </a>
               </div>
@@ -51,23 +51,23 @@
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="{{ route('admin.dishes.index')}}">
                         <i class="fas fa-hamburger"></i>
                         <span>Menu</span>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a href="{{ route('admin.dishes.statistics')}}">
                       <i class="fas fa-chart-line"></i>
                         <span>Statistiche</span>
                       </a>
                     </li>
-                    <li>
+                    {{-- <li>
                       <a href="">
                         <i class="fas fa-utensils"></i>
                         <span>Ordini</span>
                       </a>
-                    </li>
+                    </li> --}}
                   </ul>
 
                 </nav>

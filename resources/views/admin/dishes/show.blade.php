@@ -1,52 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    
-    <div class="container my-4">
-        <h2 class="display-4">{{ $dish->name}}</h2>
-        @if ($dish->visible == 0) 
-          <span class="badge badge-danger mb-2" style="font-size: 120%;"> Non Disponibile </span>     
-        @endif
-        @if ($dish->vegetarian == 1) 
-          <span class="badge badge-success mb-2" style="font-size: 120%;"> Vegetarian </span>     
-        @endif
-        <div>
-            <img src="{{ asset('storage/' . $dish->image) }}" alt="{{ $dish->name}}" style="width: 100%;  border: 10px solid #F0F0F1">
+    <div class="container">
+        <div id="header-show">
+            <div class="icon">
+                <a href="{{ route('admin.dishes.index') }}">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </a>
+            </div>     
         </div>
-        <table class="table table-light table-striped table-bordered">
-            <tr>                
-                <td style="width: 150px">
-                    <strong>Ingredienti: </strong>
-                </td>
-                <td>
-                    {{ $dish->ingredients }}
-                </td>
-            <tr>
-                <td style="width: 150px">
-                    <strong>Descrizione: </strong> 
-                </td>
-                <td>
-                    {{ $dish->description }}
-                </td>     
-            </tr>
-            <tr>
-                <td style="width: 150px">
-                    <strong>Prezzo: </strong> 
-                </td>
-                <td>
-                    {{ number_format($dish->price, 2) }} &euro; 
-                </td>     
-            </tr>
-            <tr>
-                <td style="width: 150px">
-                    <strong>Creato il: </strong> 
-                </td>
-                <td>
-                    {{ date('j F, Y', strtotime($dish->created_at)) }} 
-                </td>     
-            </tr>        
-        </table>
-        <a href="{{ route('admin.dishes.index') }}" class="btn btn-lg btn-dark">Torna alla home</a>
+        <div class="dish-show">
+            
+            <div class="img-show">
+                <img src="{{ asset('storage/' . $dish->image) }}" alt="">
+            </div>
+            
+            <div class="info-show">
+                <h4>{{ $dish->name}}</h4>
+                <h6>Ingredienti</h6>
+                <p>{{ $dish->ingredients }}</p>
+                <h6>Descrizione</h6>
+                <p><span> {{ $dish->description }}</p>
+                <h6>Prezzo</h6>
+                <p>{{ number_format($dish->price, 2) }} €</p>
+                <h6>Creato</h6>
+                <p>{{ date('j F, Y', strtotime($dish->created_at)) }} </p>
+            </div>
+        </div>
     </div>
+<script src="{{ asset('js/dashboard.js') }}" defer></script>
+
 
 @endsection
+     

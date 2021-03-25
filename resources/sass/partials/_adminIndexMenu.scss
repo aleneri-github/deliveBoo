@@ -1,5 +1,14 @@
 #indexMenu {
   overflow-y: auto;
+
+  .icon {
+    a {
+      i {
+          color: $greenButton;
+          font-size: 40px;
+      }
+    }
+  }
   .box-menu {
     //riga del piatto
     .row-food {
@@ -14,25 +23,65 @@
         transition-duration: 0.4s;
         background-color: $yellow;
       }
-      .tab {
+      .left-side {
         display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .tab-10 {
-        width: 10%;
-        img {
-          width: 100%;
-          border-radius: 5px;
+        width: 70%;
+        .tab {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .tab-10 {
+          width: 10%;
+          font-weight: bolder;
+          img {
+            width: 100%;
+            border-radius: 5px;
+          }
+        }
+        .tab-big {
+          width: 80%;
+          text-align: center;
+          span {
+            color: $greenButton;
+            font-weight: bolder;
+            letter-spacing: 3px;
+          }
         }
       }
-      .tab-big {
-        width: 40%;
+      .right-side {
+        display: flex;
+        width: 30%;
+        .tab {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: calc(100% / 3);
+          a {
+            i {
+              &:hover {
+                color: $greenButton;
+              }
+            } 
+          }
+          button {
+            i {
+              &:hover {
+                color: $greenButton;
+              }
+            }
+            a {
+              &:hover {
+                color: $greenButton;
+              }
+            } 
+          }
+        }
       }
-
     }
     // header delle righe
     .row-info {
+      display: flex;
       font-weight: bolder;
       border: 0;
       background-color: #F9F9F9;
@@ -41,47 +90,96 @@
       &:hover {
        background-color: #F9F9F9;
       }
-    }
-    // show dettaglio piatto
-    .dish-show {
-      background-color: #F9F9F9;
-      border-radius: 5px;
-      opacity: 0;
-      display: none;
-      margin: 0 40px;
-      .img-show {
+      .tab {
         display: flex;
-        width: 50%;
+        align-items: center;
+        justify-content: center;
+      }
+      .tab-10 {
+        width: 10%;
+        font-weight: bolder;
         img {
-          text-align: right;
           width: 100%;
-          border-radius: 5px 0 0 5px;
+          border-radius: 5px;
         }
       }
-      .info-show {
-        width: 50%;
-        padding: 20px 10px;
+      .tab-big {
+        width: 80%;
+        text-align: center;
         span {
+          color: $greenButton;
           font-weight: bolder;
+          letter-spacing: 3px;
         }
-        .img-info {
-          text-align: right;
-          img {
-            width: 20%;
-          }
-        }
-
       }
-    }
-    // classe active per il dettaglio piatto
-    .dish-active {
-      opacity: 1;
-      display: flex;
-      box-shadow: 18px -19px 29px -26px rgb(0 0 0 / 30%);
-    }
-    // classe active per riga del piatto cliccata
-    .row-active {
-      background-color: $yellow;
     }
   }
+}
+
+
+// LG
+@media screen and (max-width: 1200px) {
+  
+  #indexMenu {
+    overflow-y: auto;
+    .box-menu {
+      //riga del piatto
+      .row-food {
+        .left-side {
+          display: flex;
+          width: 85%;
+        }
+        .right-side {
+          display: flex;
+          width: 15%;
+        }
+      }
+    }
+  }
+
+}
+
+// SM
+@media screen and (max-width: 780px) {
+
+  #indexMenu {
+    overflow-y: auto;
+    .box-menu {
+      //riga del piatto
+      .row-food {
+        flex-direction: column;
+        padding: 0 0;
+        .left-side {
+          flex-direction: column-reverse;
+          width: 100%;
+          .tab-10 {
+            width: 100%;
+            img {
+              width: 100%;
+              border-radius: 5px 5px 0 0;
+            } 
+          }
+          .tab-id {
+            display: none;
+          }
+          .tab-big {
+            width: 100%;
+            padding: 10px 5px;
+          }
+        }
+        .right-side {
+          display: flex;
+          width: 100%;
+          .tab {
+            padding: 10px 0;
+          }
+        }
+      }
+      // header delle righe
+      .row-info {
+        display: none;
+      }
+    }
+  }
+
 }

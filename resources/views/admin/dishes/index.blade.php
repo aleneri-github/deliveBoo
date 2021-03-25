@@ -9,8 +9,10 @@
             <h2><strong>I tuoi piatti</strong></h2>
         </div>
 
-        <div>
-            <a href="{{ route('admin.dishes.create')}}" class="btn btn-dark">Crea un nuovo piatto</a>
+        <div class="icon">
+            <a href="{{ route('admin.dishes.create')}}">
+                <i class="fas fa-plus-circle"></i>
+            </a>
         </div>
     </div>
 
@@ -27,12 +29,14 @@
             </div>
         @endif
 
-        <div class="row-food row-info d-flex">
+        <div class="row-info">
             <div class="tab tab-10">
                 ID
             </div>
             <div class="tab tab-big">
                 Nome
+            </div>
+            <div class="tab tab-10">
             </div>
             <div class="tab tab-10">
                 {{-- EDIT --}}
@@ -47,62 +51,45 @@
 
         @foreach ($dishes as $key => $dish)
 
-          <div v-if="isActive == true" class="">
-            DIV DI PROVA
-          </div>
-
-        <div class="row-food d-flex"
-        :class="{{ $key }} == indexOfList ? 'row-active' : '' "
-        {{-- :class="{{ $dish->visible }} == 0 ? 'row-food' : 'row-unavailable' " --}}
-        >
-            <div class="tab tab-10">
-                {{ $dish->id }}
-            </div>
-            <div class="tab tab-big">
-                {{ $dish->name }}
-            </div>
-            <div class="tab tab-10">
-                <img src="{{ asset('storage/' . $dish->image) }}" alt="">
-            </div>
-            <div class="tab tab-10">
-                {{-- EDIT --}}
-                <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn-outline">
-                    <i class="fas fa-pencil-alt"></i>
-                </a>
-            </div>
-            <div class="tab tab-10">
-                 {{-- DESTROY --}}
-                 <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline" onSubmit="return confirm ('Sei sicuro di voler cancellare questo piatto?')">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </form>
-            </div>
-            <div class="tab tab-10">
-                 {{-- SHOW --}}
-                <button class="btn" v-cloak>
-                    <i v-if="show == false" class="fas fa-chevron-down"></i>
-                    <i v-if="show == true" class="fas fa-chevron-up"></i>
-                </button>
-            </div>
-        </div>
-        <transition name="fade">
-            <div :class="activeClass">
-                <div class="img-show">
+        <div class="row-food d-flex">
+            <div class="left-side">
+                <div class="tab tab-10 tab-id">
+                    {{ $dish->id }}
+                </div>
+                <div class="tab tab-big">
+                    <span>{{ $dish->name }}</span>
+                </div>
+                <div class="tab tab-10">
                     <img src="{{ asset('storage/' . $dish->image) }}" alt="">
                 </div>
-                <div class="info-show">
-                    <div class="img-info">
-                        <img src="{{ asset('img/foglia.svg') }}" alt="">
-                    </div>
-                    <p><span>Ingredienti:</span>  {{ $dish->ingredients }}</p>
-                    <p><span>Descrizione:</span>  {{ $dish->description }}</p>
-                    <p><span>Prezzo:</span>  {{ number_format($dish->price, 2) }} €</p>
+            </div>
+            <div class="right-side">
+                <div class="tab">
+                    {{-- EDIT --}}
+                    <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn-outline">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                </div>
+                <div class="tab">
+                     {{-- DESTROY --}}
+                     <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline" onSubmit="return confirm ('Sei sicuro di voler cancellare questo piatto?')">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="tab">
+                     {{-- SHOW --}}
+                    <button class="btn">
+                        <a href="{{ route('admin.dishes.show', $dish->slug) }}" class="btn-outline">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </button>
                 </div>
             </div>
-        </transition>
+        </div>
         @endforeach
     </div>
 </div>
