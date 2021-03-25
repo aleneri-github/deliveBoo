@@ -2,7 +2,18 @@
 
 @section('content')
 
+  <div class="container">
+    @if (session('message'))
+    <div class="alert-danger my-4 p-2">
+      <div class="alert-danger mx-4 p-2">
+        {{ session('message') }}
+      </div>
+    </div>
+    @endif
+  </div>
+
   <div id="checkout" class="container d-flex pt-5 pb-5">
+
     {{-- <transition name="fade" mode="out-in"> --}}
 
       {{-- vista di caricamento --}}

@@ -46,6 +46,13 @@ var home = new Vue(
         }
         let rect = elem.getBoundingClientRect();
         return [elem, rect]
+      },
+      clearCart(event) {
+        event.preventDefault();
+        localStorage.clear();
+        // console.log(event);
+        var link = document.getElementById('rest_a');
+        window.location.replace(link.href);
       }
     },
     mounted: function () {
