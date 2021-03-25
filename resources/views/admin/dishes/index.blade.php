@@ -15,7 +15,7 @@
     </div>
 
 
-    <div class="box-menu">
+    <div id="boxMenu">
 
 
         {{-- sezione messaggi --}}
@@ -47,13 +47,7 @@
 
         @foreach ($dishes as $key => $dish)
 
-          <div v-if="isActive == true" class="">
-            DIV DI PROVA
-          </div>
-
         <div class="row-food d-flex"
-        :class="{{ $key }} == indexOfList ? 'row-active' : '' "
-        {{-- :class="{{ $dish->visible }} == 0 ? 'row-food' : 'row-unavailable' " --}}
         >
             <div class="tab tab-10">
                 {{ $dish->id }}
@@ -82,14 +76,16 @@
             </div>
             <div class="tab tab-10">
                  {{-- SHOW --}}
-                <button class="btn" v-cloak>
-                    <i v-if="show == false" class="fas fa-chevron-down"></i>
-                    <i v-if="show == true" class="fas fa-chevron-up"></i>
+                <button class="btn" v-on:click="show = !active">
+                    <i class="fas fa-chevron-down"></i>
                 </button>
+                {{-- <button class="btn" v-on:click="show = !show">
+                    <i v-if="show == true" class="fas fa-chevron-up"></i>
+                </button> --}}
             </div>
         </div>
-        <transition name="fade">
-            <div :class="activeClass">
+        <transition name="fade" >
+            <div class="dish-show" v-if="!active">
                 <div class="img-show">
                     <img src="{{ asset('storage/' . $dish->image) }}" alt="">
                 </div>

@@ -1,31 +1,27 @@
 require('./bootstrap');
 import Vue from 'vue';
 
-var indexMenu = new Vue(
+var boxMenu = new Vue(
   {
-    el: "#indexMenu",
+    el: "#boxMenu",
     data: {
-      show: false,
-      indexOfList: -1,
-      isActive: true,
-      activeClass: 'dish-show'
+      active: false
     },
 
     methods: {
-      prova() {
-        this.renderComponent = false;
+      click() {
 
-        this.$nextTick(() => {
-          // Add the component back in
-          this.renderComponent = true;
-        });
       }
     },
-    mounted() {
-      $(document).on("click", ".row-food", () => {
-        this.prova()
-      });
-    }
 
   }
 );
+
+  // // hover li nel menu header-bottom-end
+  // $(document).on('click', '.row-food', function(){
+  //   console.log($(this).children());
+  //    $(this).parent('.dish-show').toggleClass('dish-active');
+  //    console.log($(this).parent('.dish-show'));
+  //  }
+  // );
+

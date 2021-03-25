@@ -1,6 +1,6 @@
 #indexMenu {
   overflow-y: auto;
-  .box-menu {
+  #boxMenu {
     //riga del piatto
     .row-food {
       cursor: pointer;
@@ -27,7 +27,7 @@
         }
       }
       .tab-big {
-        width: 40%;
+        width: 50%;
       }
 
     }
@@ -74,7 +74,7 @@
       }
     }
     // classe active per il dettaglio piatto
-    .dish-active {
+    .active {
       opacity: 1;
       display: flex;
       box-shadow: 18px -19px 29px -26px rgb(0 0 0 / 30%);

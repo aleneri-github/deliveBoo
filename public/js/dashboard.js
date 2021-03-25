@@ -49334,33 +49334,21 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-var indexMenu = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
-  el: "#indexMenu",
+var boxMenu = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
+  el: "#boxMenu",
   data: {
-    show: false,
-    indexOfList: -1,
-    isActive: true,
-    activeClass: 'dish-show'
+    active: false
   },
   methods: {
-    prova: function prova() {
-      var _this = this;
-
-      this.renderComponent = false;
-      this.$nextTick(function () {
-        // Add the component back in
-        _this.renderComponent = true;
-      });
-    }
-  },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    $(document).on("click", ".row-food", function () {
-      _this2.prova();
-    });
+    click: function click() {}
   }
-});
+}); // // hover li nel menu header-bottom-end
+// $(document).on('click', '.row-food', function(){
+//   console.log($(this).children());
+//    $(this).parent('.dish-show').toggleClass('dish-active');
+//    console.log($(this).parent('.dish-show'));
+//  }
+// );
 })();
 
 /******/ })()
