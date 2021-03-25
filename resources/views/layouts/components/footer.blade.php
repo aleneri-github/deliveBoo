@@ -3,7 +3,7 @@
 
     {{-- LOGO --}}
     <div class="single_column" id="logo">
-      <img id="logo" src="{{ asset('img/deliverYou-bianco.svg') }}" alt="logo">
+      <img id="logo" src="{{ asset('img/yellow-logo.png') }}" alt="logo">
     </div>
 
     {{-- STUDENTI --}}
