@@ -25,8 +25,8 @@ Route::namespace('Api')->group(function() {
   Route::get('/restaurant/dishes', 'RestaurantController@dishes');
   Route::get('/restaurant/carousel', 'RestaurantController@carousel');
   // proteggerlo da auth con middle
-  Route::get('/orders', 'OrderController@orders');
-  Route::get('/stat/top-dish', 'OrderController@topDish');
-  Route::get('/stat/bott-dish', 'OrderController@bottomDish');
+  Route::middleware('api')->get('/orders', 'OrderController@orders');
+  Route::middleware('api')->get('/stat/top-dish', 'OrderController@topDish');
+  Route::middleware('api')->get('/stat/bott-dish', 'OrderController@bottomDish');
 
 });

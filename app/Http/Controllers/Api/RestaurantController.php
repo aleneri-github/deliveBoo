@@ -11,7 +11,7 @@ use App\RestType;
 class RestaurantController extends Controller
 {
   public function index() {
-
+    // si potrebbe anche usare whereHas, che fa un filtro!
     $restaurants = Restaurant::with('types')->get();
     if ($_GET['type'] != 'all') {
       $filtered = $restaurants->filter(function ($value, $key) {
