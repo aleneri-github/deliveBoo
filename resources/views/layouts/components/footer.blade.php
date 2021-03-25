@@ -1,13 +1,13 @@
 <footer>
-  <div class="row no-gutters">
+  <div class="row">
 
     {{-- LOGO --}}
-    <div class="col-footer col-lg-3 col-sm-6 col-xs-12" id="logo">
+    <div class="single_column" id="logo">
       <img id="logo" src="{{ asset('img/deliverYou-bianco.svg') }}" alt="logo">
     </div>
 
     {{-- STUDENTI --}}
-    <div class="col-footer col-lg-3 col-sm-6 col-xs-12">
+    <div class="single_column">
       <ul class="list-unstyled">
         <li><strong>Realizzato da:</strong></li>
         <li>
@@ -29,7 +29,7 @@
     </div>
 
     {{-- DOCENTI --}}
-    <div class="col-footer col-lg-3 col-sm-6 col-xs-12">
+    <div class="single_column">
       <ul class="list-unstyled">
         <li><strong>Ringraziamenti</strong></li>
         <li>
@@ -53,9 +53,9 @@
     </div>
 
     {{-- TECNOLOGIE --}}
-    <div class="col-footer col-lg-3 col-sm-6 col-xs-12">
+    <div class="single_column" id="tec">
       <ul class="list-unstyled">
-        <li><strong>Tecnologia utilizzate</strong></li>
+        <li><strong>Tecnologie</strong></li>
         <li><a href="#">HTML</a></li>
         <li><a href="#">CSS</a></li>
         <li><a href="#">Vue.js</a></li>
