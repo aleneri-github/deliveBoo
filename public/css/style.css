@@ -525,9 +525,8 @@ main #restaurants .card_rest a .layover p {
 }
 footer {
   background-color: #1a1918;
-  height: 100%;
-  color: white;
-  font-size: 20px;
+  color: #fefefe;
+  font-size: 18px;
 }
 footer .col-footer {
   display: flex;
@@ -552,10 +551,7 @@ footer .col-footer img {
   max-width: 125px;
   cursor: pointer;
 }
-footer .col-footer img:hover {
-  transform: scale(1.1);
-}
-footer .col-footer .logo {
+footer .col-footer #logo {
   max-width: 150px;
 }
 

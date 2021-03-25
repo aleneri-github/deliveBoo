@@ -1,8 +1,7 @@
 footer {
   background-color: $grey;
-  height: 100%;
-  color: white;
-  font-size: 20px;
+  color: $white;
+  font-size: 18px;
   .col-footer {
     display: flex;
     flex-direction: column;
@@ -14,28 +13,22 @@ footer {
     }
     a {
       color: $withTextFooter;
+      &:hover {
+        text-decoration: none;
+        color: $yellow;
+      }
     }
-    a:hover {
-      text-decoration: none;
-      color: $yellow;
-    }
-    img  {
+    img {
       display: block;
       margin: 20px 0px;
       max-width: 125px;
       cursor: pointer;
     }
-
-    img:hover  {
-      transform: scale(1.1);
-    }
-
-    .logo  {
+    #logo {
       max-width: 150px;
     }
   }
 }
-
 
 // Media Query footer
 @media screen and (max-width: 575px) {
