@@ -6,6 +6,7 @@ var checkout = new Vue(
     el: "#checkout",
     data: {
       cart: [],
+      loader: true,
     },
     methods: {
       cartTotal() {

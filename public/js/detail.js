@@ -49338,7 +49338,8 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: "#detail",
   data: {
     dishes: [],
-    cart: []
+    cart: [],
+    loader: true
   },
   methods: {
     isInCart: function isInCart(elem) {
@@ -49434,6 +49435,7 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
     axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
       _this2.dishes = response.data;
+      _this2.loader = false;
     });
 
     if (localStorage.getItem('cart')) {

@@ -6,7 +6,7 @@
     <transition name="fade" mode="out-in">
     <div key=1 v-if="loader == true" class="loading_page">
       <h1>Solo un attimo...</h1>
-      <img src="img/jumb-2.svg" alt="">
+      <img src="{{ asset('img/jumb-2.svg') }}" alt="">
     </div>
     <div key=2 v-else>
     <section id="jumbotron_main">
