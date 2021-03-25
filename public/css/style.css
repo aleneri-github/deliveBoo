@@ -325,6 +325,12 @@ main #restaurants h1 {
   display: block;
   width: 100%;
 }
+main #restaurants .v-if-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
 main #restaurants .card_rest {
   position: relative;
   margin: 10px;
