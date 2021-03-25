@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
-use Illuminate\Support\Str;
-use App\Restaurant;
 class CheckoutController extends Controller
 {
   private $orderValidation = [
@@ -15,9 +13,7 @@ class CheckoutController extends Controller
     'status' => ['required', 'string', 'max:50'],
     'total' => ['required', 'numeric', 'max:9999', 'min:0']
   ];
-  public function index($slug){
-    $restaurant = Restaurant::where('slug', $slug)->firstOrFail();
-
+  public function index(){
     $gateway = new \Braintree\Gateway([
       'environment' => env('BRAINTREE_ENVIRONMENT'),
       'merchantId' => env("BRAINTREE_MERCHANT_ID"),
@@ -25,7 +21,7 @@ class CheckoutController extends Controller
       'privateKey' => env("BRAINTREE_PRIVATE_KEY")
     ]);
     $token = $gateway->clientToken()->generate();
-    return view ('guest.checkout', compact('token', 'restaurant'));
+    return view ('guest.checkout', compact('token'));
   }
   public function store(Request $request)
   {

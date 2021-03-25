@@ -41,7 +41,7 @@
           <h4>Totale</h4>
           <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
         </div>
-        <a href="{{ route('restaurant.show', $restaurant->slug) }}" class="deliveboo_button p-3">Torna indietro</a>
+        <a href="{{ url()->previous() }}" class="deliveboo_button p-3">Torna indietro</a>
         <input class="deliveboo_button p-3" type="submit" value="Compra"></input>
         <input type="hidden" id="nonce" name="nonce"></input>
         <input type="hidden" id="cart" name="cart"></input>
