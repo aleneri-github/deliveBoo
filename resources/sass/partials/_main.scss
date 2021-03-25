@@ -258,11 +258,18 @@ main {
           background: rgb(255,255,255);
           background: linear-gradient(270deg, rgba(255,255,255,0) 36%, rgba(0,0,0,0.8015581232492998) 100%);
           h3  {
-            font-size: 26px;
+            font-size: 22px;
+            font-weight: bold;
+            color: $yellow;
+            text-shadow: 1px 1px $grey;
           }
-          p {
-            font-size: 26px;
+          .card-address {
+            font-size: 16px;
+            margin-bottom: 0;
           }
+          span {
+            font-size: 14px;
+          }          
         }
 
         // .overlay {

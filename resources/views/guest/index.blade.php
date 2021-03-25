@@ -93,8 +93,8 @@
           <a :href="'restaurants' + '/' + restaurant.slug + '/show'">
             <div class="layover">
               <h3>@{{ restaurant.name }}</h3>
-              <p>@{{ restaurant.address }}</p>
-              <p>@{{ restaurant.phone_number }}</p>
+              <p class="card-address"><i class="fas fa-map-marker-alt"></i>  @{{ restaurant.address }}</p>
+              <span><i class="fas fa-phone"></i> @{{ restaurant.phone_number }}</span>
             </div>
           </a>
         </div>
