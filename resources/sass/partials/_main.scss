@@ -177,8 +177,11 @@ main {
           // overflow: hidden;
           border-radius: 5px;
           width: 100%;
+        } &:hover {
+          transform: translate(0, -7px);
+          transition: 0.5s;
         }
-        &.typeActive {
+         &.typeActive {
           border: 5px solid $yellow;
           border-radius: 10px;
         }
@@ -212,6 +215,8 @@ main {
     }
     .no-restaurants {
       h2 {
+        text-align: center;
+        font-size: 22px;
         border-radius: 20px;
         background-color: $grey;
         padding: 10px;
@@ -348,6 +353,7 @@ main {
         }
       }
     }
+
     #service {
       display: flex;
       flex-direction: column;
@@ -373,6 +379,11 @@ main {
       justify-content: center;
       .card_rest {
         min-width: 500px;
+      }
+      .no-restaurants {
+        h2 {
+          font-size: 20px;
+        }
       }
     }
     #service {
@@ -424,6 +435,15 @@ main {
         }
       }
     }
+
+    #restaurants {
+      .no-restaurants {
+        h2 {
+          font-size: 14px;
+        }
+      }
+    }
+
     #service {
       display: flex;
       flex-direction: column;
@@ -454,6 +474,13 @@ main {
         }
         div {
           min-width: calc(100% / 3);
+        }
+      }
+    }
+    #restaurants {
+      .no-restaurants {
+        h2 {
+          font-size: 12px;
         }
       }
     }
@@ -531,6 +558,13 @@ main {
               font-size: 30px;
             }
           }
+        }
+      }
+    }
+    #restaurants {
+      .no-restaurants {
+        h2 {
+          font-size: 10px;
         }
       }
     }

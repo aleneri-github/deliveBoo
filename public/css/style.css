@@ -296,6 +296,10 @@ main #carousel-type .types div img {
   border-radius: 5px;
   width: 100%;
 }
+main #carousel-type .types div:hover {
+  transform: translate(0, -7px);
+  transition: 0.5s;
+}
 main #carousel-type .types div.typeActive {
   border: 5px solid #FDC234;
   border-radius: 10px;
@@ -326,6 +330,8 @@ main #restaurants h1 {
   width: 100%;
 }
 main #restaurants .no-restaurants h2 {
+  text-align: center;
+  font-size: 22px;
   border-radius: 20px;
   background-color: #1a1918;
   padding: 10px;
@@ -434,6 +440,9 @@ main #restaurants .card_rest a .layover p {
   main #restaurants .card_rest {
     min-width: 500px;
   }
+  main #restaurants .no-restaurants h2 {
+    font-size: 20px;
+  }
   main #service {
     display: flex;
     flex-direction: column;
@@ -453,6 +462,9 @@ main #restaurants .card_rest a .layover p {
 @media screen and (max-width: 656px) {
   main #carousel-type .types div h5 {
     font-size: 13px;
+  }
+  main #restaurants .no-restaurants h2 {
+    font-size: 14px;
   }
   main #service {
     display: flex;
@@ -480,6 +492,9 @@ main #restaurants .card_rest a .layover p {
   }
   main #carousel-type .types div {
     min-width: calc(100% / 3);
+  }
+  main #restaurants .no-restaurants h2 {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -534,6 +549,9 @@ main #restaurants .card_rest a .layover p {
   }
   main .slider-wrapper .container_food .images .name_container h3 {
     font-size: 30px;
+  }
+  main #restaurants .no-restaurants h2 {
+    font-size: 10px;
   }
 }
 footer {
