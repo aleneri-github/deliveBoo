@@ -58,7 +58,7 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $request->validate($this->dishValidation);
-
+        $rest = Restaurant::where('user_id', Auth::id())->firstOrFail();
         $data = $request->all();
 
         $data["slug"] = Str::slug($data["name"]);
@@ -71,7 +71,7 @@ class DishController extends Controller
         $newDish = new Dish();
 
 
-        $data["restaurant_id"] = Auth::id();
+        $data["restaurant_id"] = $rest->id;
 
         if(empty($data["vegetarian"])) {
             $data["vegetarian"] = 0;
