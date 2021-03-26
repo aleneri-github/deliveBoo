@@ -5,6 +5,10 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Restaurant;
 use Illuminate\Support\Str;
+
+use App\Mail\checkout;
+use Illuminate\Support\Facades\Mail;
+
 class CheckoutController extends Controller
 {
   private $orderValidation = [
