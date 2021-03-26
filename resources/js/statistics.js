@@ -9,6 +9,8 @@ var statistics = new Vue(
         el: "#statistics",
         data: {
             orders: [],
+            labels: [],
+            dataOrders: [],
         },
         methods: {
             createChart() {
@@ -18,10 +20,10 @@ var statistics = new Vue(
                 let ordini = new Chart(myChart, {
                     type: 'bar',
                     data: {
-                        labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+                        labels: this.labels.reverse(),
                         datasets: [{
                             label: 'Ordini',
-                            data: [12, 8, 32, 9, 12, 8, 32, 9, 36, 45, 25, 14],
+                            data: this.dataOrders.reverse(),
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
@@ -71,27 +73,12 @@ var statistics = new Vue(
             }
         },
         mounted() {
-            this.createChart();
-
-            axios.get(`http://localhost:8000/api/orders`).then(response => {
-                this.orders = response.data;
-                console.log(this.orders);
-
-                this.orders.forEach(element => {
-                    
-                });
+          axios.get(`http://localhost:8000/api/orders?api_token=` + token).then(response => {
+                this.labels = response.data.months
+                this.dataOrders = response.data.values
+                console.log(this.labels, this.dataOrders);
+                this.createChart();
             });
         },
     }
 );
-
-
-
-
-
-
-
-
-
-
-

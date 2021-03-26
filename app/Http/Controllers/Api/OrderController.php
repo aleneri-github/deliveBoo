@@ -26,11 +26,12 @@ class OrderController extends Controller
     $myOrdersIds = [];
 
     foreach ($rest->dishes as $dish) {
+      // non funge, mi fa vedere per ogni piatto la tabella ordini! Provato pivot e non funge
+      // dd($dish->orders);
+      dd($dish->pivot->order_id);
       $orders = DB::table('dish_order')->select('order_id')->where('dish_id', '=', $dish->id)->get();
       foreach($orders as $order) {
-        if (in_array($order->order_id, $myOrdersIds)) {
-          //DO NOTHING
-        } else {
+        if (!in_array($order->order_id, $myOrdersIds)) {
           array_push($myOrdersIds, $order->order_id);
         }
       }
@@ -39,19 +40,34 @@ class OrderController extends Controller
     $filteredOrders = $orders->filter(function($value) use ($myOrdersIds) {
       return in_array($value->id, $myOrdersIds);
     });
-    $ordersMonth = [];
+
+    $dataOrders = [];
+    $months = [];
+    $monthsYears = [];
     for ($i = 0; $i < 12; $i++) {
-      $currentInt = Carbon::now();
-      $currentString = Carbon::now();
-      $currentMonthInt = $currentInt->subMonth($i)->month;
-      $currentMonthString = $currentString->subMonth($i)->isoFormat('MMMM');
-      foreach ($filteredOrders as $value) {
-        if ($value->created_at->month == $currentMonthInt) {
-          array_push($ordersMonth, ['month' => ucfirst($currentMonthString), 'year' => $value->created_at->year,'order' => $value]);
+      $currentMonth = Carbon::now();
+      $currentYear = Carbon::now();
+      $currentMonthString = $currentMonth->subMonth($i)->isoFormat('MMMM');
+      $currentYearString = $currentYear->subMonth($i)->isoFormat('YYYY');
+      array_push($months, ucfirst($currentMonthString));
+      array_push($monthsYears, ucfirst($currentMonthString). '-' .$currentYearString);
+    }
+    foreach ($months as $month) {
+      $bool = false;
+      foreach ($filteredOrders as $order) {
+        if (strtolower($month) == $order->created_at->isoFormat('MMMM')) {
+          array_push($dataOrders, count($filteredOrders->filter( function($value) use ($month) { return strtolower($month) == $value->created_at->isoFormat('MMMM'); } )));
+          $bool = true;
+          break;
+        } else {
+          continue;
         }
       }
+      if ($bool == false) {
+        array_push($dataOrders, 0);
+      }
     }
-    return response()->json($ordersMonth);
+    return response()->json(['months' => $monthsYears, 'values' => $dataOrders]);
   }
 
   public function topDish() {
@@ -66,7 +82,7 @@ class OrderController extends Controller
         $dish = Dish::where('id', '=', $key)->get();
       }
     }
-    dd($dish);
+
     return response()->json($dish);
 
   }
@@ -84,7 +100,7 @@ class OrderController extends Controller
         $dish = Dish::where('id', '=', $key)->get();
       }
     }
-    dd($dish);
+
     return response()->json($dish);
 
   }

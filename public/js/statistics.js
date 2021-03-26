@@ -7854,7 +7854,7 @@ function getAlpha(string) {
 // generators
 function hexString(rgba, a) {
    var a = (a !== undefined && rgba.length === 3) ? a : rgba[3];
-   return "#" + hexDouble(rgba[0]) 
+   return "#" + hexDouble(rgba[0])
               + hexDouble(rgba[1])
               + hexDouble(rgba[2])
               + (
@@ -86873,7 +86873,7 @@ module.exports = JSON.parse('{"1":[{"id":5,"name":"pinco","surname":"pinco","sta
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -86886,17 +86886,17 @@ module.exports = JSON.parse('{"1":[{"id":5,"name":"pinco","surname":"pinco","sta
 /******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -86909,7 +86909,7 @@ module.exports = JSON.parse('{"1":[{"id":5,"name":"pinco","surname":"pinco","sta
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -86921,7 +86921,7 @@ module.exports = JSON.parse('{"1":[{"id":5,"name":"pinco","surname":"pinco","sta
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -86933,12 +86933,12 @@ module.exports = JSON.parse('{"1":[{"id":5,"name":"pinco","surname":"pinco","sta
 /******/ 			}
 /******/ 		})();
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -86949,7 +86949,7 @@ module.exports = JSON.parse('{"1":[{"id":5,"name":"pinco","surname":"pinco","sta
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -86958,7 +86958,7 @@ module.exports = JSON.parse('{"1":[{"id":5,"name":"pinco","surname":"pinco","sta
 /******/ 			return module;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -86981,7 +86981,9 @@ var prova = __webpack_require__(/*! ./orders.json */ "./resources/js/orders.json
 var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: "#statistics",
   data: {
-    orders: []
+    orders: [],
+    labels: [],
+    dataOrders: []
   },
   methods: {
     createChart: function createChart() {
@@ -86990,10 +86992,10 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       var ordini = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChart, {
         type: 'bar',
         data: {
-          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+          labels: this.labels.reverse(),
           datasets: [{
             label: 'Ordini',
-            data: [12, 8, 32, 9, 12, 8, 32, 9, 36, 45, 25, 14],
+            data: this.dataOrders.reverse(),
             backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
             borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
             borderWidth: 1
@@ -87020,12 +87022,12 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   mounted: function mounted() {
     var _this = this;
 
-    this.createChart();
-    axios.get("http://localhost:8000/api/orders").then(function (response) {
-      _this.orders = response.data;
-      console.log(_this.orders);
+    axios.get("http://localhost:8000/api/orders?api_token=" + token).then(function (response) {
+      _this.labels = response.data.months;
+      _this.dataOrders = response.data.values;
+      console.log(_this.labels, _this.dataOrders);
 
-      _this.orders.forEach(function (element) {});
+      _this.createChart();
     });
   }
 });

@@ -47,6 +47,6 @@ Route::prefix('admin')
     Route::get('/dashboard', function () {
         return view('admin.dishes.dash');
     })->name('dishes.dash');
-    Route::get('/statistics', 'DishController@order')->name('dishes.statistics');
+    Route::get('/statistics', 'DishController@statistics')->name('dishes.statistics');
 
 });
