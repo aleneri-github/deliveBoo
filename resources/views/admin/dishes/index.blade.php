@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        @foreach ($dishes as $key => $dish)
+        @foreach ($restaurant->dishes as $key => $dish)
 
         <div class="row-food d-flex">
             <div class="left-side">

@@ -8,6 +8,22 @@ $(document).ready(function() {
   });
 });
 
+axios.get(`http://localhost:8000/api/orders?api_token=` + token).then(response => {
+  window.dataOrders = response.data.values.reverse();
+  window.dataTotals = response.data.total.reverse();
+  window.labels = response.data.months.reverse();
+  window.orders = dataOrders.reduce(function(tot, num) {
+    return tot + num;
+  })
+  window.revenue = dataTotals.reduce(function(tot, num) {
+    return tot + num;
+  })
+
+  document.getElementById('orders_total').innerHTML = window.orders;
+  document.getElementById('revenue_total').innerHTML = window.revenue.toFixed(2);
+});
+
+
 window.onpageshow = function(event) {
 if (event.persisted) {
     window.location.reload()

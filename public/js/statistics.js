@@ -87085,16 +87085,14 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       axios.get("http://localhost:8000/api/stat/bott-dish?api_token=" + token).then(function (response) {
         _this.bottDish = response.data[0].name;
       });
-      axios.get("http://localhost:8000/api/orders?api_token=" + token).then(function (response) {
-        _this.labels = response.data.months.reverse();
-        _this.dataOrders = response.data.values.reverse();
-        _this.dataTotals = response.data.total.reverse();
+      _this.labels = window.labels;
+      _this.dataOrders = window.dataOrders;
+      _this.dataTotals = window.dataTotals;
 
-        _this.createChart();
+      _this.createChart();
 
-        _this.visibility = 'visible';
-        _this.loader = false;
-      });
+      _this.visibility = 'visible';
+      _this.loader = false;
     });
   }
 });

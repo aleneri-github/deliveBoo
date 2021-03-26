@@ -33,10 +33,9 @@ class DishController extends Controller
         if (!$restaurant) {
           return redirect()->route('admin.restaurant.create');
         }
-        // con get prendo una collection
-        $dishes = Dish::where('restaurant_id', $restaurant->id)->get();
-        // GESTIONE ASSENZA DI PIATTI
-        return view('admin.dishes.index', compact('dishes', 'restaurant'));
+        $userToken = User::where('id', Auth::id())->firstOrFail();
+        $token = $userToken->api_token;
+        return view('admin.dishes.index', compact('restaurant', 'token'));
     }
 
     /**
@@ -179,7 +178,6 @@ class DishController extends Controller
     }
 
     public function statistics() {
-
        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
        $userToken = User::where('id', Auth::id())->firstOrFail();
        $token = $userToken->api_token;

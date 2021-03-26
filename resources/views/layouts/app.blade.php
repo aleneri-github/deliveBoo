@@ -136,7 +136,7 @@
               <div class="data">
                 <div class="data-top">
                     <div class="box">
-                      <span>2400</span>
+                      <span id="orders_total"></span>
                       <p>Ordini</p>
                     </div>
                     <div class="box">
@@ -144,7 +144,7 @@
                       <p>Food</p>
                     </div>
                     <div class="box">
-                      <span>12400</span>
+                      <span id="revenue_total"></span>
                       <p>Incasso</p>
                     </div>
                 </div>
@@ -154,5 +154,8 @@
             </div>
         </section>
     </div>
+    <script>
+      window.token = "{{ $token }}";
+    </script>
 </body>
 </html>
