@@ -5,6 +5,10 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Restaurant;
 use Illuminate\Support\Str;
+
+use App\Mail\DeliveMail;
+use Illuminate\Support\Facades\Mail;
+
 class CheckoutController extends Controller
 {
   private $orderValidation = [
@@ -57,6 +61,7 @@ class CheckoutController extends Controller
             array_push($data['dishes'], $value->id);
           }
         }
+        Mail::to($data['buyer_email'])->send(new OrderMail())
         $order->dishes()->attach($data['dishes']);
         return view('guest.success');
       } else {
