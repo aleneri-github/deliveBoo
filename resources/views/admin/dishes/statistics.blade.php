@@ -11,6 +11,9 @@
             <canvas id="myChartTwo"></canvas>
         </div>
     </div>
-    
+
 <script src="{{ asset('js/statistics.js') }}" defer></script>
+<script>
+  window.token = "{{ $token }}";
+</script>
 @endsection
