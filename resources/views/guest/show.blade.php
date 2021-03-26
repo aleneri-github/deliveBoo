@@ -85,7 +85,9 @@
             <h4 v-cloak>€ @{{ cartTotal().toFixed(2) }}</h4>
           </div>
           {{-- button di checkout --}}
-          <a href="{{ route('guest.checkout.index') }}" class="deliveboo_button_cart">Checkout</a>
+          <a href="{{ route('guest.checkout.index') }}" class="deliveboo_button_cart"
+          :class="cart.length == 0 ? 'd-none' : ''" 
+          >Checkout</a>
         </div>
 
       </div>

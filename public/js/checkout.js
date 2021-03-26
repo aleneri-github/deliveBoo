@@ -71840,7 +71840,8 @@ var dropin = __webpack_require__(/*! braintree-web-drop-in */ "./node_modules/br
 var checkout = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: "#checkout",
   data: {
-    cart: []
+    cart: [],
+    loader: true
   },
   methods: {
     cartTotal: function cartTotal() {
@@ -71913,6 +71914,9 @@ var checkout = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     }
 
     this.paymentBox();
+  },
+  created: function created() {
+    this.loader = false;
   }
 });
 })();

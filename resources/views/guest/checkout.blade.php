@@ -12,18 +12,18 @@
     @endif
   </div>
 
-  <div id="checkout" class="container d-flex pt-5 pb-5">
+  <div id="checkout">
 
-    {{-- <transition name="fade" mode="out-in"> --}}
+    <transition name="fade" mode="out-in">
 
       {{-- vista di caricamento --}}
-      {{-- <div key=1 v-if="loader == true" class="loading_page">
+      <div key=1 v-if="loader == true" class="loading_page">
         <h1>Solo un attimo...</h1>
         <img src="{{ asset('img/jumb-2.svg') }}" alt="">
-      </div> --}}
+      </div>
 
       {{-- view checkout --}}
-      {{-- <div key=2 v-else > --}}
+      <div key=2 v-else class="container d-flex pt-5 pb-5">
 
         {{-- DATI DI CHECKOUT --}}
         <div id="checkout_container">
@@ -62,7 +62,7 @@
                 <h4>Totale</h4>
                 <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
               </div>
-              <a href="#" class="deliveboo_button p-3">Torna indietro</a>
+              {{-- <a href="#" class="deliveboo_button p-3">Torna indietro</a> --}}
               <input class="deliveboo_button p-3" type="submit" value="Compra"></input>
               <input type="hidden" id="nonce" name="nonce"></input>
               <input type="hidden" id="cart" name="cart"></input>
@@ -98,9 +98,9 @@
           </ul>
         </div>
 
-      {{-- </div> --}}
+      </div>
 
-    {{-- </transition> --}}
+    </transition>
   </div>
 
   <script src="{{ asset('js/checkout.js') }}" defer></script>

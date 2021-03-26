@@ -6,6 +6,7 @@ var checkout = new Vue(
     el: "#checkout",
     data: {
       cart: [],
+      loader: true,
     },
     methods: {
       cartTotal() {
@@ -76,6 +77,9 @@ var checkout = new Vue(
         }
       }
       this.paymentBox();
+    },
+    created() {
+      this.loader = false;
     }
   }
 );

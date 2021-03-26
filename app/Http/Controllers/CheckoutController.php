@@ -23,7 +23,7 @@ class CheckoutController extends Controller
       'privateKey' => env("BRAINTREE_PRIVATE_KEY")
     ]);
     $token = $gateway->clientToken()->generate();
-    return view ('guest.checkout', compact('token', 'restaurant'));
+    return view ('guest.checkout', compact('token'));
   }
   public function store(Request $request)
   {
