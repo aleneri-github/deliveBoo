@@ -140,7 +140,7 @@
                       <p>Ordini</p>
                     </div>
                     <div class="box">
-                      <span>20</span>
+                      <span>{{ count($restaurant->dishes) }}</span>
                       <p>Food</p>
                     </div>
                     <div class="box">
