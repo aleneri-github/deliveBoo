@@ -28,6 +28,6 @@ class DeliveMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.deliveyou');
+        return $this->view('mail.checkout');
     }
 }
