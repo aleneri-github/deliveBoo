@@ -8,7 +8,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button> --}}
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
                 <!-- PARTE SINISTRA -->
                 {{-- <ul class="navbar-nav mr-auto">
 
@@ -19,7 +19,7 @@
                 </a>
 
                 <!-- PARTE DESTRA -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav">
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">

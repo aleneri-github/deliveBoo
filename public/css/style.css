@@ -119,11 +119,18 @@ a:hover {
   font-size: 40px;
 }
 
+@media screen and (max-width: 780px) {
+  .loading_page img {
+    top: 30%;
+    max-width: 65%;
+  }
+}
 header {
   position: sticky;
   top: 0;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
   z-index: 3;
+  background-color: #FDC234;
 }
 header nav {
   background-color: #FDC234;
@@ -276,7 +283,7 @@ main .slider-wrapper .container_food .images .name_container {
   height: 400px;
   width: 80%;
   display: flex;
-  padding: 5px;
+  padding: 40px;
 }
 main .slider-wrapper .container_food .images .name_container h3 {
   margin: auto;

@@ -110,3 +110,17 @@ a {
     }
   }
 }
+
+
+// SM
+@media screen and (max-width: 780px) {
+
+  .loading_page {
+    img {
+      top: 30%;
+      max-width: 65%;
+      }
+
+  }
+
+}
