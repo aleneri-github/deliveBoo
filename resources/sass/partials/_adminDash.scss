@@ -48,6 +48,7 @@
             a {
               color: $white;
               font-size: 18px;
+              letter-spacing: 1.2px;
               i {
                 font-size: 18px;
                 padding-right: 10px;
@@ -175,35 +176,12 @@
 
     //main
     #admin-show {
-      width: calc(100% - 300px);
-      margin-left: 100px;
-      padding: 30px 20px;
-    }
-
-    //Info restaurant
-    #admin-info {
-      padding: 15px 30px;
-      border-left: 1px solid lightgray;
-    }
-  }
-
-}
-
-// SM
-@media screen and (max-width: 750px) {
-
-  #dashboard {
-
-    // menu laterale
-
-
-    //main
-    #admin-show {
       position: relative;
       width: calc(100% - 100px);
       padding-top: 60px;
       padding-left: 20px;
       padding-left: 20px;
+      margin-left: 100px;
     }
 
     //Info restaurant
@@ -227,6 +205,69 @@
       .data {
         display: none;
       }
+    }
+      
+  }
+
+}
+
+// SM
+@media screen and (max-width: 750px) {
+
+  #dashboard {
+
+    // menu laterale
+    #admin-menu {
+      width: 60px;
+      .logo-nav {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        a {
+          img {
+            width: 60px;
+          }
+        }
+      }
+      .side-menu {
+        .admin-menu {
+          ul {
+            li {
+              padding: 30px 18px;
+              &:hover {
+                background-color: $yellow;
+                color: $white;
+                border-radius: 60px 0px 0px 60px;
+                a {
+                  color: $white;
+                }
+              }
+              a {
+                color: $white;
+                font-size: 25px;
+                i {
+                  font-size: 25px;
+                  padding-right: 10px;
+                }
+                span {
+                display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //main
+    #admin-show {
+      width: calc(100% - 60px);
+      margin-left: 60px;
+
+    }
+
+    //Info restaurant
+    #admin-info {
+      width: calc(100% - 60px);
     }
   }
 

@@ -2,7 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h1>Crea un nuovo piatto</h1>
+        <div class="header-admin d-flex justify-content-between">
+            <h1>Crea un nuovo piatto</h1>
+            <div class="icon">
+                <a href="{{ route('admin.dishes.index') }}">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </a>
+            </div> 
+        </div>
 
         @if (session('message'))
             <div class="alert-danger my-4 p-2">
@@ -70,7 +77,7 @@
                 </div>
             </div>
 
-            <input class="btn btn-primary" type="submit" value="Crea">
+            <input class="btn btn-dark" type="submit" value="Crea">
         </form>
     </div>
     <script src="{{ asset('js/dashboard.js') }}" defer></script>

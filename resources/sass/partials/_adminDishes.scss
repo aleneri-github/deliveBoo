@@ -1,6 +1,99 @@
 #dashboard {
   #admin-show {
+    .container {
+      .header-admin {
+        width: 100%;
+        text-align: right;
+        padding-bottom: 50px;
+      }
+       // show dettaglio piatto
+       .dish-show {
+        width: 80%;
+        box-shadow: 0px -4px 16px -1px  rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        margin: auto;
+        .img-show {
+          display: flex;
+          align-items: flex-start;
+          width: 100%;
+          img {
+            width: 100%;
+            margin: auto;
+            border-radius: 5px 5px 0 0;
+          }
+        }
+        .info-show {
+          width: 100%;
+          padding: 20px 40px;
+          background-color: #FFFFFF;
+          h4 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-weight: bolder;
+          }
+          h6 {
+            color: $greenButton;
+            font-weight: bolder;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding-bottom: 15px;
+          }
+          p {
+            letter-spacing: 1.2px;
+            padding-bottom: 20px;
+          }
+          .img-info {
+            text-align: right;
+            img {
+              width: 20%;
+            }
+          }
+  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+
+  #dashboard {
+    #admin-show {
+      .container {
+        max-width: 700px;
+        #header-show {
+          width: 100%;
+          text-align: right;
+          padding-bottom: 50px;
+        }
+         // show dettaglio piatto
+         .dish-show {
+          width: 100%;
+          margin: 0;
+          .info-show {
+            padding: 10px 20px;
+            h4 {
+              padding-top: 10px;
+              padding-bottom: 10px;
+            }
+            h6 {
+              letter-spacing: 3px;
+              padding-bottom: 7px;
+            }
+            p {
+              padding-bottom: 10px;
+            }
+            // .img-info {
+            //   text-align: right;
+            //   img {
+            //     width: 20%;
+            //   }
+            // }
     
+          }
+        }
+      }
+    }
   }
 
 }

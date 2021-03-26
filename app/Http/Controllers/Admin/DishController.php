@@ -102,8 +102,9 @@ class DishController extends Controller
      */
     public function show($slug)
     {
+        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
         $dish = Dish::where('slug', $slug)->firstOrFail();
-        return view('admin.dishes.show', compact('dish'));
+        return view('admin.dishes.show', compact('dish', 'restaurant'));
     }
 
     /**

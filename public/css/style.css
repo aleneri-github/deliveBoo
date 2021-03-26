@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  background-color: #fefefe;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -108,6 +112,11 @@ a:hover {
 
 [v-cloak] {
   display: none;
+}
+
+.icon a i {
+  color: #01a183;
+  font-size: 40px;
 }
 
 header {
@@ -1279,6 +1288,7 @@ a:hover {
 #dashboard #admin-menu .side-menu .admin-menu ul li a {
   color: #fefefe;
   font-size: 18px;
+  letter-spacing: 1.2px;
 }
 #dashboard #admin-menu .side-menu .admin-menu ul li a i {
   font-size: 18px;
@@ -1376,22 +1386,12 @@ a:hover {
     display: none;
   }
   #dashboard #admin-show {
-    width: calc(100% - 300px);
-    margin-left: 100px;
-    padding: 30px 20px;
-  }
-  #dashboard #admin-info {
-    padding: 15px 30px;
-    border-left: 1px solid lightgray;
-  }
-}
-@media screen and (max-width: 750px) {
-  #dashboard #admin-show {
     position: relative;
     width: calc(100% - 100px);
     padding-top: 60px;
     padding-left: 20px;
     padding-left: 20px;
+    margin-left: 100px;
   }
   #dashboard #admin-info {
     position: absolute;
@@ -1414,6 +1414,124 @@ a:hover {
     display: none;
   }
 }
+@media screen and (max-width: 750px) {
+  #dashboard #admin-menu {
+    width: 60px;
+  }
+  #dashboard #admin-menu .logo-nav {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  #dashboard #admin-menu .logo-nav a img {
+    width: 60px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li {
+    padding: 30px 18px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li:hover {
+    background-color: #FDC234;
+    color: #fefefe;
+    border-radius: 60px 0px 0px 60px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li:hover a {
+    color: #fefefe;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li a {
+    color: #fefefe;
+    font-size: 25px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li a i {
+    font-size: 25px;
+    padding-right: 10px;
+  }
+  #dashboard #admin-menu .side-menu .admin-menu ul li a span {
+    display: none;
+  }
+  #dashboard #admin-show {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+  #dashboard #admin-info {
+    width: calc(100% - 60px);
+  }
+}
+#dashboard #admin-show .container .header-admin {
+  width: 100%;
+  text-align: right;
+  padding-bottom: 50px;
+}
+#dashboard #admin-show .container .dish-show {
+  width: 80%;
+  box-shadow: 0px -4px 16px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin: auto;
+}
+#dashboard #admin-show .container .dish-show .img-show {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+#dashboard #admin-show .container .dish-show .img-show img {
+  width: 100%;
+  margin: auto;
+  border-radius: 5px 5px 0 0;
+}
+#dashboard #admin-show .container .dish-show .info-show {
+  width: 100%;
+  padding: 20px 40px;
+  background-color: #FFFFFF;
+}
+#dashboard #admin-show .container .dish-show .info-show h4 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: bolder;
+}
+#dashboard #admin-show .container .dish-show .info-show h6 {
+  color: #01a183;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding-bottom: 15px;
+}
+#dashboard #admin-show .container .dish-show .info-show p {
+  letter-spacing: 1.2px;
+  padding-bottom: 20px;
+}
+#dashboard #admin-show .container .dish-show .info-show .img-info {
+  text-align: right;
+}
+#dashboard #admin-show .container .dish-show .info-show .img-info img {
+  width: 20%;
+}
+
+@media screen and (max-width: 780px) {
+  #dashboard #admin-show .container {
+    max-width: 700px;
+  }
+  #dashboard #admin-show .container #header-show {
+    width: 100%;
+    text-align: right;
+    padding-bottom: 50px;
+  }
+  #dashboard #admin-show .container .dish-show {
+    width: 100%;
+    margin: 0;
+  }
+  #dashboard #admin-show .container .dish-show .info-show {
+    padding: 10px 20px;
+  }
+  #dashboard #admin-show .container .dish-show .info-show h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #dashboard #admin-show .container .dish-show .info-show h6 {
+    letter-spacing: 3px;
+    padding-bottom: 7px;
+  }
+  #dashboard #admin-show .container .dish-show .info-show p {
+    padding-bottom: 10px;
+  }
+}
 #indexMenu {
   overflow-y: auto;
 }
@@ -1430,22 +1548,53 @@ a:hover {
   transition-duration: 0.4s;
   background-color: #FDC234;
 }
-#indexMenu .box-menu .row-food .tab {
+#indexMenu .box-menu .row-food .left-side {
+  display: flex;
+  width: 70%;
+}
+#indexMenu .box-menu .row-food .left-side .tab {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#indexMenu .box-menu .row-food .tab-10 {
+#indexMenu .box-menu .row-food .left-side .tab-10 {
   width: 10%;
+  font-weight: bolder;
 }
-#indexMenu .box-menu .row-food .tab-10 img {
+#indexMenu .box-menu .row-food .left-side .tab-10 img {
   width: 100%;
   border-radius: 5px;
 }
-#indexMenu .box-menu .row-food .tab-big {
-  width: 40%;
+#indexMenu .box-menu .row-food .left-side .tab-big {
+  width: 80%;
+  text-align: center;
+}
+#indexMenu .box-menu .row-food .left-side .tab-big span {
+  color: #01a183;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+#indexMenu .box-menu .row-food .right-side {
+  display: flex;
+  width: 30%;
+}
+#indexMenu .box-menu .row-food .right-side .tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 3);
+}
+#indexMenu .box-menu .row-food .right-side .tab a i:hover {
+  color: #01a183;
+}
+#indexMenu .box-menu .row-food .right-side .tab button i:hover {
+  color: #01a183;
+}
+#indexMenu .box-menu .row-food .right-side .tab button a:hover {
+  color: #01a183;
 }
 #indexMenu .box-menu .row-info {
+  display: flex;
   font-weight: bolder;
   border: 0;
   background-color: #F9F9F9;
@@ -1455,44 +1604,79 @@ a:hover {
 #indexMenu .box-menu .row-info:hover {
   background-color: #F9F9F9;
 }
-#indexMenu .box-menu .dish-show {
-  background-color: #F9F9F9;
-  border-radius: 5px;
-  opacity: 0;
-  display: none;
-  margin: 0 40px;
-}
-#indexMenu .box-menu .dish-show .img-show {
+#indexMenu .box-menu .row-info .tab {
   display: flex;
-  width: 50%;
+  align-items: center;
+  justify-content: center;
 }
-#indexMenu .box-menu .dish-show .img-show img {
-  text-align: right;
-  width: 100%;
-  border-radius: 5px 0 0 5px;
-}
-#indexMenu .box-menu .dish-show .info-show {
-  width: 50%;
-  padding: 20px 10px;
-}
-#indexMenu .box-menu .dish-show .info-show span {
+#indexMenu .box-menu .row-info .tab-10 {
+  width: 10%;
   font-weight: bolder;
 }
-#indexMenu .box-menu .dish-show .info-show .img-info {
-  text-align: right;
+#indexMenu .box-menu .row-info .tab-10 img {
+  width: 100%;
+  border-radius: 5px;
 }
-#indexMenu .box-menu .dish-show .info-show .img-info img {
-  width: 20%;
+#indexMenu .box-menu .row-info .tab-big {
+  width: 80%;
+  text-align: center;
 }
-#indexMenu .box-menu .dish-active {
-  opacity: 1;
-  display: flex;
-  box-shadow: 18px -19px 29px -26px rgba(0, 0, 0, 0.3);
-}
-#indexMenu .box-menu .row-active {
-  background-color: #FDC234;
+#indexMenu .box-menu .row-info .tab-big span {
+  color: #01a183;
+  font-weight: bolder;
+  letter-spacing: 3px;
 }
 
+@media screen and (max-width: 1200px) {
+  #indexMenu {
+    overflow-y: auto;
+  }
+  #indexMenu .box-menu .row-food .left-side {
+    display: flex;
+    width: 85%;
+  }
+  #indexMenu .box-menu .row-food .right-side {
+    display: flex;
+    width: 15%;
+  }
+}
+@media screen and (max-width: 780px) {
+  #indexMenu {
+    overflow-y: auto;
+  }
+  #indexMenu .box-menu .row-food {
+    flex-direction: column;
+    padding: 0 0;
+  }
+  #indexMenu .box-menu .row-food .left-side {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  #indexMenu .box-menu .row-food .left-side .tab-10 {
+    width: 100%;
+  }
+  #indexMenu .box-menu .row-food .left-side .tab-10 img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+  #indexMenu .box-menu .row-food .left-side .tab-id {
+    display: none;
+  }
+  #indexMenu .box-menu .row-food .left-side .tab-big {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  #indexMenu .box-menu .row-food .right-side {
+    display: flex;
+    width: 100%;
+  }
+  #indexMenu .box-menu .row-food .right-side .tab {
+    padding: 10px 0;
+  }
+  #indexMenu .box-menu .row-info {
+    display: none;
+  }
+}
 #statistics {
   width: 100%;
   height: 100vh;

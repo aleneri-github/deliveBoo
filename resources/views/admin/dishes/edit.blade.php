@@ -2,7 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h1>Modifica il tuo piatto</h1>
+        <div class="header-admin d-flex justify-content-between">
+            <h1>Modifica il tuo piatto</h1>
+            <div class="icon">
+                <a href="{{ route('admin.dishes.index') }}">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </a>
+            </div> 
+        </div>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -66,11 +73,9 @@
                     </div>
                 </div>
             
-            <button type="submit" class="btn btn-primary">Salva le modifiche</button>
+            <button type="submit" class="btn btn-dark">Salva le modifiche</button>
 
         </form>
-        
-        <a href="{{ route('admin.dishes.index') }}" class="btn btn-secondary">Indietro</a>
-    
     </div>
+    <script src="{{ asset('js/dashboard.js') }}" defer></script>
 @endsection
