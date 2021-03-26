@@ -1,109 +1,70 @@
 #login-page {
   display: flex;
   align-items: center;
-  // height: calc(100vh - 55px);
+  height: calc(100vh - 55px);
   background-color: $white;
   background-image: linear-gradient(90deg, $white 57%, $yellow 43%);
-  padding: 20px 0;
-  .card {
-    width: 100%;
-    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
-    border: 0px;
-    .card-header-1 {
-      padding: 10% 13%;
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .left-side {
+      width: 60%;
+      .register-box {
+        h1 {
+          padding-left: 16%;
+          padding-bottom: 20px;
+        }
+        .form-register {
+          width: 100%;
+        }
+      }
     }
-    .login-card {
+    .right-side {
       display: flex;
-      .card-body {
-        width: 60%;
-        form {
-          padding-bottom: 20%;
-        }
-       }
-       .card-img {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          width: 40%;
-          border-bottom-left-radius: 0px;
-          border-top-left-radius: 0px;
-          background-color: $yellow;
-        img {
-         width: 80%;
-        }
+      align-items: center;
+      width: 40%;
+      height: 100%;
+      padding-left: 30px;
+      background-color: $yellow;
+      img {
+        width: 100%;
       }
     }
   }
 } 
 
-
-/* SM */
-@media screen and (max-width: 980px) {
-  #login-page {
-    .card {
-      .card-header-1 {
-        padding: 8% 0%;
-      }
-    }
-  }
-
-}
-
-/* XS */
 @media screen and (max-width: 770px) {
-  
   #login-page {
-    display: block;
+    height: 100%;
     background-color: $yellow;
-    background-image: linear-gradient($yellow 51%, $white 67%);
-    .card {
-        box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 50%);
-        border: 0px;
-        background-color: transparent;
-      .card-header-1 {
-        padding: 3% 0%;
-      }
-      .login-card {
-        flex-direction: column-reverse;
-        width: 100%; 
-        .card-body {
-          width: 100%; 
-          form {
-            padding-bottom: 0%;
+    background-image: linear-gradient( $yellow 51%, $white 67%);
+    .container {
+    flex-direction: column-reverse;
+      .left-side {
+        width: 70%;
+        .register-box {
+          h1 {
+            padding-top: 10px;
+            padding-left: 0%;
+            padding-bottom: 10px;
           }
-         }
-         .card-img {
-            display: flex;
-            justify-content: center;
+          .form-register {
             width: 100%;
-            background-color: $yellow;
-          img {
-            margin-top: 20px;
-            width: 50%;
+            padding-bottom: 20px;
           }
         }
       }
-    }
-  }
-
-}
-
-/* Extra XS */
-@media screen and (max-width: 470px) {
-  #login-page {
-    background-image: linear-gradient($yellow 51%, $white 67%);
-    .card {
-      .login-card {
-        .card-body {
-          padding: 0 10px;
-        }
-         .card-img {
-          img {
-            width: 70%;
-          }
+      .right-side {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        img {
+          width: 70%;
         }
       }
     }
-  }
+  } 
 
 }

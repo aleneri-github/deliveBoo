@@ -1058,91 +1058,65 @@ a:hover {
 #login-page {
   display: flex;
   align-items: center;
+  height: calc(100vh - 55px);
   background-color: #fefefe;
   background-image: linear-gradient(90deg, #fefefe 57%, #FDC234 43%);
-  padding: 20px 0;
 }
-#login-page .card {
-  width: 100%;
-  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
-  border: 0px;
-}
-#login-page .card .card-header-1 {
-  padding: 10% 13%;
-}
-#login-page .card .login-card {
-  display: flex;
-}
-#login-page .card .login-card .card-body {
-  width: 60%;
-}
-#login-page .card .login-card .card-body form {
-  padding-bottom: 20%;
-}
-#login-page .card .login-card .card-img {
+#login-page .container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  height: 100%;
+}
+#login-page .container .left-side {
+  width: 60%;
+}
+#login-page .container .left-side .register-box h1 {
+  padding-left: 16%;
+  padding-bottom: 20px;
+}
+#login-page .container .left-side .register-box .form-register {
+  width: 100%;
+}
+#login-page .container .right-side {
+  display: flex;
+  align-items: center;
   width: 40%;
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
+  height: 100%;
+  padding-left: 30px;
   background-color: #FDC234;
 }
-#login-page .card .login-card .card-img img {
-  width: 80%;
+#login-page .container .right-side img {
+  width: 100%;
 }
 
-/* SM */
-@media screen and (max-width: 980px) {
-  #login-page .card .card-header-1 {
-    padding: 8% 0%;
-  }
-}
-/* XS */
 @media screen and (max-width: 770px) {
   #login-page {
-    display: block;
+    height: 100%;
     background-color: #FDC234;
     background-image: linear-gradient(#FDC234 51%, #fefefe 67%);
   }
-  #login-page .card {
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
-    border: 0px;
-    background-color: transparent;
-  }
-  #login-page .card .card-header-1 {
-    padding: 3% 0%;
-  }
-  #login-page .card .login-card {
+  #login-page .container {
     flex-direction: column-reverse;
+  }
+  #login-page .container .left-side {
+    width: 70%;
+  }
+  #login-page .container .left-side .register-box h1 {
+    padding-top: 10px;
+    padding-left: 0%;
+    padding-bottom: 10px;
+  }
+  #login-page .container .left-side .register-box .form-register {
     width: 100%;
+    padding-bottom: 20px;
   }
-  #login-page .card .login-card .card-body {
-    width: 100%;
-  }
-  #login-page .card .login-card .card-body form {
-    padding-bottom: 0%;
-  }
-  #login-page .card .login-card .card-img {
+  #login-page .container .right-side {
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: #FDC234;
+    height: 100%;
   }
-  #login-page .card .login-card .card-img img {
-    margin-top: 20px;
-    width: 50%;
-  }
-}
-/* Extra XS */
-@media screen and (max-width: 470px) {
-  #login-page {
-    background-image: linear-gradient(#FDC234 51%, #fefefe 67%);
-  }
-  #login-page .card .login-card .card-body {
-    padding: 0 10px;
-  }
-  #login-page .card .login-card .card-img img {
+  #login-page .container .right-side img {
     width: 70%;
   }
 }
