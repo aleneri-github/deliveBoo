@@ -86981,60 +86981,121 @@ var prova = __webpack_require__(/*! ./orders.json */ "./resources/js/orders.json
 var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: "#statistics",
   data: {
-    orders: []
+    colorsArray: ['rgba(165, 97, 228, 1)', 'rgba(208, 222, 9, 1)', 'rgba(183, 22, 6, 1)', 'rgba(175, 97, 31, 1)', 'rgba(174, 217, 243, 1)', 'rgba(48, 96, 226, 1)', 'rgba(240, 252, 193, 1)', 'rgba(57, 52, 254, 1)', 'rgba(96, 16, 171, 1)', 'rgba(7, 57, 71, 1)', 'rgba(62, 203, 134, 1)', 'rgba(185, 232, 113, 1)'],
+    orders: [],
+    labels: [],
+    dataOrders: [],
+    dataTotals: [],
+    topDish: '',
+    bottDish: '',
+    loader: true,
+    visibility: 'hidden'
   },
   methods: {
     createChart: function createChart() {
       var myChart = document.getElementById('myChart').getContext('2d');
       var myChartTwo = document.getElementById('myChartTwo').getContext('2d');
-      var ordini = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChart, {
+      var myChartThree = document.getElementById('myChartThree').getContext('2d');
+      var myChartFour = document.getElementById('myChartFour').getContext('2d');
+      var pieOrders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartThree, {
+        type: 'pie',
+        data: {
+          labels: this.labels,
+          datasets: [{
+            data: this.dataOrders,
+            backgroundColor: this.colorsArray,
+            borderColor: 'rbg(0,0,0)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          legend: {
+            display: false
+          }
+        }
+      });
+      var pieRevenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartFour, {
+        type: 'pie',
+        data: {
+          labels: this.labels,
+          datasets: [{
+            data: this.dataTotals,
+            backgroundColor: this.colorsArray,
+            borderColor: 'rbg(0,0,0)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          legend: {
+            display: false
+          }
+        }
+      });
+      var orders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChart, {
         type: 'bar',
         data: {
-          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+          labels: this.labels,
           datasets: [{
             label: 'Ordini',
-            data: [12, 8, 32, 9, 12, 8, 32, 9, 36, 45, 25, 14],
-            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
-            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
-            borderWidth: 1
+            data: this.dataOrders,
+            backgroundColor: this.colorsArray,
+            borderColor: 'rbg(0,0,0)',
+            borderWidth: 2
           }]
         },
-        options: {}
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
       });
-      var entrate = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartTwo, {
+      var revenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartTwo, {
         type: 'line',
         data: {
-          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile'],
+          labels: this.labels,
           datasets: [{
             label: 'Entrate Mensili',
-            data: [12, 8, 32, 9],
-            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
-            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
-            borderWidth: 1
+            data: this.dataTotals,
+            backgroundColor: this.colorsArray,
+            borderColor: 'rbg(0,0,0)',
+            borderWidth: 2
           }]
         },
-        options: {}
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
       });
     }
   },
   mounted: function mounted() {
     var _this = this;
 
-    this.createChart();
-    axios.get("http://localhost:8000/api/orders").then(function (response) {
-      _this.orders = response.data;
-      console.log(_this.orders);
+    axios.get("http://localhost:8000/api/stat/top-dish?api_token=" + token).then(function (response) {
+      _this.topDish = response.data[0].name;
+      axios.get("http://localhost:8000/api/stat/bott-dish?api_token=" + token).then(function (response) {
+        _this.bottDish = response.data[0].name;
+      });
+      _this.labels = window.labels;
+      _this.dataOrders = window.dataOrders;
+      _this.dataTotals = window.dataTotals;
 
-      _this.orders.forEach(function (element) {});
+      _this.createChart();
+
+      _this.visibility = 'visible';
+      _this.loader = false;
     });
   }
 });
-
-window.onpageshow = function (event) {
-  if (event.persisted) {
-    window.location.reload();
-  }
-};
 })();
 
 /******/ })()

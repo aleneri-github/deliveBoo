@@ -16,7 +16,7 @@
 
     <transition name="fade" mode="out-in">
       {{-- vista di caricamento --}}
-      <div key=1 v-if="loader == true || loaderExit == true" class="loading_page">
+      <div key=1 v-if="loader == true" class="loading_page">
         <h1>Solo un attimo...</h1>
         <img src="{{ asset('img/jumb-2.svg') }}" alt="">
       </div>

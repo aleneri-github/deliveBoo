@@ -29,15 +29,11 @@ Route::prefix('')->name('guest.')->group( function() {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::prefix('admin')
     ->namespace('Admin')
     ->middleware('auth')
     ->name('admin.')
     ->group( function(){
-
 
     Route::resource('dishes', 'DishController');
 
@@ -47,6 +43,6 @@ Route::prefix('admin')
     Route::get('/dashboard', function () {
         return view('admin.dishes.dash');
     })->name('dishes.dash');
-    Route::get('/statistics', 'DishController@order')->name('dishes.statistics');
+    Route::get('/statistics', 'DishController@statistics')->name('dishes.statistics');
 
 });

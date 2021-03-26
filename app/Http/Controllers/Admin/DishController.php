@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
 use App\Restaurant;
+use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -32,10 +33,9 @@ class DishController extends Controller
         if (!$restaurant) {
           return redirect()->route('admin.restaurant.create');
         }
-        // con get prendo una collection
-        $dishes = Dish::where('restaurant_id', $restaurant->id)->get();
-        // GESTIONE ASSENZA DI PIATTI
-        return view('admin.dishes.index', compact('dishes', 'restaurant'));
+        $userToken = User::where('id', Auth::id())->firstOrFail();
+        $token = $userToken->api_token;
+        return view('admin.dishes.index', compact('restaurant', 'token'));
     }
 
     /**
@@ -177,9 +177,10 @@ class DishController extends Controller
                 ->with('message', "Piatto " . $dish->name . " cancellato correttamente!");
     }
 
-     public function order() {
-
-        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
-        return view('admin.dishes.statistics', compact('restaurant'));
-    }
+    public function statistics() {
+       $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
+       $userToken = User::where('id', Auth::id())->firstOrFail();
+       $token = $userToken->api_token;
+       return view('admin.dishes.statistics', compact('restaurant', 'token'));
+   }
 }
