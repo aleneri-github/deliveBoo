@@ -6,8 +6,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{-- favicon --}}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.png') }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>DeliveYou</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
