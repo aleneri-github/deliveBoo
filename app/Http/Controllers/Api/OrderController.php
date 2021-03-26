@@ -28,7 +28,7 @@ class OrderController extends Controller
     foreach ($rest->dishes as $dish) {
       // non funge, mi fa vedere per ogni piatto la tabella ordini! Provato pivot e non funge
       // dd($dish->orders);
-      dd($dish->pivot->order_id);
+      // dd($dish->pivot->order_id);
       $orders = DB::table('dish_order')->select('order_id')->where('dish_id', '=', $dish->id)->get();
       foreach($orders as $order) {
         if (!in_array($order->order_id, $myOrdersIds)) {
@@ -40,8 +40,8 @@ class OrderController extends Controller
     $filteredOrders = $orders->filter(function($value) use ($myOrdersIds) {
       return in_array($value->id, $myOrdersIds);
     });
-
     $dataOrders = [];
+    $dataTotal = [];
     $months = [];
     $monthsYears = [];
     for ($i = 0; $i < 12; $i++) {
@@ -67,8 +67,25 @@ class OrderController extends Controller
         array_push($dataOrders, 0);
       }
     }
-    return response()->json(['months' => $monthsYears, 'values' => $dataOrders]);
+
+    foreach ($months as $month) {
+      $prova = $filteredOrders->filter(function($value) use ($month) {
+        return strtolower($month) == $value->created_at->isoFormat('MMMM');
+      })->toArray();
+      if ($prova) {
+        $total = array_reduce($prova, function($carry, $item) {
+          $carry += $item['total'];
+          return $carry;
+        });
+      } else {
+        $total = 0;
+      }
+      array_push($dataTotal, $total);
+    }
+
+    return response()->json(['months' => $monthsYears, 'values' => $dataOrders, 'total' => $dataTotal]);
   }
+
 
   public function topDish() {
     $rest = Restaurant::where('user_id', Auth::id())->firstOrFail();

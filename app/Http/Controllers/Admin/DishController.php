@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
 use App\Restaurant;
+use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -177,9 +178,11 @@ class DishController extends Controller
                 ->with('message', "Piatto " . $dish->name . " cancellato correttamente!");
     }
 
-     public function order() {
+    public function statistics() {
 
-        $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
-        return view('admin.dishes.statistics', compact('restaurant'));
-    }
+       $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
+       $userToken = User::where('id', Auth::id())->firstOrFail();
+       $token = $userToken->api_token;
+       return view('admin.dishes.statistics', compact('restaurant', 'token'));
+   }
 }
