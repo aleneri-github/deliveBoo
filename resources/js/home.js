@@ -47,12 +47,8 @@ var home = new Vue(
         let rect = elem.getBoundingClientRect();
         return [elem, rect]
       },
-      clearCart(event) {
-        event.preventDefault();
+      clearCart() {
         localStorage.clear();
-        // console.log(event);
-        var link = document.getElementById('rest_a');
-        window.location.assign(link.href);
       }
     },
     mounted: function () {

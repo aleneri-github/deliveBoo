@@ -33,7 +33,7 @@
             {{-- FORM BRAINTREE --}}
             <form id="payment-form" action="{{ route('guest.checkout.store') }}" method="post">
               @csrf
-              
+
               {{-- DATI UTENTE --}}
               {{-- nome --}}
               <div class="form-group">
@@ -55,7 +55,7 @@
                 <label for="buyer_email">Email</label>
                 <input required class="form-control" type="email" id="buyer_email" name="buyer_email" value="{{ old('buyer_email') }}">
               </div>
-        
+
               {{-- DATI PAGAMENTO BRAINTREE --}}
               <div id="dropin-container"></div>
               <div id="data_total" class="mt-4 m-3 justify-content-between">
@@ -104,5 +104,5 @@
   </div>
 
   <script src="{{ asset('js/checkout.js') }}" defer></script>
-    
+
 @endsection

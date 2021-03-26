@@ -90,7 +90,7 @@
       <h1 class="text-center">I nostri ristoranti</h1>
       <div class="v-if-container" v-if="restaurants != 0">
         <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest" :class="restAnim" v-for="restaurant in restaurants">
-          <a :href="'restaurants' + '/' + restaurant.slug + '/show'" @click="clearCart" id="rest_a">
+          <a :href="'restaurants' + '/' + restaurant.slug + '/show'" @click="clearCart()" class="dishes_link">
             <div class="layover">
               <h3>@{{ restaurant.name }}</h3>
               <p class="card-address"><i class="fas fa-map-marker-alt"></i>  @{{ restaurant.address }}</p>

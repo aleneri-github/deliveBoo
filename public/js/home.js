@@ -1939,12 +1939,8 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       var rect = elem.getBoundingClientRect();
       return [elem, rect];
     },
-    clearCart: function clearCart(event) {
-      event.preventDefault();
-      localStorage.clear(); // console.log(event);
-
-      var link = document.getElementById('rest_a');
-      window.location.assign(link.href);
+    clearCart: function clearCart() {
+      localStorage.clear();
     }
   },
   mounted: function mounted() {
