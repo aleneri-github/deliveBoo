@@ -58,6 +58,7 @@ class CheckoutController extends Controller
             array_push($data['dishes'], $value->id);
           }
         }
+        Mail::to($data['buyer_email'])->send(new OrderMail())
         $order->dishes()->attach($data['dishes']);
         return response()->json($result);
         // return redirect()->route('guest.checkout', ['transaction' => $result->succes]);
