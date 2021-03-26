@@ -17,7 +17,7 @@
 
     ],
     [
-        "type" => "sushi",
+        "type" => "asiatico",
         "image" => "https://co-restaurants.roocdn.com/images/d05b2324186373d2859cabdbe28bf6fb25ab8542/shortcut/sushi-1.png?width=250&height=130&fit=crop&bg-color=440063&auto=webp&format=png",
 
     ],
