@@ -86981,7 +86981,9 @@ var prova = __webpack_require__(/*! ./orders.json */ "./resources/js/orders.json
 var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: "#statistics",
   data: {
-    orders: []
+    orders: [],
+    labels: [],
+    dataOrders: []
   },
   methods: {
     createChart: function createChart() {
@@ -86990,10 +86992,10 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       var ordini = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChart, {
         type: 'bar',
         data: {
-          labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+          labels: this.labels.reverse(),
           datasets: [{
             label: 'Ordini',
-            data: [12, 8, 32, 9, 12, 8, 32, 9, 36, 45, 25, 14],
+            data: this.dataOrders.reverse(),
             backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
             borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
             borderWidth: 1
@@ -87020,21 +87022,15 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   mounted: function mounted() {
     var _this = this;
 
-    this.createChart();
-    axios.get("http://localhost:8000/api/orders").then(function (response) {
-      _this.orders = response.data;
-      console.log(_this.orders);
+    axios.get("http://localhost:8000/api/orders?api_token=" + token).then(function (response) {
+      _this.labels = response.data.months;
+      _this.dataOrders = response.data.values;
+      console.log(_this.labels, _this.dataOrders);
 
-      _this.orders.forEach(function (element) {});
+      _this.createChart();
     });
   }
 });
-
-window.onpageshow = function (event) {
-  if (event.persisted) {
-    window.location.reload();
-  }
-};
 })();
 
 /******/ })()
