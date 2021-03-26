@@ -128,6 +128,10 @@ a:hover {
     max-width: 65%;
   }
 }
+.display_flex {
+  display: flex;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -762,7 +766,7 @@ footer .row .single_column #logo {
 }
 #detail #cart {
   position: sticky;
-  top: 40px;
+  top: 95px;
   margin: 40px;
   padding: 40px;
   width: 25%;
@@ -825,6 +829,7 @@ footer .row .single_column #logo {
     height: 60%;
   }
   #detail #cart {
+    top: 95px;
     margin: 0;
     padding: 20px;
     width: 25%;
@@ -918,8 +923,12 @@ footer .row .single_column #logo {
   #detail #cards .card_dish img {
     height: 60%;
   }
+  #detail .sm_class {
+    position: relative;
+    flex-direction: column-reverse;
+  }
   #detail #cart {
-    position: absolute;
+    position: sticky;
     top: 0;
     width: 100%;
     height: 150px;
@@ -930,6 +939,7 @@ footer .row .single_column #logo {
     display: inline-block;
   }
   #detail #cart #total {
+    display: block;
     position: sticky;
     top: 20px;
     float: right;
@@ -1014,7 +1024,7 @@ a:hover {
   }
 }
 @media screen and (max-width: 525px) {
-  #checkout {
+  #checkout_section {
     width: 100%;
     flex-direction: column-reverse;
   }

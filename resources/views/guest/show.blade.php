@@ -22,7 +22,7 @@
       </div>
 
       {{-- CONTENUTO --}}
-      <div class="d-flex">
+      <div class="d-flex sm_class">
 
         {{-- CARD PIATTI --}}
         <div id="cards">
@@ -80,13 +80,13 @@
             </li>
           </ul>
           {{-- totale --}}
-          <div id="total" class="mt-4 d-flex justify-content-between">
+          <div id="total" class="mt-4 display_flex justify-content-between">
             <h4>Totale</h4>
             <h4 v-cloak>€ @{{ cartTotal().toFixed(2) }}</h4>
           </div>
           {{-- button di checkout --}}
           <a href="{{ route('guest.checkout.index') }}" class="deliveboo_button_cart"
-          :class="cart.length == 0 ? 'd-none' : ''" 
+          :class="cart.length == 0 ? 'd-none' : ''"
           >Checkout</a>
         </div>
 

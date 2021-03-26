@@ -13,7 +13,7 @@
   #data_total {
     display: none;
   }
-}  
+}
 // CARRELLO
 #checkout_cart {
   display: inline-block;
@@ -58,7 +58,7 @@ a:hover {
   #checkout_data {
     height: 780px;
   }
-} 
+}
 
 // DISPOSITVI MD
 @media screen and (max-width: 768px) {
@@ -73,11 +73,11 @@ a:hover {
       padding: 15px;
     }
   }
-} 
+}
 
 // DISPOSITVI SM
 @media screen and (max-width: 525px) {
-  #checkout {
+  #checkout_section {
     width: 100%;
     flex-direction: column-reverse;
   }
@@ -100,4 +100,4 @@ a:hover {
       padding: 15px;
     }
   }
-} 
+}
