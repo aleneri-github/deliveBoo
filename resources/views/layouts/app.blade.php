@@ -157,7 +157,7 @@
         </section>
     </div>
     <script>
-      window.token = "{{ $token }}";
+      window.token = "{{ $token }}"; 
     </script>
 </body>
 </html>
