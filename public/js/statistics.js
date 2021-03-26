@@ -87029,6 +87029,12 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     });
   }
 });
+
+window.onpageshow = function (event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
 })();
 
 /******/ })()

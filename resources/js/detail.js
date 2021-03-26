@@ -101,3 +101,9 @@ var detail = new Vue(
     }
   }
 );
+
+window.onpageshow = function(event) {
+if (event.persisted) {
+    window.location.reload()
+}
+};

@@ -78,20 +78,15 @@ var statistics = new Vue(
                 console.log(this.orders);
 
                 this.orders.forEach(element => {
-                    
+
                 });
             });
         },
     }
 );
 
-
-
-
-
-
-
-
-
-
-
+window.onpageshow = function(event) {
+if (event.persisted) {
+    window.location.reload()
+}
+};

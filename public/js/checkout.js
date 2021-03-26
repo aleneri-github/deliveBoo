@@ -71919,6 +71919,12 @@ var checkout = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     this.loader = false;
   }
 });
+
+window.onpageshow = function (event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
 })();
 
 /******/ })()

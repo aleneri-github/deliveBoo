@@ -49361,6 +49361,12 @@ var indexMenu = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
     });
   }
 });
+
+window.onpageshow = function (event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
 })();
 
 /******/ })()
