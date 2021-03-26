@@ -1005,6 +1005,12 @@ a:hover {
   color: #fefefe;
 }
 
+.myposition {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @media screen and (max-width: 992px) {
   #checkout_data {
     height: 780px;

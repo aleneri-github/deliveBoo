@@ -71841,7 +71841,8 @@ var checkout = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   el: "#checkout",
   data: {
     cart: [],
-    loader: true
+    loader: true,
+    prova: 'd-none'
   },
   methods: {
     cartTotal: function cartTotal() {
@@ -71873,6 +71874,8 @@ var checkout = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
 
         form.addEventListener('submit', function (e) {
           e.preventDefault();
+          self.loader = true;
+          self.prova = 'd-flex';
           instance.requestPaymentMethod().then(function (payload) {
             nonce.value = payload.nonce;
             cart.value = JSON.stringify(self.cart);

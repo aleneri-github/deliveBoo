@@ -15,15 +15,14 @@
   <div id="checkout">
 
     <transition name="fade" mode="out-in">
-
       {{-- vista di caricamento --}}
-      <div key=1 v-if="loader == true" class="loading_page">
+      <div key=1 v-if="loader == true || loaderExit == true" class="loading_page">
         <h1>Solo un attimo...</h1>
         <img src="{{ asset('img/jumb-2.svg') }}" alt="">
       </div>
 
       {{-- view checkout --}}
-      <div key=2 v-else id="checkout_section" class="container d-flex pt-5 pb-5">
+      <div key=2 v-if="loader == false" id="checkout_section" class="container d-flex pt-5 pb-5">
 
         {{-- DATI DI CHECKOUT --}}
         <div id="checkout_container">
@@ -101,6 +100,10 @@
       </div>
 
     </transition>
+    <div class="loading_page myposition" :class="prova">
+      <h1>Solo un attimo...</h1>
+      <img src="{{ asset('img/jumb-2.svg') }}" alt="">
+    </div>
   </div>
 
   <script src="{{ asset('js/checkout.js') }}" defer></script>
