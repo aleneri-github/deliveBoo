@@ -25,7 +25,7 @@ var home = new Vue(
           this.restaurants = response.data;
           setTimeout(() => {
             this.restAnim = 'rest_anim';
-          }, 1000)
+          }, 500)
         });
       },
       forward() {

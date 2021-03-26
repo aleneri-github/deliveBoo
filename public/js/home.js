@@ -1915,7 +1915,7 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
         _this.restaurants = response.data;
         setTimeout(function () {
           _this.restAnim = 'rest_anim';
-        }, 1000);
+        }, 500);
       });
     },
     forward: function forward() {

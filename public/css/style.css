@@ -368,7 +368,7 @@ main #restaurants .card_rest {
   border-radius: 20px;
   overflow: hidden;
   color: white;
-  transition: 2s;
+  transition: 0.5s;
   opacity: 0;
   transform: translateX(-110%);
 }

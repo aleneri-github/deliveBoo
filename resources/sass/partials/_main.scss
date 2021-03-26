@@ -238,7 +238,7 @@ main {
       border-radius: 20px;
       overflow: hidden;
       color: white;
-      transition: 2s;
+      transition: 0.5s;
       opacity: 0;
       transform: translateX(-110%);
       &.rest_anim {
@@ -269,7 +269,7 @@ main {
           }
           span {
             font-size: 14px;
-          }          
+          }
         }
 
         // .overlay {
