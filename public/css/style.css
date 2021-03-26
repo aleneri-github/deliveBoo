@@ -58,6 +58,11 @@ a:hover {
   width: 100%;
   height: 100vh;
 }
+.loading_page.myposition {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .loading_page h1 {
   text-align: center;
   font-size: 50px;
@@ -1003,12 +1008,6 @@ a:hover {
   margin-left: 10px;
   float: right;
   color: #fefefe;
-}
-
-.myposition {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 @media screen and (max-width: 992px) {

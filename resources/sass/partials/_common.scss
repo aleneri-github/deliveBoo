@@ -55,6 +55,11 @@ a {
 }
 
 .loading_page {
+  &.myposition {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   position: relative;
   background-color: $yellow;
   overflow: hidden;
