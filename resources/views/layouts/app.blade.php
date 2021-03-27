@@ -138,7 +138,7 @@
               <div class="data">
                 <div class="data-top">
                     <div class="box">
-                      <span id="orders_total"></span>
+                      <span id="orders_total_dash"><i class="fas fa-circle-notch fa-pulse"></i></span>
                       <p>Ordini</p>
                     </div>
                     <div class="box">
@@ -146,11 +146,10 @@
                       <p>Food</p>
                     </div>
                     <div class="box">
-                      <span id="revenue_total"></span>
+                      <span id="revenue_total_dash"><i class="fas fa-circle-notch fa-pulse"></i></span>
                       <p>Incasso</p>
                     </div>
                 </div>
-
               </div>
 
             </div>

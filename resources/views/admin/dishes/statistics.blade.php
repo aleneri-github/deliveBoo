@@ -25,9 +25,27 @@
             <h6>Entrate</h6>
             <canvas id="myChartFour"></canvas>
         </div>
-        <div id="top_bot_dish">
-          <p v-cloak>Piatto più venduto: <br> <span class="dish_name">@{{ topDish }}</span></p>
-          <p v-cloak>Piatto meno venduto: <br> <span class="dish_name">@{{ bottDish }}</span></p>
+        <div id="stat_data_container">
+          <div id="top_bot_dish">
+            <p v-cloak>Piatto più venduto: <br> <span class="dish_name">@{{ topDish }}</span></p>
+            <p v-cloak>Piatto meno venduto: <br> <span class="dish_name">@{{ bottDish }}</span></p>
+          </div>
+          <div class="data">
+            <div class="data-top">
+                <div class="box">
+                  <span id="orders_total_stat"><i class="fas fa-circle-notch fa-pulse"></i></span>
+                  <p>Ordini</p>
+                </div>
+                <div class="box">
+                  <span>{{ count($restaurant->dishes) }}</span>
+                  <p>Food</p>
+                </div>
+                <div class="box">
+                  <span id="revenue_total_stat"><i class="fas fa-circle-notch fa-pulse"></i></span>
+                  <p>Incasso</p>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
 
