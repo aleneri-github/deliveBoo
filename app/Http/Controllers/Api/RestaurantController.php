@@ -42,9 +42,9 @@ class RestaurantController extends Controller
 
   public function carousel() {
 
-    $data = config('types');
-
-    return response()->json($data);
+    // $data = config('types');
+    $types = RestType::all();
+    return response()->json($types);
 
   }
 }
