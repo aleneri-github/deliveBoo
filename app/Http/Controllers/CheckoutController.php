@@ -37,7 +37,6 @@ class CheckoutController extends Controller
       'privateKey' => env("BRAINTREE_PRIVATE_KEY")
     ]);
     $data = $request->all();
-    // dd($data);
     $nonce = $data['nonce'];
     if ($nonce != null) {
       $result = $gateway->transaction()->sale([
@@ -47,7 +46,6 @@ class CheckoutController extends Controller
           'submitForSettlement' => True
         ]
       ]);
-      // dd($result->success);
       if ($result->success) {
         $data['status'] = $result->transaction->status;
         $data['dishes'] = [];
@@ -60,7 +58,7 @@ class CheckoutController extends Controller
             array_push($data['dishes'], $value->id);
           }
         }
-        Mail::to($data['buyer_email'])->send(new OrderMail($order, $cart));
+        // Mail::to($data['buyer_email'])->send(new OrderMail($order, $cart));
         $order->dishes()->attach($data['dishes']);
         return view('guest.success');
       } else {
