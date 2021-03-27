@@ -8,6 +8,18 @@
       </div>
 
       <div :class="visibility">
+
+        <div class="input-group mb-3" style="width: 160px;">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Mesi</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" v-model="months" @change="filterMonths()">
+            <option value="12" selected>12</option>
+            <option value="8">8</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+
         <div class="chart_container_lg" v-cloak>
             <canvas id="myChart"></canvas>
         </div>

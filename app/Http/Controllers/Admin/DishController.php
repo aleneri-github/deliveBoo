@@ -10,6 +10,7 @@ use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class DishController extends Controller
 {
@@ -17,7 +18,7 @@ class DishController extends Controller
         'name' => 'required|string|max:50',
         'ingredients' => 'required',
         'price' => 'required|numeric|max:99',
-        'image' => 'image',
+        'image' => 'required|image',
         'visible' => 'boolean',
         'vegetarian' => 'boolean'
     ];
@@ -35,7 +36,13 @@ class DishController extends Controller
         }
         $userToken = User::where('id', Auth::id())->firstOrFail();
         $token = $userToken->api_token;
-        return view('admin.dishes.index', compact('restaurant', 'token'));
+        $dishes = $restaurant->dishes;
+        foreach ($dishes as $dish) {
+          $dishesPivot = DB::table('dish_order')->select('dish_id')->where('dish_id', '=', $dish->id)->get();
+          $dish['totOrdini'] = $dishesPivot->count();
+        }
+
+        return view('admin.dishes.index', compact('restaurant', 'token', 'dishes'));
     }
 
     /**

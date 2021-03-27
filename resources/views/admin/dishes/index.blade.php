@@ -31,7 +31,7 @@
 
         <div class="row-info">
             <div class="tab tab-10">
-                ID
+                Ordinati
             </div>
             <div class="tab tab-big">
                 Nome
@@ -49,12 +49,12 @@
             </div>
         </div>
 
-        @foreach ($restaurant->dishes as $key => $dish)
+        @foreach ($dishes as $key => $dish)
 
         <div class="row-food d-flex">
             <div class="left-side">
                 <div class="tab tab-10 tab-id">
-                    {{ $dish->id }}
+                    {{ $dish->totOrdini }}
                 </div>
                 <div class="tab tab-big">
                     <span>{{ $dish->name }}</span>

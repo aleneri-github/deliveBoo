@@ -46,13 +46,6 @@
                 <nav class="admin-menu">
                   <ul>
                     <li>
-
-                      <a href="#">
-                        <i class="fas fa-cubes"></i>
-                        <span>Dashboard</span>
-                      </a>
-                    </li>
-                    <li>
                       <a href="{{ route('admin.dishes.index')}}">
                         <i class="fas fa-hamburger"></i>
                         <span>Menu</span>

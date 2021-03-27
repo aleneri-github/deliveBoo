@@ -86989,7 +86989,8 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     topDish: '',
     bottDish: '',
     loader: true,
-    visibility: 'hidden'
+    visibility: 'hidden',
+    months: 1
   },
   methods: {
     createChart: function createChart() {
@@ -87075,7 +87076,14 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           }
         }
       });
-    }
+    } // filterMonths() {
+    //   axios.get(`http://localhost:8000/api/orders?api_token=` + token + '$' + this.months).then(response => {
+    //     window.dataOrders = response.data.values.reverse();
+    //     window.dataTotals = response.data.total.reverse();
+    //     window.labels = response.data.months.reverse();
+    //   });
+    // }
+
   },
   mounted: function mounted() {
     var _this = this;
