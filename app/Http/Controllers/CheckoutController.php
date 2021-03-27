@@ -5,8 +5,7 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Restaurant;
 use Illuminate\Support\Str;
-
-use App\Mail\DeliveMail;
+use App\Mail\OrderMail;
 use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
@@ -61,12 +60,11 @@ class CheckoutController extends Controller
             array_push($data['dishes'], $value->id);
           }
         }
-        Mail::to($data['buyer_email'])->send(new DeliveMail());
+        Mail::to($data['buyer_email'])->send(new OrderMail());
         $order->dishes()->attach($data['dishes']);
         return view('guest.success');
       } else {
         return redirect()->route('guest.checkout.index')->with('message', 'Errore transazione!');
-        // return response()->json($result->success);
       }
     }
   }
