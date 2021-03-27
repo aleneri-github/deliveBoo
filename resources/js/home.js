@@ -55,7 +55,12 @@ var home = new Vue(
       axios.get(`http://localhost:8000/api/restaurants?type=all`).then(response => {
         this.restaurants = response.data;
         axios.get(`http://localhost:8000/api/restaurant/carousel`).then(response => {
-          this.carousel = response.data;
+          console.log(response.data);
+          this.carousel.push({
+            name: 'all',
+            image: 'https://co-restaurants.roocdn.com/images/d05b2324186373d2859cabdbe28bf6fb25ab8542/shortcut/offers.png?width=250&height=130&fit=crop&bg-color=fe9364&auto=webp&format=png'
+          })
+          this.carousel.push(...response.data);
           axios.get(`http://localhost:8000/api/restaurant/dishes`).then(response => {
             this.foods = response.data;
             this.loader = false
