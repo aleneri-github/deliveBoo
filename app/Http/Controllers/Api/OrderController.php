@@ -82,7 +82,6 @@ class OrderController extends Controller
       }
       array_push($dataTotal, $total);
     }
-
     return response()->json(['months' => $monthsYears, 'values' => $dataOrders, 'total' => $dataTotal]);
   }
 
@@ -90,6 +89,7 @@ class OrderController extends Controller
   public function topDish() {
     $rest = Restaurant::where('user_id', Auth::id())->firstOrFail();
     $myDishesList = [];
+    $dish = '';
     foreach ($rest->dishes as $dish) {
       $dishes = DB::table('dish_order')->select('dish_id')->where('dish_id', '=', $dish->id)->get();
       array_push($myDishesList, $myDishesList[$dish->id] = $dishes->count());
@@ -99,8 +99,11 @@ class OrderController extends Controller
         $dish = Dish::where('id', '=', $key)->get();
       }
     }
-
-    return response()->json($dish);
+    if ($dish != '') {
+      return response()->json($dish);
+    } else {
+      return response()->json(['']);
+    }
 
   }
 
@@ -108,6 +111,7 @@ class OrderController extends Controller
 
     $rest = Restaurant::where('user_id', Auth::id())->firstOrFail();
     $myDishesList = [];
+    $dish = '';
     foreach ($rest->dishes as $dish) {
       $dishes = DB::table('dish_order')->select('dish_id')->where('dish_id', '=', $dish->id)->get();
       array_push($myDishesList, $myDishesList[$dish->id] = $dishes->count());
@@ -118,7 +122,11 @@ class OrderController extends Controller
       }
     }
 
-    return response()->json($dish);
+    if ($dish != '') {
+      return response()->json($dish);
+    } else {
+      return response()->json(['']);
+    }
 
   }
 

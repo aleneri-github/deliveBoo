@@ -124,14 +124,14 @@ var statistics = new Vue(
             this.topDish = response.data[0].name;
             axios.get(`http://localhost:8000/api/stat/bott-dish?api_token=` + token).then(response => {
               this.bottDish = response.data[0].name;
-            });
+            })
             this.labels = window.labels;
             this.dataOrders = window.dataOrders;
             this.dataTotals = window.dataTotals;
             this.createChart();
             this.visibility = 'visible';
             this.loader = false;
-          });
+          })
         },
     }
 );
