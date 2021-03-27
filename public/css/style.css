@@ -150,6 +150,9 @@ header nav {
 header nav img {
   height: 50px;
 }
+header nav a {
+  margin: 0 50px;
+}
 
 main {
   background-color: #fefefe;
