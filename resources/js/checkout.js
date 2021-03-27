@@ -39,7 +39,7 @@ var checkout = new Vue(
           form.addEventListener('submit', function(e) {
             e.preventDefault();
             self.loader = true;
-            self.prova = 'd-flex';
+            self.prova = 'd-block';
             instance.requestPaymentMethod().then(function(payload) {
               nonce.value = payload.nonce;
               cart.value = JSON.stringify(self.cart);
