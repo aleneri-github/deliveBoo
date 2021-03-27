@@ -75,12 +75,11 @@
           </div>
     </section>
 
-
     <section id="carousel-type">
       <div class="types">
-        <div v-for="(card, index) in carousel" @click='filter(card.type); typeIndex = index' :class="index == typeIndex ? 'typeActive' : ''">
+        <div v-for="(card, index) in carousel" @click='filter(card.name); typeIndex = index' :class="index == typeIndex ? 'typeActive' : ''">
           <img :src="card.image" alt="sales">
-          <h5 :class="index == typeIndex ? 'titleActive' : ''"> @{{ card.type }}</h5>
+          <h5 :class="index == typeIndex ? 'titleActive' : ''"> @{{ card.name }}</h5>
         </div>
       </div class="types">
     </section>

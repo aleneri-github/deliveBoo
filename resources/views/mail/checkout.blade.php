@@ -14,12 +14,6 @@
       </h3>
       <p>Indirizzo: {{ $order->buyer_address}}</p>
       <h4><strong>Totale: {{ $order->total }}</strong></h4>
-      <h3>Il tuo ordine comprende:</h3>
-      <ul style="list-style: none">
-        @foreach ($cart => $dish)
-          <li>{{ $dish->name }} - X {{ $dish->quantity }}: {{ $dish->total }}</li>
-        @endforeach
-      </ul>
       <img style="height:130px;" src="{{ asset('img/food-rest.svg') }}" alt="">
       <h3 style="font-family:sans-serif; text-align:center; color:#7a7a7a;">Grazie per averci scelto!</h3>
     </main>

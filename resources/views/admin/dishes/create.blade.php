@@ -8,7 +8,7 @@
                 <a href="{{ route('admin.dishes.index') }}">
                     <i class="fas fa-chevron-circle-left"></i>
                 </a>
-            </div> 
+            </div>
         </div>
 
         @if (session('message'))
@@ -35,22 +35,22 @@
 
             <div class="form-group">
                 <label for="name">Nome del piatto</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}">
+                <input class="form-control" maxlength="50" type="text" id="name" name="name" value="{{ old('name') }}">
             </div>
 
             <div class="form-group">
                 <label for="ingredients">Ingredienti</label>
-                <textarea class="form-control" id="ingredients" name="ingredients" rows="4" cols="50" value="{{ old('ingredients') }}"></textarea>
+                <textarea class="form-control" maxlength="500" id="ingredients" name="ingredients" rows="4" cols="50" value="{{ old('ingredients') }}"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="description">Descrivi il tuo piatto</label>
-                <textarea class="form-control" id="description" name="description" rows="4" cols="50" value="{{ old('description') }}"></textarea>
+                <textarea class="form-control" maxlength="500" id="description" name="description" rows="4" cols="50" value="{{ old('description') }}"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="name">Prezzo</label>
-                <input class="form-control" type="text" id="price" name="price" value="{{ old('price') }}">
+                <input class="form-control" type="number" min="0" max="99" id="price" name="price" value="{{ old('price') }}">
             </div>
 
             <div class="form-group">

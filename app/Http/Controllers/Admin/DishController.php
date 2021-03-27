@@ -46,7 +46,9 @@ class DishController extends Controller
     public function create()
     {
         $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
-        return view('admin.dishes.create', compact('restaurant'));
+        $userToken = User::where('id', Auth::id())->firstOrFail();
+        $token = $userToken->api_token;
+        return view('admin.dishes.create', compact('restaurant', 'token'));
     }
 
     /**
@@ -104,7 +106,9 @@ class DishController extends Controller
     {
         $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
         $dish = Dish::where('slug', $slug)->firstOrFail();
-        return view('admin.dishes.show', compact('dish', 'restaurant'));
+        $userToken = User::where('id', Auth::id())->firstOrFail();
+        $token = $userToken->api_token;
+        return view('admin.dishes.show', compact('dish', 'restaurant', 'token'));
     }
 
     /**
@@ -116,7 +120,9 @@ class DishController extends Controller
     public function edit(Dish $dish)
     {
         $restaurant = Restaurant::where('user_id', Auth::id())->firstOrFail();
-        return view('admin.dishes.edit', compact('dish', 'restaurant'));
+        $userToken = User::where('id', Auth::id())->firstOrFail();
+        $token = $userToken->api_token;
+        return view('admin.dishes.edit', compact('dish', 'restaurant', 'token'));
     }
 
     /**

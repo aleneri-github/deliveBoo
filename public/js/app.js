@@ -37354,8 +37354,10 @@ axios.get("http://localhost:8000/api/orders?api_token=" + token).then(function (
   window.revenue = dataTotals.reduce(function (tot, num) {
     return tot + num;
   });
-  document.getElementById('orders_total').innerHTML = window.orders;
-  document.getElementById('revenue_total').innerHTML = window.revenue.toFixed(2);
+  document.getElementById('orders_total_dash').innerHTML = window.orders;
+  document.getElementById('revenue_total_dash').innerHTML = window.revenue.toFixed(2);
+  document.getElementById('orders_total_stat').innerHTML = window.orders;
+  document.getElementById('revenue_total_stat').innerHTML = window.revenue.toFixed(2);
 });
 
 window.onpageshow = function (event) {
