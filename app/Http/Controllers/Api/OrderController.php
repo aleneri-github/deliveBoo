@@ -92,13 +92,17 @@ class OrderController extends Controller
     $dish = '';
     foreach ($rest->dishes as $dish) {
       $dishes = DB::table('dish_order')->select('dish_id')->where('dish_id', '=', $dish->id)->get();
-      array_push($myDishesList, $myDishesList[$dish->id] = $dishes->count());
+      // dump($dishes);
+      // in caso riprovare col push
+      array_merge($myDishesList, array($myDishesList[$dish->id] = $dishes->count()));
     }
+
     foreach ($myDishesList as $key => $value) {
       if ($value == max($myDishesList)) {
         $dish = Dish::where('id', '=', $key)->get();
       }
     }
+
     if ($dish != '') {
       return response()->json($dish);
     } else {
@@ -114,7 +118,7 @@ class OrderController extends Controller
     $dish = '';
     foreach ($rest->dishes as $dish) {
       $dishes = DB::table('dish_order')->select('dish_id')->where('dish_id', '=', $dish->id)->get();
-      array_push($myDishesList, $myDishesList[$dish->id] = $dishes->count());
+      array_merge($myDishesList, array($myDishesList[$dish->id] = $dishes->count()));
     }
     foreach ($myDishesList as $key => $value) {
       if ($value == min($myDishesList)) {
