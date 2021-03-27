@@ -69,6 +69,9 @@ var checkout = new Vue(
         this.$forceUpdate();
         this.saveCart();
       },
+      scrollToTop() {
+        window.scrollTo(0, 0);
+      }
     },
     mounted() {
       if (localStorage.getItem('cart')) {

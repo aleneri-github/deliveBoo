@@ -71904,6 +71904,9 @@ var checkout = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       item.total -= item.price;
       this.$forceUpdate();
       this.saveCart();
+    },
+    scrollToTop: function scrollToTop() {
+      window.scrollTo(0, 0);
     }
   },
   mounted: function mounted() {

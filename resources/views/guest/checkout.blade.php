@@ -13,7 +13,6 @@
   </div>
 
   <div id="checkout">
-
     <transition name="fade" mode="out-in">
       {{-- vista di caricamento --}}
       <div key=1 v-if="loader == true" class="loading_page">
@@ -62,7 +61,7 @@
                 <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
               </div>
               {{-- <a href="#" class="deliveboo_button p-3">Torna indietro</a> --}}
-              <input class="deliveboo_button p-3" type="submit" value="Compra"></input>
+              <input class="deliveboo_button p-3" type="submit" value="Compra" @click="scrollToTop()"></input>
               <input type="hidden" id="nonce" name="nonce"></input>
               <input type="hidden" id="cart" name="cart"></input>
               <input type="hidden" id="token" name="token" value='{{ $token }}'/>
