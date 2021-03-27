@@ -86990,7 +86990,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     bottDish: '',
     loader: true,
     visibility: 'hidden',
-    months: 1
+    months: 12
   },
   methods: {
     createChart: function createChart() {
@@ -87076,31 +87076,35 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           }
         }
       });
-    } // filterMonths() {
-    //   axios.get(`http://localhost:8000/api/orders?api_token=` + token + '$' + this.months).then(response => {
-    //     window.dataOrders = response.data.values.reverse();
-    //     window.dataTotals = response.data.total.reverse();
-    //     window.labels = response.data.months.reverse();
-    //   });
-    // }
+    },
+    filterMonths: function filterMonths() {
+      var _this = this;
 
+      axios.get("http://localhost:8000/api/orders?api_token=" + token + '&months=' + this.months).then(function (response) {
+        window.dataOrders = response.data.values.reverse();
+        window.dataTotals = response.data.total.reverse();
+        window.labels = response.data.months.reverse();
+
+        _this.createChart();
+      });
+    }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     axios.get("http://localhost:8000/api/stat/top-dish?api_token=" + token).then(function (response) {
-      _this.topDish = response.data[0].name;
+      _this2.topDish = response.data[0].name;
       axios.get("http://localhost:8000/api/stat/bott-dish?api_token=" + token).then(function (response) {
-        _this.bottDish = response.data[0].name;
+        _this2.bottDish = response.data[0].name;
       });
-      _this.labels = window.labels;
-      _this.dataOrders = window.dataOrders;
-      _this.dataTotals = window.dataTotals;
+      _this2.labels = window.labels;
+      _this2.dataOrders = window.dataOrders;
+      _this2.dataTotals = window.dataTotals;
 
-      _this.createChart();
+      _this2.createChart();
 
-      _this.visibility = 'visible';
-      _this.loader = false;
+      _this2.visibility = 'visible';
+      _this2.loader = false;
     });
   }
 });

@@ -44,7 +44,8 @@ class OrderController extends Controller
     $dataTotal = [];
     $months = [];
     $monthsYears = [];
-    for ($i = 0; $i < 12; $i++) {
+    $int = (int) $_GET['months'];
+    for ($i = 0; $i < $int; $i++) {
       $currentMonth = Carbon::now();
       $currentYear = Carbon::now();
       $currentMonthString = $currentMonth->subMonth($i)->isoFormat('MMMM');
