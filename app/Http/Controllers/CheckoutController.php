@@ -60,7 +60,7 @@ class CheckoutController extends Controller
             array_push($data['dishes'], $value->id);
           }
         }
-        Mail::to($data['buyer_email'])->send(new OrderMail());
+        Mail::to($data['buyer_email'])->send(new OrderMail($order, $cart));
         $order->dishes()->attach($data['dishes']);
         return view('guest.success');
       } else {

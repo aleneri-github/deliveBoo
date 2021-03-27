@@ -13,15 +13,17 @@ class OrderMail extends Mailable
     use Queueable, SerializesModels;
 
     public $order;
+    public $cart;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Order $order)
+    public function __construct(Order $order, $cart)
     {
       $this->order = $order;
+      $this->cart = $cart;
     }
 
     /**
