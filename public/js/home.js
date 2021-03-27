@@ -2015,6 +2015,10 @@ window.onpageshow = function (event) {
   }
 };
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 /***/ }),
 
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":

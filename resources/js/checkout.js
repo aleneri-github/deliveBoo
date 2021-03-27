@@ -95,3 +95,7 @@ if (event.persisted) {
     window.location.reload()
 }
 };
+
+window.onbeforeunload = function () {
+    window.scrollTo(0,0);
+};
