@@ -50,7 +50,7 @@
 
             <div class="form-group">
                 <label for="name">Prezzo</label>
-                <input class="form-control" type="number" min="0" max="99" id="price" name="price" value="{{ old('price') }}">
+                <input class="form-control" type="number" min="0" max="99" step=".01" id="price" name="price" value="{{ old('price') }}">
             </div>
 
             <div class="form-group">

@@ -42,7 +42,7 @@
 
                 <div class="form-group">
                     <label for="name">Prezzo</label>
-                    <input class="form-control" type="number" min="0" max="99" id="price" name="price" value="{{ $dish->price }}">
+                    <input class="form-control" type="number" min="0" max="99" step=".01" id="price" name="price" value="{{ $dish->price }}">
                 </div>
 
                 <div class="form-group">
