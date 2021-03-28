@@ -212,12 +212,10 @@ main #service .box-cards {
   display: flex;
 }
 main #service .box-cards .service-card {
-  background: #e0e0e0;
   width: calc(100% / 3 - 20px);
   text-align: center;
-  margin: 40px 10px;
-  padding: 20px;
-  border-radius: 20px;
+  margin: 20px 10px;
+  padding: 10px;
 }
 main #service .box-cards .text-card {
   margin-top: 25px;

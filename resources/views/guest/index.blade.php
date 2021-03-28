@@ -42,7 +42,7 @@
           </div>
           <div class="text-card">
             <h4>Consegna rapida</h4>
-            <p>La rapidità è un nostro punto d'orgoglio. <br> Ordina o invia qualsiasi cosa nella tua città <br> e lo ritireremo e te lo consegneremo <br> nel giro di pochi minuti.</p>
+            <p>La rapidità è un nostro punto d'orgoglio. <br> Ordina il tuo cibo preferito e te lo consegneremo nel giro di pochi minuti.</p>
           </div>
         </div>
         <div class="service-card">
@@ -51,7 +51,7 @@
           </div>
           <div class="text-card">
             <h4>Direttamente a casa</h4>
-            <p>Trova tutti i tuoi piatti preferiti direttamente a casa tua, puoi contare su di noi per portartelo.</p>
+            <p>Consegneremo tutti i tuoi piatti preferiti direttamente a casa tua, puoi contare su di noi! </p>
           </div>
         </div>
 
