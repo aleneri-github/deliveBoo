@@ -49426,24 +49426,26 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       this.saveCart();
     },
     prova: function prova() {
-      var _this2 = this;
-
       var cart = document.getElementById('cart_pass');
       cart.value = JSON.stringify(this.cart);
-      axios.post("http://localhost:8000/checkout/passcart", {
-        cart_pass: cart.value
+      console.log(cart.value);
+      axios({
+        method: 'post',
+        url: 'http://localhost:8000/checkout/passcart',
+        data: {
+          cart_pass: cart.value
+        }
       }).then(function (response) {
-        _this2.dishes = response.data;
-        _this2.loader = false;
+        console.log(response);
       });
     }
   },
   mounted: function mounted() {
-    var _this3 = this;
+    var _this2 = this;
 
     axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
-      _this3.dishes = response.data;
-      _this3.loader = false;
+      _this2.dishes = response.data;
+      _this2.loader = false;
     });
 
     if (localStorage.getItem('cart')) {

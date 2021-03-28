@@ -84,9 +84,15 @@ var detail = new Vue(
       prova() {
         let cart = document.getElementById('cart_pass');
         cart.value = JSON.stringify(this.cart);
-        axios.post(`http://localhost:8000/checkout/passcart`, { cart_pass: cart.value }).then(response => {
-          this.dishes = response.data;
-          this.loader = false;
+        console.log(cart.value);
+        axios({
+          method: 'post',
+          url:'http://localhost:8000/checkout/passcart',
+          data: {
+            cart_pass: cart.value
+          }
+        }).then(response => {
+          console.log(response);
         });
 
 

@@ -21,6 +21,7 @@ class CheckoutController extends Controller
   ];
 
   public function index(Request $request){
+    dd($request);
     $test = json_decode($request->getContent(), true);
     dd($test);
     $gateway = new \Braintree\Gateway([
