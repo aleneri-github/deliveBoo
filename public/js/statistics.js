@@ -86971,6 +86971,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js");
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_0__);
+var _data;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -86980,7 +86984,7 @@ var prova = __webpack_require__(/*! ./orders.json */ "./resources/js/orders.json
 
 var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: "#statistics",
-  data: {
+  data: (_data = {
     colorsArray: ['rgba(165, 97, 228, 1)', 'rgba(208, 222, 9, 1)', 'rgba(183, 22, 6, 1)', 'rgba(175, 97, 31, 1)', 'rgba(174, 217, 243, 1)', 'rgba(48, 96, 226, 1)', 'rgba(240, 252, 193, 1)', 'rgba(57, 52, 254, 1)', 'rgba(96, 16, 171, 1)', 'rgba(7, 57, 71, 1)', 'rgba(62, 203, 134, 1)', 'rgba(185, 232, 113, 1)'],
     orders: [],
     labels: [],
@@ -86990,15 +86994,17 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     bottDish: '',
     loader: true,
     visibility: 'hidden',
-    months: 4
-  },
+    months: 4,
+    pieOrders: '',
+    pieRevenues: ''
+  }, _defineProperty(_data, "orders", ''), _defineProperty(_data, "revenues", ''), _data),
   methods: {
     createChart: function createChart() {
       var myChart = document.getElementById('myChart').getContext('2d');
       var myChartTwo = document.getElementById('myChartTwo').getContext('2d');
       var myChartThree = document.getElementById('myChartThree').getContext('2d');
       var myChartFour = document.getElementById('myChartFour').getContext('2d');
-      var pieOrders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartThree, {
+      this.pieOrders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartThree, {
         type: 'pie',
         data: {
           labels: this.labels,
@@ -87015,7 +87021,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           }
         }
       });
-      var pieRevenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartFour, {
+      this.pieRevenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartFour, {
         type: 'pie',
         data: {
           labels: this.labels,
@@ -87032,7 +87038,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           }
         }
       });
-      var orders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChart, {
+      this.orders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChart, {
         type: 'bar',
         data: {
           labels: this.labels,
@@ -87054,7 +87060,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           }
         }
       });
-      var revenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartTwo, {
+      this.revenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartTwo, {
         type: 'line',
         data: {
           labels: this.labels,
@@ -87076,6 +87082,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           }
         }
       });
+      this.$forceUpdate();
     },
     filterMonths: function filterMonths() {
       var _this = this;
@@ -87085,9 +87092,95 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         _this.dataTotals = response.data.total.reverse();
         _this.labels = response.data.months.reverse();
 
-        _this.createChart();
+        _this.pieOrders.destroy();
 
-        _this.$forceUpdate();
+        _this.pieOrders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartThree, {
+          type: 'pie',
+          data: {
+            labels: _this.labels,
+            datasets: [{
+              data: _this.dataOrders,
+              backgroundColor: _this.colorsArray,
+              borderColor: 'rbg(0,0,0)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            legend: {
+              display: false
+            }
+          }
+        });
+
+        _this.pieRevenues.destroy();
+
+        _this.pieRevenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartFour, {
+          type: 'pie',
+          data: {
+            labels: _this.labels,
+            datasets: [{
+              data: _this.dataTotals,
+              backgroundColor: _this.colorsArray,
+              borderColor: 'rbg(0,0,0)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            legend: {
+              display: false
+            }
+          }
+        });
+
+        _this.orders.destroy();
+
+        _this.orders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChart, {
+          type: 'bar',
+          data: {
+            labels: _this.labels,
+            datasets: [{
+              label: 'Ordini',
+              data: _this.dataOrders,
+              backgroundColor: _this.colorsArray,
+              borderColor: 'rbg(0,0,0)',
+              borderWidth: 2
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+
+        _this.revenues.destroy();
+
+        _this.revenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(myChartTwo, {
+          type: 'line',
+          data: {
+            labels: _this.labels,
+            datasets: [{
+              label: 'Entrate Mensili',
+              data: _this.dataTotals,
+              backgroundColor: _this.colorsArray,
+              borderColor: 'rbg(0,0,0)',
+              borderWidth: 2
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
       });
     }
   },

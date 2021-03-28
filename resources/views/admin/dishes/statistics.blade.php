@@ -20,20 +20,20 @@
           </select>
         </div>
 
-        <div class="chart_container_lg" v-cloak>
+        <div class="chart_container_lg">
             <canvas id="myChart"></canvas>
         </div>
 
-        <div class="chart_container_lg" v-cloak>
+        <div class="chart_container_lg">
             <canvas id="myChartTwo"></canvas>
         </div>
 
-        <div class="chart_container_md" v-cloak>
+        <div class="chart_container_md">
             <h6>Ordini</h6>
             <canvas id="myChartThree"></canvas>
         </div>
 
-        <div class="chart_container_md" v-cloak>
+        <div class="chart_container_md">
             <h6>Entrate</h6>
             <canvas id="myChartFour"></canvas>
         </div>

@@ -28,16 +28,22 @@ var statistics = new Vue(
             bottDish: '',
             loader: true,
             visibility: 'hidden',
-            months: 4
+            months: 4,
+            pieOrders: '',
+            pieRevenues: '',
+            orders: '',
+            revenues: ''
         },
         methods: {
             createChart() {
+
                 let myChart = document.getElementById('myChart').getContext('2d');
                 let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
                 let myChartThree = document.getElementById('myChartThree').getContext('2d');
                 let myChartFour = document.getElementById('myChartFour').getContext('2d');
 
-                let pieOrders = new Chart(myChartThree, {
+
+                this.pieOrders = new Chart(myChartThree, {
                     type: 'pie',
                     data: {
                         labels: this.labels,
@@ -55,7 +61,7 @@ var statistics = new Vue(
                     }
                 });
 
-                let pieRevenues = new Chart(myChartFour, {
+                this.pieRevenues = new Chart(myChartFour, {
                     type: 'pie',
                     data: {
                         labels: this.labels,
@@ -73,7 +79,7 @@ var statistics = new Vue(
                     }
                 });
 
-                let orders = new Chart(myChart, {
+                this.orders = new Chart(myChart, {
                     type: 'bar',
                     data: {
                         labels: this.labels,
@@ -96,7 +102,7 @@ var statistics = new Vue(
                     }
                 });
 
-                let revenues = new Chart(myChartTwo, {
+                this.revenues = new Chart(myChartTwo, {
                     type: 'line',
                     data: {
                         labels: this.labels,
@@ -118,14 +124,97 @@ var statistics = new Vue(
                       }
                     }
                 });
+
+                this.$forceUpdate();
+
             },
             filterMonths() {
               axios.get(`http://localhost:8000/api/orders?api_token=` + token + '&months=' + this.months).then(response => {
                 this.dataOrders = response.data.values.reverse();
                 this.dataTotals = response.data.total.reverse();
                 this.labels = response.data.months.reverse();
-                this.createChart();
-                this.$forceUpdate();
+                this.pieOrders.destroy();
+                this.pieOrders = new Chart(myChartThree, {
+                      type: 'pie',
+                      data: {
+                          labels: this.labels,
+                          datasets: [{
+                              data: this.dataOrders,
+                              backgroundColor: this.colorsArray,
+                              borderColor: 'rbg(0,0,0)',
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                        legend: {
+                          display: false
+                        }
+                      }
+                  });
+                this.pieRevenues.destroy();
+                this.pieRevenues = new Chart(myChartFour, {
+                      type: 'pie',
+                      data: {
+                          labels: this.labels,
+                          datasets: [{
+                              data: this.dataTotals,
+                              backgroundColor: this.colorsArray,
+                              borderColor: 'rbg(0,0,0)',
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                        legend: {
+                          display: false
+                        }
+                      }
+                  });
+                this.orders.destroy();
+                this.orders = new Chart(myChart, {
+                      type: 'bar',
+                      data: {
+                          labels: this.labels,
+                          datasets: [{
+                              label: 'Ordini',
+                              data: this.dataOrders,
+                              backgroundColor: this.colorsArray,
+                              borderColor: 'rbg(0,0,0)',
+                              borderWidth: 2
+                          }]
+                      },
+                      options: {
+                        scales: {
+                          yAxes: [{
+                            ticks: {
+                              beginAtZero: true
+                            }
+                          }]
+                        }
+                      }
+                  });
+                this.revenues.destroy();
+                this.revenues = new Chart(myChartTwo, {
+                      type: 'line',
+                      data: {
+                          labels: this.labels,
+                          datasets: [{
+                              label: 'Entrate Mensili',
+                              data: this.dataTotals,
+                              backgroundColor: this.colorsArray,
+                              borderColor: 'rbg(0,0,0)',
+                              borderWidth: 2
+                          }]
+                      },
+                      options: {
+                        scales: {
+                          yAxes: [{
+                            ticks: {
+                              beginAtZero: true
+                            }
+                          }]
+                        }
+                      }
+                  });
               });
             }
         },
