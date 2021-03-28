@@ -7,14 +7,14 @@
                 <a href="{{ route('admin.dishes.index') }}">
                     <i class="fas fa-chevron-circle-left"></i>
                 </a>
-            </div>     
+            </div>
         </div>
         <div class="dish-show">
-            
+
             <div class="img-show">
                 <img src="{{ asset('storage/' . $dish->image) }}" alt="">
             </div>
-            
+
             <div class="info-show">
                 <h4>{{ $dish->name}}</h4>
                 <h6>Ingredienti</h6>
@@ -37,4 +37,3 @@
 
 
 @endsection
-     

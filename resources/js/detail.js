@@ -56,7 +56,7 @@ var detail = new Vue(
         let partials = this.cart.map((e) => {
           return parseFloat(e.total);
         })
-        console.log(partials)
+
         return partials.reduce(function(a,b) {
           return a + b;
         }, 0);
@@ -66,14 +66,14 @@ var detail = new Vue(
         localStorage.setItem('cart', parsed);
       },
       addItem(item) {
-        console.log(item)
+
         item.quantity++;
         item.total += item.price;
         this.$forceUpdate();
         this.saveCart();
       },
       removeItem(item) {
-        console.log(item)
+        
         if (item.quantity == 1) {
           let index = this.cart.indexOf(item);
           this.cart.splice(index,1);

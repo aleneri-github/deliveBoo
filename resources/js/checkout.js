@@ -14,7 +14,7 @@ var checkout = new Vue(
         let partials = this.cart.map((e) => {
           return parseFloat(e.total);
         })
-        console.log(partials)
+
         return partials.reduce(function(a,b) {
           return a + b;
         }, 0);
@@ -34,19 +34,26 @@ var checkout = new Vue(
         }, function(err, instance) {
           if (err) {
             console.error(err);
+            self.prova = 'd-none';
+            self.loader = true;
+            console.log('prova')
             return
           }
           form.addEventListener('submit', function(e) {
             e.preventDefault();
-            self.loader = true;
-            self.prova = 'd-block';
+            // self.loader = true;
+            // self.prova = 'd-block';
             instance.requestPaymentMethod().then(function(payload) {
+              self.loader = true;
+              self.prova = 'd-block';
               nonce.value = payload.nonce;
               cart.value = JSON.stringify(self.cart);
               total.value = self.cartTotal();
               form.submit();
             }).catch(function(err) {
               console.error(err);
+              self.prova = 'd-none';
+              self.loader = true;
             });
           })
         }

@@ -1963,8 +1963,6 @@ var home = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       axios.get("http://localhost:8000/api/restaurant/carousel").then(function (response) {
         var _this2$carousel;
 
-        console.log(response.data);
-
         _this2.carousel.push({
           name: 'all',
           image: 'https://co-restaurants.roocdn.com/images/d05b2324186373d2859cabdbe28bf6fb25ab8542/shortcut/offers.png?width=250&height=130&fit=crop&bg-color=fe9364&auto=webp&format=png'
