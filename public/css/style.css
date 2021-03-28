@@ -747,6 +747,9 @@ footer .row .single_column #logo {
   float: right;
   height: 100px;
 }
+#detail #cards .card_dish .card_body p img {
+  width: 20%;
+}
 #detail #cards .card_dish:hover {
   cursor: pointer;
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.6);

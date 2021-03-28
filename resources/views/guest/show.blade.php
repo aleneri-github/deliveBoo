@@ -38,7 +38,11 @@
 
             <div class="card_body">
               <div style="height: 100px">
-                <p>{{ $dish->ingredients }}</p>
+                <p>{{ $dish->ingredients }}
+                  @if ($dish->vegetarian == 1)
+                    <img src="{{ asset('img/foglia.svg') }}" alt="leaf">
+                  @endif
+                </p>
                 <p>€ {{ $dish->price }}</p>
               </div>
               {{-- BUTTONS --}}
