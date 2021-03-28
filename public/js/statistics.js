@@ -86990,7 +86990,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     bottDish: '',
     loader: true,
     visibility: 'hidden',
-    months: 12
+    months: 4
   },
   methods: {
     createChart: function createChart() {
@@ -87081,11 +87081,13 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       var _this = this;
 
       axios.get("http://localhost:8000/api/orders?api_token=" + token + '&months=' + this.months).then(function (response) {
-        window.dataOrders = response.data.values.reverse();
-        window.dataTotals = response.data.total.reverse();
-        window.labels = response.data.months.reverse();
+        _this.dataOrders = response.data.values.reverse();
+        _this.dataTotals = response.data.total.reverse();
+        _this.labels = response.data.months.reverse();
 
         _this.createChart();
+
+        _this.$forceUpdate();
       });
     }
   },

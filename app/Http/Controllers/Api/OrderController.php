@@ -44,7 +44,11 @@ class OrderController extends Controller
     $dataTotal = [];
     $months = [];
     $monthsYears = [];
-    $int = (int) $_GET['months'];
+    if(isset($_GET['months'])) {
+      $int = (int) $_GET['months'];
+    } else {
+      $int = 4;
+    }
     for ($i = 0; $i < $int; $i++) {
       $currentMonth = Carbon::now();
       $currentYear = Carbon::now();
