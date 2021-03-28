@@ -9,14 +9,14 @@
 
       <div :class="visibility">
 
-        <div class="input-group mb-3" style="width: 160px;">
+        <div class="input-group mb-3" style="width: 180px;">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Mesi</label>
+            <label class="input-group-text" for="inputGroupSelect01">Mensilità</label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" v-model="months" @change="filterMonths()">
-            <option value="12" selected>12</option>
-            <option value="8">8</option>
-            <option value="4">4</option>
+            <option value="4" selected>4 Mesi</option>
+            <option value="8">8 Mesi</option>
+            <option value="12">12 Mesi</option>
           </select>
         </div>
 

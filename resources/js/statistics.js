@@ -28,7 +28,7 @@ var statistics = new Vue(
             bottDish: '',
             loader: true,
             visibility: 'hidden',
-            months: 1
+            months: 4
         },
         methods: {
             createChart() {
@@ -119,13 +119,15 @@ var statistics = new Vue(
                     }
                 });
             },
-            // filterMonths() {
-            //   axios.get(`http://localhost:8000/api/orders?api_token=` + token + '$' + this.months).then(response => {
-            //     window.dataOrders = response.data.values.reverse();
-            //     window.dataTotals = response.data.total.reverse();
-            //     window.labels = response.data.months.reverse();
-            //   });
-            // }
+            filterMonths() {
+              axios.get(`http://localhost:8000/api/orders?api_token=` + token + '&months=' + this.months).then(response => {
+                this.dataOrders = response.data.values.reverse();
+                this.dataTotals = response.data.total.reverse();
+                this.labels = response.data.months.reverse();
+                this.createChart();
+                this.$forceUpdate();
+              });
+            }
         },
         mounted() {
           axios.get(`http://localhost:8000/api/stat/top-dish?api_token=` + token).then(response => {
