@@ -25,6 +25,11 @@
                 <p>{{ number_format($dish->price, 2) }} €</p>
                 <h6>Creato</h6>
                 <p>{{ date('j F, Y', strtotime($dish->created_at)) }} </p>
+                <div class="vegan">
+                    @if ($dish->vegetarian == 1)
+                    <img src="{{ asset('img/foglia.svg') }}" alt="leaf">
+                    @endif
+                </div>
             </div>
         </div>
     </div>

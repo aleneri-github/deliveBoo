@@ -1493,6 +1493,7 @@ a:hover {
   border-radius: 5px 5px 0 0;
 }
 #dashboard #admin-show .container .dish-show .info-show {
+  position: relative;
   width: 100%;
   padding: 20px 40px;
   background-color: #FFFFFF;
@@ -1512,6 +1513,14 @@ a:hover {
 #dashboard #admin-show .container .dish-show .info-show p {
   letter-spacing: 1.2px;
   padding-bottom: 20px;
+}
+#dashboard #admin-show .container .dish-show .info-show .vegan {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#dashboard #admin-show .container .dish-show .info-show .vegan img {
+  width: 80px;
 }
 #dashboard #admin-show .container .dish-show .info-show .img-info {
   text-align: right;
@@ -1608,6 +1617,9 @@ a:hover {
 }
 #indexMenu .box-menu .row-food .right-side .tab button a:hover {
   color: #01a183;
+}
+#indexMenu .box-menu .row-visible {
+  background-color: lightgray;
 }
 #indexMenu .box-menu .row-info {
   display: flex;

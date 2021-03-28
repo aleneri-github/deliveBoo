@@ -22,6 +22,7 @@
           }
         }
         .info-show {
+          position: relative;
           width: 100%;
           padding: 20px 40px;
           background-color: #FFFFFF;
@@ -40,6 +41,14 @@
           p {
             letter-spacing: 1.2px;
             padding-bottom: 20px;
+          }
+          .vegan {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            img {
+              width: 80px;
+            }
           }
           .img-info {
             text-align: right;
