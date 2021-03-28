@@ -42,7 +42,7 @@
           </div>
           <div class="text-card">
             <h4>Consegna rapida</h4>
-            <p>La rapidità è un nostro punto d'orgoglio. Ordina o invia qualsiasi cosa nella tua città e lo ritireremo e te lo consegneremo nel giro di pochi minuti.</p>
+            <p>La rapidità è un nostro punto d'orgoglio. <br> Ordina o invia qualsiasi cosa nella tua città <br> e lo ritireremo e te lo consegneremo <br> nel giro di pochi minuti.</p>
           </div>
         </div>
         <div class="service-card">
@@ -50,7 +50,7 @@
             <img src="https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/why-glovo/groceries.svg" alt="" srcset="">
           </div>
           <div class="text-card">
-            <h4>Consegna della spesa</h4>
+            <h4>Direttamente a casa</h4>
             <p>Trova tutti i tuoi piatti preferiti direttamente a casa tua, puoi contare su di noi per portartelo.</p>
           </div>
         </div>
