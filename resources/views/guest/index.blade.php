@@ -62,7 +62,7 @@
     <section id="food">
       <div class="slider-wrapper">
 
-              <div class="container_food">
+              <div class="container_food container">
                 <h2 class="text-center">Le nostre novità in zona</h2>
                 <div v-for="(food, index) in foods" class="images" :class="(index == indexOfImage) ? active : ''">
                     <img :src="'http://127.0.0.1:8000/storage' + '/' + food.image">
@@ -87,7 +87,7 @@
     {{-- RESTAURANTS --}}
     <section id="restaurants">
       <h1 class="text-center">I nostri ristoranti</h1>
-      <div class="v-if-container" v-if="restaurants != 0">
+      <div class="v-if-container container" v-if="restaurants != 0">
         <div :style="{backgroundImage: 'url(' + 'http://127.0.0.1:8000/storage' + '/' + restaurant.image + ')'}" style="background-repeat: no-repeat; background-size: cover;" class="card_rest" :class="restAnim" v-for="restaurant in restaurants">
           <a :href="'restaurants' + '/' + restaurant.slug + '/show'" @click="clearCart()">
             <div class="layover">

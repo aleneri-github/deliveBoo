@@ -1,5 +1,5 @@
 <footer>
-  <div class="row">
+  <div class="row container m-auto">
 
     {{-- LOGO --}}
     <div class="single_column" id="logo">
