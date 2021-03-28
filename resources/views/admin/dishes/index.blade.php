@@ -51,7 +51,7 @@
 
         @foreach ($dishes as $key => $dish)
 
-        <div class="row-food d-flex">
+        <div class="{{ $dish->visible == 0 ? 'row-food d-flex row-visible' : 'row-food d-flex'}}">
             <div class="left-side">
                 <div class="tab tab-10 tab-id">
                     {{ $dish->totOrdini }}
