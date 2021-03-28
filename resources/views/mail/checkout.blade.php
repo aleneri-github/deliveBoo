@@ -6,12 +6,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
     <title></title>
   </head>
-  <body style="box-sizing:border-box; margin:0; padding:0; border: 7px solid #00B08C;">
-    <header style="box-sizing:border-box; margin:0; height:20vh; padding-left: 40px; background-color:#FDC234; border-bottom: 2px solid white; ">
-      <img style="height:100%;" src="{{ asset('img/deliverYou-bianco.svg') }}" alt="logo">
+  <body style="box-sizing:border-box; margin:0; padding:0;">
+    <header style="box-sizing:border-box; margin:0; height:20vh; padding: 10px 40px; background-color:#FDC234; border-bottom: 2px solid white; ">
+      <img style="height:100%;" src="{{ asset('img/white-logo.png') }}" alt="logo">
     </header>
-    <main style="background-image: url('https://previews.123rf.com/images/nightman1965/nightman19651205/nightman1965120500003/13434243-muro-di-mattoni-texture-di-alta-qualit%C3%A0.jpg'); background-size: cover; background-repeat: no-repeat; box-sizing:border-box; margin:0; padding:15px; display:flex; justify-content:center;">
-      <div style="background-color: rgba(255, 255, 255, 0.7); width:70%; display:flex; flex-direction:column; justify-content:center; align-items: center; border-radius:20px; border: 4px solid #00B08C;)">
+    <main style="background-image: url('https://previews.123rf.com/images/torsakarin/torsakarin1604/torsakarin160400143/54889067-legno-naturale-texture-muro-bianco-e-lo-sfondo-senza-soluzione-di-continuit%C3%A0.jpg'); background-size: cover; background-repeat: no-repeat; box-sizing:border-box; margin:0; padding:15px; display:flex; justify-content:center;">
+      <div style="background-color: rgba(255, 255, 255, 0.7); width:70%; display:flex; flex-direction:column; justify-content:center; align-items: center; border-radius:20px;)">
         <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size:28px; text-align:center; color:#00B08C; ">
           Complimenti <strong>{{ $order->name. ' ' .$order->surname }}</strong>! <br> Ordine effettuato con successo!!
         </h3>
