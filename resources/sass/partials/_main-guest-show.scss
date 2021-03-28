@@ -85,6 +85,11 @@
           float: right;
           height: 100px
         }
+        p {
+          img {
+            width: 20%;
+          }
+        }
       }
       &:hover {
         cursor: pointer;
