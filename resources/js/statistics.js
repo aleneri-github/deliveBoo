@@ -37,13 +37,12 @@ var statistics = new Vue(
         methods: {
             createChart() {
 
-                window.myChart = document.getElementById('myChart').getContext('2d');
-                window.myChartTwo = document.getElementById('myChartTwo').getContext('2d');
-                window.myChartThree = document.getElementById('myChartThree').getContext('2d');
-                window.myChartFour = document.getElementById('myChartFour').getContext('2d');
+              let myChart = document.getElementById('myChart').getContext('2d');
+              let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
+              let myChartThree = document.getElementById('myChartThree').getContext('2d');
+              let myChartFour = document.getElementById('myChartFour').getContext('2d');
 
-
-                this.pieOrders = new Chart(window.myChartThree, {
+              this.pieOrders = new Chart(window.myChartThree, {
                     type: 'pie',
                     data: {
                         labels: this.labels,
@@ -61,7 +60,7 @@ var statistics = new Vue(
                     }
                 });
 
-                this.pieRevenues = new Chart(window.myChartFour, {
+              this.pieRevenues = new Chart(window.myChartFour, {
                     type: 'pie',
                     data: {
                         labels: this.labels,
@@ -79,7 +78,7 @@ var statistics = new Vue(
                     }
                 });
 
-                this.orders = new Chart(window.myChart, {
+              this.orders = new Chart(window.myChart, {
                     type: 'bar',
                     data: {
                         labels: this.labels,
@@ -102,7 +101,7 @@ var statistics = new Vue(
                     }
                 });
 
-                this.revenues = new Chart(window.myChartTwo, {
+              this.revenues = new Chart(window.myChartTwo, {
                     type: 'line',
                     data: {
                         labels: this.labels,
@@ -125,19 +124,31 @@ var statistics = new Vue(
                     }
                 });
 
-                // this.$forceUpdate();
+              this.$forceUpdate();
 
             },
             filterMonths() {
               axios.get(`http://localhost:8000/api/orders?api_token=` + token + '&months=' + this.months).then(response => {
-                // document.getElementById('myChart').getContext('2d');
-                // document.getElementById('myChartTwo').getContext('2d');
-                // window.myChartThree = document.getElementById('myChartThree').getContext('2d');
-                // window.myChartFour = document.getElementById('myChartFour').getContext('2d');
+                
+                document.getElementById('myChart').remove();
+                document.getElementById('myChartTwo').remove();
+                document.getElementById('myChartThree').remove();
+                document.getElementById('myChartFour').remove();
+
+                document.getElementById('first').innerHTML = '<canvas id="myChart"></canvas>'
+                document.getElementById('second').innerHTML = '<canvas id="myChartTwo"></canvas>'
+                document.getElementById('third').innerHTML = '<canvas id="myChartThree"></canvas>'
+                document.getElementById('fourth').innerHTML = '<canvas id="myChartFour"></canvas>'
+
+                let myChart = document.getElementById('myChart').getContext('2d');
+                let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
+                let myChartThree = document.getElementById('myChartThree').getContext('2d');
+                let myChartFour = document.getElementById('myChartFour').getContext('2d');
+
                 this.dataOrders = response.data.values.reverse();
                 this.dataTotals = response.data.total.reverse();
                 this.labels = response.data.months.reverse();
-                this.pieOrders.destroy();
+
                 this.pieOrders = new Chart(window.myChartThree, {
                       type: 'pie',
                       data: {
@@ -155,7 +166,7 @@ var statistics = new Vue(
                         }
                       }
                   });
-                this.pieRevenues.destroy();
+
                 this.pieRevenues = new Chart(window.myChartFour, {
                       type: 'pie',
                       data: {
@@ -173,7 +184,7 @@ var statistics = new Vue(
                         }
                       }
                   });
-                this.orders.destroy();
+
                 this.orders = new Chart(window.myChart, {
                       type: 'bar',
                       data: {
@@ -196,7 +207,7 @@ var statistics = new Vue(
                         }
                       }
                   });
-                this.revenues.destroy();
+
                 this.revenues = new Chart(window.myChartTwo, {
                       type: 'line',
                       data: {
