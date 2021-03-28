@@ -7,8 +7,8 @@
     <title></title>
   </head>
   <body style="box-sizing:border-box; margin:0; padding:0;">
-    <header style="box-sizing:border-box; margin:0; height:20vh; padding: 10px 40px; background-color:#FDC234; border-bottom: 2px solid white; ">
-      <img style="height:100%;" src="{{ asset('img/white-logo.png') }}" alt="logo">
+    <header style="box-sizing:border-box; margin:0; padding: 10px 40px; background-color:#FDC234; border-bottom: 2px solid white; ">
+      <img style="height:50px;" src="{{ asset('img/white-logo.png') }}" alt="logo">
     </header>
     <main style="background-image: url('https://previews.123rf.com/images/torsakarin/torsakarin1604/torsakarin160400143/54889067-legno-naturale-texture-muro-bianco-e-lo-sfondo-senza-soluzione-di-continuit%C3%A0.jpg'); background-size: cover; background-repeat: no-repeat; box-sizing:border-box; margin:0; padding:15px; display:flex; justify-content:center;">
     <div style="box-sizing:border-box; border-radius: 20px; padding:5px; width:90%; margin:15px; background-color: rgba(255, 255, 255, 0.7); display:flex; flex-direction: column; align-items:center;">
