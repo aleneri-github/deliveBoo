@@ -36,7 +36,7 @@ Route::prefix('admin')
     ->group( function(){
 
     Route::resource('dishes', 'DishController');
-
+    Route::get('/', 'RedirectController@admin');
     Route::get('/restaurant', 'RestaurantController@index')->name('restaurant.index');
     Route::get('/restaurant/create', 'RestaurantController@create')->name('restaurant.create')->middleware('check');
     Route::post('/restaurant/store', 'RestaurantController@store')->name('restaurant.store');
