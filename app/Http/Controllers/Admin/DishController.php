@@ -18,7 +18,7 @@ class DishController extends Controller
         'name' => 'required|string|max:50',
         'ingredients' => 'required',
         'price' => 'required|numeric|max:99',
-        'image' => 'required|image',
+        'image' => 'image',
         'visible' => 'boolean',
         'vegetarian' => 'boolean'
     ];
@@ -79,7 +79,6 @@ class DishController extends Controller
 
         $newDish = new Dish();
 
-
         $data["restaurant_id"] = $rest->id;
 
         if(empty($data["vegetarian"])) {
@@ -92,6 +91,8 @@ class DishController extends Controller
 
         if(!empty($data["image"])) {
             $data["image"] = Storage::disk('public')->put('images', $data["image"]);
+        } else {
+          $data['image'] = 'images/default.png';
         }
 
         $newDish->fill($data);
@@ -160,7 +161,7 @@ class DishController extends Controller
 
         if(!empty($data["image"])) {
             // verifico se è presente un'immagine precedente, se si devo cancellarla
-            if(!empty($dish->image)) {
+            if(!empty($dish->image) && $dish->image != 'images/default.png') {
                 Storage::disk('public')->delete($dish->image);
             }
 
