@@ -51,7 +51,8 @@ main {
       .service-card {
         width: calc(100% / 3 - 20px);
         text-align: center;
-        margin-top: 40px;
+        margin: 20px 10px;
+        padding: 10px;
       }
       .text-card {
         margin-top: 25px;

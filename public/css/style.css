@@ -214,7 +214,8 @@ main #service .box-cards {
 main #service .box-cards .service-card {
   width: calc(100% / 3 - 20px);
   text-align: center;
-  margin-top: 40px;
+  margin: 20px 10px;
+  padding: 10px;
 }
 main #service .box-cards .text-card {
   margin-top: 25px;
