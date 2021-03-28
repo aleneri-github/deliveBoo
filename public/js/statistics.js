@@ -87000,10 +87000,10 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   }, _defineProperty(_data, "orders", ''), _defineProperty(_data, "revenues", ''), _data),
   methods: {
     createChart: function createChart() {
-      window.myChart = document.getElementById('myChart').getContext('2d');
-      window.myChartTwo = document.getElementById('myChartTwo').getContext('2d');
-      window.myChartThree = document.getElementById('myChartThree').getContext('2d');
-      window.myChartFour = document.getElementById('myChartFour').getContext('2d');
+      var myChart = document.getElementById('myChart').getContext('2d');
+      var myChartTwo = document.getElementById('myChartTwo').getContext('2d');
+      var myChartThree = document.getElementById('myChartThree').getContext('2d');
+      var myChartFour = document.getElementById('myChartFour').getContext('2d');
       this.pieOrders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChartThree, {
         type: 'pie',
         data: {
@@ -87081,22 +87081,28 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
             }]
           }
         }
-      }); // this.$forceUpdate();
+      });
+      this.$forceUpdate();
     },
     filterMonths: function filterMonths() {
       var _this = this;
 
       axios.get("http://localhost:8000/api/orders?api_token=" + token + '&months=' + this.months).then(function (response) {
-        // document.getElementById('myChart').getContext('2d');
-        // document.getElementById('myChartTwo').getContext('2d');
-        // window.myChartThree = document.getElementById('myChartThree').getContext('2d');
-        // window.myChartFour = document.getElementById('myChartFour').getContext('2d');
+        document.getElementById('myChart').remove();
+        document.getElementById('myChartTwo').remove();
+        document.getElementById('myChartThree').remove();
+        document.getElementById('myChartFour').remove();
+        document.getElementById('first').innerHTML = '<canvas id="myChart"></canvas>';
+        document.getElementById('second').innerHTML = '<canvas id="myChartTwo"></canvas>';
+        document.getElementById('third').innerHTML = '<canvas id="myChartThree"></canvas>';
+        document.getElementById('fourth').innerHTML = '<canvas id="myChartFour"></canvas>';
+        var myChart = document.getElementById('myChart').getContext('2d');
+        var myChartTwo = document.getElementById('myChartTwo').getContext('2d');
+        var myChartThree = document.getElementById('myChartThree').getContext('2d');
+        var myChartFour = document.getElementById('myChartFour').getContext('2d');
         _this.dataOrders = response.data.values.reverse();
         _this.dataTotals = response.data.total.reverse();
         _this.labels = response.data.months.reverse();
-
-        _this.pieOrders.destroy();
-
         _this.pieOrders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChartThree, {
           type: 'pie',
           data: {
@@ -87114,9 +87120,6 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
             }
           }
         });
-
-        _this.pieRevenues.destroy();
-
         _this.pieRevenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChartFour, {
           type: 'pie',
           data: {
@@ -87134,9 +87137,6 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
             }
           }
         });
-
-        _this.orders.destroy();
-
         _this.orders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChart, {
           type: 'bar',
           data: {
@@ -87159,9 +87159,6 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
             }
           }
         });
-
-        _this.revenues.destroy();
-
         _this.revenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChartTwo, {
           type: 'line',
           data: {
