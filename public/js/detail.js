@@ -49399,7 +49399,6 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       var partials = this.cart.map(function (e) {
         return parseFloat(e.total);
       });
-      console.log(partials);
       return partials.reduce(function (a, b) {
         return a + b;
       }, 0);
@@ -49409,15 +49408,12 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       localStorage.setItem('cart', parsed);
     },
     addItem: function addItem(item) {
-      console.log(item);
       item.quantity++;
       item.total += item.price;
       this.$forceUpdate();
       this.saveCart();
     },
     removeItem: function removeItem(item) {
-      console.log(item);
-
       if (item.quantity == 1) {
         var index = this.cart.indexOf(item);
         this.cart.splice(index, 1);
@@ -49428,14 +49424,26 @@ var detail = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
       item.total -= item.price;
       this.$forceUpdate();
       this.saveCart();
+    },
+    prova: function prova() {
+      var _this2 = this;
+
+      var cart = document.getElementById('cart_pass');
+      cart.value = JSON.stringify(this.cart);
+      axios.post("http://localhost:8000/checkout/passcart", {
+        cart_pass: cart.value
+      }).then(function (response) {
+        _this2.dishes = response.data;
+        _this2.loader = false;
+      });
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
 
     axios.get("http://localhost:8000/api/restaurant/dishes").then(function (response) {
-      _this2.dishes = response.data;
-      _this2.loader = false;
+      _this3.dishes = response.data;
+      _this3.loader = false;
     });
 
     if (localStorage.getItem('cart')) {

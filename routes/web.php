@@ -22,6 +22,7 @@ Route::get('/home', function () {
 Route::prefix('')->name('guest.')->group( function() {
 
   Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+  Route::post('/checkout/passcart', 'CheckoutController@index')->name('checkout.passcart');
   Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
   Route::get('/restaurants/{slug}/show', 'GuestController@show')->name('show');
 

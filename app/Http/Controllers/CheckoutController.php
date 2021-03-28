@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Restaurant;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cookie;
 use App\Mail\OrderMail;
 use Illuminate\Support\Facades\Mail;
 
@@ -18,7 +19,10 @@ class CheckoutController extends Controller
     'status' => ['required', 'string', 'max:50'],
     'total' => ['required', 'numeric', 'max:9999', 'min:0']
   ];
-  public function index(){
+
+  public function index(Request $request){
+    $test = json_decode($request->getContent(), true);
+    dd($test);
     $gateway = new \Braintree\Gateway([
       'environment' => env('BRAINTREE_ENVIRONMENT'),
       'merchantId' => env("BRAINTREE_MERCHANT_ID"),
@@ -28,6 +32,8 @@ class CheckoutController extends Controller
     $token = $gateway->clientToken()->generate();
     return view ('guest.checkout', compact('token'));
   }
+
+
   public function store(Request $request)
   {
     $gateway = new \Braintree\Gateway([

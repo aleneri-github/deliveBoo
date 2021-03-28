@@ -89,8 +89,9 @@
             <h4 v-cloak>€ @{{ cartTotal().toFixed(2) }}</h4>
           </div>
           {{-- button di checkout --}}
+          <input type="hidden" id="cart_pass" name="cart_pass" value="0"></input>
           <a href="{{ route('guest.checkout.index') }}" class="deliveboo_button_cart"
-          :class="cart.length == 0 ? 'd-none' : ''"
+          :class="cart.length == 0 ? 'd-none' : ''" @click="prova()"
           >Checkout</a>
         </div>
 

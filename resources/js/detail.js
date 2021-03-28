@@ -56,7 +56,6 @@ var detail = new Vue(
         let partials = this.cart.map((e) => {
           return parseFloat(e.total);
         })
-        console.log(partials)
         return partials.reduce(function(a,b) {
           return a + b;
         }, 0);
@@ -66,14 +65,12 @@ var detail = new Vue(
         localStorage.setItem('cart', parsed);
       },
       addItem(item) {
-        console.log(item)
         item.quantity++;
         item.total += item.price;
         this.$forceUpdate();
         this.saveCart();
       },
       removeItem(item) {
-        console.log(item)
         if (item.quantity == 1) {
           let index = this.cart.indexOf(item);
           this.cart.splice(index,1);
@@ -84,6 +81,16 @@ var detail = new Vue(
         this.$forceUpdate();
         this.saveCart();
       },
+      prova() {
+        let cart = document.getElementById('cart_pass');
+        cart.value = JSON.stringify(this.cart);
+        axios.post(`http://localhost:8000/checkout/passcart`, { cart_pass: cart.value }).then(response => {
+          this.dishes = response.data;
+          this.loader = false;
+        });
+
+
+      }
     },
     mounted: function() {
       axios.get(`http://localhost:8000/api/restaurant/dishes`).then(response => {
