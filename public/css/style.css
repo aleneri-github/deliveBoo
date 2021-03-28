@@ -272,7 +272,7 @@ main .slider-wrapper .container_food h2 {
 main .slider-wrapper .container_food .images {
   height: 100%;
   position: absolute;
-  right: 8%;
+  right: 0%;
   width: 55%;
   opacity: 0;
   transition: 2.5s;
@@ -1763,6 +1763,7 @@ a:hover {
 #statistics #stat_data_container .data {
   width: 50%;
   border-radius: 10px;
+  margin-top: 20px;
 }
 #statistics #stat_data_container .data .data-top {
   display: flex;

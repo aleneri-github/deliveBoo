@@ -46,3 +46,7 @@ Route::prefix('admin')
     Route::get('/statistics', 'DishController@statistics')->name('dishes.statistics');
 
 });
+
+// Route::options('/{path}', function(){
+//     return '';
+// })->where('path', '.*');
