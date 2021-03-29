@@ -13,7 +13,6 @@
 
     {{-- view show --}}
     <div key=2 v-if="loader == false">
-
       {{-- JUMBOTRON --}}
       <div id="jumbotron_rest" style="background-image: url('{{ asset('storage/' . $restaurant->image) }}')">
         <div class="dark_layer">
