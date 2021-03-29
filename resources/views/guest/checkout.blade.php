@@ -61,7 +61,7 @@
                 <h4>€ @{{ cartTotal().toFixed(2) }}</h4>
               </div>
               {{-- <a href="#" class="deliveboo_button p-3">Torna indietro</a> --}}
-              <input class="deliveboo_button p-3" type="submit" value="Compra" @click="scrollToTop()"></input>
+              <input class="deliveboo_button p-3" :class="cart.length == 0 ? 'd-none' : ''" type="submit" value="Compra" @click="scrollToTop()"></input>
               <input type="hidden" id="nonce" name="nonce"></input>
               <input type="hidden" id="cart" name="cart"></input>
               <input type="hidden" id="token" name="token" value='{{ $token }}'/>
