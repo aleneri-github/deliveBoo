@@ -47,6 +47,6 @@ Route::prefix('admin')
 
 });
 
-// Route::options('/{path}', function(){
-//     return '';
-// })->where('path', '.*');
+Route::options('/{path}', function(){
+    return '';
+})->where('path', '.*');

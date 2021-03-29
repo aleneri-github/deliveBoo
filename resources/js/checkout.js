@@ -41,19 +41,21 @@ var checkout = new Vue(
           }
           form.addEventListener('submit', function(e) {
             e.preventDefault();
-            // self.loader = true;
-            // self.prova = 'd-block';
             instance.requestPaymentMethod().then(function(payload) {
-              self.loader = true;
-              self.prova = 'd-block';
               nonce.value = payload.nonce;
+              if (nonce.value) {
+                self.loader = true;
+                self.prova = 'd-block';
+              } else {
+                return
+              }
               cart.value = JSON.stringify(self.cart);
               total.value = self.cartTotal();
               form.submit();
             }).catch(function(err) {
               console.error(err);
               self.prova = 'd-none';
-              self.loader = true;
+              self.loader = false;
             });
           })
         }
