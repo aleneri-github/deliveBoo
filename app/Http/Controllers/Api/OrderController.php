@@ -52,11 +52,12 @@ class OrderController extends Controller
     for ($i = 0; $i < $int; $i++) {
       $currentMonth = Carbon::now();
       $currentYear = Carbon::now();
-      $currentMonthString = $currentMonth->subMonth($i)->isoFormat('MMMM');
-      $currentYearString = $currentYear->subMonth($i)->isoFormat('YYYY');
+      $currentMonthString = $currentMonth->subMonthNoOverflow($i)->isoFormat('MMMM');
+      $currentYearString = $currentYear->subMonthNoOverflow($i)->isoFormat('YYYY');
       array_push($months, ucfirst($currentMonthString));
       array_push($monthsYears, ucfirst($currentMonthString). '-' .$currentYearString);
     }
+    
     foreach ($months as $month) {
       $bool = false;
       foreach ($filteredOrders as $order) {
