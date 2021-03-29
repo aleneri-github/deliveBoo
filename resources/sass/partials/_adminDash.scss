@@ -36,7 +36,16 @@
             padding: 20px 30px;
             list-style-type: none;
             transition-duration: 0.4s;
+            margin-top: 10px;
             cursor: pointer;
+            &.active {
+              background-color: $white;
+              color: $yellow;
+              border-radius: 60px 0px 0px 60px;
+              a {
+                color: $yellow;
+              }
+            }
             &:hover {
               background-color: $white;
               color: $yellow;
