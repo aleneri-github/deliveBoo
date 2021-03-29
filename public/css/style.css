@@ -1291,7 +1291,16 @@ a:hover {
   padding: 20px 30px;
   list-style-type: none;
   transition-duration: 0.4s;
+  margin-top: 10px;
   cursor: pointer;
+}
+#dashboard #admin-menu .side-menu .admin-menu ul li.active {
+  background-color: #fefefe;
+  color: #FDC234;
+  border-radius: 60px 0px 0px 60px;
+}
+#dashboard #admin-menu .side-menu .admin-menu ul li.active a {
+  color: #FDC234;
 }
 #dashboard #admin-menu .side-menu .admin-menu ul li:hover {
   background-color: #fefefe;

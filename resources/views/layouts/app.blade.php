@@ -45,13 +45,13 @@
               <div class="side-menu">
                 <nav class="admin-menu">
                   <ul>
-                    <li>
+                    <li class="{{ Route::currentRouteName() == 'admin.dishes.index' ? 'active' : '' }}">
                       <a href="{{ route('admin.dishes.index')}}">
                         <i class="fas fa-hamburger"></i>
                         <span>Menu</span>
                       </a>
                     </li>
-                    <li>
+                    <li class="{{ Route::currentRouteName() == 'admin.dishes.statistics' ? 'active' : '' }}">
                       <a href="{{ route('admin.dishes.statistics')}}">
                       <i class="fas fa-chart-line"></i>
                         <span>Statistiche</span>

@@ -19,10 +19,19 @@ axios.get(`http://localhost:8000/api/orders?api_token=` + token).then(response =
     return tot + num;
   })
 
-  document.getElementById('orders_total_dash').innerHTML = window.orders;
-  document.getElementById('revenue_total_dash').innerHTML = window.revenue.toFixed(2);
-  document.getElementById('orders_total_stat').innerHTML = window.orders;
-  document.getElementById('revenue_total_stat').innerHTML = window.revenue.toFixed(2);
+  if (document.getElementById('orders_total_dash')) {
+    document.getElementById('orders_total_dash').innerHTML = window.orders;
+  }
+  if (document.getElementById('revenue_total_dash')) {
+    document.getElementById('revenue_total_dash').innerHTML = window.revenue.toFixed(2);
+  }
+  if (document.getElementById('orders_total_stat')) {
+    document.getElementById('orders_total_stat').innerHTML = window.orders;
+  }
+  if (document.getElementById('revenue_total_stat')) {
+    document.getElementById('revenue_total_stat').innerHTML = window.revenue.toFixed(2);
+  }
+  
 });
 
 
