@@ -9,7 +9,7 @@
 
       <div :class="visibility">
 
-        <div class="input-group mb-3" style="width: 180px;">
+        {{-- <div class="input-group mb-3" style="width: 180px;">
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Mensilità</label>
           </div>
@@ -18,7 +18,7 @@
             <option value="8">8 Mesi</option>
             <option value="12">12 Mesi</option>
           </select>
-        </div>
+        </div> --}}
 
         <div id="first" class="chart_container_lg">
             <canvas id="myChart"></canvas>

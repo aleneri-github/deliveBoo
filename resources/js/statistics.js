@@ -45,7 +45,7 @@ var statistics = new Vue(
               this.pieOrders = new Chart(window.myChartThree, {
                     type: 'pie',
                     data: {
-                        labels: this.labels,
+                        labels: ['Dicembre-2020', 'Gennaio-2021', 'Febbraio-2021', 'Marzo-2021'],
                         datasets: [{
                             data: this.dataOrders,
                             backgroundColor: this.colorsArray,
@@ -63,7 +63,7 @@ var statistics = new Vue(
               this.pieRevenues = new Chart(window.myChartFour, {
                     type: 'pie',
                     data: {
-                        labels: this.labels,
+                        labels: ['Dicembre-2020', 'Gennaio-2021', 'Febbraio-2021', 'Marzo-2021'],
                         datasets: [{
                             data: this.dataTotals,
                             backgroundColor: this.colorsArray,
@@ -81,7 +81,7 @@ var statistics = new Vue(
               this.orders = new Chart(window.myChart, {
                     type: 'bar',
                     data: {
-                        labels: this.labels,
+                        labels: ['Dicembre-2020', 'Gennaio-2021', 'Febbraio-2021', 'Marzo-2021'],
                         datasets: [{
                             label: 'Ordini',
                             data: this.dataOrders,
@@ -104,7 +104,7 @@ var statistics = new Vue(
               this.revenues = new Chart(window.myChartTwo, {
                     type: 'line',
                     data: {
-                        labels: this.labels,
+                        labels: ['Dicembre-2020', 'Gennaio-2021', 'Febbraio-2021', 'Marzo-2021'],
                         datasets: [{
                             label: 'Entrate Mensili',
                             data: this.dataTotals,
@@ -129,7 +129,7 @@ var statistics = new Vue(
             },
             filterMonths() {
               axios.get(`http://localhost:8000/api/orders?api_token=` + token + '&months=' + this.months).then(response => {
-                
+
                 document.getElementById('myChart').remove();
                 document.getElementById('myChartTwo').remove();
                 document.getElementById('myChartThree').remove();

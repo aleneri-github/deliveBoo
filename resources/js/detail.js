@@ -73,7 +73,7 @@ var detail = new Vue(
         this.saveCart();
       },
       removeItem(item) {
-        
+
         if (item.quantity == 1) {
           let index = this.cart.indexOf(item);
           this.cart.splice(index,1);

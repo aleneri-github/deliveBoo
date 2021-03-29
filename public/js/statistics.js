@@ -87007,7 +87007,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.pieOrders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChartThree, {
         type: 'pie',
         data: {
-          labels: this.labels,
+          labels: ['Dicembre-2020', 'Gennaio-2021', 'Febbraio-2021', 'Marzo-2021'],
           datasets: [{
             data: this.dataOrders,
             backgroundColor: this.colorsArray,
@@ -87024,7 +87024,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.pieRevenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChartFour, {
         type: 'pie',
         data: {
-          labels: this.labels,
+          labels: ['Dicembre-2020', 'Gennaio-2021', 'Febbraio-2021', 'Marzo-2021'],
           datasets: [{
             data: this.dataTotals,
             backgroundColor: this.colorsArray,
@@ -87041,7 +87041,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.orders = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChart, {
         type: 'bar',
         data: {
-          labels: this.labels,
+          labels: ['Dicembre-2020', 'Gennaio-2021', 'Febbraio-2021', 'Marzo-2021'],
           datasets: [{
             label: 'Ordini',
             data: this.dataOrders,
@@ -87063,7 +87063,7 @@ var statistics = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.revenues = new (chart_js__WEBPACK_IMPORTED_MODULE_0___default())(window.myChartTwo, {
         type: 'line',
         data: {
-          labels: this.labels,
+          labels: ['Dicembre-2020', 'Gennaio-2021', 'Febbraio-2021', 'Marzo-2021'],
           datasets: [{
             label: 'Entrate Mensili',
             data: this.dataTotals,
